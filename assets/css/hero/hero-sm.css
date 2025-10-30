@@ -29,7 +29,7 @@
     min-height: auto;
     display: flex;
     align-items: center;
-    background-color: var(--color-accent);
+    background-color: var(--color-primary); /* #00B5E2 */
     margin-bottom: 0 !important;
   }
 
@@ -46,7 +46,7 @@
   .container_l.adView {
     width: 100%;
     padding: 0;
-    background-color: var(--color-accent);
+    background-color: var(--color-primary); /* #00B5E2 */
   }
 
   .mv_txt-box {
