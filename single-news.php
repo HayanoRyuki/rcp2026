@@ -1,52 +1,51 @@
 <?php get_header(); ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single-news.css">
 
-<main class="site-main main-content single-news">
-  <div class="container max-w-7xl mx-auto py-16 flex gap-8">
+<main class="site-main news">
+  <div class="news__container">
 
-    <!-- ▼ メインカラム -->
-    <div class="main-column w-2/3">
- <!-- ▼ パンくずリスト -->
-<nav class="breadcrumb text-sm text-gray-500 mb-6" aria-label="breadcrumb">
-  <a href="<?php echo home_url(); ?>" class="text-blue-600 hover:underline">HOME</a> &gt;
-  <a href="<?php echo home_url('/news'); ?>" class="text-blue-600 hover:underline">お知らせ</a> &gt;
-  <span class="text-gray-500"><?php the_title(); ?></span>
-</nav>
-<!-- ▲ パンくずリスト -->
+    <!-- ===== メインカラム ===== -->
+    <div class="news__main">
+
+      <!-- パンくず -->
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <a href="<?php echo home_url(); ?>">HOME</a> &gt;
+        <a href="<?php echo home_url('/news'); ?>">お知らせ</a> &gt;
+        <span><?php the_title(); ?></span>
+      </nav>
 
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <article <?php post_class(); ?>>
+        <article class="news__article">
 
-          <!-- ▼ タイトル・メタ情報 -->
-          <header class="post-header mb-8">
-            <h1 class="post-title text-3xl font-bold leading-snug mb-4"><?php the_title(); ?></h1>
-            <div class="post-meta flex justify-between items-center text-sm text-gray-500">
-              <div class="post-categories">
+          <!-- タイトル・メタ情報 -->
+          <header class="news__header">
+            <h1 class="news__title"><?php the_title(); ?></h1>
+
+            <div class="news__meta">
+              <div class="news__categories">
                 <?php
                 $categories = get_the_category();
                 foreach ($categories as $category) {
-                  echo '<span class="inline-block bg-black text-white rounded px-2 py-1 text-xs mr-2">' . esc_html($category->name) . '</span>';
+                  echo '<span class="news__category">' . esc_html($category->name) . '</span>';
                 }
                 ?>
               </div>
-              <div class="post-date">
-                <?php echo get_the_date('Y.m.d'); ?>
-              </div>
+              <time class="news__date"><?php echo get_the_date('Y.m.d'); ?></time>
             </div>
           </header>
 
-          <!-- ▼ 本文 -->
-          <div class="post-content prose">
+          <!-- 本文 -->
+          <div class="news__content">
             <?php the_content(); ?>
           </div>
-
         </article>
       <?php endwhile; endif; ?>
     </div>
 
-    <!-- ▼ サイドバー：他のニュース -->
-    <aside class="sidebar w-1/3">
-      <h2 class="text-xl font-bold mb-4 border-b pb-2">お知らせ一覧</h2>
-      <ul class="other-news-list space-y-4">
+    <!-- ===== サイドバー ===== -->
+    <aside class="news__sidebar">
+      <h2 class="news__sidebar-title">お知らせ一覧</h2>
+      <ul class="news__sidebar-list">
         <?php
         $args = [
           'post_type'      => 'news',
@@ -55,14 +54,12 @@
         ];
         $related_news = new WP_Query($args);
         if ($related_news->have_posts()) :
-          while ($related_news->have_posts()) : $related_news->the_post();
-        ?>
-            <li>
-<span class="block text-xs text-gray-500"><?php echo get_the_date('Y.m.d'); ?></span>
-<a href="<?php the_permalink(); ?>" class="block text-sm text-blue-700 hover:underline">
-  <?php the_title(); ?>
-</a>
-
+          while ($related_news->have_posts()) : $related_news->the_post(); ?>
+            <li class="news__sidebar-item">
+              <time class="news__sidebar-date"><?php echo get_the_date('Y.m.d'); ?></time>
+              <a href="<?php the_permalink(); ?>" class="news__sidebar-link">
+                <?php the_title(); ?>
+              </a>
             </li>
         <?php endwhile;
           wp_reset_postdata();

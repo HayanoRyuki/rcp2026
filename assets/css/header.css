@@ -7,8 +7,8 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #fff;
-  border-bottom: 1px solid #e5e7eb;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
@@ -44,8 +44,8 @@ body {
    CTAボタン（PCのみ表示）
 ================================= */
 .site-header .cta-button {
-  background-color: #f87171;
-  color: #fff;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
   padding: 0.5rem 1.5rem;
   border-radius: 9999px;
   font-size: 0.875rem;
@@ -55,7 +55,7 @@ body {
 }
 
 .site-header .cta-button:hover {
-  background-color: #ef4444;
+  background-color: var(--color-primary);
 }
 
 /* ===============================
@@ -76,7 +76,7 @@ body {
 .menu-toggle .bar {
   height: 2px;
   width: 100%;
-  background-color: #333;
+  background-color: var(--color-text);
   border-radius: 1px;
 }
 
@@ -111,12 +111,12 @@ body {
   .main-nav a {
     text-decoration: none;
     font-weight: 600;
-    color: #4b5563;
+    color: var(--color-text-light);
     transition: color 0.2s ease;
   }
 
   .main-nav a:hover {
-    color: #111827;
+    color: var(--color-text);
   }
 
   .site-header .cta-button {
@@ -130,7 +130,7 @@ body {
 @media (max-width: 768px) {
   .main-nav {
     display: none;
-    background-color: #fff;
+    background-color: var(--color-white);
     width: 100%;
     padding: 1rem;
     position: absolute;
@@ -154,12 +154,12 @@ body {
     display: block;
     font-size: 1rem;
     padding: 0.5rem 0;
-    color: #333;
+    color: var(--color-text);
     text-decoration: none;
   }
 
   .main-nav li a:hover {
-    background-color: #f5f5f5;
+    background-color: var(--color-bg-alt);
   }
 
   .site-header .cta-button {
@@ -173,10 +173,10 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #fff;
+  background: var(--color-white);
   padding: 10px 0;
   list-style: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
 }
 
@@ -191,12 +191,11 @@ body {
 .main-nav-list .submenu li a {
   display: block;
   padding: 8px 20px;
-  color: #333;
+  color: var(--color-text);
   white-space: nowrap;
   text-decoration: none;
 }
 
 .main-nav-list .submenu li a:hover {
-  background-color: #f0f0f0;
+  background-color: var(--color-bg-alt);
 }
-

@@ -1,9 +1,9 @@
-/* ===============================
-   ヒーローセクション：PC（1280px以上）XL
-=============================== */
+/* =========================================================
+   HERO SECTION：PC（1280px以上） / root対応
+========================================================= */
 @media (min-width: 1280px) {
 
-  /* --- 上部余白の調整 --- */
+  /* --- 上部余白調整 --- */
   body.top,
   body.home,
   main.site-main.front-page {
@@ -31,7 +31,7 @@
     align-items: center;
     margin-top: 70px;
     padding-top: 0;
-    background-color: #009bc9;
+    background-color: var(--color-accent);
     margin-bottom: 0 !important;
   }
 
@@ -47,7 +47,7 @@
   }
 
   .container_l.adView {
-    background-color: #009bc9;
+    background-color: var(--color-accent);
   }
 
   .hero-title-box {
@@ -64,7 +64,7 @@
   .hero-user-image {
     width: 110%;
     height: 450px;
-    background-image: url('/wp-content/themes/rcp2025/assets/img/hero/hero-user-lg.png');
+    background-image: url("/wp-content/themes/rcp2025/assets/img/hero/hero-user-lg.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -77,11 +77,11 @@
   .container_r {
     width: 35%;
     min-width: 490px;
-    background-color: #fff;
+    background-color: var(--color-white);
     padding: 30px;
     margin-left: 30px;
     box-sizing: border-box;
-    color: #333;
+    color: var(--color-text);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -90,7 +90,7 @@
   }
 
   .kv-form {
-    background-color: #fff;
+    background-color: var(--color-white);
     border-radius: 10px;
     padding: 0.5em;
     height: 700px;
@@ -117,6 +117,7 @@
     min-width: 100px;
   }
 
+  /* 同意チェック */
   .kv-form-agree {
     display: flex;
     align-items: flex-start;
@@ -125,7 +126,8 @@
     white-space: normal;
     font-size: 0.75rem;
     line-height: 1.4;
-    color: #666;
+    color: var(--color-text);
+    opacity: 0.8;
     margin: 0.5rem 0;
   }
 
@@ -141,11 +143,12 @@
 
   .kv-form-agree a {
     text-decoration: underline;
-    color: #0076ff;
+    color: var(--color-link);
     font-size: inherit;
     word-break: break-word;
   }
 
+  /* ダウンロードボタン */
   .btn.btn_dl {
     display: block;
     width: 100%;
@@ -153,10 +156,10 @@
     padding: 12px;
     margin-top: 1.5rem;
     margin-bottom: 2rem;
-    background-color: #ff706e;
-    color: #fff;
+    background-color: var(--color-accent);
+    color: var(--color-white);
     font-size: 1.15rem;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
     border: none;
     border-radius: 6px;
@@ -165,38 +168,43 @@
 
   .btn.btn_dl:hover {
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.85;
   }
 
+  /* HERO補足テキスト */
   .hero-note {
     font-size: 0.85rem;
-    color: #fff;
+    color: var(--color-white);
     line-height: 1.2;
     margin: 1rem 1rem;
     padding-right: 1rem;
     text-align: left;
   }
 
+  /* 資料案内 */
   .document-guidance-box {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 1rem;
-    color: #333;
+    color: var(--color-text);
   }
 }
 
+/* =========================================================
+   FORM ELEMENTS（共通）
+========================================================= */
 .kv-form-group input,
 .kv-form-group select {
   width: 100%;
   height: 55px;
   padding: 10px 12px;
   font-size: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--color-white);
+  color: var(--color-text);
   box-sizing: border-box;
   appearance: auto;
 }
@@ -210,15 +218,15 @@
   top: -10px;
   left: 12px;
   font-size: 0.75rem;
-  font-weight: bold;
-  color: #333;
-  background: #fff;
+  font-weight: 700;
+  color: var(--color-text);
+  background: var(--color-white);
   padding: 0 6px;
   pointer-events: none;
   z-index: 1;
 }
 
-/* プレースホルダー用（input/textarea） */
+/* プレースホルダー */
 .kv-form-group input::placeholder,
 .kv-form-group textarea::placeholder {
   font-size: 0.85rem;
@@ -226,48 +234,49 @@
   opacity: 1;
 }
 
-/* selectボックスの未選択状態だけを薄くする */
+/* select 未選択 / 選択後 */
 .kv-form-group select:invalid {
   color: #888;
   font-size: 0.85rem;
 }
 
-/* 選択後は濃く表示 */
 .kv-form-group select {
-  color: #333;
+  color: var(--color-text);
   font-size: 0.95rem;
 }
 
+/* =========================================================
+   LAYOUT（等高配置）
+========================================================= */
 .hero-body {
   display: flex;
-  justify-content: space-between; /* 左右配置 */
-  align-items: stretch;           /* ← 高さを揃えるポイント */
+  justify-content: space-between;
+  align-items: stretch;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
-/* 左右カラムが同じ高さで伸びる */
+/* 左右カラム等高 */
 .container_l.adView,
 .container_r {
-  flex: 1;              /* 高さを揃えるために伸縮 */
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-
-/* 右カラムよせる */
- .container_r {
-    width: 40%;
-    max-width: 490px;
-    background-color: #fff;
-    padding: 30px;
-    box-sizing: border-box;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left: auto;   /* 右端に寄せる */
-    margin-right: -80px;
-  }
+/* 右カラム寄せ */
+.container_r {
+  width: 40%;
+  max-width: 490px;
+  background-color: var(--color-white);
+  padding: 30px;
+  box-sizing: border-box;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: auto;
+  margin-right: -80px;
+}

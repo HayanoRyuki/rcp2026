@@ -1,0 +1,162 @@
+/*-------------------------------------
+  導入事例セクション全体
+-------------------------------------*/
+.case-top-section {
+  background-color: var(--color-bg-alt);
+  padding: 80px 20px;
+}
+
+.case-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.case-top-section .case-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: -100px;
+}
+
+/*-------------------------------------
+  カードグリッドレイアウト
+-------------------------------------*/
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.case-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--color-white);
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.case-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/*-------------------------------------
+  サムネイル（画像）
+-------------------------------------*/
+.case-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.case-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.case-thumbnail a {
+  display: block;
+  overflow: hidden;
+}
+
+.case-thumbnail a img {
+  transition: transform 0.3s ease;
+}
+
+.case-thumbnail a:hover img {
+  transform: scale(1.05);
+}
+
+/*-------------------------------------
+  カード本文
+-------------------------------------*/
+.case-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.case-heading {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0 0 0.5em 0;
+  color: var(--color-text);
+}
+
+.case-company,
+.case-count {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.case-link {
+  margin-top: auto;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.case-link:hover {
+  text-decoration: underline;
+}
+
+/*-------------------------------------
+  タイトルホバーアニメーション
+-------------------------------------*/
+.case-title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.case-title-link:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/*-------------------------------------
+  レスポンシブ対応
+-------------------------------------*/
+@media (max-width: 1024px) {
+  .case-card {
+    width: calc(50% - 12px);
+  }
+}
+
+@media (max-width: 640px) {
+  .case-card {
+    width: 100%;
+  }
+}
+
+/*-------------------------------------
+  もっと見るボタン
+-------------------------------------*/
+.case-more-button {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.case-more-button .button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.case-more-button .button:hover {
+  background-color: var(--color-primary-dark);
+}

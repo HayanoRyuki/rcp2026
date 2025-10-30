@@ -3,82 +3,72 @@
 get_header();
 ?>
 
-<main class="site-main contact-partner-page">
-  <section class="section-contact-partner">
-    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 60px 20px;">
-      <h1 class="page-title" style="font-size: 2rem; text-align: center; margin-bottom: 1.5rem;">
-        お問い合わせ - 販売代理店の方 -
-      </h1>
-      <p style="text-align: center; margin-bottom: 2rem;">
+<main class="site-main contact-partner">
+  <section class="contact-partner__section">
+    <div class="contact-partner__inner">
+      <h1 class="contact-partner__title">お問い合わせ - 販売代理店の方 -</h1>
+
+      <p class="contact-partner__intro">
         ご質問、ご相談は以下のフォームよりお送りください。<br>
         内容確認後、担当より通常2〜4営業日以内にご連絡いたします。
       </p>
 
-      <form name="agency" class="form-track download-form pardot-form"
+      <form name="agency"
+            class="contact-partner__form form-track download-form pardot-form"
             action="" method="post"
-            data-event="request_materials" data-form-id="agency">
+            data-event="request_materials"
+            data-form-id="agency">
 
-        <!-- 会社名 -->
-        <div class="form-group">
-          <label for="company_name" class="required">貴社名</label>
-          <input type="text" name="company_name" id="company_name" required>
+        <div class="contact-partner__group">
+          <label for="company_name" class="contact-partner__label required">貴社名</label>
+          <input type="text" name="company_name" id="company_name" class="contact-partner__input" required>
         </div>
 
-        <!-- 姓・名を横並び -->
-        <div class="form-row-flex" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
-          <div class="form-group" style="flex: 1;">
-            <label for="last_name" class="required">姓</label>
-            <input type="text" name="last_name" id="last_name" required>
+        <div class="contact-partner__row">
+          <div class="contact-partner__group">
+            <label for="last_name" class="contact-partner__label required">姓</label>
+            <input type="text" name="last_name" id="last_name" class="contact-partner__input" required>
           </div>
 
-          <div class="form-group" style="flex: 1;">
-            <label for="first_name" class="required">名</label>
-            <input type="text" name="first_name" id="first_name" required>
+          <div class="contact-partner__group">
+            <label for="first_name" class="contact-partner__label required">名</label>
+            <input type="text" name="first_name" id="first_name" class="contact-partner__input" required>
           </div>
         </div>
 
-        <!-- メールアドレス -->
-        <div class="form-group">
-          <label for="email" class="required">メールアドレス</label>
-          <input type="email" name="email" id="email" required>
+        <div class="contact-partner__group">
+          <label for="email" class="contact-partner__label required">メールアドレス</label>
+          <input type="email" name="email" id="email" class="contact-partner__input" required>
         </div>
 
-        <!-- 電話番号 -->
-        <div class="form-group">
-          <label for="phone_no" class="required">電話番号</label>
-          <input type="tel" name="phone_no" id="phone_no" required>
+        <div class="contact-partner__group">
+          <label for="phone_no" class="contact-partner__label required">電話番号</label>
+          <input type="tel" name="phone_no" id="phone_no" class="contact-partner__input" required>
         </div>
 
-        <!-- お問い合わせ内容 -->
-        <div class="form-group">
-          <label for="body" class="required">お問い合わせ内容</label>
-          <textarea name="body" id="body" rows="6" required></textarea>
+        <div class="contact-partner__group">
+          <label for="body" class="contact-partner__label required">お問い合わせ内容</label>
+          <textarea name="body" id="body" rows="6" class="contact-partner__textarea" required></textarea>
         </div>
 
-  <!-- 同意チェックボックス -->
-<div class="form-group privacy-policy" style="text-align: center; margin-bottom: 1.5rem;">
-  <label for="privacy_policy">
-    <input type="checkbox" id="privacy_policy" name="privacy_policy" required>
-    <span>
-      <a href="https://help.receptionist.jp/?p=402" target="_blank" rel="noopener">
-        （株）RECEPTIONISTの個人情報の取り扱い
-      </a> に同意します。<span style="color: red;">*</span>
-    </span>
-  </label>
-</div>
+        <div class="contact-partner__privacy">
+          <label for="privacy_policy" class="contact-partner__privacy-label">
+            <input type="checkbox" id="privacy_policy" name="privacy_policy" required>
+            <span>
+              <a href="https://help.receptionist.jp/?p=402" target="_blank" rel="noopener">
+                （株）RECEPTIONISTの個人情報の取り扱い
+              </a> に同意します。<span class="required">*</span>
+            </span>
+          </label>
+        </div>
 
-        <!-- ハニーポット -->
         <input type="text" name="hp" tabindex="-1" autocomplete="off"
-               style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
+               class="contact-partner__honeypot">
 
-        <!-- contact_type -->
         <input type="hidden" name="contact_type" value="agency">
 
-        <!-- 送信ボタン -->
-        <div class="form-group" style="text-align: center;">
-          <button type="submit" style="padding: 0.75rem 2rem; background-color: #0072FF; color: #fff; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer;">
-            送信する
-          </button>
+        <div class="contact-partner__actions">
+          <button type="submit" class="contact-partner__button">送信する</button>
         </div>
       </form>
     </div>

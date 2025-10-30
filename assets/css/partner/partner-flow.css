@@ -1,0 +1,38 @@
+/* =========================================================
+   PARTNER - FLOW SECTION（root変数対応版）
+========================================================= */
+
+.partner--flow {
+  background-color: var(--color-white);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.partner__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ===== タイトル ===== */
+.partner__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--color-primary-hover);
+}
+
+/* ===== 画像エリア ===== */
+.partner__image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 767px) {
+  .partner__title {
+    font-size: 1.8rem;
+    line-height: 1.5;
+  }
+}

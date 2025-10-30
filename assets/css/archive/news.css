@@ -1,0 +1,55 @@
+/* =========================================================
+   NEWS アーカイブページ専用スタイル / root対応
+   （共通構造は archive.css に統合済）
+========================================================= */
+
+/* ===== セクション全体 ===== */
+.archive-news {
+  padding: 0 20px 60px;
+  background-color: var(--color-bg-alt); /* #f4f7fb → サブ背景統一 */
+}
+
+/* ===== 見出し調整 ===== */
+.archive-news h1 {
+  color: var(--color-text);
+}
+
+/* ===== メタ情報（日時・カテゴリ） ===== */
+.archive-news .news-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  opacity: 0.85;
+}
+
+.archive-news .news-meta time {
+  color: var(--color-text);
+  opacity: 0.65;
+}
+
+/* ===== カテゴリラベル ===== */
+.archive-news .news-category {
+  background-color: var(--color-primary); /* #0077C8 → 統一テーマカラー */
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25em 0.7em;
+  border-radius: 999px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* ===== スマホ調整 ===== */
+@media (max-width: 768px) {
+  .archive-news h1 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .archive-news .news-meta {
+    font-size: 0.8rem;
+  }
+}

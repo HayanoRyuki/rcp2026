@@ -1,6 +1,6 @@
-/* ===============================
-   ヒーローセクション：PC（1024px〜1279px）LG
-=============================== */
+/* =========================================================
+   HERO SECTION（1024px〜1279px対応 / root統一版）
+========================================================= */
 @media (min-width: 1024px) and (max-width: 1279px) {
 
   body.top,
@@ -29,7 +29,7 @@
     align-items: center;
     margin-top: 70px;
     padding-top: 0;
-    background-color: #009bc9;
+    background-color: var(--color-accent);
     margin-bottom: 0 !important;
   }
 
@@ -45,7 +45,7 @@
   }
 
   .container_l.adView {
-    background-color: #009bc9;
+    background-color: var(--color-accent);
   }
 
   .hero-title-box {
@@ -63,7 +63,7 @@
   .hero-user-image {
     width: 110%;
     height: 450px;
-    background-image: url('/wp-content/themes/rcp2025/assets/img/hero/hero-user-lg.png');
+    background-image: url("/wp-content/themes/rcp2025/assets/img/hero/hero-user-lg.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -76,11 +76,11 @@
     width: 35%;
     max-width: 450px;
     min-width: 420px;
-    background-color: #fff;
+    background-color: var(--color-white);
     padding: 30px;
     margin-left: 30px;
     box-sizing: border-box;
-    color: #333;
+    color: var(--color-text);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,7 +89,7 @@
   }
 
   .kv-form {
-    background-color: #fff;
+    background-color: var(--color-white);
     border-radius: 10px;
     padding: 0.5em;
     height: 650px;
@@ -118,7 +118,7 @@
 
   .hero-note {
     font-size: 0.85rem;
-    color: #fff;
+    color: var(--color-white);
     line-height: 1.2;
     margin: 1rem 1rem;
     padding-right: 1rem;
@@ -129,22 +129,25 @@
     display: flex;
     align-items: center;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 1rem;
-    color: #333;
+    color: var(--color-text);
   }
 }
 
+/* =========================================================
+   FORM ELEMENTS（共通）
+========================================================= */
 .kv-form-group input,
 .kv-form-group select {
   width: 100%;
   height: 54px;
   padding: 10px 12px;
   font-size: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--color-white);
+  color: var(--color-text);
   box-sizing: border-box;
   appearance: auto;
 }
@@ -158,9 +161,9 @@
   top: -10px;
   left: 12px;
   font-size: 0.75rem;
-  font-weight: bold;
-  color: #333;
-  background: #fff;
+  font-weight: 700;
+  color: var(--color-text);
+  background: var(--color-white);
   padding: 0 6px;
   pointer-events: none;
   z-index: 1;
@@ -175,7 +178,7 @@
 }
 
 .kv-form-group select:invalid {
-  color: #aaa;
+  color: #888;
 }
 
 .kv-form-agree {
@@ -183,7 +186,8 @@
   align-items: flex-start;
   flex-wrap: wrap;
   font-size: 0.75rem;
-  color: #666;
+  color: var(--color-text);
+  opacity: 0.7;
   margin: 0.5rem 0;
 }
 
@@ -198,10 +202,11 @@
 
 .kv-form-agree a {
   text-decoration: underline;
-  color: #0076ff;
+  color: var(--color-link);
   word-break: break-word;
 }
 
+/* ===== ダウンロードボタン ===== */
 .btn.btn_dl {
   display: block;
   width: 100%;
@@ -209,84 +214,59 @@
   padding: 12px;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
-  background-color: #ff706e;
-  color: #fff;
+  background-color: var(--color-accent);
+  color: var(--color-white);
   font-size: 1.15rem;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
   border: none;
   border-radius: 6px;
+  transition: opacity 0.3s ease;
 }
 
-/* プレースホルダー用（input/textarea） */
-.kv-form-group input::placeholder,
-.kv-form-group textarea::placeholder {
-  font-size: 0.85rem;
-  color: #888;
-  opacity: 1;
+.btn.btn_dl:hover {
+  opacity: 0.85;
 }
 
-/* selectボックスの未選択状態だけを薄くする */
-.kv-form-group select:invalid {
-  color: #888;
-  font-size: 0.85rem;
+/* =========================================================
+   LAYOUT FIX（等高・整列調整）
+========================================================= */
+.download-form {
+  width: 100%;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
 }
-
-/* 選択後は濃く表示 */
-.kv-form-group select {
-  color: #333;
-  font-size: 0.95rem;
-}
-
-.download-form{
-    width: 100%;       /* コンテナ幅いっぱい */
-    max-width: none !important;    /* 320px制限を解除 */
-    margin: 0 !important;          /* autoで右寄りになっていたのをリセット */
-    padding: 0 !important;         /* 余白は container_r / kv-form 側で管理 */
-    background: transparent !important;
-    border-radius: 0 !important;
-  }
-
-  /* 右カラムの位置は“左と右で均等配置”に */
-  .hero-body{
-    justify-content: space-between;
-  }
-
-  /* 必要なら、フォーム箱の左余白は自動調整（固定30px→auto） */
-  .container_r{
-    margin-left: auto;
-  }
-
 
 .hero-body {
   display: flex;
-  justify-content: space-between; /* 左右配置 */
-  align-items: stretch;           /* ← 高さを揃えるポイント */
+  justify-content: space-between;
+  align-items: stretch;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
-/* 左右カラムが同じ高さで伸びる */
 .container_l.adView,
 .container_r {
-  flex: 1;              /* 高さを揃えるために伸縮 */
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* 右カラムよせる */
- .container_r {
-    width: 45%;
-    max-width: 490px;
-    background-color: #fff;
-    padding: 30px;
-    box-sizing: border-box;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left: auto;   /* 右端に寄せる */
-    margin-right: 0;     /* 念のため */
-  }
+.container_r {
+  width: 45%;
+  max-width: 490px;
+  background-color: var(--color-white);
+  padding: 30px;
+  box-sizing: border-box;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: auto;
+  margin-right: 0;
+}

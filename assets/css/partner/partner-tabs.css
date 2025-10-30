@@ -1,0 +1,195 @@
+/* =========================================================
+   RCP PARTNER LIST（root変数対応版）
+========================================================= */
+.rcp-partnerlist {
+  background: var(--color-white);
+  padding: 6rem 2rem;
+}
+
+.rcp-partnerlist__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ===== ヘッダー ===== */
+.rcp-partnerlist__head {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.rcp-partnerlist__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-primary-hover);
+  margin-bottom: 1rem;
+}
+
+.rcp-partnerlist__lead {
+  font-size: 1.4rem;
+  color: var(--color-text-light);
+}
+
+/* ===== Tabs ===== */
+.rcp-partnerlist__tabwrap {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.rcp-partnerlist__tabs {
+  display: inline-flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.rcp-partnerlist__tab {
+  appearance: none;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-primary-hover);
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rcp-partnerlist__tab.is-active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+/* ===== Filter ===== */
+.rcp-partnerlist__filterwrap {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.rcp-partnerlist__filter {
+  display: inline-flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.rcp-partnerlist__filterbtn {
+  appearance: none;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.rcp-partnerlist__filterbtn.is-active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+/* ===== Panels ===== */
+.rcp-partnerlist__section {
+  display: none;
+}
+.rcp-partnerlist__section.is-active {
+  display: block;
+}
+
+.rcp-partnerlist__block-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary-hover);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.rcp-partnerlist__block-lead {
+  text-align: center;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+}
+
+/* ===== Grid ===== */
+.rcp-partnerlist__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.rcp-partnerlist__item {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.6rem;
+  text-align: center;
+  background: var(--color-bg-alt);
+}
+
+.rcp-partnerlist__badge img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 0.8rem;
+}
+
+.rcp-partnerlist__img img {
+  max-width: 160px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.rcp-partnerlist__name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  color: var(--color-primary-hover);
+}
+
+.rcp-partnerlist__excerpt {
+  font-size: 1.3rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.rcp-partnerlist__url {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  text-decoration: underline;
+  margin-bottom: 1rem;
+  word-break: break-all;
+}
+
+.rcp-partnerlist__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.rcp-partnerlist__tags span {
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1.1rem;
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  display: inline-block;
+}
+
+.rcp-partnerlist__empty {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: 2rem 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .rcp-partnerlist__title {
+    font-size: 1.8rem;
+  }
+  .rcp-partnerlist__block-title {
+    font-size: 1.6rem;
+  }
+}

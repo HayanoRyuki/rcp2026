@@ -1,0 +1,100 @@
+/* =========================================================
+   PARTNER - CONTACT SECTION（root変数対応版）
+========================================================= */
+
+.partner--contact {
+  background-color: var(--color-bg-alt);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.partner__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ===== タイトル・リード ===== */
+.partner__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+  color: var(--color-primary-hover);
+}
+
+.partner__lead {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 4rem;
+  line-height: 1.8;
+}
+
+/* ===== カードグリッド ===== */
+.partner__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.partner__card {
+  background: var(--color-white);
+  padding: 2.4rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===== アイコン ===== */
+.partner__icon {
+  margin-bottom: 1.2rem;
+}
+
+.partner__icon img {
+  width: 80px;
+  height: auto;
+}
+
+/* ===== カード本文 ===== */
+.partner__card-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: var(--color-primary-hover);
+}
+
+.partner__card-desc {
+  font-size: 1.4rem;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+/* ===== CTAボタン ===== */
+.partner__button .btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.partner__button .btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .partner__grid {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+
+  .partner__card {
+    padding: 2rem;
+  }
+}

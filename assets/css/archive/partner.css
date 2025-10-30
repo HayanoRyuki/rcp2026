@@ -1,0 +1,277 @@
+/* =========================================================
+   PARTNER アーカイブページ（完全独立・root対応）
+   ※ 共通 archive.css には依存しない
+========================================================= */
+
+/* ===== メインビジュアルセクション ===== */
+.secPtrMainVis {
+  background: var(--color-white);
+  position: relative;
+  padding: 80px 40px 40px;
+}
+
+.secPtrMainVis:before {
+  content: "";
+  width: 797px;
+  height: 100%;
+  background: url(../img/ptr_kv_img_bg.png) no-repeat center left;
+  background-size: auto 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.secPtrMainVis .secTtlWrap {
+  position: relative;
+  z-index: 1;
+}
+
+.secPtrMainVis .secTtlWrap .secTtl {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.secPtrMainVis .mainVisInr {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+  position: relative;
+}
+
+.secPtrMainVis .mainVisInr .secLeadWrap {
+  flex: 1;
+}
+
+.secPtrMainVis .mainVisInr .secLeadWrap .secLead {
+  margin-top: 25px;
+  color: var(--color-text-light); /* #264153 */
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.secPtrMainVis .mainVisInr .secImg {
+  width: 325px;
+}
+
+/* ===== 下部グリッド紹介ブロック ===== */
+.secPtrMainVis .mainVisInrBtm {
+  max-width: 1040px;
+  margin: 10px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.secPtrMainVis .mainVisInrBtm .mainVisInrBtmItm {
+  display: grid;
+  grid-template-columns: 125px auto;
+  gap: 8px 22px;
+  padding: 22px;
+  background-color: var(--color-white);
+  box-shadow: 2px 2px 15px rgba(185, 214, 222, 0.4);
+  border-radius: 12px;
+}
+
+.secPtrMainVis .mainVisInrBtm .secTtl {
+  color: var(--color-text);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.secPtrMainVis .mainVisInrBtm .secLead {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* ===== パートナーリスト ===== */
+.secPartnerList {
+  background-color: var(--color-bg-alt); /* #EAF4F7 */
+  padding-bottom: 160px;
+  position: relative;
+}
+
+.secPartnerList .secInr {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* セクションヘッダ */
+.secPartnerList .md-secHead .secTtl {
+  color: var(--color-primary-dark); /* #112d48 */
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.secPartnerList .md-secHead .secLead {
+  color: var(--color-text-light);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 20px;
+}
+
+/* ===== タブ／フィルター ===== */
+.secPartnerListTabWrap {
+  max-width: 456px;
+  margin: 24px auto 0;
+  background-color: var(--color-white);
+  height: 60px;
+  border-radius: 30px;
+  padding: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.secPartnerListTab {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.secPartnerListTab a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-muted); /* #485E75 */
+  border-radius: 22px;
+  transition: all 0.3s ease;
+}
+
+.secPartnerListTab a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 2px 4px rgba(183, 192, 207, 0.64);
+}
+
+/* ===== リスト本体 ===== */
+.secPartnerList .ctsBlock {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  padding: 40px 0 20px;
+  border: 1px solid var(--color-white);
+  margin-top: 40px;
+}
+
+.ctsList,
+.ctsListG3 {
+  display: grid;
+  gap: 32px 16px;
+}
+
+.ctsList {
+  grid-template-columns: 1fr 1fr;
+}
+
+.ctsListG3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.listInfo {
+  background-color: var(--color-white);
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.itemName {
+  color: var(--color-text);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.itemLead {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+.itemTag span {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+  height: 24px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ===== トップへ戻るリンク ===== */
+.secTotopLink {
+  position: absolute;
+  right: 60px;
+  bottom: 60px;
+}
+
+.secTotopLink a {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.secTotopLink a:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.secTotopLink a svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--color-primary);
+}
+
+/* ===== レスポンシブ ===== */
+@media screen and (max-width: 1040px) {
+  .secPtrMainVis:before {
+    width: 76.6vw;
+  }
+  .secPartnerList .secInr {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .secPtrMainVis {
+    padding: 48px 16px;
+  }
+
+  .secPartnerList {
+    padding: 48px 20px;
+  }
+
+  .secPartnerListTabWrap {
+    width: 100%;
+    height: 70px;
+    border-radius: 35px;
+  }
+
+  .secTotopLink {
+    display: none;
+  }
+
+  .ctsList,
+  .ctsListG3 {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,129 @@
+/* =========================================================
+   PARTNER - PROGRAM SECTION（root変数対応版）
+========================================================= */
+
+.partner--program {
+  background-color: var(--color-bg-alt);
+  padding: 6rem 2rem;
+}
+
+.partner__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ===== ヘッダー ===== */
+.partner__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.partner__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-primary-hover);
+  margin-bottom: 1rem;
+}
+
+.partner__lead {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  line-height: 1.8;
+}
+
+/* ===== リスト・カード ===== */
+.partner__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.partner__item {
+  background: var(--color-white);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 3rem;
+  flex: 1 1 480px;
+  max-width: 520px;
+}
+
+.partner__item-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-primary-hover);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.partner__item-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.partner__item-image {
+  text-align: center;
+  position: relative;
+}
+
+.partner__item-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* ===== 補足テキスト・説明 ===== */
+.partner__contract-note {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  margin-top: 0.6rem;
+}
+
+.partner__desc-text {
+  font-size: 1.4rem;
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+/* ===== ポイントリスト ===== */
+.partner__points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.partner__points-title {
+  font-weight: 600;
+  color: var(--color-primary-hover);
+  margin-bottom: 0.8rem;
+}
+
+.partner__points-item {
+  font-size: 1.3rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.6rem;
+}
+
+.partner__points-item::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .partner__list {
+    flex-direction: column;
+  }
+
+  .partner__item {
+    max-width: 100%;
+  }
+}

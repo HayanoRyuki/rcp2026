@@ -1,0 +1,101 @@
+/* =========================================================
+   EVENT アーカイブページ専用スタイル / root対応
+   （共通構造は archive.css に統合済）
+========================================================= */
+
+/* ===== ページ全体 ===== */
+.event-archive-section {
+  padding: 0 20px 60px;
+  background-color: var(--color-bg-alt);
+}
+
+/* ===== 固定イベント（上部ピックアップなど） ===== */
+.event-fixed {
+  background-color: var(--color-bg-light); /* #f9f9f9 */
+  border: 2px solid var(--color-border);   /* #ccc */
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 6px;
+}
+
+.event-fixed-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.event-fixed-link {
+  display: flex;
+  gap: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.event-fixed-link:hover {
+  opacity: 0.85;
+}
+
+.event-fixed-body h3 {
+  margin-top: 0;
+  font-size: 1.125rem;
+  color: var(--color-text);
+}
+
+.event-fixed-body p {
+  margin: 0;
+  color: var(--color-text);
+  opacity: 0.85;
+}
+
+/* ===== メタ情報（開催日など） ===== */
+.event-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.event-meta li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+/* ラベル（例：開催日） */
+.event-meta-label {
+  display: inline-block;
+  background-color: var(--color-primary);      /* #009fe3 */
+  color: var(--color-white);
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-right: 4px;
+  line-height: 1.4;
+}
+
+/* ===== イベントが存在しない場合の表示 ===== */
+.no-event {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+/* ===== スマホ調整 ===== */
+@media (max-width: 767px) {
+  .event-fixed {
+    padding: 16px;
+  }
+
+  .event-fixed-title {
+    font-size: 1.125rem;
+  }
+
+  .event-meta {
+    font-size: 0.8rem;
+  }
+}

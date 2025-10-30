@@ -1,0 +1,146 @@
+/* =========================================================
+   CASE アーカイブページ専用スタイル / root対応
+   （共通構造は archive.css に統合済）
+========================================================= */
+
+/* ===== ページレイアウト ===== */
+.case-archive-section {
+  padding: 0 20px 60px;
+  background-color: var(--color-bg-alt);
+}
+
+.case-archive-title {
+  color: var(--color-text);
+}
+
+/* ===== フィルターエリア ===== */
+.case-filter-wrap {
+  background-color: var(--color-bg-accent); /* #E0F7FF → アクセント薄色 */
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+}
+
+.case-filter-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-box {
+  flex: 1;
+  min-width: 220px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.filter-box label {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  opacity: 0.75;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.filter-box select {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background-color: var(--color-white);
+  color: var(--color-text);
+}
+
+.filter-submit-area {
+  text-align: left;
+}
+
+.filter-submit {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-submit:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* ===== カテゴリラベル ===== */
+.case-category {
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  text-align: left;
+  margin-top: 0.25rem;
+}
+
+.case-category span {
+  display: inline-block;
+  background-color: var(--color-bg-accent);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+
+/* ===== 企業ロゴエリア ===== */
+.case-logo {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  background-color: var(--color-white);
+  padding: 4px 6px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  max-width: 100px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.case-logo img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===== 「この事例を見る」ボタン ===== */
+.case-readmore-btn {
+  display: block;
+  width: fit-content;
+  margin: 1rem auto 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.case-readmore-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* ===== パンくず背景調整 ===== */
+.breadcrumb {
+  background-color: var(--color-white);
+}
+
+.breadcrumb .container {
+  padding: 16px 0;
+}

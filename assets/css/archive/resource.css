@@ -1,0 +1,83 @@
+/* =========================================================
+   RESOURCE アーカイブページ専用スタイル / root対応
+   （共通構造は archive.css に統合済）
+========================================================= */
+
+/* ===== セクション全体 ===== */
+.archive-resource {
+  padding-bottom: 60px;
+  background-color: var(--color-bg-alt); /* #f9fafb → 統一サブ背景 */
+}
+
+/* ===== タイトル下説明文 ===== */
+.resource-intro {
+  font-size: 1rem;
+  text-align: center;
+  color: var(--color-text-muted); /* #666 */
+  margin-top: -1rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+/* ===== 現在選択中タグ表示 ===== */
+.current-tag {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-primary); /* #0074c8 → 統一テーマカラー */
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* ===== タグ選択フォーム ===== */
+.tag-filter-form {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tag-filter-form select {
+  font-size: 0.875rem;
+  padding: 0.5em 1em;
+  border: 1px solid var(--color-border); /* #ccc → 共通ボーダー */
+  border-radius: 6px;
+  background-color: var(--color-white);
+  color: var(--color-text);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tag-filter-form select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 116, 200, 0.2);
+}
+
+/* ===== ダウンロードボタン ===== */
+.resource-download-button {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-download-button:hover {
+  background-color: var(--color-primary-dark); /* #005fa3相当 */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== スマホ調整 ===== */
+@media screen and (max-width: 768px) {
+  .archive-intro {
+    text-align: left;
+    margin: 0 1rem 1.5rem;
+  }
+}

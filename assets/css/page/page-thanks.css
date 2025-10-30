@@ -1,0 +1,12 @@
+/* =========================================================
+   PAGE - THANKS（個別修飾）
+========================================================= */
+
+/* 青系ボタンバリエーション */
+.page-thanks--blue .page-thanks__button {
+  background-color: var(--color-link); /* 共通リンクカラーを利用 */
+}
+
+.page-thanks--blue .page-thanks__number {
+  color: var(--color-link);
+}

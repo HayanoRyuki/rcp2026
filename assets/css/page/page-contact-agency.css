@@ -1,0 +1,32 @@
+/* =========================================================
+   PAGE - CONTACT（AGENCY用 個別）
+========================================================= */
+
+/* ページ固有の背景・余白などを変更したい場合 */
+.page-contact--agency {
+  /* 必要なら上書き */
+}
+
+/* AGENCY特有の説明文や文言スタイル */
+.page-contact--agency .page-contact__intro {
+  /* 例）margin-bottom や font-weight の調整など */
+}
+
+/* AGENCY専用の入力項目（例：代理店名・紹介コードなど）がある場合 */
+.page-contact--agency .page-contact__group--agency-name,
+.page-contact--agency .page-contact__group--refcode {
+  margin-bottom: 2rem;
+}
+
+/* AGENCYフォーム専用ボタンデザイン（色変更など） */
+.page-contact--agency .page-contact__button {
+  background-color: #01b695; /* サブカラー例：Jungle Green */
+}
+
+/* AGENCY特有のリンクや注意書き */
+.page-contact--agency .page-contact__note {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #666;
+  margin-top: 1rem;
+}

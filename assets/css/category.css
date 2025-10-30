@@ -2,7 +2,7 @@
 
 .archive-post {
   padding: 4rem 0;
-  background-color: #f9f9f9;
+  background-color: var(--color-bg-alt);
 }
 
 .blog-archive-section .container {
@@ -18,13 +18,13 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 3rem;
-  color: #333;
+  color: var(--color-text);
 }
 
 /* カテゴリ説明文 */
 .category-header p {
   font-size: 1rem;
-  color: #555;
+  color: var(--color-text-light);
   text-align: center;
   max-width: 720px;
   margin: 0 auto 3rem;
@@ -50,7 +50,7 @@
 
 /* 投稿カード */
 .blog-item {
-  background: #fff;
+  background: var(--color-white);
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -88,15 +88,15 @@
 /* 投稿日 */
 .blog-meta time {
   font-size: 0.875rem;
-  color: #888;
+  color: var(--color-text-light);
 }
 
 /* カテゴリーラベル */
 .blog-category {
   display: inline-block;
   font-size: 0.75rem;
-  background-color: #00B5D8; /* ロゴカラーに近い水色 */
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   padding: 0.25em 0.6em;
   border-radius: 9999px; /* pill型 */
   line-height: 1.2;
@@ -108,8 +108,8 @@
   font-size: 1.125rem;
   font-weight: bold;
   line-height: 1.4;
-  color: #111;
-  border-bottom: 1px solid #eee;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
   padding-bottom: 0.25rem;
 }
 
@@ -123,19 +123,19 @@
   display: inline-block;
   margin: 0 0.5rem;
   padding: 0.5rem 0.75rem;
-  color: #333;
-  border: 1px solid #ccc;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
   border-radius: 0.25rem;
   text-decoration: none;
   font-size: 0.875rem;
 }
 
 .pagination .current {
-  background-color: #333;
-  color: #fff;
-  border-color: #333;
+  background-color: var(--color-text);
+  color: var(--color-white);
+  border-color: var(--color-text);
 }
 
 .pagination .page-numbers:hover {
-  background-color: #eee;
+  background-color: var(--color-bg-alt);
 }

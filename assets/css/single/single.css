@@ -1,0 +1,126 @@
+/* ========== Base Layout ========== */
+.single-case-wrapper,
+.single-event-wrapper,
+.single-news-wrapper,
+.single-post-wrapper,
+.single-resource-wrapper {
+  padding-top: 1rem;
+  background-color: var(--color-bg-alt);
+}
+
+.single-case-wrapper .container,
+.single-event-wrapper .container,
+.single-news-wrapper .container,
+.single-post-wrapper .container,
+.single-resource-wrapper .container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.single-case-wrapper .main-column,
+.single-event-wrapper .main-column,
+.single-news-wrapper .main-column,
+.single-post-wrapper .main-column,
+.single-resource-wrapper .main-column {
+  width: 66.6666%;
+}
+
+.sidebar {
+  width: 33.3333%;
+}
+
+/* ========== Breadcrumb ========== */
+.breadcrumb {
+  background-color: var(--color-white);
+  font-size: 14px;
+  padding: 12px 0;
+  margin-bottom: 30px;
+}
+
+.breadcrumb .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.breadcrumb ol li::after {
+  content: ">";
+  margin: 0 0.5em;
+  color: var(--color-text-light);
+}
+
+.breadcrumb ol li:last-child::after {
+  content: "";
+}
+
+.breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Article Base ========== */
+.article-box {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.content {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.lead {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-light);
+}
+
+.page-title {
+  font-size: 1.45rem;
+  font-weight: bold;
+  margin: 0 0 1.5rem;
+  text-align: left;
+}
+
+/* ========== Responsive ========== */
+@media screen and (max-width: 1024px) {
+  .single-case-wrapper .container,
+  .single-event-wrapper .container,
+  .single-news-wrapper .container,
+  .single-post-wrapper .container,
+  .single-resource-wrapper .container {
+    flex-direction: column;
+  }
+
+  .single-case-wrapper .main-column,
+  .single-event-wrapper .main-column,
+  .single-news-wrapper .main-column,
+  .single-post-wrapper .main-column,
+  .single-resource-wrapper .main-column,
+  .single-case-wrapper .sidebar,
+  .single-event-wrapper .sidebar,
+  .single-news-wrapper .sidebar,
+  .single-post-wrapper .sidebar,
+  .single-resource-wrapper .sidebar {
+    width: 100%;
+  }
+
+  .sticky-box {
+    position: static;
+    top: auto;
+  }
+}

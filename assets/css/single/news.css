@@ -1,0 +1,56 @@
+/* ========== Single News ========== */
+
+/* 背景のみ上書き */
+.single-news .breadcrumb {
+  background-color: transparent;
+}
+
+/* 投稿本文エリア */
+.single-news .post-title {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.single-news .post-meta {
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-light);
+}
+
+@media (max-width: 768px) {
+  .single-news .post-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* カテゴリーラベル */
+.single-news .post-categories span {
+  background-color: var(--color-text);
+  color: var(--color-white);
+  padding: 0.25em 0.75em;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+/* 本文 */
+.single-news .post-content {
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+/* サイドバー：他のニュース */
+.single-news .other-news-list li {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.single-news .other-news-list li span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  font-family: 'Helvetica Neue', sans-serif;
+  margin-bottom: 0.25rem;
+}

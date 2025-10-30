@@ -1,0 +1,118 @@
+/* ========== Aboutセクション ========== */
+
+/* セクション全体 */
+.about-section {
+  background-color: var(--color-primary-hover); /* 背景ブルー（外側） */
+  padding: 60px 20px;
+}
+
+.about-box {
+  background-color: var(--color-primary); /* 内側ブロックカラー */
+  border-radius: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.about-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* 動画エリア */
+.about-video {
+  flex: 1 1 48%;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border: 2px solid var(--color-white);
+  border-radius: 12px;
+  background: var(--color-black);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* テキストエリア */
+.about-content {
+  flex: 1 1 48%;
+  color: var(--color-white);
+}
+
+.about-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.about-lead {
+  background-color: var(--color-white);
+  color: var(--color-primary-hover);
+  display: inline-block;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.about-description {
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* 表示制御クラス */
+.sp-only {
+  display: none;
+}
+.pc-only {
+  display: block;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .about-inner {
+    flex-direction: column;
+  }
+
+  .about-video,
+  .about-content {
+    flex: 1 1 100%;
+  }
+
+  .sp-only {
+    display: block;
+  }
+  .pc-only {
+    display: none;
+  }
+
+  .about-video {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .video-wrapper {
+    height: auto !important;
+    min-height: 200px !important;
+    padding-bottom: 56.25% !important;
+  }
+
+  .video-wrapper iframe {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    visibility: visible !important;
+  }
+}

@@ -1,0 +1,125 @@
+/* =========================================================
+   PARTNER - ABOUT SECTION（root変数対応版）
+========================================================= */
+
+.partner--about {
+  position: relative;
+  background-color: var(--color-bg-alt);
+  overflow: hidden;
+  padding: 6rem 2rem;
+}
+
+/* 背景装飾 */
+.partner--about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1000px;
+  height: 100%;
+  background: url("/wp-content/themes/rcp2025/assets/img/partner/ptr_kv_img_bg.png") no-repeat top right;
+  background-size: contain;
+  z-index: 0;
+}
+
+/* コンテナ */
+.partner__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ===== タイトル ===== */
+.partner__title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  color: var(--color-primary-hover);
+}
+
+/* ===== 導入テキスト・画像 ===== */
+.partner__intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  flex-wrap: wrap;
+  margin-bottom: 6rem;
+}
+
+.partner__lead {
+  flex: 1;
+  min-width: 300px;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.partner__image {
+  flex: 1;
+  text-align: center;
+}
+
+.partner__image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 320px;
+}
+
+/* ===== 認定バッジエリア ===== */
+.partner__tiers {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.partner__card {
+  flex: 1 1 400px;
+  background: var(--color-white);
+  padding: 2.4rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.partner__badge {
+  margin-bottom: 1.6rem;
+}
+
+.partner__badge img {
+  width: 120px;
+  height: auto;
+}
+
+.partner__card-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-primary-hover);
+}
+
+.partner__card-desc {
+  font-size: 1.4rem;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 767px) {
+  .partner__intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .partner__tiers {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .partner__title {
+    font-size: 2rem;
+  }
+}

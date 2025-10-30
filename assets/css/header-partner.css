@@ -10,8 +10,8 @@
   left: 0;
   width: 100%;
   z-index: 1000; /* 他要素より前面 */
-  background-color: #fff;
-  border-bottom: 1px solid #e5e7eb;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
@@ -55,21 +55,21 @@ body.partner-page {
 .partner-nav a {
   text-decoration: none;
   font-weight: 600;
-  color: #5c5c73;
+  color: var(--color-text-light);
   font-size: 0.9375rem;
   transition: color 0.2s ease;
 }
 
 .partner-nav a:hover {
-  color: #111827;
+  color: var(--color-text);
 }
 
 /* ===============================
    CTAボタン（問い合わせ）
 ================================= */
 .partner-cta .btn-cta {
-  background-color: #ff5c5c;
-  color: #ffffff;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
   padding: 0.6rem 1.5rem;
   border-radius: 9999px;
   font-size: 0.9375rem;
@@ -80,7 +80,7 @@ body.partner-page {
 }
 
 .partner-cta .btn-cta:hover {
-  background-color: #e03131;
+  background-color: var(--color-primary);
 }
 
 /* ===============================
@@ -123,7 +123,7 @@ body.partner-page {
     display: block;
     width: 24px;
     height: 3px;
-    background-color: #333;
+    background-color: var(--color-text);
     border-radius: 2px;
     transition: transform 0.3s, opacity 0.3s;
   }
@@ -132,7 +132,7 @@ body.partner-page {
   .main-nav {
     display: none;
     flex-direction: column;
-    background-color: #fff;
+    background-color: var(--color-white);
     position: absolute;
     top: 64px;
     left: 0;
@@ -175,7 +175,7 @@ body.partner-page {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #fff;
+  background: var(--color-white);
   padding: 10px 0;
   list-style: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -193,13 +193,13 @@ body.partner-page {
 .main-nav-list .submenu li a {
   display: block;
   padding: 8px 20px;
-  color: #333;
+  color: var(--color-text);
   white-space: nowrap;
   text-decoration: none;
 }
 
 .main-nav-list .submenu li a:hover {
-  background-color: #f0f0f0;
+  background-color: var(--color-bg-alt);
 }
 
 /* ===============================
@@ -218,8 +218,8 @@ body.partner-page {
 .secBtnWrap .btn a {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #00bcd4;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;

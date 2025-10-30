@@ -1,0 +1,58 @@
+/* =========================================================
+   PAGE - REGISTER（TRIAL専用）
+========================================================= */
+
+.page-register--trial {
+  background: var(--color-white);
+  padding: 6rem 0;
+  font-family: var(--font-base);
+  color: var(--color-text);
+}
+
+.page-register--trial .page-register__wrap {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.page-register--trial .page-register__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.page-register--trial .page-register__text {
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+  color: rgba(51, 51, 51, 0.8); /* var(--color-text)の淡いトーン */
+}
+
+.page-register--trial #loading {
+  margin-top: 1rem;
+  text-align: center;
+  color: rgba(51, 51, 51, 0.6);
+  font-size: 0.9rem;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .page-register--trial {
+    padding: 4rem 0;
+  }
+
+  .page-register--trial .page-register__wrap {
+    padding: 0 1rem;
+  }
+
+  .page-register--trial .page-register__title {
+    font-size: 1.6rem;
+  }
+
+  .page-register--trial .page-form__button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}

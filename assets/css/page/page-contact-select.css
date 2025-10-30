@@ -1,0 +1,120 @@
+/* =========================================================
+   PAGE - CONTACT SELECT（root対応・最適化）
+========================================================= */
+
+.contact-select {
+  padding: 0 20px;
+  margin-bottom: 40px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-base);
+}
+
+/* セクションタイトル */
+.contact-select .section-title {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--color-text);
+}
+
+/* ページタイトル中央寄せ */
+.contact-select-page .page-title,
+.contact-select .page-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 60px auto 20px;
+  max-width: 1200px;
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .contact-select .page-title {
+    margin-top: 60px;
+    font-size: 22px;
+  }
+}
+
+/* ===== グリッドレイアウト ===== */
+.contact-select-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-select-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== カード ===== */
+.contact-card {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* アイコン画像 */
+.contact-card img.icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+}
+
+/* 見出し */
+.contact-card h3 {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* 説明文 */
+.contact-card p {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+/* ボタン群 */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ボタン */
+.btn {
+  background: var(--color-accent);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--color-primary-hover);
+}
+
+/* カード内補足文 */
+.card-desc {
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+  opacity: 0.85;
+}

@@ -1,6 +1,6 @@
-/* ===============================
-   ヒーローセクション：タブレット用（768px〜1023px）
-=============================== */
+/* =========================================================
+   HERO SECTION：タブレット用（768px〜1023px） / root対応
+========================================================= */
 @media (min-width: 768px) and (max-width: 1023px) {
 
   body.top,
@@ -10,9 +10,17 @@
     margin-top: 0 !important;
   }
 
-  body.page-template-front-page .site-header { padding-bottom: 0 !important; }
-  .site-header { margin-bottom: 0 !important; }
-  body .section-hero { padding: 0; }
+  body.page-template-front-page .site-header {
+    padding-bottom: 0 !important;
+  }
+
+  .site-header {
+    margin-bottom: 0 !important;
+  }
+
+  body .section-hero {
+    padding: 0;
+  }
 
   .hero.page-title.wrapper {
     margin-top: 65px;
@@ -21,7 +29,7 @@
     min-height: auto;
     display: flex;
     align-items: center;
-    background-color: #009bc9;
+    background-color: var(--color-accent);
     margin-bottom: 0 !important;
   }
 
@@ -36,7 +44,7 @@
   }
 
   .container_l.adView {
-    background-color: #009bc9;
+    background-color: var(--color-accent);
     overflow-x: visible;
     margin: 0 auto;
   }
@@ -56,7 +64,7 @@
   }
 
   .hero-user-image {
-    background-image: url('/wp-content/themes/rcp2025/assets/img/hero/hero-user-md.png');
+    background-image: url("/wp-content/themes/rcp2025/assets/img/hero/hero-user-md.png");
     width: 100%;
     height: 450px;
     background-size: contain;
@@ -69,15 +77,15 @@
   .container_r {
     width: 100%;
     max-width: 660px;
-    background-color: #fff;
+    background-color: var(--color-white);
     padding: 2rem;
     margin: 2rem 0 0;
     box-sizing: border-box;
-    color: #333;
+    color: var(--color-text);
   }
 
   .kv-form {
-    background-color: #fff;
+    background-color: var(--color-white);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     padding: 1.5rem;
@@ -95,7 +103,8 @@
   .kv-form-agree {
     font-size: 0.8rem;
     line-height: 1.5;
-    color: #666;
+    color: var(--color-text);
+    opacity: 0.75;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -109,18 +118,19 @@
 
   .kv-form-agree a {
     text-decoration: underline;
-    color: #0076ff;
+    color: var(--color-link);
   }
 
+  /* ダウンロードボタン */
   .btn.btn_dl {
     display: block;
     width: 100%;
     height: 52px;
     padding: 12px;
-    background-color: #ff706e;
-    color: #fff;
+    background-color: var(--color-accent);
+    color: var(--color-white);
     font-size: 1.15rem;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
     border: none;
     border-radius: 6px;
@@ -128,11 +138,20 @@
     margin-bottom: 2rem;
     transition: opacity 0.3s ease;
   }
-  .btn.btn_dl:hover { cursor: pointer; opacity: 0.8; }
+
+  .btn.btn_dl:hover {
+    cursor: pointer;
+    opacity: 0.85;
+  }
 }
 
-/* 共通（md含む） */
-.kv-form-group { position: relative; margin-bottom: 20px; }
+/* =========================================================
+   FORM ELEMENTS（共通 / md含む）
+========================================================= */
+.kv-form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
 
 .kv-form-group input,
 .kv-form-group select {
@@ -140,73 +159,100 @@
   height: 44px;
   padding: 10px 12px;
   font-size: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--color-white);
+  color: var(--color-text);
   box-sizing: border-box;
   appearance: auto;
 }
 
-.kv-form-group select option[value=""] { color: #aaa; }
+.kv-form-group select option[value=""] {
+  color: #aaa;
+}
 
 .floating-label {
   position: absolute;
   top: -10px;
   left: 12px;
   font-size: 0.75rem;
-  font-weight: bold;
-  color: #333;
-  background: #fff;
+  font-weight: 700;
+  color: var(--color-text);
+  background: var(--color-white);
   padding: 0 6px;
   pointer-events: none;
   z-index: 1;
 }
 
 .kv-form-group input::placeholder,
-.kv-form-group select::placeholder { color: #888; font-size: 0.95rem; }
+.kv-form-group select::placeholder {
+  color: #888;
+  font-size: 0.95rem;
+}
 
-.kv-form-group.uk-flex { display: flex; gap: 1rem; flex-wrap: wrap; }
-.kv-form-group.uk-flex span { flex: 1; min-width: 100px; }
+.kv-form-group.uk-flex {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-.asterisk { color: red; font-size: 11px; margin-left: 4px; vertical-align: top; }
+.kv-form-group.uk-flex span {
+  flex: 1;
+  min-width: 100px;
+}
+
+.asterisk {
+  color: var(--color-accent);
+  font-size: 11px;
+  margin-left: 4px;
+  vertical-align: top;
+}
 
 .hero-note {
   font-size: 0.95rem;
-  color: #fff;
+  color: var(--color-white);
   line-height: 1.2;
   margin-top: 1rem;
   padding-right: 1rem;
   text-align: left;
 }
 
-/* プレースホルダー用（input/textarea） */
+/* プレースホルダー */
 .kv-form-group input::placeholder,
-.kv-form-group textarea::placeholder { font-size: 0.85rem; color: #888; opacity: 1; }
+.kv-form-group textarea::placeholder {
+  font-size: 0.85rem;
+  color: #888;
+  opacity: 1;
+}
 
 /* select 未選択 / 選択後 */
-.kv-form-group select:invalid { color: #888; font-size: 0.85rem; }
-.kv-form-group select { color: #333; font-size: 0.95rem; }
+.kv-form-group select:invalid {
+  color: #888;
+  font-size: 0.85rem;
+}
 
-/* 資料案内ボックス余白 */
-.document-guidance-box { margin-bottom: 1.5rem; }
+.kv-form-group select {
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
 
-  .document-guidance-box{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .document-guidance-box img{
-    flex: 0 0 auto;   /* つぶれ防止 */
-    width: 30px;
-    height: 30px;
-  }
+/* 資料案内ボックス */
+.document-guidance-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
 
-  .document-guidance-text{
-    margin: 0;
-    line-height: 1.4;
-    /* 1行に固定したい場合は↓をON
-    white-space: nowrap;
-    */
-  }
+.document-guidance-box img {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+}
+
+.document-guidance-text {
+  margin: 0;
+  line-height: 1.4;
+  /* white-space: nowrap;  ← 必要なら再度有効化 */
 }

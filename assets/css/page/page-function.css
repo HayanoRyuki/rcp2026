@@ -1,0 +1,391 @@
+/* =========================================================
+   FUNCTION HERO SECTION / root対応
+========================================================= */
+.function--hero {
+  background-color: var(--color-white);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.function--hero .function__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.function--hero .function__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.function--hero .function__description {
+  font-size: 1.6rem;
+  color: var(--color-text);
+  opacity: 0.85; /* #444相当 */
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+/* ===== Links ===== */
+.function--hero .function__links {
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.function--hero .function__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background: var(--color-bg-alt); /* #f8f8f8 → 統一 */
+  padding: 2rem;
+  border-radius: 12px;
+  width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.function--hero .function__link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.08);
+}
+
+.function--hero .function__icon {
+  width: 48px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.function--hero .function__label {
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .function--hero .function__links {
+    gap: 1.6rem;
+  }
+
+  .function--hero .function__link {
+    width: 150px;
+    padding: 1.6rem;
+  }
+
+  .function--hero .function__label {
+    font-size: 1.4rem;
+  }
+}
+
+
+/* =========================================================
+   FUNCTION - MAIN SECTION（主要機能）/ root対応
+========================================================= */
+.function--main {
+  background-color: var(--color-bg-alt); /* #f4fbfe → 統一背景 */
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.function--main .function__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.function--main .function__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4rem;
+}
+
+.function--main .function__grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.function--main .function__item {
+  width: 300px;
+  text-align: center;
+}
+
+.function--main .function__image {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 2rem;
+}
+
+.function--main .function__name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.function--main .function__desc {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  opacity: 0.85; /* #333相当トーン */
+  line-height: 1.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .function--main .function__grid {
+    gap: 2.4rem;
+  }
+
+  .function--main .function__item {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .function--main .function__title {
+    font-size: 2rem;
+  }
+}
+
+
+/* =========================================================
+   FUNCTION - 受付業務の効率化 / root対応
+========================================================= */
+.function--efficiency {
+  background-color: var(--color-bg-alt); /* #e9f7fc → 共通背景に統一 */
+  padding: 6rem 2rem;
+}
+
+.function--efficiency .function__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.function--efficiency .function__title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4rem;
+}
+
+.function--efficiency .function__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.function--efficiency .function__card {
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 2.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.function--efficiency .function__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.function--efficiency .function__icon img {
+  width: 48px;
+  height: auto;
+}
+
+.function--efficiency .function__name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: var(--color-text);
+}
+
+.function--efficiency .function__desc {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  opacity: 0.85; /* #555相当 */
+  line-height: 1.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .function--efficiency .function__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .function--efficiency .function__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   FUNCTION - SECURITY SECTION / root対応
+========================================================= */
+.function--security {
+  background-color: var(--color-bg-alt); /* #f4f9fd → 共通背景 */
+  padding: 6rem 2rem;
+}
+
+.function--security .function__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.function--security .function__title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4rem;
+}
+
+.function--security .function__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.function--security .function__card {
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 2.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.function--security .function__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  margin-bottom: 1.2rem;
+}
+
+.function--security .function__icon img {
+  width: 48px;
+  height: auto;
+}
+
+.function--security .function__name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.8rem;
+}
+
+.function--security .function__desc {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  opacity: 0.85; /* #333 のトーンを再現 */
+  line-height: 1.7;
+}
+
+.function--security .function__card--empty {
+  visibility: hidden;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .function--security .function__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .function--security .function__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .function--security .function__title {
+    font-size: 2rem;
+  }
+}
+
+
+/* =========================================================
+   FUNCTION - 200人以上の企業向け機能 / root対応
+========================================================= */
+.function--enterprise {
+  background-color: var(--color-bg-alt); /* #eef5f9 → 統一 */
+  padding: 6rem 2rem;
+}
+
+.function--enterprise .function__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.function--enterprise .function__title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4rem;
+}
+
+.function--enterprise .function__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.function--enterprise .function__card {
+  background-color: var(--color-white);
+  border-radius: 12px;
+  padding: 2.4rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.function--enterprise .function__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.function--enterprise .function__icon img {
+  width: 48px;
+  height: auto;
+}
+
+.function--enterprise .function__name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: var(--color-text);
+}
+
+.function--enterprise .function__desc {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  opacity: 0.85; /* #555相当のトーンに調整 */
+  line-height: 1.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .function--enterprise .function__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .function--enterprise .function__grid {
+    grid-template-columns: 1fr;
+  }
+}

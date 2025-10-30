@@ -1,0 +1,114 @@
+/* =========================================================
+   PARTNER - SERIES SECTION（root変数対応版）
+========================================================= */
+
+.partner--series {
+  background-color: var(--color-white);
+  padding: 6rem 2rem;
+}
+
+.partner__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ===== ヘッダー ===== */
+.partner__header {
+  margin-bottom: 4rem;
+}
+
+.partner__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-primary-hover);
+  margin-bottom: 1rem;
+}
+
+.partner__lead {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  line-height: 1.8;
+}
+
+/* ===== シリーズカードグリッド ===== */
+.partner__series-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  justify-items: center;
+}
+
+.partner__series-card {
+  background: var(--color-bg-alt);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 360px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.partner__series-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== カード内容 ===== */
+.partner__series-desc {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.partner__series-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-primary-hover);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.partner__series-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.partner__series-text {
+  font-size: 1.3rem;
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== タグ ===== */
+.partner__series-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.partner__tag {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1.1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .partner__title {
+    font-size: 2rem;
+  }
+
+  .partner__lead {
+    font-size: 1.4rem;
+  }
+
+  .partner__series-card {
+    padding: 2rem 1.6rem;
+  }
+}

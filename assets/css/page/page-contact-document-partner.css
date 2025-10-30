@@ -1,0 +1,32 @@
+/* =========================================================
+   PAGE - CONTACT（DOCUMENT-PARTNER専用）
+========================================================= */
+.page-contact--document-partner {
+  /* 共通ベースは page-contact が持つため、必要があれば色や余白を上書き */
+}
+
+/* 左カラム（資料紹介エリア） */
+.page-contact--document-partner .page-contact__col--left {
+  flex: 1 1 45%;
+}
+
+.page-contact--document-partner .page-contact__col--left h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.page-contact--document-partner .page-contact__col--left ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1rem;
+}
+
+.page-contact--document-partner .page-contact__col--left ul li {
+  margin-bottom: 0.5rem;
+}
+
+.page-contact--document-partner .page-contact__col--left img {
+  max-width: 100%;
+  border-radius: 8px;
+}

@@ -1,0 +1,56 @@
+/* ========== コストセクション（共通） ========== */
+.cost-section {
+  padding: 10px 20px;
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.cost-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.cost-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-text);
+  margin-bottom: 3rem;
+  line-height: 1.4;
+}
+
+.cost-title .highlight {
+  color: var(--color-primary);
+}
+
+/* ========== 2カラムグリッド ========== */
+.cost-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: start;
+  justify-items: center;
+}
+
+.cost-grid img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+}
+
+/* ========== スマホ表示（1カラム） ========== */
+@media screen and (max-width: 768px) {
+  .cost-section {
+    padding: 60px 16px;
+  }
+
+  .cost-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .cost-grid {
+    grid-template-columns: 1fr;
+  }
+}

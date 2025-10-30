@@ -1,8 +1,8 @@
 .footer {
-  background-color: #f6f7f8;
+  background-color: var(--color-bg-alt);
   padding: 60px 20px;
   font-size: 14px;
-  color: var(--light-gray-dark);
+  color: var(--color-text-light);
 }
 
 .footer-inner {
@@ -50,7 +50,7 @@
   font-weight: bold;
   font-size: 0.95em;
   margin-bottom: 1rem;
-  color: var(--light-black);
+  color: var(--color-text);
 }
 
 .footer-nav-block ul {
@@ -65,11 +65,11 @@
 
 .footer-nav-block a {
   text-decoration: none;
-  color: var(--light-gray-dark);
+  color: var(--color-text-light);
 }
 
 .footer-nav-block a:hover {
-  color: var(--accent-dark);
+  color: var(--color-primary);
 }
 
 /* 下部 */
@@ -90,12 +90,12 @@
 }
 
 .footer-links a {
-  color: var(--light-gray-dark);
+  color: var(--color-text-light);
   text-decoration: none;
 }
 
 .footer-links a:hover {
-  color: var(--accent-dark);
+  color: var(--color-primary);
 }
 
 /* スマホ対応 */
@@ -132,6 +132,7 @@
     font-size: 11px;
   }
 }
+
 @media screen and (max-width: 768px) {
   .footer-logo {
     margin: 0 auto;
@@ -169,7 +170,6 @@
   }
 }
 
-
 @media screen and (max-width: 768px) {
   .footer-logo {
     display: flex;
@@ -195,4 +195,3 @@
     height: auto;
   }
 }
-

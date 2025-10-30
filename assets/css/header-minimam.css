@@ -18,8 +18,8 @@ body.admin-bar {
 .header-minimam {
   margin: 0 !important;
   padding: 0 !important;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
 }
 
 /* ロゴ中央寄せ＋サイズ */
