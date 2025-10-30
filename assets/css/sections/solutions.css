@@ -98,7 +98,7 @@
   padding: 0.75rem 1rem;
   border-radius: 9999px;
   gap: 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem; /* 少し余白を広げ */
 }
 
 .solution-issue-box .icon {
@@ -107,10 +107,11 @@
 }
 
 .issue-text {
-  font-weight: 500;
-  font-size: 1.15rem;
+  font-weight: 600;         /* ← 500 → 600 にして少し太字に */
+  font-size: 1.3rem;        /* ← 1.15rem → 少し大きく */
   color: var(--color-text);
   margin: 0;
+  line-height: 1.5;
 }
 
 /* 解決のラベル */
@@ -118,7 +119,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .solution-answer-box .icon {
@@ -127,10 +128,21 @@
 }
 
 .answer-text {
-  font-weight: 800;
-  font-size: 1.275rem;
+  font-weight: 700;         /* ← 800 → 若干落として自然な太さに */
+  font-size: 1.4rem;        /* ← 1.275rem → 見出しらしく拡大 */
   color: var(--color-text);
   margin: 0;
+  line-height: 1.5;
+}
+
+/* タブレット以上ではさらに見やすく */
+@media (min-width: 768px) {
+  .issue-text {
+    font-size: 1.45rem;
+  }
+  .answer-text {
+    font-size: 1.55rem;
+  }
 }
 
 /************************
