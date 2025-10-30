@@ -1,7 +1,9 @@
-// ========== Swiper 初期化 ==========
-// 複数箇所対応：.js-swiper が存在する分だけ全て初期化
+// =========================================================
+//  共通スクリプト：Swiper初期化＋ヘッダー高さ調整
+// =========================================================
 document.addEventListener('DOMContentLoaded', function () {
 
+  // ========== Swiper 初期化 ==========
   const genericSwipers = document.querySelectorAll('.js-swiper');
   genericSwipers.forEach(el => {
     new Swiper(el, {
@@ -19,5 +21,22 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     });
   });
+
+  // ========== ヘッダー高さを自動取得して main padding-top を調整 ==========
+  const header = document.querySelector('header');
+  const main = document.querySelector('.site-main');
+
+  if (header && main) {
+    const adjustPadding = () => {
+      const headerHeight = header.offsetHeight;
+      main.style.paddingTop = `${headerHeight}px`;
+    };
+
+    // 初回実行
+    adjustPadding();
+
+    // リサイズ時に再計算（レスポンシブ対応）
+    window.addEventListener('resize', adjustPadding);
+  }
 
 });
