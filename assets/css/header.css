@@ -1,3 +1,7 @@
+/* =========================================================
+   HEADER STYLE / rootカラー対応版（最終整形済み）
+========================================================= */
+
 /* ===============================
    ヘッダー全体
 ================================= */
@@ -16,7 +20,7 @@
 .site-header .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 1.2rem 2rem; /* 余白をやや広げて安定感 */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,7 +40,7 @@ body {
 }
 
 .site-header .logo img {
-  height: 32px;
+  height: 36px; /* 視認性UP */
   width: auto;
 }
 
@@ -44,38 +48,19 @@ body {
    CTAボタン（PCのみ表示）
 ================================= */
 .site-header .cta-button {
-  background-color: var(--color-danger);
+  background-color: var(--color-danger);      /* 赤ベース */
   color: var(--color-white);
   padding: 0.6rem 1.8rem;
   border-radius: 9999px;
-  font-size: 1rem;              /* ← 0.875rem → 1rem に拡大 */
-  font-weight: 700;             /* 少し太く */
+  font-size: 1rem;              /* 16pxに統一 */
+  font-weight: 700;
   white-space: nowrap;
   transition: background-color 0.3s ease;
 }
 
-/* ===============================
-   PCナビゲーション
-================================= */
-@media (min-width: 769px) {
-  .main-nav ul {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .main-nav a {
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;            /* ← 明確に16px指定 */
-    color: var(--color-text-light);
-    transition: color 0.2s ease;
-  }
-
-  .main-nav a:hover {
-    color: var(--color-primary);
-  }
+.site-header .cta-button:hover {
+  background-color: var(--color-danger-hover); /* 濃い赤に変化 */
 }
-
 
 /* ===============================
    ハンバーガー（SPのみ表示）
@@ -130,12 +115,13 @@ body {
   .main-nav a {
     text-decoration: none;
     font-weight: 600;
+    font-size: 1rem;            /* 明確に16px指定 */
     color: var(--color-text-light);
     transition: color 0.2s ease;
   }
 
   .main-nav a:hover {
-    color: var(--color-primary); /* ← ホバー時に青を強調 */
+    color: var(--color-primary); /* ホバー時は青に */
   }
 
   .site-header .cta-button {
@@ -171,8 +157,8 @@ body {
 
   .main-nav li a {
     display: block;
-    font-size: 1rem;
-    padding: 0.5rem 0;
+    font-size: 1.05rem; /* 少し拡大して押しやすく */
+    padding: 0.6rem 0;
     color: var(--color-text);
     text-decoration: none;
   }
@@ -187,7 +173,7 @@ body {
 }
 
 /* ===============================
-   プルダウン
+   プルダウンメニュー
 ================================= */
 .main-nav-list .submenu {
   display: none;
