@@ -9,6 +9,14 @@
   background-color: var(--color-bg-alt);
 }
 
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--color-text);
+}
+
 /* ===== 固定イベント（上部ピックアップなど） ===== */
 .event-fixed {
   background-color: var(--color-bg-light); /* #f9f9f9 */
@@ -49,6 +57,57 @@
   opacity: 0.85;
 }
 
+/* ===== イベントグリッド ===== */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* ===== イベントカード ===== */
+.event-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== カード本文 ===== */
+.event-card-body {
+  padding: 1.5rem;
+}
+
+.event-card-body h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.event-card-body h2 a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.event-card-body h2 a:hover {
+  color: var(--color-primary);
+}
+
 /* ===== メタ情報（開催日など） ===== */
 .event-meta {
   list-style: none;
@@ -62,9 +121,11 @@
 .event-meta li {
   margin-bottom: 4px;
   line-height: 1.4;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
 }
 
-/* ラベル（例：開催日） */
 .event-meta-label {
   display: inline-block;
   background-color: var(--color-primary);      /* #009fe3 */
@@ -75,6 +136,15 @@
   font-weight: 700;
   margin-right: 4px;
   line-height: 1.4;
+  flex-shrink: 0;
+}
+
+/* ===== 抜粋文 ===== */
+.event-card-body p {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* ===== イベントが存在しない場合の表示 ===== */
@@ -83,6 +153,7 @@
   font-size: 1rem;
   color: var(--color-text);
   opacity: 0.7;
+  margin-top: 2rem;
 }
 
 /* ===== スマホ調整 ===== */
@@ -97,5 +168,14 @@
 
   .event-meta {
     font-size: 0.8rem;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .event-card-body {
+    padding: 1.25rem;
   }
 }
