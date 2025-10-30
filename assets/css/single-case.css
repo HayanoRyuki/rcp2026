@@ -1,0 +1,301 @@
+/* ========== Base Layout ========== */
+.single-case-wrapper {
+  padding-top: 1rem;
+  background-color: #f4f7fb;
+}
+
+.single-case-wrapper .container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.single-case-wrapper .main-column {
+  width: 66.6666%;
+}
+
+.sidebar {
+  width: 33.3333%;
+}
+
+/* ========== パンくずリスト ========== */
+.breadcrumb {
+  background-color: #ffffff; /* グレーから白に変更 */
+  font-size: 14px;
+  padding: 12px 0;
+  margin-bottom: 30px;
+}
+
+.breadcrumb .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* 必要に応じて上下余白を微調整したい場合はここを編集 */
+}
+
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.breadcrumb ol li::after {
+  content: ">";
+  margin: 0 0.5em;
+  color: #999;
+}
+
+.breadcrumb ol li:last-child::after {
+  content: "";
+}
+
+.breadcrumb a {
+  color: #0073aa;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ========== 記事タイトル ========== */
+.page-title {
+  font-size: 1.45rem;
+  font-weight: bold;
+  margin: 0 0 1.5rem;
+  text-align: left;
+}
+
+/* ========== 記事ボックス ========== */
+.article-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.content {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.lead {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* ========== 要約セクション ========== */
+.summary-box {
+  background: #f0f4f8;
+  padding: 1rem;
+  margin: 2.5rem 0;
+  border-radius: 6px;
+}
+
+.summary-box h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #E0E0E0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-box .check-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1em 0;
+  font-size: 13px;
+  color: #333;
+}
+
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+
+.check-list .check-icon {
+  color: #06b6d4;
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: 0.15em;
+  flex-shrink: 0;
+}
+
+/* ========== 企業情報カード ========== */
+.sticky-box {
+  position: sticky;
+  top: 6rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.company-logo {
+  margin-bottom: 1rem;
+}
+
+.company-table {
+  width: 100%;
+  font-size: 0.9rem;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.company-table th,
+.company-table td {
+  padding: 10px 0;
+  line-height: 1.6;
+  vertical-align: top;
+  text-align: left;
+  border: none;
+}
+
+.company-table th {
+  width: 90px;
+  color: #555;
+  font-weight: bold;
+}
+
+.company-table td {
+  color: #333;
+}
+
+/* ロゴ画像の高さを 100px に固定 */
+.company-profile .logo img {
+  height: 80px;      /* 縦に固定 */
+  width: auto;        /* アスペクト比を維持しながら横幅を自動調整 */
+  object-fit: contain; /* 枠内に収まるようにリサイズ */
+}
+
+/* ========== レスポンシブ ========== */
+@media screen and (max-width: 1024px) {
+  .single-case-wrapper .container {
+    flex-direction: column;
+  }
+
+  .single-case-wrapper .main-column,
+  .single-case-wrapper .sidebar {
+    width: 100%;
+  }
+
+  .sticky-box {
+    position: static;
+    top: auto;
+  }
+}
+
+/* ========== 導入事例バナー切替 ========== */
+.case-study-banner-pc {
+  display: block;
+}
+
+.case-study-banner-sp {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .case-study-banner-pc {
+    display: none;
+  }
+
+  .case-study-banner-sp {
+    display: block;
+  }
+}
+
+/* ========== インタビュー表示調整 ========== */
+.interview-lead {
+  border: 2px solid #aaa;
+  padding: 2em;
+  border-radius: 15px;
+  margin: 2rem 0;
+}
+
+.case-question {
+  font-weight: bold;
+  color: #61BBD9;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.case-question::before {
+  content: "ー ";
+}
+
+.case-answer {
+  line-height: 1.8;
+  color: #555;
+}
+
+.speaker-name {
+  font-weight: normal;
+  background-color: #61BBD9;
+  color: #fff;
+  margin-right: 4px;
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 2px;
+}
+
+.case-marker {
+  background: linear-gradient(transparent 70%, #FDFF54 20%);
+  font-weight: bold;
+}
+
+/* ========== セクション見出し装飾 ========== */
+h2.case {
+  position: relative;
+  margin-top: 2rem;
+  padding: 0.5em;
+  background: #61BBD9;
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 1em 0;
+  border-radius: 5px;
+}
+
+h2.case::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px rgb(149, 158, 155);
+}
+
+/* ========== カスタムリストスタイル ========== */
+.case-list,
+.case-ul {
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-left: 10px;
+  list-style-type: none;
+}
+
+.case-list li,
+.case-ul li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1.8;
+  position: relative;
+  padding-left: 25px;
+}
+
+.case-list li::before,
+.case-ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 10px;
+  height: 10px;
+  background-color: #61BBD9;
+  border-radius: 50%;
+}

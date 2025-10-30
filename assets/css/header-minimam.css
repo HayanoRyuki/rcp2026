@@ -1,0 +1,39 @@
+/* 完全に詰めるミニマムヘッダー対策（管理バー含む） */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.admin-bar {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#wpadminbar {
+  position: fixed !important;
+  top: 0;
+}
+
+/* ヘッダー */
+.header-minimam {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+/* ロゴ中央寄せ＋サイズ */
+.header-minimam-inner {
+  text-align: center;
+  padding: 12px 0; /* ←これが上下余白 */
+}
+
+.header-logo {
+  display: inline-block;
+}
+
+.header-logo img {
+  height: 36px;
+  margin: 0 auto;
+  display: block;
+}

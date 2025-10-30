@@ -1,0 +1,248 @@
+/* 全体の背景グレー */
+.single-event {
+  background-color: #f4f7fb;
+  font-family: sans-serif;
+  padding: 40px 1rem 4rem; /* ← 上に160px余白を追加 */
+}
+
+/* コンテナ */
+.single-event .event-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* パンくず */
+.single-event .breadcrumb,
+.breadcrumb {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  color: #6b7280;
+}
+.breadcrumb a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* タイトル・メタ情報 */
+.single-event .event-header {
+  margin-bottom: 2rem;
+}
+.single-event .event-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.single-event .event-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* イベントタイプ表示 */
+.event-type {
+  margin-top: 0.75rem;
+}
+.event-type-label {
+  display: inline-block;
+  background-color: #1f2937;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.25em 0.75em;
+  border-radius: 9999px;
+  margin-right: 0.5em;
+}
+
+/* 2カラム構成 */
+.event-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .event-columns {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .event-left {
+    width: 65%;
+  }
+  .event-sidebar {
+    width: 35%;
+    align-self: flex-start;
+    position: sticky;
+    top: 100px;
+  }
+}
+
+/* サマリー（右カラム） */
+.event-summary {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.event-summary h1 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.event-thumbnail img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+.event-meta-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #374151;
+}
+.event-meta-list li {
+  margin-bottom: 0.5rem;
+}
+.event-excerpt {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* 本文カード（左カラム） */
+.event-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #374151;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 見出し・段落の余白調整 */
+.event-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.event-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* パンくず */
+.single-event .breadcrumb,
+.breadcrumb {
+  font-size: 0.75rem; /* ← 小さめに調整（0.875rem → 0.75rem） */
+  margin-bottom: 1rem;
+  margin-top: 1.5rem; /* ← 上に余白を追加 */
+  color: #6b7280;
+}
+.breadcrumb a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* カテゴリー表示 */
+.event-category {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+/* タイトル */
+.event-sidebar .event-title {
+  font-size: 1.5rem; /* 少し小さめ */
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+/* メタ情報（縦揃え） */
+.event-meta-list {
+  display: table;
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+.event-meta-list li {
+  display: table-row;
+}
+.event-meta-list .label,
+.event-meta-list .value {
+  display: table-cell;
+  padding: 0.25rem 0;
+}
+.event-meta-list .label {
+  font-weight: bold;
+  padding-right: 1rem;
+  white-space: nowrap;
+}
+
+/* フォームボックス */
+.event-form-box {
+  margin-top: 2rem;
+}
+
+/* メタ情報（バッジ風ラベル） */
+.event-meta-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.event-meta-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.event-meta-list .label {
+  background-color: #00B4E6;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 0.25em 0.75em;
+  border-radius: 9999px;
+  margin-right: 1rem;
+  min-width: 6em;
+  text-align: center;
+}
+
+
+.event-meta-list .value {
+  font-size: 0.9rem;
+  color: #111827;
+}
+/* ===============================
+   サイドバー sticky 調整（ヘッダー重なり防止）
+================================= */
+.sticky-box {
+  position: sticky;
+  top: 158px;       /* ヘッダー＋余白で固定されないように */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 10;      /* ヘッダーより下に表示 */
+}
+
+/* SP対応：下に回り込む場合 */
+@media (max-width: 959px) {
+  .sticky-box {
+    position: relative;
+    top: auto;
+  }
+}
+
+/* 内部リンクスクロール補正 */
+html {
+  scroll-padding-top: 158px; /* ヘッダー分と同じ */
+}
+

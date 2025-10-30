@@ -1,0 +1,74 @@
+/* ----------------------------------
+ * CSS Reset - Minimal & Modern Base
+ * ---------------------------------- */
+
+/* 全要素のマージン・パディングをリセット */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ベース設定 */
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  color: #000;
+}
+
+/* テキスト系要素のリセット */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, figure,
+ol, ul, dl, dd {
+  margin: 0;
+}
+
+/* リストスタイルをなしに */
+ul, ol {
+  list-style: none;
+}
+
+/* aタグは色・装飾をリセット */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 画像・メディア要素の最大幅を制限 */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* フォーム要素のフォント継承など */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* ボタンなどのデフォルト装飾解除 */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* テーブルのセルスペース削除 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

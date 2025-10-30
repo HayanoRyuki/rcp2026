@@ -1,0 +1,96 @@
+/* ========== ロゴセクション ========== */
+
+/* front-page では余白ゼロ */
+body.home .section-logo-slider {
+  padding: 0;  
+	background-color: #f9f9f9;
+}
+
+body.front-page .logo-section {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.logo-section {
+	  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: #f9f9f9;
+  color: #fff;
+  overflow: hidden;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* スライダー全体ラッパー */
+.logo-slider-wrapper {
+  overflow: hidden;
+}
+
+/* ロゴスライダー（1列のみ） */
+.logo-slider-row {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  min-width: 200%;
+  animation-name: scrollLeft;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* アニメーション設定 */
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ロゴアイテム */
+.logo-item {
+  flex: 0 0 auto;
+  margin-right: 1.5rem;
+}
+
+.logo-item:last-child {
+  margin-right: 0;
+}
+
+/* ロゴボックス */
+.logo-box {
+  width: 120px;
+  height: 70px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ロゴ画像 */
+.logo-box img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ========== モバイル対応 ========== */
+@media (max-width: 640px) {
+  .logo-section {
+    padding: 1rem 0;
+  }
+
+  .logo-item {
+    margin-right: 0.75rem;
+  }
+
+  .logo-box {
+    width: 80px;
+    height: 50px;
+  }
+}

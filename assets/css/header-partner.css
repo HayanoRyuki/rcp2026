@@ -1,0 +1,228 @@
+/* ===============================
+   パートナー専用ヘッダー（固定 + スタイル）
+================================= */
+.partner-header,
+.header-partner,
+.header-partner-list,
+.header-partner-contact-select {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* 他要素より前面 */
+  background-color: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+body.partner-page {
+  padding-top: 68px;
+}
+
+.partner-header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===============================
+   ロゴ
+================================= */
+.partner-logo img {
+  height: 36px;
+  width: auto;
+}
+
+/* ===============================
+   ナビゲーション
+================================= */
+.partner-nav {
+  z-index: 1001;
+}
+
+.partner-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.partner-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #5c5c73;
+  font-size: 0.9375rem;
+  transition: color 0.2s ease;
+}
+
+.partner-nav a:hover {
+  color: #111827;
+}
+
+/* ===============================
+   CTAボタン（問い合わせ）
+================================= */
+.partner-cta .btn-cta {
+  background-color: #ff5c5c;
+  color: #ffffff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.partner-cta .btn-cta:hover {
+  background-color: #e03131;
+}
+
+/* ===============================
+   モバイル対応（必要最低限）
+================================= */
+@media (max-width: 767px) {
+  .partner-nav,
+  .partner-cta {
+    display: none;
+  }
+
+  .partner-logo img {
+    height: 28px;
+  }
+
+  body.partner-page {
+    padding-top: 64px;
+  }
+}
+
+/* ===============================
+   ハンバーガーメニュー（SP用）
+================================= */
+@media (max-width: 767px) {
+
+  /* ハンバーガーボタン表示 */
+  .partner-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1002; /* nav より前面 */
+  }
+
+  .partner-menu-toggle .bar {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  /* ナビ初期状態：非表示 */
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    pointer-events: none; /* 初期クリック不可 */
+    z-index: 1001;
+  }
+
+  /* 開閉時 */
+  .main-nav.open {
+    display: flex;
+    pointer-events: auto; /* クリック可能 */
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* ハンバーガーボタンアニメーション */
+  .partner-menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .partner-menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .partner-menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+
+/* ===============================
+   プルダウンメニュー
+================================= */
+.main-nav-list .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  padding: 10px 0;
+  list-style: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.main-nav-list .has-submenu {
+  position: relative;
+}
+
+.main-nav-list .has-submenu:hover .submenu {
+  display: block;
+}
+
+.main-nav-list .submenu li a {
+  display: block;
+  padding: 8px 20px;
+  color: #333;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.main-nav-list .submenu li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* ===============================
+   セクションボタン
+================================= */
+.secBtnWrap {
+  margin-top: 24px;
+}
+
+.secBtnWrap .btn {
+  display: inline-block;
+  width: auto;
+  text-align: center;
+}
+
+.secBtnWrap .btn a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #00bcd4;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  white-space: nowrap;
+}

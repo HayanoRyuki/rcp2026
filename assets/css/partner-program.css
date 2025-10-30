@@ -1,0 +1,167 @@
+/* =========================================================
+   パートナープログラム補完デザイン
+   （元の構造を保持したまま、見本画像に近づける）
+========================================================= */
+
+.secProgram {
+  background: #f9fafb;
+  padding: 80px 0;
+}
+
+.secProgram .md-secHead {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.secProgram .secTtl {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.secProgram .secLead {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.8;
+}
+
+/* 2カラムレイアウト */
+.secProgram .ctsListWrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.secProgram .ctsList {
+  width: 48%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  border-top: 6px solid transparent;
+}
+
+.secProgram .ctsList01 {
+  border-top-color: #00A59E; /* グリーン */
+}
+
+.secProgram .ctsList02 {
+  border-top-color: #4A90E2; /* ブルー */
+}
+
+/* 見出し */
+.secProgram .listTtl {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+/* 画像 */
+.secProgram .listImg {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.secProgram .listImg img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* 契約ボックス */
+.secProgram .contractBox {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin-top: 10px;
+}
+
+.secProgram .ctsList01 .contractBox {
+  background: #E8FAF7;
+  border: 1px solid #00A59E;
+  color: #008874;
+}
+
+.secProgram .ctsList02 .contractBox {
+  background: #E8F2FB;
+  border: 1px solid #4A90E2;
+  color: #3366CC;
+}
+
+/* テキスト説明 */
+.secProgram .listDesc {
+  padding: 0 25px 25px;
+}
+
+.secProgram .desc {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* こんな方にオススメ */
+.secProgram .descPoint {
+  list-style: none;
+  padding: 15px 20px;
+  margin: 0;
+  background: #F5F9F9;
+  border-radius: 8px;
+}
+
+.secProgram .pointTtl {
+  display: inline-block;
+  background: #00A59E;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 20px;
+  padding: 4px 14px;
+  margin-bottom: 10px;
+}
+
+.secProgram .ctsList02 .pointTtl {
+  background: #4A90E2;
+}
+
+/* チェックマーク付き */
+.secProgram .pointList {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.secProgram .pointList::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #00A59E;
+  font-weight: bold;
+}
+
+.secProgram .ctsList02 .pointList::before {
+  color: #4A90E2;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 768px) {
+  .secProgram .ctsListWrap {
+    flex-direction: column;
+  }
+  .secProgram .ctsList {
+    width: 100%;
+  }
+  .secProgram .secTtl {
+    font-size: 22px;
+  }
+  .secProgram .listTtl {
+    font-size: 18px;
+  }
+}

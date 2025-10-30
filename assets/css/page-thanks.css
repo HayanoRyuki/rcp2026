@@ -1,0 +1,75 @@
+.thanks-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: sans-serif;
+}
+
+.thanks-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.thanks-lead {
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.thanks-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.btn-thanks {
+  display: inline-block;
+  background-color: #00B5E2;
+  color: #fff;
+  text-decoration: none;
+  padding: 1.2rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: opacity 0.2s ease;
+}
+
+.btn-thanks.blue {
+  background-color: #0072FF;
+}
+
+.btn-thanks:hover {
+  opacity: 0.85;
+}
+
+.thanks-links {
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.thanks-links a {
+  color: #0072FF;
+  text-decoration: underline;
+}
+
+.highlight-number {
+  display: inline-block;
+  background-color: #fff;
+  color: #00B5E2;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.1em 0.5em;
+  border-radius: 999px;
+  line-height: 1.4;
+}
+.btn-thanks.blue .highlight-number {
+  color: #0072FF;
+}

@@ -1,0 +1,241 @@
+/* ========================================
+   レイアウト（2カラム → SP時縦並び）
+======================================== */
+.resource-body {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.main-column { flex: 2; }
+.form-area   { flex: 1; }
+
+@media (max-width: 768px) {
+  .resource-body { flex-direction: column; }
+
+  .main-column,
+  .post-thumbnail,
+  .post-header,
+  .resource-meta-inline,
+  .resource-meta {
+    padding: 0 1rem;
+  }
+
+  .form-area { margin-top: 2rem; }
+
+  .post-title {
+    display: block;
+    padding: 0 0 1rem 0;
+    margin-left: 0 !important;
+    text-align: left !important;
+  }
+
+  /* SP時フォーム中央寄せ */
+  .page-template-single-resource .download-form {
+    margin: 0 auto !important;
+    padding: 1rem !important;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ========================================
+   アイキャッチ画像・タイトル
+======================================== */
+.post-thumbnail {
+  margin-bottom: 2rem;
+}
+.post-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: 12px 36px 36px rgba(0, 0, 0, 0.2);
+}
+.post-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* ========================================
+   メタ情報（インライン + 縦並び）
+======================================== */
+.resource-meta-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+.resource-meta {
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+.meta-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.label-badge {
+  background-color: #00a7d0;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.label-value {
+  font-weight: 500;
+  color: #222;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  white-space: pre-wrap;
+  margin-top: 0.2rem;
+}
+
+/* ========================================
+   本文・コンテナ
+======================================== */
+.post-content {
+  line-height: 1.8;
+  color: #222;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 0 32px;
+}
+.main-content,
+header.site-header {
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* ========================================
+   フォーム全体
+======================================== */
+.page-template-single-resource .download-form {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 400px;
+  margin-left: auto;
+  padding: 1.5rem;
+}
+
+.download-form .form-intro {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.download-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.download-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.download-form input[type="text"],
+.download-form input[type="email"],
+.download-form input[type="tel"] {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   プライバシーポリシー
+======================================== */
+.download-form .form-group.privacy-policy {
+  margin-top: 1rem;
+}
+.download-form .privacy-policy {
+  font-size: 0.75rem;   /* 全体を小さめに */
+  font-weight: normal;  /* 太字解除 */
+  line-height: 1.4;
+  white-space: nowrap;  /* 折り返し防止 */
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.download-form .privacy-policy input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+.download-form .privacy-policy a {
+  color: #0073e6;
+  text-decoration: underline;
+  font-weight: normal;
+}
+.download-form .privacy-policy a:hover {
+  color: #005bb5;
+}
+
+/* ========================================
+   送信ボタン
+======================================== */
+.download-form .form-submit {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.download-form button[type="submit"] {
+  background: #009bc9;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.download-form button[type="submit"]:hover {
+  background: #007da1;
+}
+
+/* ========================================
+   セレクトボックス（従業員数・導入予定時期）
+======================================== */
+.download-form select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* ▼アイコンを右端に表示 */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23999'%3E%3Cpath d='M4 6l4 4 4-4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px 12px;
+}
+
+/* フォーカス時 */
+.download-form select:focus {
+  border-color: #009bc9; /* 既存ボタン色に揃える */
+  outline: none;
+}

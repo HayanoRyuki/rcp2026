@@ -1,0 +1,156 @@
+.event-archive-section {
+  padding: 0px 20px 60px;
+}
+
+/* コンテナ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* セクションタイトル */
+.archive-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* イベントグリッド */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* 各カード */
+.event-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-card img {
+  width: 100%;
+  height: auto;
+}
+
+/* カード内本文 */
+.event-card-body {
+  padding: 16px;
+}
+
+/* タイトル */
+.event-card-body h2 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.event-card-body h2 a {
+  color: #111;
+  text-decoration: none;
+}
+
+.event-card-body h2 a:hover {
+  text-decoration: underline;
+}
+
+/* メタ情報全体 */
+.event-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.event-meta li {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+/* ラベル（開催日などの項目名） */
+.event-meta-label {
+  display: inline-block;
+  background-color: #009fe3; /* RECEPTIONISTテーマカラー */
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-right: 4px;
+  line-height: 1.4;
+}
+
+/* 抜粋 */
+.event-card-body p {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* イベントなしメッセージ */
+.no-event {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* スマホ対応 */
+@media (max-width: 767px) {
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .event-card-body h2 {
+    font-size: 1rem;
+  }
+
+  .event-meta {
+    font-size: 0.8rem;
+  }
+
+  .event-card-body p {
+    font-size: 0.8rem;
+  }
+}
+
+.event-fixed {
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.event-fixed-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.event-fixed-link {
+  display: flex;
+  gap: 20px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.event-fixed-body h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.event-fixed-body p {
+  margin: 0;
+}

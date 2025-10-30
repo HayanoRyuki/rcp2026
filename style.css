@@ -1,0 +1,26 @@
+/*
+Theme Name: RCP2026
+Theme URI: https://receptionist.jp/
+Author: Media Confidence Inc.
+Description: RECEPTIONIST 2026 custom theme
+Version: 1.0
+Text Domain: rcp2026
+*/
+
+
+/* セクションごとのCSSを読み込み */
+@import url('assets/css/reset.css');
+@import url('assets/css/common.css');
+@import url('assets/css/header.css');
+@import url('assets/css/footer.css');
+@import url('assets/css/hero.css');
+@import url('assets/css/logo.css');
+@import url('assets/css/about.css');
+@import url('assets/css/solutions.css');
+@import url('assets/css/single-case.css');
+@import url('assets/css/single-post.css');
+@import url('assets/css/single-news.css');
+@import url('assets/css/single-resource.css');
+@import url('assets/css/archive-case.css');
+@import url('assets/css/archive-news.css');
+@import url('assets/css/archive-resource.css');

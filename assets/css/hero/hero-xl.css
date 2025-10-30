@@ -1,0 +1,273 @@
+/* ===============================
+   ヒーローセクション：PC（1280px以上）XL
+=============================== */
+@media (min-width: 1280px) {
+
+  /* --- 上部余白の調整 --- */
+  body.top,
+  body.home,
+  main.site-main.front-page {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  body.page-template-front-page .site-header {
+    padding-bottom: 0 !important;
+  }
+
+  .site-header {
+    margin-bottom: 0 !important;
+  }
+
+  body .section-hero {
+    padding: 0;
+  }
+
+  /* --- HERO本体レイアウト --- */
+  .hero.page-title.wrapper {
+    width: 100%;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+    padding-top: 0;
+    background-color: #009bc9;
+    margin-bottom: 0 !important;
+  }
+
+  .hero-body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .container_l.adView {
+    background-color: #009bc9;
+  }
+
+  .hero-title-box {
+    position: relative;
+    z-index: 3;
+  }
+
+  .hero-title-img {
+    width: 90%;
+    max-width: 580px;
+    height: auto;
+  }
+
+  .hero-user-image {
+    width: 110%;
+    height: 450px;
+    background-image: url('/wp-content/themes/rcp2025/assets/img/hero/hero-user-lg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin-top: -100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* --- フォームエリア（右） --- */
+  .container_r {
+    width: 35%;
+    min-width: 490px;
+    background-color: #fff;
+    padding: 30px;
+    margin-left: 30px;
+    box-sizing: border-box;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .kv-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 0.5em;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .kv-form-wrap > div,
+  .kv-form-group {
+    margin-bottom: 0.8rem;
+    position: relative;
+  }
+
+  .kv-form-group.uk-flex {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .kv-form-group.uk-flex span {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .kv-form-agree {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    white-space: normal;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #666;
+    margin: 0.5rem 0;
+  }
+
+  .kv-form-agree input[type="checkbox"] {
+    margin-right: 0.5rem;
+    margin-top: 4px;
+  }
+
+  .kv-form-agree label {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .kv-form-agree a {
+    text-decoration: underline;
+    color: #0076ff;
+    font-size: inherit;
+    word-break: break-word;
+  }
+
+  .btn.btn_dl {
+    display: block;
+    width: 100%;
+    height: 52px;
+    padding: 12px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #ff706e;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn.btn_dl:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  .hero-note {
+    font-size: 0.85rem;
+    color: #fff;
+    line-height: 1.2;
+    margin: 1rem 1rem;
+    padding-right: 1rem;
+    text-align: left;
+  }
+
+  .document-guidance-box {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+}
+
+.kv-form-group input,
+.kv-form-group select {
+  width: 100%;
+  height: 55px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  box-sizing: border-box;
+  appearance: auto;
+}
+
+.kv-form-group select option[value=""] {
+  color: #aaa;
+}
+
+.floating-label {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #333;
+  background: #fff;
+  padding: 0 6px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* プレースホルダー用（input/textarea） */
+.kv-form-group input::placeholder,
+.kv-form-group textarea::placeholder {
+  font-size: 0.85rem;
+  color: #888;
+  opacity: 1;
+}
+
+/* selectボックスの未選択状態だけを薄くする */
+.kv-form-group select:invalid {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* 選択後は濃く表示 */
+.kv-form-group select {
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.hero-body {
+  display: flex;
+  justify-content: space-between; /* 左右配置 */
+  align-items: stretch;           /* ← 高さを揃えるポイント */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* 左右カラムが同じ高さで伸びる */
+.container_l.adView,
+.container_r {
+  flex: 1;              /* 高さを揃えるために伸縮 */
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* 右カラムよせる */
+ .container_r {
+    width: 40%;
+    max-width: 490px;
+    background-color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: auto;   /* 右端に寄せる */
+    margin-right: -80px;
+  }

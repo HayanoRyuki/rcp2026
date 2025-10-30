@@ -1,0 +1,120 @@
+/* ============ パートナー一覧 共通 ============ */
+body.partner-page .site-main {
+  padding-top: 0;
+}
+
+/* ============ 認定パートナー制度セクション ============ */
+#partner-about {
+  position: relative;
+  background-color: #f5fbff;
+  overflow: hidden;
+}
+
+#partner-about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1000px;
+  height: 100%;
+  background: url('/wp-content/themes/rcp2025/assets/img/partner/ptr_kv_img_bg.png') no-repeat top right;
+  background-size: contain;
+  z-index: 0;
+}
+
+.secPtrMainVis .secTtlWrap {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.secPtrMainVis .secTtl {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.mainVisInr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1080px;
+  margin: 0 auto 60px;
+  flex-wrap: wrap;
+}
+
+.mainVisInr > * {
+  position: relative;
+  z-index: 1;
+}
+
+.secLeadWrap {
+  flex: 1;
+  min-width: 300px;
+}
+
+.secLead {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.secImg {
+  flex: 1;
+  text-align: center;
+}
+
+.secImg img {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+
+.mainVisInrBtm {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.mainVisInrBtmItm {
+  flex: 1 1 400px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.mainVisInrBtmItm figure {
+  margin-bottom: 16px;
+}
+
+.mainVisInrBtmItm img {
+  width: 120px;
+  height: auto;
+}
+
+.mainVisInrBtmItmTtl .secTtl {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.mainVisInrBtmItmLead .secLead {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* ============ レスポンシブ ============ */
+@media screen and (max-width: 767px) {
+  .mainVisInr {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mainVisInrBtm {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

@@ -1,0 +1,113 @@
+.cta-section {
+  background-color: #e0f7fa; /* シアンの淡い背景 */
+  padding: 80px 20px;
+}
+
+.cta-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cta-text {
+  flex: 1 1 500px;
+}
+
+.cta-heading {
+  font-size: 2rem;
+  color: #1f2937;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.cta-description {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #f87171; /* 赤みのあるボタンカラー */
+  color: #fff;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 9999px; /* 完全なpill型 */
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #06b6d4; /* テーマのシアンに切り替え */
+}
+
+.cta-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.cta-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .cta-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-text,
+  .cta-image {
+    flex: 1 1 100%;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+.cta-image img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* シャドウ強化 */
+}
+
+/* スマホ調整 */
+@media (max-width: 768px) {
+  .cta-container {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .cta-text {
+    text-align: left;
+    font-size: 0.95rem;
+  }
+
+  .cta-heading {
+    font-size: 1.5rem;
+  }
+
+  .cta-description {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 280px;
+    font-size: 1rem;
+  }
+}
+

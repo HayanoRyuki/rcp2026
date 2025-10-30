@@ -1,0 +1,198 @@
+.footer {
+  background-color: #f6f7f8;
+  padding: 60px 20px;
+  font-size: 14px;
+  color: var(--light-gray-dark);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ロゴエリア */
+.footer-logo {
+  width: 200px;
+  text-align: left;
+}
+
+.footer-logo img {
+  width: 70px;
+  height: auto;
+}
+
+.footer-logo .pmark {
+  margin-top: 20px;
+}
+
+/* 上部レイアウト：ロゴ + ナビ */
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* ナビゲーション */
+.footer-nav {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-nav-block {
+  min-width: 160px;
+}
+
+.footer-nav-block h6 {
+  font-weight: bold;
+  font-size: 0.95em;
+  margin-bottom: 1rem;
+  color: var(--light-black);
+}
+
+.footer-nav-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-block li {
+  margin-bottom: 0.5em;
+}
+
+.footer-nav-block a {
+  text-decoration: none;
+  color: var(--light-gray-dark);
+}
+
+.footer-nav-block a:hover {
+  color: var(--accent-dark);
+}
+
+/* 下部 */
+.footer-bottom {
+  margin-top: 40px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 1em;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links a {
+  color: var(--light-gray-dark);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--accent-dark);
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-logo {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .footer-logo img {
+    width: 100px;
+  }
+
+  .footer-logo .pmark {
+    margin-top: 12px;
+  }
+
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .footer-nav-block {
+    min-width: auto;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer-logo {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .footer-logo img {
+    width: 70px; /* ← 100px → 70px に戻して調整 */
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer-logo .pmark img {
+    width: 80px; /* ← ISMS認証ロゴも縮小 */
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer-logo .pmark {
+    margin-top: 12px;
+  }
+
+  .footer-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .footer-nav-block {
+    min-width: auto;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 左寄せ */
+    gap: 1rem; /* ロゴ間の余白 */
+    margin: 0;
+    text-align: left;
+  }
+
+  .footer-logo a,
+  .footer-logo .pmark {
+    margin: 0;
+  }
+
+  .footer-logo img {
+    width: 60px;
+    height: auto;
+  }
+
+  .footer-logo .pmark img {
+    width: 70px;
+    height: auto;
+  }
+}
+

@@ -1,0 +1,216 @@
+/* ===============================
+   ヘッダー全体
+================================= */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.site-header .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body {
+  padding-top: 70px; /* PC用 */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 64px; /* スマホ用 */
+  }
+}
+/* ===============================
+   ロゴ
+================================= */
+.site-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-header .logo img {
+  height: 32px;
+  width: auto;
+}
+
+/* ===============================
+   CTAボタン（PCのみ表示）
+================================= */
+.site-header .cta-button {
+  background-color: #f87171;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.site-header .cta-button:hover {
+  background-color: #ef4444;
+}
+
+/* ===============================
+   ハンバーガー（SPのみ表示）
+================================= */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 2px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 1px;
+}
+
+/* ===============================
+   ナビゲーション共通
+================================= */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===============================
+   PCナビゲーション（幅769px以上）
+================================= */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-nav {
+    display: block !important;
+    position: static;
+    padding: 0;
+  }
+
+  .main-nav ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .main-nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #4b5563;
+    transition: color 0.2s ease;
+  }
+
+  .main-nav a:hover {
+    color: #111827;
+  }
+
+  .site-header .cta-button {
+    display: inline-block;
+  }
+}
+
+/* ===============================
+   SPナビゲーション（幅768px以下）
+================================= */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+    background-color: #fff;
+    width: 100%;
+    padding: 1rem;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .main-nav.open {
+    display: block;
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .main-nav li a {
+    display: block;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .main-nav li a:hover {
+    background-color: #f5f5f5;
+  }
+
+  .site-header .cta-button {
+    display: none !important;
+  }
+}
+
+.hero.page-title.wrapper {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* 広告用ページの余白調整 */
+.page-ads.site-main {
+  padding-top: 0px !important;
+}
+
+/* プルダウン初期は非表示 */
+.main-nav-list .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  padding: 10px 0;
+  list-style: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.main-nav-list .has-submenu {
+  position: relative;
+}
+
+.main-nav-list .has-submenu:hover .submenu {
+  display: block;
+}
+
+.main-nav-list .submenu li a {
+  display: block;
+  padding: 8px 20px;
+  color: #333;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.main-nav-list .submenu li a:hover {
+  background-color: #f0f0f0;
+}
+
