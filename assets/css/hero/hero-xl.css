@@ -47,7 +47,7 @@
   }
 
   .container_l.adView {
-    background-color: var(--color-accent);
+    background-color: var(--color-primary); /* #00B5E2 */
   }
 
   .hero-title-box {
