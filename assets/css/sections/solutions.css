@@ -59,23 +59,115 @@
 }
 
 /************************
-  カード本体
+  カード本体（リデザイン）
 ************************/
 
 .solution-card {
   background-color: var(--color-white);
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
+  border-radius: 0.5rem; /* ← 少し小さくしてシャープに */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  padding: 1.25rem 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 0.75rem; /* ← 1rem → 詰めて緊張感を */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .solution-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/************************
+  番号
+************************/
+.solution-number {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/************************
+  課題ラベル（上段）
+************************/
+.solution-issue-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(1, 182, 149, 0.12); /* ← 淡いグリーンで統一感 */
+  padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.solution-issue-box .icon {
+  width: 26px;
+  height: 26px;
+}
+
+.issue-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/************************
+  解決ラベル（中段）
+************************/
+.solution-answer-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.solution-answer-box .icon {
+  width: 28px;
+  height: 28px;
+}
+
+.answer-text {
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/************************
+  画像・本文
+************************/
+.solution-card img.w-full {
+  border-radius: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.solution-card p.text-sm {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+/************************
+  レスポンシブ
+************************/
+@media (min-width: 768px) {
+  .issue-text {
+    font-size: 1.2rem;
+  }
+  .answer-text {
+    font-size: 1.45rem;
+  }
+  .solution-card {
+    padding: 1.5rem 1.75rem;
+  }
 }
 
 /************************
