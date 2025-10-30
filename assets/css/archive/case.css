@@ -76,12 +76,57 @@
   background-color: var(--color-primary-dark);
 }
 
+/* =========================================================
+   カードグリッド（幅に応じて自動列変更）
+========================================================= */
+.case-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  justify-content: center;
+  align-items: start;
+}
+
+/* カード単体 */
+.case-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* サムネイル */
+.case-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* コンテンツ */
+.case-content {
+  padding: 1.5rem 1.5rem 1.8rem;
+}
+
+.case-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 1rem; /* 上0 下1rem */
+  line-height: 1.6;
+}
+
 /* ===== カテゴリラベル ===== */
 .case-category {
   font-size: 0.875rem;
   color: var(--color-primary);
   text-align: left;
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 .case-category span {
