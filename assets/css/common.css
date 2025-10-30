@@ -16,7 +16,13 @@
   --color-border: #ddd;              /* 標準ボーダー */
   --color-white: #ffffff;            /* ホワイト */
   --color-black: #000000;            /* ブラック */
+
+  /* ===== アラート・強調カラー（赤系） ===== */
+  --color-danger: #FF5A5A;           /* CTAボタンなどに使うコーラルレッド */
+  --color-danger-hover: #E04E4E;     /* ホバー時の濃い赤 */
+  --color-danger-light: #FFECEC;     /* 背景・装飾用の淡い赤 */
 }
+
 /* ========================================
    レイアウトの基本設定
 ======================================== */
@@ -44,7 +50,7 @@ main {
    見出し・ページタイトル
 ======================================== */
 .page-title {
-  font-size: 2rem;       /* 32px */
+  font-size: 2rem;       
   font-weight: bold;
   text-align: center;
   margin: 0 0 2rem;

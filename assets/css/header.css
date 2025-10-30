@@ -44,19 +44,38 @@ body {
    CTAボタン（PCのみ表示）
 ================================= */
 .site-header .cta-button {
-  background-color: var(--color-secondary);
+  background-color: var(--color-danger);
   color: var(--color-white);
-  padding: 0.5rem 1.5rem;
+  padding: 0.6rem 1.8rem;
   border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: bold;
+  font-size: 1rem;              /* ← 0.875rem → 1rem に拡大 */
+  font-weight: 700;             /* 少し太く */
   white-space: nowrap;
   transition: background-color 0.3s ease;
 }
 
-.site-header .cta-button:hover {
-  background-color: var(--color-primary);
+/* ===============================
+   PCナビゲーション
+================================= */
+@media (min-width: 769px) {
+  .main-nav ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .main-nav a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;            /* ← 明確に16px指定 */
+    color: var(--color-text-light);
+    transition: color 0.2s ease;
+  }
+
+  .main-nav a:hover {
+    color: var(--color-primary);
+  }
 }
+
 
 /* ===============================
    ハンバーガー（SPのみ表示）
@@ -116,7 +135,7 @@ body {
   }
 
   .main-nav a:hover {
-    color: var(--color-text);
+    color: var(--color-primary); /* ← ホバー時に青を強調 */
   }
 
   .site-header .cta-button {
@@ -167,7 +186,9 @@ body {
   }
 }
 
-/* プルダウン初期は非表示 */
+/* ===============================
+   プルダウン
+================================= */
 .main-nav-list .submenu {
   display: none;
   position: absolute;
