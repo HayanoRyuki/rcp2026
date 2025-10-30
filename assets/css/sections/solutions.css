@@ -11,30 +11,34 @@
 
 /* 小見出し（h3） */
 .solutions-subtitle {
-  font-size: 1rem;
+  font-size: 1.4rem; /* ← 以前:1rem → 少し大きく */
   font-weight: 600;
   color: var(--color-text);
-  margin-bottom: 4px;
-  line-height: 1.4;
+  margin-bottom: 8px;
+  line-height: 1.5;
 }
 
 /* メイン見出し（h2） */
 .solutions-title {
-  font-size: 1.75rem;
-  font-weight: bold;
+  font-size: 2.6rem; /* ← 以前:1.75rem → しっかり見出し感 */
+  font-weight: 700;
   color: var(--color-text);
   margin-top: 0;
-  margin-bottom: 2rem;
-  line-height: 1.3;
+  margin-bottom: 2.5rem;
+  line-height: 1.4;
 }
 
 .solutions-title .highlight {
   color: var(--color-primary);
+  font-weight: 800;
 }
 
 @media (min-width: 768px) {
+  .solutions-subtitle {
+    font-size: 1.6rem;
+  }
   .solutions-title {
-    font-size: 2rem;
+    font-size: 3rem; /* ← PCではさらに大きめ */
   }
 }
 
@@ -165,5 +169,11 @@
   .solutions-section {
     max-width: 100%;
     padding: 40px 16px;
+  }
+  .solutions-subtitle {
+    font-size: 1.2rem;
+  }
+  .solutions-title {
+    font-size: 2rem;
   }
 }
