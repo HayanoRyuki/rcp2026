@@ -2,15 +2,56 @@
    SINGLE POST / 記事ページ専用スタイル（RCP2026）
 ========================================================= */
 
-/* ===== レイアウト外枠 ===== */
-html {
-  scroll-padding-top: 68px; /* 内部リンクスクロール補正 */
+/* ===== レイアウト全体 ===== */
+.post-body {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.post-main {
+  flex: 1 1 66%;
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.post-sidebar {
+  flex: 0 0 30%;
+}
+
+@media (max-width: 1024px) {
+  .post-body {
+    flex-direction: column;
+  }
+
+  .post-sidebar {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+/* ===== パンくず ===== */
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-muted);
+}
+
+.breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
 }
 
 /* ===== タイトル・メタ情報 ===== */
 .post-title {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.4;
 }
@@ -21,38 +62,51 @@ html {
   margin-bottom: 2rem;
 }
 
-.post-meta .category-badge {
+.post-meta .post-category {
   display: inline-block;
   background-color: var(--color-primary);
   color: var(--color-white);
   font-size: 0.8rem;
   padding: 0.25rem 0.75rem;
-  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   border-radius: 9999px;
   text-decoration: none;
-  transition: background-color 0.3s;
 }
 
-.post-meta .category-badge:hover {
+.post-meta .post-category:hover {
   background-color: var(--color-primary-hover);
-  color: var(--color-white);
 }
 
-/* ===== アイキャッチ ===== */
+/* ===== アイキャッチ（16:9固定） ===== */
 .post-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .post-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.post-thumbnail:hover img {
+  transform: scale(1.03);
 }
 
 /* ===== 本文エリア ===== */
 .post-content {
   font-size: 1rem;
   color: var(--color-text);
+  line-height: 1.8;
 }
 
 .post-content p {
@@ -68,28 +122,30 @@ html {
 .post-content a {
   color: var(--color-primary);
   text-decoration: underline;
+  transition: 0.3s;
 }
 
 .post-content a:hover {
   text-decoration: none;
+  color: var(--color-primary-hover);
 }
 
 /* ===== 見出し ===== */
 .post-content h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
   border-left: 6px solid var(--color-primary);
   padding-left: 0.75rem;
   color: var(--color-text);
 }
 
 .post-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  font-weight: bold;
+  font-weight: 700;
   position: relative;
   padding-left: 1.25rem;
   color: var(--color-text);
@@ -106,20 +162,10 @@ html {
   border-radius: 50%;
 }
 
-/* ===== サイドバー ===== */
-.post-sidebar {
-  width: 100%;
-}
-
-@media (min-width: 960px) {
-  .post-sidebar {
-    width: 300px;
-  }
-}
-
-.sticky-box {
+/* ===== サイドバー固定 ===== */
+.post-sticky {
   position: sticky;
-  top: 158px;
+  top: 140px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -127,14 +173,14 @@ html {
 }
 
 @media (max-width: 959px) {
-  .sticky-box {
+  .post-sticky {
     position: relative;
     top: auto;
   }
 }
 
-/* ===== サイドバー内コンポーネント ===== */
-.sidebar-box {
+/* ===== サイドバーBOX ===== */
+.post-sidebar-box {
   background-color: var(--color-bg-alt);
   padding: 1.5rem;
   border-radius: 1rem;
@@ -142,13 +188,13 @@ html {
   text-align: center;
 }
 
-.sidebar-title {
+.post-sidebar-title {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.sidebar-button {
+.post-sidebar-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   background-color: var(--color-primary);
@@ -159,57 +205,11 @@ html {
   transition: background-color 0.3s;
 }
 
-.sidebar-button:hover {
+.post-sidebar-button:hover {
   background-color: var(--color-primary-hover);
 }
 
-/* ===== 関連リンクカード ===== */
-.internal-link-card {
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  overflow: hidden;
-  margin: 2rem 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.link-card-inner {
-  display: flex;
-  text-decoration: none;
-  color: inherit;
-}
-
-.link-card-inner:hover {
-  background-color: var(--color-accent);
-}
-
-.link-card-image img {
-  width: 150px;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.link-card-content {
-  padding: 1rem;
-  flex: 1;
-}
-
-.link-card-title {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.link-card-excerpt {
-  font-size: 0.9rem;
-  color: var(--color-text-light);
-}
-
-/* =========================================================
-   MEDIA QUERIES / Responsive
-========================================================= */
-
-/* ===== スマホ対応 ===== */
+/* ===== レスポンシブ対応 ===== */
 @media (max-width: 768px) {
   .post-title {
     font-size: 1.6rem;
@@ -223,16 +223,7 @@ html {
     font-size: 1.1rem;
   }
 
-  .link-card-inner {
-    flex-direction: column;
-  }
-
-  .link-card-image img {
-    width: 100%;
-    height: auto;
-  }
-
-  .sidebar-box {
+  .post-sidebar-box {
     margin-top: 2rem;
   }
 }
