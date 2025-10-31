@@ -69,7 +69,7 @@
 }
 
 .partner-merit .partner-item-title {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--color-primary, #0077b6);
   margin-bottom: 1.2rem;
@@ -81,7 +81,7 @@
 }
 
 .partner-merit .partner-item-image img {
-  width: 80px;
+  width: 180px;
   height: auto;
 }
 
