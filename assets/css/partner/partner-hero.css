@@ -24,7 +24,7 @@
 }
 
 .partner-hero .partner-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--color-primary, #0077b6);
   margin-bottom: 1rem;
@@ -32,7 +32,7 @@
 }
 
 .partner-hero .partner-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1.5;
   color: #222;
@@ -40,7 +40,7 @@
 }
 
 .partner-hero .partner-lead {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.8;
   color: #333;
   margin-bottom: 2.5rem;
@@ -51,7 +51,7 @@
   background: var(--color-primary, #0077b6);
   color: #fff;
   font-weight: 700;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding: 1rem 2.8rem;
   border-radius: 4px;
   text-decoration: none;
