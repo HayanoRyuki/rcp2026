@@ -213,19 +213,6 @@ function rcp2026_enqueue_assets() {
       }
     }
 
-    $resource_dir = "{$theme_dir}/assets/css/resource/";
-    if (is_dir($resource_dir)) {
-      foreach (glob($resource_dir . '*.css') as $path) {
-        $basename = basename($path, '.css');
-        wp_enqueue_style(
-          "rcp2026-resource-{$basename}",
-          "{$theme_uri}/assets/css/resource/{$basename}.css",
-          [],
-          filemtime($path)
-        );
-      }
-    }
-
     $resource_js_dir = "{$theme_dir}/assets/js/";
     foreach (glob($resource_js_dir . 'resource-*.js') as $path) {
       $basename = basename($path, '.js');

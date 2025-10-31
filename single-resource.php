@@ -1,5 +1,4 @@
 <?php get_header('minimam'); ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/single-resource.css">
 
 <main class="site-main resource">
   <div class="resource-container">

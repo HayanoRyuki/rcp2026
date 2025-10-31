@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/archive-resource.css">
 
 <main class="site-main archive-resource">
   <section class="resource">
