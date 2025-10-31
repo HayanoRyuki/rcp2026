@@ -261,3 +261,14 @@
   width: 360px;
   flex-shrink: 0;
 }
+
+/* ===== 下余白（フォーム下〜フッター間） ===== */
+.site-main.resource {
+  padding-bottom: 80px; /* ← 余白をしっかり確保 */
+}
+
+@media (max-width: 768px) {
+  .site-main.resource {
+    padding-bottom: 60px; /* スマホでは少し狭く */
+  }
+}
