@@ -1,28 +1,28 @@
 /* =========================================================
-   PARTNER CONTACT SECTION（root変数対応・ハイフン1本仕様）
+   PARTNER CONTACT SELECT SECTION（root変数対応・ハイフン1本仕様）
 ========================================================= */
 
-.partner-contact {
+.partner-contact-select {
   background-color: var(--color-bg-alt);
   padding: 6rem 2rem;
   text-align: center;
 }
 
 /* ===== コンテナ ===== */
-.partner-contact .partner-inner {
+.partner-contact-select .partner-inner {
   max-width: 1080px;
   margin: 0 auto;
 }
 
 /* ===== タイトル・リード ===== */
-.partner-contact .partner-title {
+.partner-contact-select .partner-title {
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 1.6rem;
   color: var(--color-primary-hover);
 }
 
-.partner-contact .partner-lead {
+.partner-contact-select .partner-lead {
   font-size: 1.5rem;
   color: var(--color-text);
   margin-bottom: 4rem;
@@ -30,14 +30,14 @@
 }
 
 /* ===== カードグリッド ===== */
-.partner-contact .partner-grid {
+.partner-contact-select .partner-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 }
 
 /* ===== カード ===== */
-.partner-contact .partner-card {
+.partner-contact-select .partner-card {
   background: var(--color-white);
   padding: 2.4rem;
   border-radius: 12px;
@@ -49,24 +49,24 @@
 }
 
 /* ===== アイコン ===== */
-.partner-contact .partner-icon {
+.partner-contact-select .partner-icon {
   margin-bottom: 1.2rem;
 }
 
-.partner-contact .partner-icon img {
+.partner-contact-select .partner-icon img {
   width: 80px;
   height: auto;
 }
 
-/* ===== カード本文 ===== */
-.partner-contact .partner-card-title {
+/* ===== 本文 ===== */
+.partner-contact-select .partner-card-title {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1.2rem;
   color: var(--color-primary-hover);
 }
 
-.partner-contact .partner-card-desc {
+.partner-contact-select .partner-card-desc {
   font-size: 1.4rem;
   color: var(--color-text);
   margin-bottom: 2rem;
@@ -74,7 +74,7 @@
 }
 
 /* ===== CTAボタン ===== */
-.partner-contact .partner-button .btn {
+.partner-contact-select .partner-button .btn {
   display: inline-block;
   padding: 0.8rem 1.6rem;
   background-color: var(--color-primary);
@@ -85,18 +85,18 @@
   transition: background 0.3s ease;
 }
 
-.partner-contact .partner-button .btn:hover {
+.partner-contact-select .partner-button .btn:hover {
   background-color: var(--color-primary-hover);
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
-  .partner-contact .partner-grid {
+  .partner-contact-select .partner-grid {
     grid-template-columns: 1fr;
     gap: 2.4rem;
   }
 
-  .partner-contact .partner-card {
+  .partner-contact-select .partner-card {
     padding: 2rem;
   }
 }
