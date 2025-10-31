@@ -171,7 +171,7 @@ function rcp2026_enqueue_assets() {
     }
   }
 
-   // ===================================
+// ===================================
 // パートナーページ群CSS（共通＋自動検出・安全版）
 // ===================================
 $partner_templates = [
@@ -205,10 +205,10 @@ if ($is_partner_template) {
     $deps_for_child = [$partner_common_handle]; // 個別CSSの依存に設定
   }
 
-  // 個別CSSを自動検出して読込（共通ファイルは重複読込を回避）
-  $partner_dir = "{$theme_dir}/assets/css/page/";
-  if (is_dir($partner_dir)) {
-    foreach (glob($partner_dir . 'page-partner*.css') as $path) {
+  // 個別CSS（/assets/css/page/page-partner*.css）
+  $partner_page_dir = "{$theme_dir}/assets/css/page/";
+  if (is_dir($partner_page_dir)) {
+    foreach (glob($partner_page_dir . 'page-partner*.css') as $path) {
       $basename = basename($path, '.css');
       if ($basename === 'page-partner') { continue; } // 共通はスキップ
       wp_enqueue_style(
@@ -219,7 +219,27 @@ if ($is_partner_template) {
       );
     }
   }
+
+  // ===================================
+  // パートナーセクションCSS（/assets/css/partner/ 以下）
+  // 各セクション単位のブロックCSSを自動で読み込み
+  // ===================================
+  $partner_section_dir = "{$theme_dir}/assets/css/partner/";
+  if (is_dir($partner_section_dir)) {
+    foreach (glob($partner_section_dir . 'partner-*.css') as $path) {
+      $basename = basename($path, '.css');
+      $handle   = "rcp2026-{$basename}";
+      wp_enqueue_style(
+        $handle,
+        "{$theme_uri}/assets/css/partner/{$basename}.css",
+        $deps_for_child,
+        filemtime($path)
+      );
+    }
+  }
 }
+// ===================================
+
 
   // ===================================
   // 資料ダウンロード（resource投稿タイプ）専用
