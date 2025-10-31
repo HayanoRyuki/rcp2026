@@ -1,27 +1,28 @@
 /* =========================================================
-   PARTNER - CONTACT SECTION（root変数対応版）
+   PARTNER CONTACT SECTION（root変数対応・ハイフン1本仕様）
 ========================================================= */
 
-.partner--contact {
+.partner-contact {
   background-color: var(--color-bg-alt);
   padding: 6rem 2rem;
   text-align: center;
 }
 
-.partner__inner {
+/* ===== コンテナ ===== */
+.partner-contact .partner-inner {
   max-width: 1080px;
   margin: 0 auto;
 }
 
 /* ===== タイトル・リード ===== */
-.partner__title {
+.partner-contact .partner-title {
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 1.6rem;
   color: var(--color-primary-hover);
 }
 
-.partner__lead {
+.partner-contact .partner-lead {
   font-size: 1.5rem;
   color: var(--color-text);
   margin-bottom: 4rem;
@@ -29,13 +30,14 @@
 }
 
 /* ===== カードグリッド ===== */
-.partner__grid {
+.partner-contact .partner-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 }
 
-.partner__card {
+/* ===== カード ===== */
+.partner-contact .partner-card {
   background: var(--color-white);
   padding: 2.4rem;
   border-radius: 12px;
@@ -47,24 +49,24 @@
 }
 
 /* ===== アイコン ===== */
-.partner__icon {
+.partner-contact .partner-icon {
   margin-bottom: 1.2rem;
 }
 
-.partner__icon img {
+.partner-contact .partner-icon img {
   width: 80px;
   height: auto;
 }
 
 /* ===== カード本文 ===== */
-.partner__card-title {
+.partner-contact .partner-card-title {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1.2rem;
   color: var(--color-primary-hover);
 }
 
-.partner__card-desc {
+.partner-contact .partner-card-desc {
   font-size: 1.4rem;
   color: var(--color-text);
   margin-bottom: 2rem;
@@ -72,7 +74,7 @@
 }
 
 /* ===== CTAボタン ===== */
-.partner__button .btn {
+.partner-contact .partner-button .btn {
   display: inline-block;
   padding: 0.8rem 1.6rem;
   background-color: var(--color-primary);
@@ -83,18 +85,18 @@
   transition: background 0.3s ease;
 }
 
-.partner__button .btn:hover {
+.partner-contact .partner-button .btn:hover {
   background-color: var(--color-primary-hover);
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
-  .partner__grid {
+  .partner-contact .partner-grid {
     grid-template-columns: 1fr;
     gap: 2.4rem;
   }
 
-  .partner__card {
+  .partner-contact .partner-card {
     padding: 2rem;
   }
 }
