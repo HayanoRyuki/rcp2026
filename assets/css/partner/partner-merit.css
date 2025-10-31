@@ -39,7 +39,7 @@
 }
 
 .partner-merit .partner-image img {
-  max-width: 800px;
+  max-width: 1200px;
   width: 100%;
   height: auto;
   border-radius: 8px;
@@ -86,7 +86,7 @@
 }
 
 .partner-merit .partner-item-desc {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #333;
   line-height: 1.8;
 }
