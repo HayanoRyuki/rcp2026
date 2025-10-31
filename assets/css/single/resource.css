@@ -272,3 +272,65 @@
     padding-bottom: 60px; /* スマホでは少し狭く */
   }
 }
+
+/* ===== スマホ対応（1カラム構成） ===== */
+@media (max-width: 768px) {
+  /* 2カラム → 1カラム化 */
+  .resource-columns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* サイドバー（フォーム）を下に配置 */
+  .resource-sidebar {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* 左右余白を調整 */
+  .resource-container {
+    padding: 0 1.5rem;
+  }
+
+  /* タイトル・本文の余白を少し詰める */
+  .resource-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .resource-content {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* メタ情報の並びを縦積みに */
+  .resource-meta-inline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* 各行のバッジとテキストも読みやすく */
+  .resource-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resource-badge {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
+
+  /* アイキャッチの影を軽くする */
+  .resource-thumbnail img {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  /* フォームも全幅で中央寄せ */
+  .resource-form {
+    margin-top: 1rem !important;
+    width: 100%;
+    max-width: 100%;
+    padding: 1.2rem !important;
+  }
+}
