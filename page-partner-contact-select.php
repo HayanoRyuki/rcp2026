@@ -1,5 +1,7 @@
 <?php
-/* Template Name: パートナーお問い合わせカテゴリー選択 */
+/**
+ * Template Name: パートナーお問い合わせカテゴリー選択
+ */
 get_header('partner');
 ?>
 
