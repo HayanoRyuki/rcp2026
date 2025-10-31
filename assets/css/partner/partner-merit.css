@@ -34,7 +34,8 @@
 
 /* ===== 上部画像 ===== */
 .partner-merit .partner-image {
-  text-align: center;
+  display: flex;
+  justify-content: center; /* 横方向中央揃え */
   margin-bottom: 80px;
 }
 
@@ -44,6 +45,8 @@
   height: auto;
   border-radius: 8px;
   box-shadow: none;
+  display: block; /* 画像の余白をなくす */
+  margin: 0 auto; /* 念のため中央寄せ */
 }
 
 /* ===== メリットリスト ===== */
