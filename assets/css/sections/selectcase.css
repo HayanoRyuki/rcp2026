@@ -16,8 +16,9 @@
   font-weight: bold;
   text-align: center;
   color: var(--color-text);
-  margin-bottom: 2.5rem; /* 通常の余白に変更 */
+  margin-bottom: 2.5rem;
 }
+
 /*-------------------------------------
   カードグリッドレイアウト
 -------------------------------------*/
@@ -123,21 +124,6 @@
 }
 
 /*-------------------------------------
-  レスポンシブ対応
--------------------------------------*/
-@media (max-width: 1024px) {
-  .case-card {
-    width: calc(50% - 12px);
-  }
-}
-
-@media (max-width: 640px) {
-  .case-card {
-    width: 100%;
-  }
-}
-
-/*-------------------------------------
   もっと見るボタン
 -------------------------------------*/
 .case-more-button {
@@ -158,4 +144,80 @@
 
 .case-more-button .button:hover {
   background-color: var(--color-primary-dark);
+}
+
+/*-------------------------------------
+  レスポンシブ対応
+-------------------------------------*/
+
+/* --- タブレット --- */
+@media (max-width: 1024px) {
+  .case-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .case-thumbnail {
+    height: 160px;
+  }
+
+  .case-heading {
+    font-size: 0.95rem;
+  }
+}
+
+/* --- スマホ --- */
+@media (max-width: 640px) {
+  .case-top-section {
+    padding: 60px 1rem;
+  }
+
+  .case-container {
+    padding: 0 1rem;
+  }
+
+  .case-top-section .case-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .case-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .case-card {
+    border-radius: 10px;
+  }
+
+  .case-thumbnail {
+    height: 160px;
+  }
+
+  .case-body {
+    padding: 16px;
+  }
+
+  .case-heading {
+    font-size: 1rem;
+  }
+
+  .case-company,
+  .case-count {
+    font-size: 0.8rem;
+  }
+
+  .case-link {
+    font-size: 0.85rem;
+  }
+
+  .case-more-button {
+    margin-top: 1.5rem;
+  }
+
+  .case-more-button .button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+  }
 }
