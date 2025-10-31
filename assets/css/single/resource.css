@@ -2,16 +2,50 @@
    RESOURCE シングルページ専用スタイル / root対応
 ========================================================= */
 
+/* ===== レイアウト外枠余白 ===== */
+.resource-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem; /* ← 左右にゆとり */
+  box-sizing: border-box;
+}
+
+/* ===== 2カラム構造調整 ===== */
+.resource-columns {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem; /* ← カラム間の余白を広めに */
+}
+
+/* ===== メイン・サイドの幅バランス ===== */
+.resource-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.resource-sidebar {
+  width: 360px;
+  flex-shrink: 0;
+}
+
 /* ===== アイキャッチ ===== */
 .resource-thumbnail {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   margin-bottom: 2rem;
 }
-.resource-thumbnail img {
+
+.resource-thumbnail img,
+.resource-main img.wp-post-image {
   width: 100%;
-  height: auto;
+  max-width: 100% !important;
+  height: auto !important;
   display: block;
-  border-radius: 0;
-  box-shadow: 12px 36px 36px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* ===== タイトル ===== */
@@ -132,9 +166,9 @@
 }
 
 .resource-form .privacy-policy {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: normal;
-  line-height: 1.4;
+  line-height: 1.5;
   white-space: nowrap;
   display: flex;
   align-items: center;
@@ -179,120 +213,36 @@
   background: var(--color-primary-hover);
 }
 
-/* ===== SP対応 ===== */
-@media (max-width: 768px) {
-  .resource-form {
-    margin: 2rem auto 0 !important;
-    padding: 1rem !important;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-}
-
-
-/* ===== 2カラム構造調整 ===== */
-.resource-columns {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.resource-main {
-  flex: 1;
-  min-width: 0; /* ← flex-itemの画像はみ出し防止 */
-}
-
-.resource-sidebar {
-  width: 400px;
-  flex-shrink: 0;
-}
-
-/* ===== アイキャッチ画像の調整 ===== */
-.resource-thumbnail {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.resource-thumbnail img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-
-.resource-thumbnail img,
-.resource-main img.wp-post-image {
-  max-width: 100% !important;
-  height: auto !important;
-  display: block;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-/* ===== レイアウト外枠余白 ===== */
-.resource-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem; /* ← 左右にゆとり */
-  box-sizing: border-box;
-}
-
-/* ===== 2カラム構造調整 ===== */
-.resource-columns {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 3rem; /* ← カラム間の余白を広めに */
-}
-
-/* ===== メイン・サイドの幅バランス ===== */
-.resource-main {
-  flex: 1;
-  min-width: 0;
-}
-
-.resource-sidebar {
-  width: 360px;
-  flex-shrink: 0;
-}
-
 /* ===== 下余白（フォーム下〜フッター間） ===== */
 .site-main.resource {
   padding-bottom: 80px; /* ← 余白をしっかり確保 */
 }
 
+/* =========================================================
+   MEDIA QUERIES
+========================================================= */
+
+/* ===== タブレット・スマホ共通調整 ===== */
 @media (max-width: 768px) {
   .site-main.resource {
     padding-bottom: 60px; /* スマホでは少し狭く */
   }
-}
 
-/* ===== スマホ対応（1カラム構成） ===== */
-@media (max-width: 768px) {
   /* 2カラム → 1カラム化 */
   .resource-columns {
     flex-direction: column;
     gap: 2rem;
   }
 
-  /* サイドバー（フォーム）を下に配置 */
   .resource-sidebar {
     width: 100%;
     margin: 0 auto;
   }
 
-  /* 左右余白を調整 */
   .resource-container {
     padding: 0 1.5rem;
   }
 
-  /* タイトル・本文の余白を少し詰める */
   .resource-title {
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
@@ -303,14 +253,12 @@
     line-height: 1.7;
   }
 
-  /* メタ情報の並びを縦積みに */
   .resource-meta-inline {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
 
-  /* 各行のバッジとテキストも読みやすく */
   .resource-row {
     flex-direction: column;
     align-items: flex-start;
@@ -321,16 +269,15 @@
     margin-bottom: 0.3rem;
   }
 
-  /* アイキャッチの影を軽くする */
   .resource-thumbnail img {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   }
 
-  /* フォームも全幅で中央寄せ */
   .resource-form {
-    margin-top: 1rem !important;
+    margin: 2rem auto 0 !important;
+    padding: 1.2rem !important;
     width: 100%;
     max-width: 100%;
-    padding: 1.2rem !important;
+    box-sizing: border-box;
   }
 }
