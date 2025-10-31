@@ -108,13 +108,21 @@ function rcp2026_enqueue_assets() {
   $singles = ['case', 'event', 'resource', 'news', 'post', 'partner'];
   foreach ($singles as $type) {
     $path = "{$theme_dir}/assets/css/single/{$type}.css";
-    if (file_exists($path) && is_singular($type)) {
-      wp_enqueue_style(
-        "rcp2026-single-{$type}",
-        "{$theme_uri}/assets/css/single/{$type}.css",
-        ['rcp2026-single-common'],
-        filemtime($path)
+    if (file_exists($path)) {
+
+      $is_match = (
+        ($type === 'post' && is_single()) ||
+        is_singular($type)
       );
+
+      if ($is_match) {
+        wp_enqueue_style(
+          "rcp2026-single-{$type}",
+          "{$theme_uri}/assets/css/single/{$type}.css",
+          ['rcp2026-single-common'],
+          filemtime($path)
+        );
+      }
     }
   }
 
