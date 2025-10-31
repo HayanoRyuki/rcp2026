@@ -1,9 +1,5 @@
-<?php
-// CSSを読み込み（このセクション限定）
-echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/assets/css/sections/series.css">';
-?>
 <section class="series-section">
-  <div class="container max-w-7xl mx-auto px-4 text-center">
+  <div class="series-container">
     <h2 class="section-title">RECEPTIONISTシリーズについて</h2>
     <p class="section-lead">
       RECEPTIONISTシリーズは、ビジネス上のつながりをテクノロジーでスマートにすることで<br>
