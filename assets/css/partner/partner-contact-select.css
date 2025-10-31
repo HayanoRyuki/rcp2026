@@ -5,7 +5,7 @@
 /* ===== セクション全体 ===== */
 .partner-contact {
   background-color: var(--color-bg-alt);
-  padding: 8rem 2rem;
+  padding: 0rem 2rem;
   text-align: center;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .partner-lead {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--color-text);
   margin-bottom: 4rem;
   line-height: 1.8;
@@ -77,7 +77,7 @@
 
 /* ===== 説明文 ===== */
 .partner-card-desc {
-  font-size: 1.4rem;
+  font-size: 1rem;
   color: var(--color-text);
   line-height: 1.7;
   margin-bottom: 2rem;
