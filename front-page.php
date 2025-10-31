@@ -25,9 +25,6 @@
   <!-- 導入企業のロゴ -->
   <?php get_template_part('sections/clientlogo'); ?>
 
-  <!-- ニュース -->
-  <?php get_template_part('sections/news'); ?>
-
   <!-- CTA（資料請求） -->
   <?php get_template_part('sections/cta'); ?>
 
