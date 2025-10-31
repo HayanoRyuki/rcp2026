@@ -1,6 +1,6 @@
 /* ========== CTAセクション ========== */
 .cta-section {
-  background-color: var(--color-danger-light); /* 背景を淡い赤に変更 */
+  background-color: var(--color-bg-alt); /* 淡いグレーに変更 */
   padding: 80px 20px;
 }
 
