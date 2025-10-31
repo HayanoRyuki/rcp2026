@@ -3,7 +3,7 @@
 ========================================================= */
 
 .partner-list {
-  background-color: var(--color-white);
+  /* background-color: var(--color-white); ← 削除！ */
   padding: 6rem 2rem;
 }
 
@@ -15,7 +15,7 @@
 
 /* ===== 見出し ===== */
 .partner-list .partner-title {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 4rem;
@@ -66,7 +66,7 @@
 
 /* ===== 各アイテム内 ===== */
 .partner-list .partner-item-image img {
-  width: 320px;
+  width: 500px;
   height: auto;
   margin-bottom: 0.8rem;
 }
