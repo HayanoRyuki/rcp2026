@@ -1,108 +1,118 @@
 /* =========================================================
-   PARTNER - MERIT SECTION（root変数対応版）
+   PARTNER MERIT SECTION（ハイフン1本仕様）
 ========================================================= */
 
-.partner--merit {
-  background-color: var(--color-bg-alt);
-  padding: 6rem 2rem;
+.partner-merit {
+  background: #eef6f9;
+  padding: 100px 20px;
 }
 
-.partner__inner {
-  max-width: 1080px;
+.partner-inner {
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ===== ヘッダー ===== */
-.partner__header {
+/* ===== 見出しエリア ===== */
+.partner-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 60px;
 }
 
-.partner__title {
-  font-size: 2.2rem;
+.partner-title {
+  font-size: 2.4rem;
   font-weight: 700;
-  color: var(--color-primary-hover);
+  color: var(--color-primary, #0077b6);
   margin-bottom: 1rem;
 }
 
-.partner__lead {
-  font-size: 1.5rem;
-  color: var(--color-text);
+.partner-lead {
+  font-size: 1.6rem;
+  color: #333;
   line-height: 1.8;
 }
 
-/* ===== コンテンツ構成 ===== */
-.partner__content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 3rem;
-}
-
-/* ===== 画像エリア ===== */
-.partner__image {
-  flex: 1 1 300px;
+/* ===== 上部画像 ===== */
+.partner-image {
   text-align: center;
+  margin-bottom: 80px;
 }
 
-.partner__image img {
-  max-width: 100%;
+.partner-image img {
+  max-width: 800px;
+  width: 100%;
   height: auto;
+  border-radius: 8px;
+  box-shadow: none;
 }
 
 /* ===== メリットリスト ===== */
-.partner__list {
-  flex: 2 1 600px;
+.partner-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2.4rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  justify-items: center;
 }
 
-.partner__item {
-  background: var(--color-white);
+.partner-item {
+  background: #fff;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 32px 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.partner__item-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--color-primary-hover);
+.partner-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.partner__item-image img {
-  width: 120px;
+.partner-item-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary, #0077b6);
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
+}
+
+.partner-item-image {
+  margin-bottom: 1.6rem;
+}
+
+.partner-item-image img {
+  width: 80px;
   height: auto;
-  margin-bottom: 1rem;
 }
 
-.partner__item-desc {
+.partner-item-desc {
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+.partner-note {
   font-size: 1.3rem;
-  line-height: 1.7;
-  color: var(--color-text);
+  color: #777;
 }
 
-.partner__note {
-  display: block;
-  font-size: 1.1rem;
-  color: var(--color-text-light);
-  margin-top: 0.5rem;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .partner__content {
-    flex-direction: column;
-    align-items: center;
+/* ===== レスポンシブ ===== */
+@media screen and (max-width: 1024px) {
+  .partner-merit {
+    padding: 80px 16px;
   }
+  .partner-image img {
+    max-width: 100%;
+  }
+  .partner-list {
+    gap: 32px;
+  }
+}
 
-  .partner__list {
-    grid-template-columns: 1fr;
+@media screen and (max-width: 600px) {
+  .partner-item {
+    padding: 28px 20px;
+  }
+  .partner-item-image img {
+    width: 64px;
   }
 }

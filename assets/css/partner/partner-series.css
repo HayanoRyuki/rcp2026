@@ -1,44 +1,46 @@
 /* =========================================================
-   PARTNER - SERIES SECTION（root変数対応版）
+   PARTNER SERIES SECTION（root変数対応・ハイフン1本仕様）
 ========================================================= */
 
-.partner--series {
+.partner-series {
   background-color: var(--color-white);
   padding: 6rem 2rem;
 }
 
-.partner__inner {
+.partner-inner {
   max-width: 1080px;
   margin: 0 auto;
 }
 
 /* ===== ヘッダー ===== */
-.partner__header {
+.partner-header {
   margin-bottom: 4rem;
+  text-align: center;
 }
 
-.partner__title {
+.partner-title {
   font-size: 2.4rem;
   font-weight: 700;
   color: var(--color-primary-hover);
   margin-bottom: 1rem;
 }
 
-.partner__lead {
+.partner-lead {
   font-size: 1.5rem;
   color: var(--color-text);
   line-height: 1.8;
 }
 
 /* ===== シリーズカードグリッド ===== */
-.partner__series-grid {
+.partner-series-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
   justify-items: center;
 }
 
-.partner__series-card {
+/* ===== カード ===== */
+.partner-series-card {
   background: var(--color-bg-alt);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -48,19 +50,19 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.partner__series-card:hover {
+.partner-series-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* ===== カード内容 ===== */
-.partner__series-desc {
+.partner-series-desc {
   font-size: 1.3rem;
   color: var(--color-primary);
   margin-bottom: 1rem;
 }
 
-.partner__series-name {
+.partner-series-name {
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--color-primary-hover);
@@ -68,14 +70,14 @@
   line-height: 1.4;
 }
 
-.partner__series-image img {
+.partner-series-image img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   margin-bottom: 1.5rem;
 }
 
-.partner__series-text {
+.partner-series-text {
   font-size: 1.3rem;
   color: var(--color-text);
   line-height: 1.7;
@@ -83,14 +85,14 @@
 }
 
 /* ===== タグ ===== */
-.partner__series-tags {
+.partner-series-tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.8rem;
 }
 
-.partner__tag {
+.partner-tag {
   background-color: var(--color-primary);
   color: var(--color-white);
   font-size: 1.1rem;
@@ -100,15 +102,15 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .partner__title {
+  .partner-title {
     font-size: 2rem;
   }
 
-  .partner__lead {
+  .partner-lead {
     font-size: 1.4rem;
   }
 
-  .partner__series-card {
+  .partner-series-card {
     padding: 2rem 1.6rem;
   }
 }

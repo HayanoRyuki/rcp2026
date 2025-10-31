@@ -1,29 +1,30 @@
 /* =========================================================
-   PARTNER - ABOUT SECTION（root変数対応版）
+   PARTNER ABOUT SECTION（root変数対応・ハイフン1本仕様）
 ========================================================= */
 
-.partner--about {
+.partner-about {
   position: relative;
   background-color: var(--color-bg-alt);
   overflow: hidden;
   padding: 6rem 2rem;
 }
 
-/* 背景装飾 */
-.partner--about::before {
+/* ===== 背景装飾 ===== */
+.partner-about::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   width: 1000px;
   height: 100%;
-  background: url("/wp-content/themes/rcp2025/assets/img/partner/ptr_kv_img_bg.png") no-repeat top right;
+  background: url("/wp-content/themes/RCP2026/assets/img/partner/ptr_kv_img_bg.png")
+    no-repeat top right;
   background-size: contain;
   z-index: 0;
 }
 
-/* コンテナ */
-.partner__inner {
+/* ===== コンテナ ===== */
+.partner-inner {
   position: relative;
   z-index: 1;
   max-width: 1080px;
@@ -31,7 +32,7 @@
 }
 
 /* ===== タイトル ===== */
-.partner__title {
+.partner-title {
   text-align: center;
   font-size: 2.4rem;
   font-weight: 700;
@@ -40,7 +41,7 @@
 }
 
 /* ===== 導入テキスト・画像 ===== */
-.partner__intro {
+.partner-intro {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,7 +50,7 @@
   margin-bottom: 6rem;
 }
 
-.partner__lead {
+.partner-lead {
   flex: 1;
   min-width: 300px;
   font-size: 1.5rem;
@@ -57,26 +58,26 @@
   color: var(--color-text);
 }
 
-.partner__image {
+.partner-image {
   flex: 1;
   text-align: center;
 }
 
-.partner__image img {
+.partner-image img {
   max-width: 100%;
   height: auto;
   max-height: 320px;
 }
 
 /* ===== 認定バッジエリア ===== */
-.partner__tiers {
+.partner-tiers {
   display: flex;
   justify-content: center;
   gap: 4rem;
   flex-wrap: wrap;
 }
 
-.partner__card {
+.partner-card {
   flex: 1 1 400px;
   background: var(--color-white);
   padding: 2.4rem;
@@ -85,23 +86,23 @@
   text-align: center;
 }
 
-.partner__badge {
+.partner-badge {
   margin-bottom: 1.6rem;
 }
 
-.partner__badge img {
+.partner-badge img {
   width: 120px;
   height: auto;
 }
 
-.partner__card-title {
+.partner-card-title {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--color-primary-hover);
 }
 
-.partner__card-desc {
+.partner-card-desc {
   font-size: 1.4rem;
   color: var(--color-text);
   line-height: 1.7;
@@ -109,17 +110,17 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 767px) {
-  .partner__intro {
+  .partner-intro {
     flex-direction: column;
     text-align: center;
   }
 
-  .partner__tiers {
+  .partner-tiers {
     flex-direction: column;
     gap: 2.4rem;
   }
 
-  .partner__title {
+  .partner-title {
     font-size: 2rem;
   }
 }

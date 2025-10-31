@@ -1,28 +1,29 @@
 /* =========================================================
-   PARTNER - FLOW SECTION（root変数対応版）
+   PARTNER FLOW SECTION（root変数対応・ハイフン1本仕様）
 ========================================================= */
 
-.partner--flow {
+.partner-flow {
   background-color: var(--color-white);
   padding: 6rem 2rem;
   text-align: center;
 }
 
-.partner__inner {
+.partner-inner {
   max-width: 1080px;
   margin: 0 auto;
 }
 
 /* ===== タイトル ===== */
-.partner__title {
+.partner-title {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 3rem;
   color: var(--color-primary-hover);
+  line-height: 1.5;
 }
 
 /* ===== 画像エリア ===== */
-.partner__image img {
+.partner-image img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
@@ -31,8 +32,12 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 767px) {
-  .partner__title {
+  .partner-title {
     font-size: 1.8rem;
     line-height: 1.5;
+  }
+
+  .partner-image img {
+    border-radius: 4px;
   }
 }

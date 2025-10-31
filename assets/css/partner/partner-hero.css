@@ -1,97 +1,101 @@
 /* =========================================================
-   PARTNER HERO SECTION
+   PARTNER HERO SECTION（ハイフン1本仕様）
 ========================================================= */
 
-.partner--hero {
-  background: var(--color-bg-alt, #f9fafb);
-  padding: 6rem 2rem;
-  position: relative;
-  overflow: hidden;
+.partner-hero {
+  background: #eef6f9;
+  padding: 80px 20px;
 }
 
-.partner--hero .partner__inner {
+.partner-inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 4rem;
-  max-width: 1200px;
+  justify-content: space-between;
+  max-width: 1100px;
   margin: 0 auto;
+  gap: 60px;
 }
 
-/* ===== 左側テキスト ===== */
-.partner--hero .partner__content {
+/* ===== テキストブロック ===== */
+.partner-content {
   flex: 1;
-  max-width: 600px;
+  min-width: 480px;
 }
 
-.partner--hero .partner__subtitle {
-  font-size: 1.4rem;
+.partner-subtitle {
+  font-size: 1.5rem;
   font-weight: 600;
-  color: var(--color-secondary, #00a592);
-  margin-bottom: 1.5rem;
+  color: var(--color-primary, #0077b6);
+  margin-bottom: 1rem;
   line-height: 1.6;
 }
 
-.partner--hero .partner__title {
-  font-size: 2.8rem;
+.partner-title {
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.5;
-  color: var(--color-text, #222);
-  margin-bottom: 2rem;
+  color: #222;
+  margin-bottom: 1.8rem;
 }
 
-.partner--hero .partner__lead {
+.partner-lead {
   font-size: 1.6rem;
   line-height: 1.8;
-  color: #444;
-  margin-bottom: 3rem;
+  color: #333;
+  margin-bottom: 2.5rem;
 }
 
-.partner--hero .partner__button .btn {
+.partner-button .btn {
   display: inline-block;
   background: var(--color-primary, #0077b6);
   color: #fff;
   font-weight: 700;
   font-size: 1.6rem;
-  padding: 1.2rem 3rem;
-  border-radius: 6px;
+  padding: 1rem 2.8rem;
+  border-radius: 4px;
   text-decoration: none;
   transition: background 0.3s;
 }
 
-.partner--hero .partner__button .btn:hover {
+.partner-button .btn:hover {
   background: var(--color-secondary, #01b695);
 }
 
-/* ===== 右側画像 ===== */
-.partner--hero .partner__image {
+/* ===== 画像ブロック ===== */
+.partner-image {
   flex: 1;
   text-align: right;
 }
 
-.partner--hero .partner__image img {
-  max-width: 100%;
+.partner-image img {
+  max-width: 420px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 0;
+  box-shadow: none;
+  transform: translateY(5px);
 }
 
 /* ===== レスポンシブ ===== */
 @media screen and (max-width: 1024px) {
-  .partner--hero {
-    padding: 5rem 1.5rem;
+  .partner-hero {
+    padding: 60px 16px;
   }
-  .partner--hero .partner__inner {
+  .partner-inner {
     flex-direction: column;
-    gap: 3rem;
     text-align: center;
+    gap: 40px;
   }
-  .partner--hero .partner__image {
-    text-align: center;
+  .partner-content {
+    min-width: auto;
   }
-  .partner--hero .partner__title {
-    font-size: 2.2rem;
+  .partner-title {
+    font-size: 2.4rem;
   }
-  .partner--hero .partner__lead {
+  .partner-lead {
     font-size: 1.5rem;
+  }
+  .partner-image img {
+    max-width: 300px;
+    transform: none;
   }
 }
