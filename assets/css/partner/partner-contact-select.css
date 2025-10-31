@@ -1,28 +1,29 @@
 /* =========================================================
-   PARTNER CONTACT SELECT SECTION（root変数対応・ハイフン1本仕様）
+   PARTNER CONTACT SELECT SECTION（ハイフン1本仕様・最終統一版）
 ========================================================= */
 
-.partner-contact-select {
+/* ===== セクション全体 ===== */
+.partner-contact {
   background-color: var(--color-bg-alt);
-  padding: 6rem 2rem;
+  padding: 8rem 2rem;
   text-align: center;
 }
 
 /* ===== コンテナ ===== */
-.partner-contact-select .partner-inner {
+.partner-inner {
   max-width: 1080px;
   margin: 0 auto;
 }
 
 /* ===== タイトル・リード ===== */
-.partner-contact-select .partner-title {
+.partner-title {
   font-size: 2.4rem;
   font-weight: 700;
-  margin-bottom: 1.6rem;
   color: var(--color-primary-hover);
+  margin-bottom: 1.6rem;
 }
 
-.partner-contact-select .partner-lead {
+.partner-lead {
   font-size: 1.5rem;
   color: var(--color-text);
   margin-bottom: 4rem;
@@ -30,73 +31,90 @@
 }
 
 /* ===== カードグリッド ===== */
-.partner-contact-select .partner-grid {
+.partner-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 }
 
-/* ===== カード ===== */
-.partner-contact-select .partner-card {
-  background: var(--color-white);
-  padding: 2.4rem;
+/* ===== 各カード ===== */
+.partner-card {
+  background-color: var(--color-white);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 /* ===== アイコン ===== */
-.partner-contact-select .partner-icon {
-  margin-bottom: 1.2rem;
+.partner-icon {
+  margin-bottom: 1.6rem;
 }
 
-.partner-contact-select .partner-icon img {
+.partner-icon img {
   width: 80px;
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-/* ===== 本文 ===== */
-.partner-contact-select .partner-card-title {
+/* ===== タイトル ===== */
+.partner-card-title {
   font-size: 1.8rem;
   font-weight: 600;
-  margin-bottom: 1.2rem;
   color: var(--color-primary-hover);
+  margin-bottom: 1rem;
 }
 
-.partner-contact-select .partner-card-desc {
+/* ===== 説明文 ===== */
+.partner-card-desc {
   font-size: 1.4rem;
   color: var(--color-text);
-  margin-bottom: 2rem;
   line-height: 1.7;
+  margin-bottom: 2rem;
 }
 
-/* ===== CTAボタン ===== */
-.partner-contact-select .partner-button .btn {
+/* ===== ボタン ===== */
+.partner-button .btn {
   display: inline-block;
-  padding: 0.8rem 1.6rem;
+  padding: 1rem 2.4rem;
   background-color: var(--color-primary);
-  color: var(--color-white);
+  color: #fff;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
   transition: background 0.3s ease;
 }
 
-.partner-contact-select .partner-button .btn:hover {
+.partner-button .btn:hover {
   background-color: var(--color-primary-hover);
 }
 
-/* ===== Responsive ===== */
+/* ===== レスポンシブ ===== */
 @media (max-width: 900px) {
-  .partner-contact-select .partner-grid {
+  .partner-grid {
     grid-template-columns: 1fr;
     gap: 2.4rem;
   }
 
-  .partner-contact-select .partner-card {
-    padding: 2rem;
+  .partner-card {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .partner-card-title {
+    font-size: 1.6rem;
+  }
+
+  .partner-card-desc {
+    font-size: 1.3rem;
   }
 }
