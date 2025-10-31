@@ -1,19 +1,19 @@
 /* =========================================================
-   PARTNER - LIST SECTION（root変数対応版）
+   PARTNER LIST SECTION（root変数対応・ハイフン1本仕様）
 ========================================================= */
 
-.partner--list {
+.partner-list {
   background-color: var(--color-white);
   padding: 6rem 2rem;
 }
 
-.partner__inner {
+.partner-inner {
   max-width: 1100px;
   margin: 0 auto;
 }
 
 /* ===== 見出し ===== */
-.partner__title {
+.partner-title {
   font-size: 2.4rem;
   font-weight: 700;
   text-align: center;
@@ -22,11 +22,11 @@
 }
 
 /* ===== ブロック構成 ===== */
-.partner__block {
+.partner-block {
   margin-bottom: 6rem;
 }
 
-.partner__block-title {
+.partner-block-title {
   font-size: 2rem;
   font-weight: 600;
   color: var(--color-primary-hover);
@@ -35,7 +35,7 @@
   margin-bottom: 2.4rem;
 }
 
-.partner__category-title {
+.partner-category-title {
   font-size: 1.6rem;
   font-weight: 600;
   margin: 2rem 0 1.2rem;
@@ -43,34 +43,40 @@
 }
 
 /* ===== グリッドレイアウト ===== */
-.partner__items {
+.partner-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2.4rem;
 }
 
-.partner__item {
+.partner-item {
   background: var(--color-bg-alt);
   border-radius: 8px;
   padding: 1.6rem;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.partner-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* ===== 各アイテム内 ===== */
-.partner__item-image img {
+.partner-item-image img {
   width: 120px;
   height: auto;
   margin-bottom: 0.8rem;
 }
 
-.partner__item-name {
+.partner-item-name {
   font-weight: 600;
   margin-bottom: 0.8rem;
   color: var(--color-primary-hover);
 }
 
-.partner__item-url {
+.partner-item-url {
   display: block;
   font-size: 1.3rem;
   color: var(--color-primary);
@@ -79,11 +85,11 @@
   word-break: break-all;
 }
 
-.partner__item-url:hover {
+.partner-item-url:hover {
   text-decoration: underline;
 }
 
-.partner__item-desc {
+.partner-item-desc {
   font-size: 1.4rem;
   color: var(--color-text);
   line-height: 1.6;
@@ -91,15 +97,15 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .partner__block-title {
+  .partner-block-title {
     font-size: 1.8rem;
   }
 
-  .partner__item {
+  .partner-item {
     padding: 1.2rem;
   }
 
-  .partner__item-image img {
+  .partner-item-image img {
     width: 100px;
   }
 }
