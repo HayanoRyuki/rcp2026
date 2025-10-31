@@ -128,3 +128,11 @@
     max-width: 100%;
   }
 }
+
+.partner-program .partner-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  padding: 0 6rem 2rem;
+}
