@@ -1,156 +1,296 @@
-/* ========== Single Event ========== */
+/* =========================================================
+   SINGLE EVENT / イベント詳細ページ
+========================================================= */
 
-.single-event .event-header {
-  margin-bottom: 2rem;
+/* ===== 全体レイアウト ===== */
+.site-main.event {
+  background-color: var(--color-bg);
+  padding: 80px 20px;
 }
-.single-event .event-title {
-  font-size: 1.875rem;
-  font-weight: bold;
-  line-height: 1.4;
-  margin-bottom: 1rem;
+
+.event__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== カラムレイアウト ===== */
+.event__columns {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* ===== 左カラム（メインコンテンツ） ===== */
+.event__left {
+  flex: 2;
+}
+
+.event__thumbnail {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.event__thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.event__content {
+  font-size: 1rem;
+  line-height: 1.8;
   color: var(--color-text);
 }
-.single-event .event-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.875rem;
-  color: var(--color-text-light);
+
+.event__content h2,
+.event__content h3 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
-.event-type {
-  margin-top: 0.75rem;
-}
-.event-type-label {
-  display: inline-block;
-  background-color: var(--color-text);
-  color: var(--color-white);
-  font-size: 0.75rem;
-  padding: 0.25em 0.75em;
-  border-radius: 9999px;
-  margin-right: 0.5em;
+.event__content p {
+  margin-bottom: 1.5em;
 }
 
-.event-columns {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-@media screen and (min-width: 768px) {
-  .event-columns {
-    flex-direction: row;
-    gap: 2rem;
-  }
-  .event-left {
-    width: 65%;
-  }
-  .event-sidebar {
-    width: 35%;
-    align-self: flex-start;
-    position: sticky;
-    top: 100px;
-  }
-}
-
-.event-summary {
-  background-color: var(--color-white);
+/* ===== 右カラム（サイドバー） ===== */
+.event__sidebar {
+  flex: 1;
+  background-color: var(--color-bg-alt);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
 }
-.event-summary h1 {
-  font-size: 1.875rem;
-  font-weight: bold;
+
+.event__category {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-primary);
+  border-radius: 9999px;
+  padding: 0.3rem 0.8rem;
   margin-bottom: 1rem;
 }
-.event-thumbnail img {
-  max-width: 100%;
-  height: auto;
+
+.event__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
   margin-bottom: 1.5rem;
+  line-height: 1.4;
 }
-.event-meta-list {
+
+.event__meta {
   list-style: none;
   padding: 0;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-  color: var(--color-text);
+  margin-bottom: 2rem;
 }
-.event-meta-list li {
-  margin-bottom: 0.5rem;
+
+.event__meta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px dashed var(--color-border);
+  padding: 0.6rem 0;
 }
-.event-excerpt {
-  font-size: 0.95rem;
+
+.event__label {
+  font-weight: 600;
   color: var(--color-text-light);
-  line-height: 1.6;
+  font-size: 0.9rem;
 }
 
-.event-content {
-  background-color: var(--color-white);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  font-size: 0.95rem;
-  line-height: 1.75;
+.event__value {
+  font-size: 1rem;
   color: var(--color-text);
-  width: 100%;
-  max-width: 100%;
+  text-align: right;
 }
 
-.event-content h2 {
+.event__form {
   margin-top: 2rem;
-  margin-bottom: 1rem;
 }
-.event-content p {
+
+/* ===== パンくず ===== */
+.breadcrumb {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+}
+
+/* =========================================================
+   EVENT CONTENT SECTIONS / 開催概要・おすすめ・講演概要など
+========================================================= */
+
+/* ===== 共通スタイル ===== */
+.event-outline,
+.event-recommendation,
+.event-program,
+.event-benefits,
+.event-details {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2.5rem 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.event-outline h2,
+.event-recommendation h2,
+.event-program h2,
+.event-benefits h2,
+.event-details h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--color-primary);
+  padding-left: 0.75rem;
+}
+
+.event-outline p,
+.event-recommendation p,
+.event-program p,
+.event-benefits p,
+.event-details p {
+  line-height: 1.8;
+  color: var(--color-text);
   margin-bottom: 1.5rem;
 }
 
-.event-category {
-  font-size: 0.75rem;
-  font-weight: bold;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-}
-
-.event-meta-list li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.75rem;
-}
-.event-meta-list .label {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  font-weight: bold;
-  font-size: 0.75rem;
-  padding: 0.25em 0.75em;
-  border-radius: 9999px;
-  margin-right: 1rem;
-  min-width: 6em;
-  text-align: center;
-}
-.event-meta-list .value {
-  font-size: 0.9rem;
+/* ===== リスト ===== */
+.event-outline ul,
+.event-recommendation ul,
+.event-program ul,
+.event-benefits ul,
+.event-details ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
   color: var(--color-text);
-}
-.event-form-box {
-  margin-top: 2rem;
+  line-height: 1.8;
 }
 
-.sticky-box {
-  position: sticky;
-  top: 158px;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  z-index: 10;
+.event-outline li,
+.event-recommendation li,
+.event-program li,
+.event-benefits li,
+.event-details li {
+  margin-bottom: 0.8rem;
 }
 
-@media (max-width: 959px) {
-  .sticky-box {
-    position: relative;
-    top: auto;
+/* ===== small文字 ===== */
+.event-outline small,
+.event-program small,
+.event-benefits small,
+.event-details small {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-top: 0.5rem;
+}
+
+/* ===== 背景や強調差別化 ===== */
+.event-outline {
+  background-color: var(--color-bg-alt);
+}
+
+.event-recommendation {
+  background-color: #f8fcff;
+}
+
+.event-program {
+  background-color: #fdfcf8;
+}
+
+.event-benefits {
+  background-color: #f9fff9;
+}
+
+.event-details {
+  background-color: #f8f8f8;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+  .event__columns {
+    flex-direction: column;
+  }
+
+  .event__sidebar {
+    margin-top: 3rem;
   }
 }
 
-html {
-  scroll-padding-top: 158px;
+@media (max-width: 768px) {
+  .site-main.event {
+    padding: 60px 1rem;
+  }
+
+  .event__sidebar {
+    padding: 1.5rem;
+  }
+
+  .event__title {
+    font-size: 1.4rem;
+  }
+
+  .event__meta-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .event__label {
+    font-size: 0.85rem;
+  }
+
+  .event__value {
+    font-size: 0.95rem;
+  }
+
+  .event__thumbnail {
+    margin-bottom: 1.5rem;
+  }
+
+  .event-outline,
+  .event-recommendation,
+  .event-program,
+  .event-benefits,
+  .event-details {
+    padding: 1.8rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .event-outline h2,
+  .event-recommendation h2,
+  .event-program h2,
+  .event-benefits h2,
+  .event-details h2 {
+    font-size: 1.4rem;
+  }
+
+  .event-outline p,
+  .event-recommendation p,
+  .event-program p,
+  .event-benefits p,
+  .event-details p {
+    font-size: 0.95rem;
+  }
+
+  .event-outline ul,
+  .event-recommendation ul,
+  .event-program ul,
+  .event-benefits ul,
+  .event-details ul {
+    margin-left: 1rem;
+  }
 }
