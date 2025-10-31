@@ -1,6 +1,6 @@
 /* ========== CTAセクション ========== */
 .cta-section {
-  background-color: var(--color-accent-light); /* シアンの淡い背景 */
+  background-color: var(--color-danger-light); /* 背景を淡い赤に変更 */
   padding: 80px 20px;
 }
 
@@ -33,9 +33,10 @@
   margin-bottom: 2rem;
 }
 
+/* === ボタン部分：コーラルレッドに変更 === */
 .cta-button {
   display: inline-block;
-  background-color: var(--color-accent); /* ボタン色 */
+  background-color: var(--color-danger); /* コーラルレッド */
   color: var(--color-white);
   padding: 1rem 2.5rem;
   font-size: 1.125rem;
@@ -47,7 +48,7 @@
 }
 
 .cta-button:hover {
-  background-color: var(--color-primary); /* テーマシアン */
+  background-color: var(--color-danger-hover); /* 濃い赤 */
 }
 
 .cta-image {
