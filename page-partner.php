@@ -4,9 +4,6 @@
  */
 get_header('partner');
 ?>
-
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/page-partner.css">
-
 <main class="site-main main wrapper page factory-page">
   <div class="btm_nav sticky-wrapper" uk-sticky="bottom: true"></div>
 

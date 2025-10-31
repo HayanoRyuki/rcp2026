@@ -3,8 +3,6 @@
 get_header();
 ?>
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/page-contactuser.css">
-
 <main class="contact-section contact-user wrapper">
   <h1 class="contact-title">お問い合わせ - アカウントをお持ちの方 -</h1>
   <p class="contact-description">
