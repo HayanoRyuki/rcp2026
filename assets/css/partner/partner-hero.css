@@ -1,98 +1,97 @@
 /* =========================================================
-   PARTNER - HERO SECTION（root変数対応版）
+   PARTNER HERO SECTION
 ========================================================= */
 
 .partner--hero {
-  background-color: var(--color-bg-alt);
+  background: var(--color-bg-alt, #f9fafb);
   padding: 6rem 2rem;
+  position: relative;
   overflow: hidden;
 }
 
-.partner__inner {
+.partner--hero .partner__inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 4rem;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap;
 }
 
-/* ===== テキストコンテンツ ===== */
-.partner__content {
+/* ===== 左側テキスト ===== */
+.partner--hero .partner__content {
   flex: 1;
-  min-width: 300px;
-  text-align: left;
+  max-width: 600px;
 }
 
-.partner__subtitle {
+.partner--hero .partner__subtitle {
   font-size: 1.4rem;
-  color: var(--color-primary);
   font-weight: 600;
+  color: var(--color-secondary, #00a592);
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
 
-.partner__title {
-  font-size: 2.6rem;
+.partner--hero .partner__title {
+  font-size: 2.8rem;
   font-weight: 700;
-  color: var(--color-primary-hover);
-  margin-bottom: 2rem;
   line-height: 1.5;
+  color: var(--color-text, #222);
+  margin-bottom: 2rem;
 }
 
-.partner__lead {
-  font-size: 1.5rem;
-  color: var(--color-text);
+.partner--hero .partner__lead {
+  font-size: 1.6rem;
   line-height: 1.8;
-  margin-bottom: 2.5rem;
+  color: #444;
+  margin-bottom: 3rem;
 }
 
-/* ===== CTAボタン ===== */
-.partner__button .btn {
+.partner--hero .partner__button .btn {
   display: inline-block;
-  padding: 1rem 2.4rem;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  font-weight: 600;
+  background: var(--color-primary, #0077b6);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.6rem;
+  padding: 1.2rem 3rem;
   border-radius: 6px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
 }
 
-.partner__button .btn:hover {
-  background-color: var(--color-primary-hover);
+.partner--hero .partner__button .btn:hover {
+  background: var(--color-secondary, #01b695);
 }
 
-/* ===== 画像エリア ===== */
-.partner__image {
+/* ===== 右側画像 ===== */
+.partner--hero .partner__image {
   flex: 1;
   text-align: right;
 }
 
-.partner__image img {
+.partner--hero .partner__image img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 900px) {
-  .partner__inner {
+/* ===== レスポンシブ ===== */
+@media screen and (max-width: 1024px) {
+  .partner--hero {
+    padding: 5rem 1.5rem;
+  }
+  .partner--hero .partner__inner {
     flex-direction: column;
+    gap: 3rem;
     text-align: center;
   }
-
-  .partner__image {
+  .partner--hero .partner__image {
     text-align: center;
-    margin-top: 2rem;
   }
-
-  .partner__title {
+  .partner--hero .partner__title {
     font-size: 2.2rem;
   }
-
-  .partner__lead {
-    font-size: 1.4rem;
+  .partner--hero .partner__lead {
+    font-size: 1.5rem;
   }
 }
