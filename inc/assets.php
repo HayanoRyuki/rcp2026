@@ -175,34 +175,44 @@ function rcp2026_enqueue_assets() {
   // パートナーページ群CSS（共通＋自動検出）
   // ===================================
   $partner_common = "{$theme_dir}/assets/css/partner/page-partner.css";
-  if (file_exists($partner_common) && is_page_template('page-partner*.php')) {
-    wp_enqueue_style(
-      'rcp2026-partner-common',
-      "{$theme_uri}/assets/css/partner/page-partner.css",
-      [],
-      filemtime($partner_common)
-    );
-  }
-
-  $partner_dir = "{$theme_dir}/assets/css/partner/";
-  foreach (glob($partner_dir . '*.css') as $path) {
-    $basename = basename($path, '.css');
-    $handle = "rcp2026-{$basename}";
+  if (file_exists($partner_common)) {
     if (
       is_page_template('page-partner.php') ||
       is_page_template('page-partner-list.php') ||
+      is_page_template('page-partner-contact.php') ||
       is_page_template('page-partner-contact-select.php') ||
       is_page_template('page-document-partner.php')
     ) {
       wp_enqueue_style(
-        $handle,
-        "{$theme_uri}/assets/css/partner/{$basename}.css",
-        ['rcp2026-partner-common'],
-        filemtime($path)
+        'rcp2026-partner-common',
+        "{$theme_uri}/assets/css/partner/page-partner.css",
+        [],
+        filemtime($partner_common)
       );
     }
   }
 
+  $partner_dir = "{$theme_dir}/assets/css/partner/";
+  if (is_dir($partner_dir)) {
+    foreach (glob($partner_dir . '*.css') as $path) {
+      $basename = basename($path, '.css');
+      $handle   = "rcp2026-{$basename}";
+      if (
+        is_page_template('page-partner.php') ||
+        is_page_template('page-partner-list.php') ||
+        is_page_template('page-partner-contact.php') ||
+        is_page_template('page-partner-contact-select.php') ||
+        is_page_template('page-document-partner.php')
+      ) {
+        wp_enqueue_style(
+          $handle,
+          "{$theme_uri}/assets/css/partner/{$basename}.css",
+          ['rcp2026-partner-common'],
+          filemtime($path)
+        );
+      }
+    }
+  }
   // ===================================
   // 資料ダウンロード（resource投稿タイプ）専用
   // ===================================
