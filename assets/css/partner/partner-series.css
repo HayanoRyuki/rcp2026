@@ -27,7 +27,7 @@
 }
 
 .partner-series .partner-lead {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--color-text);
   line-height: 1.8;
 }
@@ -55,7 +55,7 @@
 
 /* ===== サブタイトル（小説明） ===== */
 .partner-series .partner-series-desc {
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   color: var(--color-secondary);
   font-weight: 600;
   margin-bottom: 0.8rem;
