@@ -276,3 +276,26 @@
     padding: 1.25rem;
   }
 }
+
+/* ===== サムネイル（16:9アスペクト比固定） ===== */
+.pickup-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* ← 比率を正確に指定 */
+  overflow: hidden;
+}
+
+.pickup-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ← 中央トリミング */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.pickup-card:hover .pickup-thumb img {
+  transform: scale(1.05);
+}
