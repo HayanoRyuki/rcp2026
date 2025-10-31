@@ -271,3 +271,9 @@
 .page-lp__cta-button:hover {
   background-color: var(--color-primary-hover);
 }
+
+.page-content.inner {
+  max-width: 1200px; /* front-page の cta-container と同一幅 */
+  margin: 0 auto;
+  padding: 0 20px;
+}

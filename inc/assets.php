@@ -171,48 +171,55 @@ function rcp2026_enqueue_assets() {
     }
   }
 
-    // ===================================
-  // パートナーページ群CSS（共通＋自動検出）
-  // ===================================
-  $partner_common = "{$theme_dir}/assets/css/page/page-partner.css";
-  if (file_exists($partner_common)) {
-    if (
-      is_page_template('page-partner.php') ||
-      is_page_template('page-partner-list.php') ||
-      is_page_template('page-partner-contact.php') ||
-      is_page_template('page-partner-contact-select.php') ||
-      is_page_template('page-document-partner.php')
-    ) {
-      wp_enqueue_style(
-        'rcp2026-partner-common',
-        "{$theme_uri}/assets/css/page/page-partner.css",
-        [],
-        filemtime($partner_common)
-      );
-    }
+   // ===================================
+// パートナーページ群CSS（共通＋自動検出・安全版）
+// ===================================
+$partner_templates = [
+  'page-partner.php',
+  'page-partner-list.php',
+  'page-partner-contact.php',
+  'page-partner-contact-select.php',
+  'page-document-partner.php',
+  'page-partner-series.php',
+];
+
+// いずれかの partner テンプレートに該当するか判定
+$is_partner_template = false;
+foreach ($partner_templates as $tpl) {
+  if (is_page_template($tpl)) { $is_partner_template = true; break; }
+}
+
+if ($is_partner_template) {
+  $partner_common_path = "{$theme_dir}/assets/css/page/page-partner.css";
+  $partner_common_handle = 'rcp2026-partner-common';
+  $deps_for_child = [];
+
+  // 共通CSS（page-partner.css）を先に読み込み（存在チェック付き）
+  if (file_exists($partner_common_path)) {
+    wp_enqueue_style(
+      $partner_common_handle,
+      "{$theme_uri}/assets/css/page/page-partner.css",
+      [],
+      filemtime($partner_common_path)
+    );
+    $deps_for_child = [$partner_common_handle]; // 個別CSSの依存に設定
   }
 
+  // 個別CSSを自動検出して読込（共通ファイルは重複読込を回避）
   $partner_dir = "{$theme_dir}/assets/css/page/";
   if (is_dir($partner_dir)) {
     foreach (glob($partner_dir . 'page-partner*.css') as $path) {
       $basename = basename($path, '.css');
-      $handle   = "rcp2026-{$basename}";
-      if (
-        is_page_template('page-partner.php') ||
-        is_page_template('page-partner-list.php') ||
-        is_page_template('page-partner-contact.php') ||
-        is_page_template('page-partner-contact-select.php') ||
-        is_page_template('page-document-partner.php')
-      ) {
-        wp_enqueue_style(
-          $handle,
-          "{$theme_uri}/assets/css/page/{$basename}.css",
-          ['rcp2026-partner-common'],
-          filemtime($path)
-        );
-      }
+      if ($basename === 'page-partner') { continue; } // 共通はスキップ
+      wp_enqueue_style(
+        "rcp2026-{$basename}",
+        "{$theme_uri}/assets/css/page/{$basename}.css",
+        $deps_for_child,
+        filemtime($path)
+      );
     }
   }
+}
 
   // ===================================
   // 資料ダウンロード（resource投稿タイプ）専用

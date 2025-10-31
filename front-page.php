@@ -10,6 +10,9 @@
   <!-- Aboutセクション -->
   <?php get_template_part('sections/about'); ?>
 
+    <!-- ピックアップ -->
+  <?php // get_template_part('sections/pickup'); ?>
+
   <!-- コスト -->
   <?php // get_template_part('sections/cost'); ?>
 

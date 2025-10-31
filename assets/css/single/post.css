@@ -244,3 +244,16 @@
     margin-top: 2rem;
   }
 }
+
+/* ===== サイドバー追従修正 ===== */
+.post-sidebar {
+  position: relative;
+  overflow: visible; /* ← これが重要 */
+}
+
+.post-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 120px;
+  align-self: flex-start; /* ← Flex内のstickyを安定化 */
+}
