@@ -1,10 +1,12 @@
-/* ========== Single Resource ========== */
+/* =========================================================
+   RESOURCE シングルページ専用スタイル / root対応
+========================================================= */
 
 /* ===== アイキャッチ ===== */
-.resource__thumbnail {
+.resource-thumbnail {
   margin-bottom: 2rem;
 }
-.resource__thumbnail img {
+.resource-thumbnail img {
   width: 100%;
   height: auto;
   display: block;
@@ -13,7 +15,7 @@
 }
 
 /* ===== タイトル ===== */
-.resource__title {
+.resource-title {
   font-size: 1.6rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -21,7 +23,7 @@
 }
 
 /* ===== メタ情報 ===== */
-.resource__meta-inline {
+.resource-meta-inline {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -30,20 +32,20 @@
   font-size: 0.95rem;
 }
 
-.resource__meta {
+.resource-meta {
   margin-bottom: 2rem;
   font-size: 0.95rem;
   color: var(--color-text);
 }
 
-.resource__row {
+.resource-row {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
   margin-bottom: 1rem;
 }
 
-.resource__badge {
+.resource-badge {
   background-color: var(--color-primary);
   color: var(--color-white);
   padding: 0.25rem 0.75rem;
@@ -54,7 +56,7 @@
   flex-shrink: 0;
 }
 
-.resource__value {
+.resource-value {
   font-weight: 500;
   color: var(--color-text);
   font-size: 0.95rem;
@@ -64,13 +66,13 @@
 }
 
 /* ===== 本文 ===== */
-.resource__content {
+.resource-content {
   line-height: 1.8;
   color: var(--color-text);
 }
 
 /* ===== フォームエリア ===== */
-.resource__form {
+.resource-form {
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   border-radius: 8px;
@@ -79,18 +81,18 @@
   padding: 1.5rem;
 }
 
-.resource__form .form-intro {
+.resource-form .form-intro {
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
   color: var(--color-text);
   line-height: 1.6;
 }
 
-.resource__form .form-group {
+.resource-form .form-group {
   margin-bottom: 1.2rem;
 }
 
-.resource__form label {
+.resource-form label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -98,10 +100,10 @@
   color: var(--color-text);
 }
 
-.resource__form input[type="text"],
-.resource__form input[type="email"],
-.resource__form input[type="tel"],
-.resource__form select {
+.resource-form input[type="text"],
+.resource-form input[type="email"],
+.resource-form input[type="tel"],
+.resource-form select {
   width: 100%;
   padding: 0.6rem 0.8rem;
   border: 1px solid var(--color-border);
@@ -110,7 +112,7 @@
   box-sizing: border-box;
 }
 
-.resource__form select {
+.resource-form select {
   background-color: var(--color-white);
   appearance: none;
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23999'%3E%3Cpath d='M4 6l4 4 4-4z'/%3E%3C/svg%3E");
@@ -119,17 +121,17 @@
   background-size: 12px 12px;
 }
 
-.resource__form select:focus {
+.resource-form select:focus {
   border-color: var(--color-primary-hover);
   outline: none;
 }
 
 /* ===== プライバシーポリシー ===== */
-.resource__form .form-group.privacy-policy {
+.resource-form .form-group.privacy-policy {
   margin-top: 1rem;
 }
 
-.resource__form .privacy-policy {
+.resource-form .privacy-policy {
   font-size: 0.75rem;
   font-weight: normal;
   line-height: 1.4;
@@ -139,29 +141,29 @@
   gap: 0.5em;
 }
 
-.resource__form .privacy-policy input[type="checkbox"] {
+.resource-form .privacy-policy input[type="checkbox"] {
   width: 16px;
   height: 16px;
   margin: 0;
 }
 
-.resource__form .privacy-policy a {
+.resource-form .privacy-policy a {
   color: var(--color-primary);
   text-decoration: underline;
   font-weight: normal;
 }
 
-.resource__form .privacy-policy a:hover {
+.resource-form .privacy-policy a:hover {
   color: var(--color-primary-hover);
 }
 
 /* ===== 送信ボタン ===== */
-.resource__form .form-submit {
+.resource-form .form-submit {
   text-align: center;
   margin-top: 1.5rem;
 }
 
-.resource__form button[type="submit"] {
+.resource-form button[type="submit"] {
   background: var(--color-primary);
   color: var(--color-white);
   border: none;
@@ -173,13 +175,13 @@
   transition: background 0.3s ease;
 }
 
-.resource__form button[type="submit"]:hover {
+.resource-form button[type="submit"]:hover {
   background: var(--color-primary-hover);
 }
 
 /* ===== SP対応 ===== */
 @media (max-width: 768px) {
-  .resource__form {
+  .resource-form {
     margin: 2rem auto 0 !important;
     padding: 1rem !important;
     width: 100%;
