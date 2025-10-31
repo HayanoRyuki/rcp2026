@@ -77,13 +77,13 @@
 
 /* ===== 補足テキスト・説明 ===== */
 .partner-program .partner-contract-note {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   color: var(--color-text-light);
   margin-top: 0.6rem;
 }
 
 .partner-program .partner-desc-text {
-  font-size: 1.4rem;
+  font-size: 1rem;
   color: var(--color-text);
   line-height: 1.7;
   margin-bottom: 1.2rem;
@@ -104,7 +104,7 @@
 }
 
 .partner-program .partner-points-item {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--color-text);
   line-height: 1.6;
   position: relative;
