@@ -81,3 +81,63 @@
     margin: 0 1rem 1.5rem;
   }
 }
+
+/* ===== 資料リスト（3カラムグリッド） ===== */
+.resource-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 1行3つ */
+  gap: 2rem; /* 各カードの間隔 */
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.resource-item {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.resource-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.resource-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  padding: 1rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.resource-button-wrap {
+  text-align: center;
+  padding: 1rem 0 2rem;
+}
+
+/* ===== スマホ・タブレット対応 ===== */
+@media screen and (max-width: 1024px) {
+  .resource-list {
+    grid-template-columns: repeat(2, 1fr); /* タブレットは2列 */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .resource-list {
+    grid-template-columns: 1fr; /* スマホは1列 */
+    padding: 0 1rem;
+  }
+}
