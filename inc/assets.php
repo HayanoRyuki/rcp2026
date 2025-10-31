@@ -28,7 +28,7 @@ function rcp2026_enqueue_assets() {
   $partner_templates = [
     'page-partner.php',
     'page-partner-list.php',
-    'page-partnercontactselect.php',
+    'page-partner-contact-select.php',
     'page-partner-contact-select.php',
   ];
 
@@ -44,7 +44,7 @@ function rcp2026_enqueue_assets() {
   if (
     is_page('partner') ||
     is_page('partner-list') ||
-    is_page('partnercontactselect') 
+    is_page('partner-contact-select') 
   ) {
     $use_partner_header = true;
   }
