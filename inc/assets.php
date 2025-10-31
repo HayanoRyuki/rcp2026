@@ -6,10 +6,10 @@ function rcp2026_enqueue_assets() {
   $theme_uri = get_template_directory_uri();
   $theme_dir = get_template_directory();
 
-  // ===================================
+// ===================================
   // 共通CSS（全ページ読み込み）
   // ===================================
-  $common_css = ['reset', 'common', 'header', 'footer'];
+  $common_css = ['reset', 'common', 'footer'];
   foreach ($common_css as $file) {
     $path = "{$theme_dir}/assets/css/{$file}.css";
     if (file_exists($path)) {
@@ -20,6 +20,46 @@ function rcp2026_enqueue_assets() {
         filemtime($path)
       );
     }
+  }
+
+  // ===================================
+  // ヘッダーCSSの切り替え（ここを追加）
+  // ===================================
+  $partner_templates = [
+    'page-partner.php',
+    'page-partner-list.php',
+    'page-partnercontactselect.php',
+    'page-partner-contact-select.php',
+  ];
+
+  $use_partner_header = false;
+  foreach ($partner_templates as $tpl) {
+    if (is_page_template($tpl)) {
+      $use_partner_header = true;
+      break;
+    }
+  }
+
+  // スラッグでも判定
+  if (
+    is_page('partner') ||
+    is_page('partner-list') ||
+    is_page('partnercontactselect') 
+  ) {
+    $use_partner_header = true;
+  }
+
+  // header-partner.css か header.css を出し分け
+  $header_css = $use_partner_header ? 'header-partner' : 'header';
+  $header_path = "{$theme_dir}/assets/css/{$header_css}.css";
+
+  if (file_exists($header_path)) {
+    wp_enqueue_style(
+      'rcp2026-header',
+      "{$theme_uri}/assets/css/{$header_css}.css",
+      [],
+      filemtime($header_path)
+    );
   }
   
   // ===================================

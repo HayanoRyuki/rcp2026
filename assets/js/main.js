@@ -59,3 +59,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   markers.forEach((el) => observer.observe(el));
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.querySelector('.header-partner__menu-toggle');
+  const nav = document.querySelector('.header-partner__nav');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      toggle.classList.toggle('active');
+      nav.classList.toggle('open');
+    });
+  }
+});
