@@ -189,3 +189,48 @@
     box-sizing: border-box;
   }
 }
+
+
+/* ===== 2カラム構造調整 ===== */
+.resource-columns {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.resource-main {
+  flex: 1;
+  min-width: 0; /* ← flex-itemの画像はみ出し防止 */
+}
+
+.resource-sidebar {
+  width: 400px;
+  flex-shrink: 0;
+}
+
+/* ===== アイキャッチ画像の調整 ===== */
+.resource-thumbnail {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.resource-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+.resource-thumbnail img,
+.resource-main img.wp-post-image {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
