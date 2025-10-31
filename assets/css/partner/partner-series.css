@@ -1,116 +1,156 @@
 /* =========================================================
-   PARTNER SERIES SECTION（root変数対応・ハイフン1本仕様）
+   PARTNER - SERIES SECTION（root変数対応・BEM命名統一）
 ========================================================= */
 
 .partner-series {
-  background-color: var(--color-white);
-  padding: 6rem 2rem;
-}
-
-.partner-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-/* ===== ヘッダー ===== */
-.partner-header {
-  margin-bottom: 4rem;
+  background-color: var(--color-bg-alt);
+  padding: 8rem 2rem;
   text-align: center;
 }
 
-.partner-title {
+.partner-series .partner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== 見出しエリア ===== */
+.partner-series .partner-header {
+  margin-bottom: 4rem;
+}
+
+.partner-series .partner-title {
   font-size: 2.4rem;
   font-weight: 700;
   color: var(--color-primary-hover);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.partner-lead {
+.partner-series .partner-lead {
   font-size: 1.5rem;
   color: var(--color-text);
   line-height: 1.8;
 }
 
-/* ===== シリーズカードグリッド ===== */
+/* ===== グリッドレイアウト ===== */
 .partner-series-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 3rem;
-  justify-items: center;
 }
 
-/* ===== カード ===== */
+/* ===== 各カード ===== */
 .partner-series-card {
-  background: var(--color-bg-alt);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  background-color: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   padding: 3rem 2rem;
-  text-align: center;
-  max-width: 360px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .partner-series-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== カード内容 ===== */
+/* ===== サブタイトル（小説明） ===== */
 .partner-series-desc {
   font-size: 1.3rem;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
 }
 
+/* ===== サービス名 ===== */
 .partner-series-name {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--color-primary-hover);
+  line-height: 1.6;
   margin-bottom: 1.5rem;
-  line-height: 1.4;
+}
+
+/* ===== 画像 ===== */
+.partner-series-image {
+  margin: 1.5rem 0;
 }
 
 .partner-series-image img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
-  margin-bottom: 1.5rem;
 }
 
+/* ===== テキスト説明 ===== */
 .partner-series-text {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--color-text);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  margin-bottom: 1.8rem;
 }
 
-/* ===== タグ ===== */
+/* ===== タグエリア ===== */
 .partner-series-tags {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0.8rem;
 }
 
-.partner-tag {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  font-size: 1.1rem;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
+.partner-series-tags .partner-tag {
+  display: inline-block;
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.4rem 1.2rem;
+  transition: all 0.25s ease;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .partner-title {
+.partner-series-tags .partner-tag:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 1024px) {
+  .partner-series {
+    padding: 6rem 2rem;
+  }
+
+  .partner-series .partner-title {
     font-size: 2rem;
   }
 
-  .partner-lead {
+  .partner-series .partner-lead {
     font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .partner-series {
+    padding: 5rem 1.5rem;
+  }
+
+  .partner-series-grid {
+    gap: 2.4rem;
   }
 
   .partner-series-card {
-    padding: 2rem 1.6rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .partner-series-name {
+    font-size: 1.6rem;
+  }
+
+  .partner-series-text {
+    font-size: 1.3rem;
+  }
+
+  .partner-series-tags .partner-tag {
+    font-size: 1.1rem;
+    padding: 0.3rem 1rem;
   }
 }
