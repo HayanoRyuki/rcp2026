@@ -130,15 +130,15 @@
   color: var(--color-primary-hover);
 }
 
-/* ===== 見出し ===== */
+/* ===== 見出し（強調） ===== */
 .post-content h2 {
   font-size: 1.6rem;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
-  font-weight: 700;
+  font-weight: 800;
   border-left: 6px solid var(--color-primary);
   padding-left: 0.75rem;
-  color: var(--color-text);
+  color: var(--color-primary);
 }
 
 .post-content h3 {
@@ -148,7 +148,7 @@
   font-weight: 700;
   position: relative;
   padding-left: 1.25rem;
-  color: var(--color-text);
+  color: var(--color-primary);
 }
 
 .post-content h3::before {
@@ -162,20 +162,31 @@
   border-radius: 50%;
 }
 
-/* ===== サイドバー固定 ===== */
+/* ===== サイドバー追従 ===== */
 .post-sticky {
   position: sticky;
-  top: 140px;
+  top: 120px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   z-index: 10;
+  transition: transform 0.3s ease-out;
 }
 
-@media (max-width: 959px) {
+@media (prefers-reduced-motion: no-preference) {
   .post-sticky {
-    position: relative;
-    top: auto;
+    animation: floatFollow 1.5s ease-out;
+  }
+
+  @keyframes floatFollow {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }
 
@@ -221,6 +232,12 @@
 
   .post-content h3 {
     font-size: 1.1rem;
+  }
+
+  .post-sticky {
+    position: relative;
+    top: auto;
+    animation: none;
   }
 
   .post-sidebar-box {
