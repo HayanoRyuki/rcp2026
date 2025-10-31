@@ -1,5 +1,5 @@
 /* =========================================================
-   PARTNER PROGRAM SECTION（root変数対応・ハイフン1本仕様）
+   PARTNER PROGRAM SECTION（スコープ限定・ハイフン1本仕様）
 ========================================================= */
 
 .partner-program {
@@ -7,39 +7,40 @@
   padding: 6rem 2rem;
 }
 
-.partner-inner {
+/* ===== コンテナ ===== */
+.partner-program .partner-inner {
   max-width: 1080px;
   margin: 0 auto;
 }
 
 /* ===== ヘッダー ===== */
-.partner-header {
+.partner-program .partner-header {
   text-align: center;
   margin-bottom: 4rem;
 }
 
-.partner-title {
+.partner-program .partner-title {
   font-size: 2.2rem;
   font-weight: 700;
   color: var(--color-primary-hover);
   margin-bottom: 1rem;
 }
 
-.partner-lead {
+.partner-program .partner-lead {
   font-size: 1.5rem;
   color: var(--color-text);
   line-height: 1.8;
 }
 
 /* ===== リスト・カード ===== */
-.partner-list {
+.partner-program .partner-list {
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
   justify-content: center;
 }
 
-.partner-item {
+.partner-program .partner-item {
   background: var(--color-white);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -48,7 +49,7 @@
   max-width: 520px;
 }
 
-.partner-item-title {
+.partner-program .partner-item-title {
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--color-primary-hover);
@@ -56,32 +57,32 @@
   margin-bottom: 2rem;
 }
 
-.partner-item-body {
+.partner-program .partner-item-body {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.6rem;
 }
 
-.partner-item-image {
+.partner-program .partner-item-image {
   text-align: center;
   position: relative;
 }
 
-.partner-item-image img {
+.partner-program .partner-item-image img {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
 }
 
 /* ===== 補足テキスト・説明 ===== */
-.partner-contract-note {
+.partner-program .partner-contract-note {
   font-size: 1.2rem;
   color: var(--color-text-light);
   margin-top: 0.6rem;
 }
 
-.partner-desc-text {
+.partner-program .partner-desc-text {
   font-size: 1.4rem;
   color: var(--color-text);
   line-height: 1.7;
@@ -90,19 +91,19 @@
 }
 
 /* ===== ポイントリスト ===== */
-.partner-points {
+.partner-program .partner-points {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.partner-points-title {
+.partner-program .partner-points-title {
   font-weight: 600;
   color: var(--color-primary-hover);
   margin-bottom: 0.8rem;
 }
 
-.partner-points-item {
+.partner-program .partner-points-item {
   font-size: 1.3rem;
   color: var(--color-text);
   line-height: 1.6;
@@ -110,7 +111,7 @@
   padding-left: 1.6rem;
 }
 
-.partner-points-item::before {
+.partner-program .partner-points-item::before {
   content: "・";
   position: absolute;
   left: 0;
@@ -119,11 +120,11 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .partner-list {
+  .partner-program .partner-list {
     flex-direction: column;
   }
 
-  .partner-item {
+  .partner-program .partner-item {
     max-width: 100%;
   }
 }

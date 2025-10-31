@@ -1,5 +1,5 @@
 /* =========================================================
-   PARTNER ABOUT SECTION（root変数対応・ハイフン1本仕様）
+   PARTNER ABOUT SECTION（スコープ限定・ハイフン1本仕様）
 ========================================================= */
 
 .partner-about {
@@ -24,7 +24,7 @@
 }
 
 /* ===== コンテナ ===== */
-.partner-inner {
+.partner-about .partner-inner {
   position: relative;
   z-index: 1;
   max-width: 1080px;
@@ -32,7 +32,7 @@
 }
 
 /* ===== タイトル ===== */
-.partner-title {
+.partner-about .partner-title {
   text-align: center;
   font-size: 2.4rem;
   font-weight: 700;
@@ -41,7 +41,7 @@
 }
 
 /* ===== 導入テキスト・画像 ===== */
-.partner-intro {
+.partner-about .partner-intro {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,7 +50,7 @@
   margin-bottom: 6rem;
 }
 
-.partner-lead {
+.partner-about .partner-lead {
   flex: 1;
   min-width: 300px;
   font-size: 1.5rem;
@@ -58,26 +58,26 @@
   color: var(--color-text);
 }
 
-.partner-image {
+.partner-about .partner-image {
   flex: 1;
   text-align: center;
 }
 
-.partner-image img {
+.partner-about .partner-image img {
   max-width: 100%;
   height: auto;
   max-height: 320px;
 }
 
 /* ===== 認定バッジエリア ===== */
-.partner-tiers {
+.partner-about .partner-tiers {
   display: flex;
   justify-content: center;
   gap: 4rem;
   flex-wrap: wrap;
 }
 
-.partner-card {
+.partner-about .partner-card {
   flex: 1 1 400px;
   background: var(--color-white);
   padding: 2.4rem;
@@ -86,23 +86,23 @@
   text-align: center;
 }
 
-.partner-badge {
+.partner-about .partner-badge {
   margin-bottom: 1.6rem;
 }
 
-.partner-badge img {
+.partner-about .partner-badge img {
   width: 120px;
   height: auto;
 }
 
-.partner-card-title {
+.partner-about .partner-card-title {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--color-primary-hover);
 }
 
-.partner-card-desc {
+.partner-about .partner-card-desc {
   font-size: 1.4rem;
   color: var(--color-text);
   line-height: 1.7;
@@ -110,17 +110,17 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 767px) {
-  .partner-intro {
+  .partner-about .partner-intro {
     flex-direction: column;
     text-align: center;
   }
 
-  .partner-tiers {
+  .partner-about .partner-tiers {
     flex-direction: column;
     gap: 2.4rem;
   }
 
-  .partner-title {
+  .partner-about .partner-title {
     font-size: 2rem;
   }
 }

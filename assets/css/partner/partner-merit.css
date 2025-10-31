@@ -1,5 +1,5 @@
 /* =========================================================
-   PARTNER MERIT SECTION（ハイフン1本仕様）
+   PARTNER MERIT SECTION（スコープ限定・ハイフン1本仕様）
 ========================================================= */
 
 .partner-merit {
@@ -7,37 +7,38 @@
   padding: 100px 20px;
 }
 
-.partner-inner {
+/* ===== コンテナ ===== */
+.partner-merit .partner-inner {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* ===== 見出しエリア ===== */
-.partner-header {
+.partner-merit .partner-header {
   text-align: center;
   margin-bottom: 60px;
 }
 
-.partner-title {
+.partner-merit .partner-title {
   font-size: 2.4rem;
   font-weight: 700;
   color: var(--color-primary, #0077b6);
   margin-bottom: 1rem;
 }
 
-.partner-lead {
+.partner-merit .partner-lead {
   font-size: 1.6rem;
   color: #333;
   line-height: 1.8;
 }
 
 /* ===== 上部画像 ===== */
-.partner-image {
+.partner-merit .partner-image {
   text-align: center;
   margin-bottom: 80px;
 }
 
-.partner-image img {
+.partner-merit .partner-image img {
   max-width: 800px;
   width: 100%;
   height: auto;
@@ -46,14 +47,14 @@
 }
 
 /* ===== メリットリスト ===== */
-.partner-list {
+.partner-merit .partner-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
   justify-items: center;
 }
 
-.partner-item {
+.partner-merit .partner-item {
   background: #fff;
   border-radius: 10px;
   padding: 32px 28px;
@@ -62,12 +63,12 @@
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.partner-item:hover {
+.partner-merit .partner-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.partner-item-title {
+.partner-merit .partner-item-title {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--color-primary, #0077b6);
@@ -75,22 +76,22 @@
   line-height: 1.4;
 }
 
-.partner-item-image {
+.partner-merit .partner-item-image {
   margin-bottom: 1.6rem;
 }
 
-.partner-item-image img {
+.partner-merit .partner-item-image img {
   width: 80px;
   height: auto;
 }
 
-.partner-item-desc {
+.partner-merit .partner-item-desc {
   font-size: 1.5rem;
   color: #333;
   line-height: 1.8;
 }
 
-.partner-note {
+.partner-merit .partner-note {
   font-size: 1.3rem;
   color: #777;
 }
@@ -100,19 +101,22 @@
   .partner-merit {
     padding: 80px 16px;
   }
-  .partner-image img {
+
+  .partner-merit .partner-image img {
     max-width: 100%;
   }
-  .partner-list {
+
+  .partner-merit .partner-list {
     gap: 32px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .partner-item {
+  .partner-merit .partner-item {
     padding: 28px 20px;
   }
-  .partner-item-image img {
+
+  .partner-merit .partner-item-image img {
     width: 64px;
   }
 }

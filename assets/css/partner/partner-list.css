@@ -1,5 +1,5 @@
 /* =========================================================
-   PARTNER LIST SECTION（root変数対応・ハイフン1本仕様）
+   PARTNER LIST SECTION（スコープ限定・ハイフン1本仕様）
 ========================================================= */
 
 .partner-list {
@@ -7,13 +7,14 @@
   padding: 6rem 2rem;
 }
 
-.partner-inner {
+/* ===== コンテナ ===== */
+.partner-list .partner-inner {
   max-width: 1100px;
   margin: 0 auto;
 }
 
 /* ===== 見出し ===== */
-.partner-title {
+.partner-list .partner-title {
   font-size: 2.4rem;
   font-weight: 700;
   text-align: center;
@@ -22,11 +23,11 @@
 }
 
 /* ===== ブロック構成 ===== */
-.partner-block {
+.partner-list .partner-block {
   margin-bottom: 6rem;
 }
 
-.partner-block-title {
+.partner-list .partner-block-title {
   font-size: 2rem;
   font-weight: 600;
   color: var(--color-primary-hover);
@@ -35,7 +36,7 @@
   margin-bottom: 2.4rem;
 }
 
-.partner-category-title {
+.partner-list .partner-category-title {
   font-size: 1.6rem;
   font-weight: 600;
   margin: 2rem 0 1.2rem;
@@ -43,13 +44,13 @@
 }
 
 /* ===== グリッドレイアウト ===== */
-.partner-items {
+.partner-list .partner-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2.4rem;
 }
 
-.partner-item {
+.partner-list .partner-item {
   background: var(--color-bg-alt);
   border-radius: 8px;
   padding: 1.6rem;
@@ -58,25 +59,25 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.partner-item:hover {
+.partner-list .partner-item:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* ===== 各アイテム内 ===== */
-.partner-item-image img {
+.partner-list .partner-item-image img {
   width: 120px;
   height: auto;
   margin-bottom: 0.8rem;
 }
 
-.partner-item-name {
+.partner-list .partner-item-name {
   font-weight: 600;
   margin-bottom: 0.8rem;
   color: var(--color-primary-hover);
 }
 
-.partner-item-url {
+.partner-list .partner-item-url {
   display: block;
   font-size: 1.3rem;
   color: var(--color-primary);
@@ -85,11 +86,11 @@
   word-break: break-all;
 }
 
-.partner-item-url:hover {
+.partner-list .partner-item-url:hover {
   text-decoration: underline;
 }
 
-.partner-item-desc {
+.partner-list .partner-item-desc {
   font-size: 1.4rem;
   color: var(--color-text);
   line-height: 1.6;
@@ -97,15 +98,15 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .partner-block-title {
+  .partner-list .partner-block-title {
     font-size: 1.8rem;
   }
 
-  .partner-item {
+  .partner-list .partner-item {
     padding: 1.2rem;
   }
 
-  .partner-item-image img {
+  .partner-list .partner-item-image img {
     width: 100px;
   }
 }

@@ -1,5 +1,5 @@
 /* =========================================================
-   PARTNER HERO SECTION（ハイフン1本仕様）
+   PARTNER HERO SECTION（スコープ限定版・ハイフン1本仕様）
 ========================================================= */
 
 .partner-hero {
@@ -7,7 +7,8 @@
   padding: 80px 20px;
 }
 
-.partner-inner {
+/* ===== レイアウト ===== */
+.partner-hero .partner-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,12 +18,12 @@
 }
 
 /* ===== テキストブロック ===== */
-.partner-content {
+.partner-hero .partner-content {
   flex: 1;
   min-width: 480px;
 }
 
-.partner-subtitle {
+.partner-hero .partner-subtitle {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-primary, #0077b6);
@@ -30,7 +31,7 @@
   line-height: 1.6;
 }
 
-.partner-title {
+.partner-hero .partner-title {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.5;
@@ -38,14 +39,14 @@
   margin-bottom: 1.8rem;
 }
 
-.partner-lead {
+.partner-hero .partner-lead {
   font-size: 1.6rem;
   line-height: 1.8;
   color: #333;
   margin-bottom: 2.5rem;
 }
 
-.partner-button .btn {
+.partner-hero .partner-button .btn {
   display: inline-block;
   background: var(--color-primary, #0077b6);
   color: #fff;
@@ -57,17 +58,17 @@
   transition: background 0.3s;
 }
 
-.partner-button .btn:hover {
+.partner-hero .partner-button .btn:hover {
   background: var(--color-secondary, #01b695);
 }
 
 /* ===== 画像ブロック ===== */
-.partner-image {
+.partner-hero .partner-image {
   flex: 1;
   text-align: right;
 }
 
-.partner-image img {
+.partner-hero .partner-image img {
   max-width: 420px;
   height: auto;
   border-radius: 0;
@@ -80,21 +81,26 @@
   .partner-hero {
     padding: 60px 16px;
   }
-  .partner-inner {
+
+  .partner-hero .partner-inner {
     flex-direction: column;
     text-align: center;
     gap: 40px;
   }
-  .partner-content {
+
+  .partner-hero .partner-content {
     min-width: auto;
   }
-  .partner-title {
+
+  .partner-hero .partner-title {
     font-size: 2.4rem;
   }
-  .partner-lead {
+
+  .partner-hero .partner-lead {
     font-size: 1.5rem;
   }
-  .partner-image img {
+
+  .partner-hero .partner-image img {
     max-width: 300px;
     transform: none;
   }

@@ -1,5 +1,5 @@
 /* =========================================================
-   PARTNER - SERIES SECTION（root変数対応・BEM命名統一）
+   PARTNER SERIES SECTION（スコープ限定・ハイフン1本仕様）
 ========================================================= */
 
 .partner-series {
@@ -8,6 +8,7 @@
   text-align: center;
 }
 
+/* ===== コンテナ ===== */
 .partner-series .partner-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -32,14 +33,14 @@
 }
 
 /* ===== グリッドレイアウト ===== */
-.partner-series-grid {
+.partner-series .partner-series-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 3rem;
 }
 
 /* ===== 各カード ===== */
-.partner-series-card {
+.partner-series .partner-series-card {
   background-color: var(--color-white);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
@@ -47,13 +48,13 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.partner-series-card:hover {
+.partner-series .partner-series-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== サブタイトル（小説明） ===== */
-.partner-series-desc {
+.partner-series .partner-series-desc {
   font-size: 1.3rem;
   color: var(--color-secondary);
   font-weight: 600;
@@ -61,7 +62,7 @@
 }
 
 /* ===== サービス名 ===== */
-.partner-series-name {
+.partner-series .partner-series-name {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--color-primary-hover);
@@ -70,18 +71,18 @@
 }
 
 /* ===== 画像 ===== */
-.partner-series-image {
+.partner-series .partner-series-image {
   margin: 1.5rem 0;
 }
 
-.partner-series-image img {
+.partner-series .partner-series-image img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
 /* ===== テキスト説明 ===== */
-.partner-series-text {
+.partner-series .partner-series-text {
   font-size: 1.4rem;
   color: var(--color-text);
   line-height: 1.8;
@@ -89,14 +90,14 @@
 }
 
 /* ===== タグエリア ===== */
-.partner-series-tags {
+.partner-series .partner-series-tags {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.8rem;
 }
 
-.partner-series-tags .partner-tag {
+.partner-series .partner-tag {
   display: inline-block;
   background-color: var(--color-bg-alt);
   color: var(--color-primary);
@@ -108,7 +109,7 @@
   transition: all 0.25s ease;
 }
 
-.partner-series-tags .partner-tag:hover {
+.partner-series .partner-tag:hover {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
@@ -133,23 +134,23 @@
     padding: 5rem 1.5rem;
   }
 
-  .partner-series-grid {
+  .partner-series .partner-series-grid {
     gap: 2.4rem;
   }
 
-  .partner-series-card {
+  .partner-series .partner-series-card {
     padding: 2rem 1.5rem;
   }
 
-  .partner-series-name {
+  .partner-series .partner-series-name {
     font-size: 1.6rem;
   }
 
-  .partner-series-text {
+  .partner-series .partner-series-text {
     font-size: 1.3rem;
   }
 
-  .partner-series-tags .partner-tag {
+  .partner-series .partner-tag {
     font-size: 1.1rem;
     padding: 0.3rem 1rem;
   }
