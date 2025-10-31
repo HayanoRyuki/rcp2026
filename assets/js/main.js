@@ -40,3 +40,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+// ===== マーカーアニメーション =====
+document.addEventListener('DOMContentLoaded', function () {
+  const markers = document.querySelectorAll('.case-marker');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target); // 一度きり発火
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  markers.forEach((el) => observer.observe(el));
+});

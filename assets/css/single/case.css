@@ -318,3 +318,21 @@ h2.case {
     font-size: 1.3rem;
   }
 }
+
+/* =========================================================
+   CASE MARKER ANIMATION
+========================================================= */
+
+/* 初期状態：マーカー非表示（width 0% 相当） */
+.case-marker {
+  background: linear-gradient(transparent 60%, rgba(255, 235, 59, 0.7) 60%);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 1s ease-out;
+  font-weight: 600;
+}
+
+/* ビューポートに入ったら塗り広がる */
+.case-marker.is-visible {
+  background-size: 100% 100%;
+}
