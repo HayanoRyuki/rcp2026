@@ -234,3 +234,30 @@
   border-radius: 8px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
+
+/* ===== レイアウト外枠余白 ===== */
+.resource-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem; /* ← 左右にゆとり */
+  box-sizing: border-box;
+}
+
+/* ===== 2カラム構造調整 ===== */
+.resource-columns {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem; /* ← カラム間の余白を広めに */
+}
+
+/* ===== メイン・サイドの幅バランス ===== */
+.resource-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.resource-sidebar {
+  width: 360px;
+  flex-shrink: 0;
+}
