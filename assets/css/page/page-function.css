@@ -7,6 +7,29 @@
   text-align: center;
 }
 
+/* ===== 導入テキスト中央揃え ===== */
+.function__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.function__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.function__intro {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+/* ===== HERO本体 ===== */
 .function--hero .function__inner {
   max-width: 1200px;
   margin: 0 auto;
