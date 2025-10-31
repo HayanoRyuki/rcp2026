@@ -226,9 +226,20 @@ $partner_templates = [
 // partnerページを判定（テンプレート or 固定ページスラッグ）
 $is_partner_template = false;
 foreach ($partner_templates as $tpl) {
-  if (is_page_template($tpl)) { $is_partner_template = true; break; }
+  if (is_page_template($tpl)) {
+    $is_partner_template = true;
+    break;
+  }
 }
-if (is_page('partner') || is_page('partner-list') || is_page('partner-contact') || is_page('partner-series')) {
+
+// 固定ページスラッグでも判定（←ここを拡張）
+if (
+  is_page('partner') ||
+  is_page('partner-list') ||
+  is_page('partner-contact') ||
+  is_page('partner-contact-select') || // ←★ これを追加！
+  is_page('partner-series')
+) {
   $is_partner_template = true;
 }
 
@@ -278,7 +289,6 @@ if ($is_partner_template) {
   }
 }
 
-  // ===================================
   // 資料ダウンロード（resource投稿タイプ）専用
   // ===================================
   if (is_singular('resource')) {
