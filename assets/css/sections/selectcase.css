@@ -16,9 +16,8 @@
   font-weight: bold;
   text-align: center;
   color: var(--color-text);
-  margin-bottom: -100px;
+  margin-bottom: 2.5rem; /* 通常の余白に変更 */
 }
-
 /*-------------------------------------
   カードグリッドレイアウト
 -------------------------------------*/

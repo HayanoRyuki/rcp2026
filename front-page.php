@@ -25,9 +25,6 @@
   <!-- 導入企業のロゴ -->
   <?php get_template_part('sections/clientlogo'); ?>
 
-  <!-- サービス紹介 -->
-  <?php get_template_part('sections/service'); ?>
-
   <!-- ニュース -->
   <?php get_template_part('sections/news'); ?>
 
