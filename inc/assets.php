@@ -183,18 +183,21 @@ $partner_templates = [
   'page-partner-series.php',
 ];
 
-// いずれかの partner テンプレートに該当するか判定
+// partnerページを判定（テンプレート or 固定ページスラッグ）
 $is_partner_template = false;
 foreach ($partner_templates as $tpl) {
   if (is_page_template($tpl)) { $is_partner_template = true; break; }
 }
+if (is_page('partner') || is_page('partner-list') || is_page('partner-contact') || is_page('partner-series')) {
+  $is_partner_template = true;
+}
 
 if ($is_partner_template) {
+  // 共通CSS
   $partner_common_path = "{$theme_dir}/assets/css/page/page-partner.css";
   $partner_common_handle = 'rcp2026-partner-common';
   $deps_for_child = [];
 
-  // 共通CSS（page-partner.css）を先に読み込み（存在チェック付き）
   if (file_exists($partner_common_path)) {
     wp_enqueue_style(
       $partner_common_handle,
@@ -202,7 +205,7 @@ if ($is_partner_template) {
       [],
       filemtime($partner_common_path)
     );
-    $deps_for_child = [$partner_common_handle]; // 個別CSSの依存に設定
+    $deps_for_child = [$partner_common_handle];
   }
 
   // 個別CSS（/assets/css/page/page-partner*.css）
@@ -210,7 +213,7 @@ if ($is_partner_template) {
   if (is_dir($partner_page_dir)) {
     foreach (glob($partner_page_dir . 'page-partner*.css') as $path) {
       $basename = basename($path, '.css');
-      if ($basename === 'page-partner') { continue; } // 共通はスキップ
+      if ($basename === 'page-partner') continue;
       wp_enqueue_style(
         "rcp2026-{$basename}",
         "{$theme_uri}/assets/css/page/{$basename}.css",
@@ -220,17 +223,13 @@ if ($is_partner_template) {
     }
   }
 
-  // ===================================
-  // パートナーセクションCSS（/assets/css/partner/ 以下）
-  // 各セクション単位のブロックCSSを自動で読み込み
-  // ===================================
+  // セクションCSS（/assets/css/partner/partner-*.css）
   $partner_section_dir = "{$theme_dir}/assets/css/partner/";
   if (is_dir($partner_section_dir)) {
     foreach (glob($partner_section_dir . 'partner-*.css') as $path) {
       $basename = basename($path, '.css');
-      $handle   = "rcp2026-{$basename}";
       wp_enqueue_style(
-        $handle,
+        "rcp2026-{$basename}",
         "{$theme_uri}/assets/css/partner/{$basename}.css",
         $deps_for_child,
         filemtime($path)
@@ -238,8 +237,6 @@ if ($is_partner_template) {
     }
   }
 }
-// ===================================
-
 
   // ===================================
   // 資料ダウンロード（resource投稿タイプ）専用
