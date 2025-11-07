@@ -15,6 +15,23 @@ $cur_basic = get_post_meta($post_id, 'curriculum_basic', true);
 $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
 ?>
 
+<!-- ==============================
+     講習会LP専用ヘッダー
+============================== -->
+<header class="lp-header">
+  <div class="lp-header__inner">
+    <div class="lp-header__logo">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-receptionist.svg" alt="RECEPTIONIST" width="140" height="20">
+    </div>
+    <div class="lp-header__text">
+      <p>
+        受付システムをもっと活用したい方へ！
+        <span class="highlight">無料講習会</span> にご招待！
+      </p>
+    </div>
+  </div>
+</header>
+
 <main class="l-main">
 
   <!-- ==============================

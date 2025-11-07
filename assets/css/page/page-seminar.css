@@ -1723,3 +1723,53 @@ svg {
 .l-header__nav-cta {
   display: none !important;
 }
+/* =========================================================
+   講習会LP専用ヘッダー
+========================================================= */
+
+.lp-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 1.2rem 0;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.lp-header__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.lp-header__logo img {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+.lp-header__text p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.4;
+}
+
+.lp-header__text .highlight {
+  color: #d56c1c; /* オレンジ文字 */
+  font-weight: 700;
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 767px) {
+  .lp-header__inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+  .lp-header__text p {
+    font-size: 1.4rem;
+  }
+}
