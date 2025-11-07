@@ -279,62 +279,109 @@
 }
 
 /* =========================================================
-   自由記入フォーム共通スタイル（全固定ページ共通）
+   自由記入フォーム共通スタイル（全固定ページ共通・root対応）
 ========================================================= */
 .contact-form {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: var(--color-white);
 }
 
+/* ラベル */
 .contact-form label {
   display: block;
-  font-weight: 600;
-  margin-bottom: .5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
 }
 
+/* 入力欄・セレクト・テキストエリア */
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form input[type="tel"],
-.contact-form textarea,
-.contact-form select {
+.contact-form select,
+.contact-form textarea {
   width: 100%;
-  border: 1px solid #ccc;
-  padding: 10px 12px;
+  border: 1px solid var(--color-border);
   border-radius: 4px;
-  font-size: 1.6rem;
+  padding: 8px 10px;
+  font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
+  color: var(--color-text);
+  background-color: var(--color-white);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0,181,226,0.15);
+  outline: none;
 }
 
 .contact-form textarea {
-  min-height: 180px;
+  min-height: 160px;
   resize: vertical;
 }
 
-.contact-form .required {
-  color: #e53935;
+/* 必須マーク */
+.contact-form .required,
+.contact-form .asterisk {
+  color: var(--color-danger);
   margin-left: 4px;
-  font-size: 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
-.contact-form .form-group {
-  margin-bottom: 1.8rem;
+/* フィールド間隔 */
+.contact-form .form-group,
+.contact-form > div {
+  margin-bottom: 1.5rem;
 }
 
-.contact-form .btn-submit {
+/* 送信ボタン */
+.contact-form .btn-submit,
+.contact-form button[type="submit"],
+.contact-form input[type="submit"] {
   display: inline-block;
   background-color: var(--color-primary);
-  color: #fff;
-  padding: 12px 40px;
+  color: var(--color-white);
   border: none;
   border-radius: 4px;
-  font-weight: bold;
-  font-size: 1.6rem;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 28px;
   cursor: pointer;
-  transition: background-color .3s;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-.contact-form .btn-submit:hover {
-  background-color: var(--color-primary-dark, #004fa2);
+.contact-form .btn-submit:hover,
+.contact-form button[type="submit"]:hover,
+.contact-form input[type="submit"]:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
 }
+
+.contact-form .btn-submit:active,
+.contact-form button[type="submit"]:active,
+.contact-form input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* エラーメッセージ（必要に応じて使用） */
+.contact-form .error-message {
+  color: var(--color-danger);
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+/* 背景と間隔の調整（フォーム全体） */
+.contact-form-wrapper {
+  background-color: var(--color-bg);
+  padding: 3rem 1rem;
+}
+
