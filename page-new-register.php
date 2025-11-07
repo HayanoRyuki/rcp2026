@@ -27,7 +27,6 @@ get_header();
             placeholder="会社のメールアドレスを入れてください"
             required
           >
-          <p id="error-email" class="error-message"></p>
         </div>
 
         <div class="contact-new__group">
@@ -43,7 +42,6 @@ get_header();
             placeholder="パスワード"
             required
           >
-          <p id="error-password" class="error-message"></p>
         </div>
 
         <div class="contact-new__privacy">
@@ -55,13 +53,10 @@ get_header();
             <a href="https://help.receptionist.jp/?p=402" target="_blank" rel="noopener noreferrer">個人情報保護方針</a>
             を読み、これに同意します。
           </label>
-          <p id="error-check" class="error-message"></p>
         </div>
 
         <div class="contact-new__actions">
-          <button type="button" class="contact-new__button" id="sub-mit">無料で試してみる</button>
-          <p id="loading" class="contact-new__loading" style="display:none;">loading.....</p>
-          <p id="error" class="error-message"></p>
+          <button type="submit" class="contact-new__button">無料で試してみる</button>
         </div>
       </form>
     </div>
