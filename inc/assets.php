@@ -208,26 +208,6 @@ if (is_page_template('page-seminar.php')) {
   }
 }
 
-// ===================================
-// 講習会LP専用JS（page-seminar.js強制読み込み）
-// ===================================
-function rcp2026_force_enqueue_page_seminar_js() {
-  if (is_page('seminar') || is_page_template('page-seminar.php')) {
-    $theme_dir = get_template_directory();
-    $theme_uri = get_template_directory_uri();
-    $path = "{$theme_dir}/assets/js/page-seminar.js";
-    if (file_exists($path)) {
-      wp_enqueue_script(
-        'rcp2026-page-seminar',
-        "{$theme_uri}/assets/js/page-seminar.js",
-        ['jquery'],
-        filemtime($path),
-        true
-      );
-    }
-  }
-}
-add_action('wp_enqueue_scripts', 'rcp2026_force_enqueue_page_seminar_js', 25);
 
 
   // ===================================
