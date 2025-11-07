@@ -15,27 +15,26 @@ viewport固定（375px以下は小さくさせない）
 // })();
 
 /* ===================================================
-スクロール監視
+スクロール監視（復活）
 =====================================================*/
-// const intersectionObserver = new IntersectionObserver(function(entries){
-//   entries.forEach(function(entry) {
-//     if(entry.isIntersecting){
-//       entry.target.classList.add("is-in-view");
-//     } else {
-//       //entry.target.classList.remove("is-in-view");
-//     }
-//   });
-// }, {
-//   root: null, // ビューポート
-//   rootMargin: "0px 0px -20% 0px", // 下から20%手前で発火
-//   threshold: 0 // 0でOK（下からのスクロールにだけ対応している）
-// });
+const intersectionObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry) {
+    if(entry.isIntersecting){
+      entry.target.classList.add("is-in-view");
+    } else {
+      //entry.target.classList.remove("is-in-view");
+    }
+  });
+}, {
+  root: null,
+  rootMargin: "0px 0px -20% 0px",
+  threshold: 0
+});
 
-// const inViewItems = document.querySelectorAll(".js-in-view");
-// inViewItems.forEach(function(inViewItem) {
-//   intersectionObserver.observe(inViewItem);
-// });
-
+const inViewItems = document.querySelectorAll(".js-in-view");
+inViewItems.forEach(function(inViewItem) {
+  intersectionObserver.observe(inViewItem);
+});
 /* ===================================================
 スムーススクロール（ノーマル）＋ 初期化維持
 =====================================================*/
