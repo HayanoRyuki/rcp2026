@@ -116,6 +116,137 @@ if (!is_array($advanced_dates)) {
     </div>
   </section>
 
+  <!-- ここから下は既存LPにあった残りセクションを順次復活 -->
+
+  <!--p-event-->
+  <section class="p-event" id="event">
+    <div class="l-inner">
+      <div class="c-section-head js-in-view fade-in-up">
+        <hgroup class="c-section-head__title-wrap">
+          <p class="c-section-head__sub"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icn_section_head.svg" alt="Event Overview"> Event Overview</p>
+          <h2 class="c-section-head__title">講習会概要</h2>
+        </hgroup>
+      </div>
+      <div class="p-event__container js-in-view fade-in-up">
+        <div class="p-event__contents">
+          <div class="p-event__step">
+            <div class="p-event__step-num">
+              <h3 class="p-event__step-num-text"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icn_user.svg" alt="参加対象">参加対象</h3>
+            </div>
+            <div class="p-event__step-body">
+              <p class="p-event__step-text">基礎編：トライアルご契約中の方、スタンダードプランご契約中の方<br>
+                応用編：すでにご利用中で運用を開始している方</p>
+            </div>
+          </div>
+          <div class="p-event__step">
+            <div class="p-event__step-num">
+              <h3 class="p-event__step-num-text"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icn_question.svg" alt="注意事項">注意事項</h3>
+            </div>
+            <div class="p-event__step-body">
+              <p class="p-event__step-text">本イベントは同業他社や対象者以外のお申込みについては、お断りさせていただく場合がございます。<br>
+                また、録画や静止画像の拡散はお断りしております。なお、本イベントは<b>事前準備</b>が必要になります。<br>
+                詳細は申込後に送られるご案内メールをご参照ください。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--/end p-event-->
+
+    <!--p-support-->
+    <section class="p-support" id="support">
+      <div class="p-support-head js-in-view fade-in-up">
+        <h2 class="p-support__title">RECEPTIONIST講習会で<br class="u-sp">導入前の不安から<br class="u-sp">導入後の定着までサポート！<br>
+          少しでも設定に不安がある時は<br class="u-sp">ぜひご参加ください！</h2>
+        <p class="p-support__text">基本設定の流れや運用のコツを実際の画面で解説。<br class="u-pc">
+          初めての方でもスムーズに導入でき、社内への定着まで安心して進められます。</p>
+      </div>
+      <div class="l-inner u-pc">
+        <div class="p-cta js-in-view fade-in-up">
+          <a href="#" class="c-button c-button-blue c-button-l">
+            <span>今すぐ申し込む</span>
+            <span>基礎編はこちら</span>
+          </a>
+          <a href="#" class="c-button c-button-l">
+            <span>今すぐ申し込む</span>
+            <span>応用編はこちら</span>
+          </a>
+        </div>
+      </div>
+      <div class="p-fv__form u-sp">
+        <div class="p-fv__form-inner">
+          <form id="forms">
+            <div class="c-form-group-set">
+              <div class="c-form-group">
+                <label>姓<span class="required">必須</span></label>
+                <div class="c-form-input">
+                  <input type="text" placeholder="山田">
+                </div>
+              </div>
+              <div class="c-form-group">
+                <label>名<span class="required">必須</span></label>
+                <div class="c-form-input">
+                  <input type="text" placeholder="太郎">
+                </div>
+              </div>
+            </div>
+            <div class="c-form-group">
+              <label>貴社名<span class="required">必須</span></label>
+              <div class="c-form-input">
+                <input type="text" placeholder="貴社名">
+              </div>
+            </div>
+            <div class="c-form-group">
+              <label>メールアドレス<span class="required">必須</span></label>
+              <div class="c-form-input">
+                <input type="text" placeholder="example@company.com">
+              </div>
+            </div>
+            <div class="c-form-group">
+              <label>参加日時<span class="required">必須</span></label>
+              <div class="c-form-select">
+                <select>
+                  <option>開催日を選択してください</option>
+                </select>
+              </div>
+            </div>
+            <div class="c-form-group">
+              <label>この講習会をどこで知りましたか？<span class="cap">（任意）</span></label>
+              <div class="c-form-select">
+                <select>
+                  <option>選択してください</option>
+                </select>
+              </div>
+            </div>
+            <div class="c-form-group">
+              <label>導入目的<span class="cap">（任意）</span></label>
+              <div class="c-form-input">
+                <input type="text" placeholder="導入目的をご記入ください">
+              </div>
+            </div>
+            <div class="c-form-group">
+              <label>現在の課題<span class="cap">（任意）</span></label>
+              <div class="c-form-input">
+                <input type="text" placeholder="現在の課題をご記入ください">
+              </div>
+            </div>
+            <div class="c-form-btn-area">
+              <a href="#" class="c-button c-button-blue">
+                <span>今すぐ申し込む</span>
+                <span>基礎編はこちら</span>
+              </a>
+              <a href="#" class="c-button">
+                <span>今すぐ申し込む</span>
+                <span>応用編はこちら</span>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!--/end p-support-->
+
+    
   <!-- ==============================
        カリキュラムセクション
   =============================== -->
