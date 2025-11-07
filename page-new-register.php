@@ -35,13 +35,13 @@ get_header();
             8文字以上（大文字英字・小文字英字・数字・特殊記号のうち3種類以上）で設定してください。
           </p>
           <input
-            type="password"
-            id="password"
-            name="password"
-            class="contact-new__input"
-            placeholder="パスワード"
-            required
-          >
+  type="password"
+  id="password"
+  name="password"
+  class="contact-new__input contact-new__input--password"
+  placeholder="パスワード"
+  required
+>
         </div>
 
         <div class="contact-new__privacy">
