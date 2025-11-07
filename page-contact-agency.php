@@ -13,11 +13,11 @@ get_header();
         内容確認後、担当より通常2〜4営業日以内にご連絡いたします。
       </p>
 
-      <form name="agency"
-            class="contact-partner__form form-track download-form pardot-form"
-            action="" method="post"
-            data-event="request_materials"
-            data-form-id="agency">
+ <form name="agency"
+      class="contact-form contact-partner__form form-track download-form pardot-form"
+      action="" method="post"
+      data-event="request_materials"
+      data-form-id="agency">
 
         <div class="contact-partner__group">
           <label for="company_name" class="contact-partner__label required">貴社名</label>

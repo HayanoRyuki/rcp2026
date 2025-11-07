@@ -14,10 +14,11 @@ get_header();
       </p>
 
       <form name="proposal"
-            class="contact-proposal__form form-track download-form pardot-form"
-            action="" method="post"
-            data-event="proposal_submit"
-            data-form-id="proposal">
+      class="contact-form contact-proposal__form form-track download-form pardot-form"
+      action="" method="post"
+      data-event="proposal_submit"
+      data-form-id="proposal">
+
 
         <input type="hidden" name="contact_type" value="suggest_company">
 

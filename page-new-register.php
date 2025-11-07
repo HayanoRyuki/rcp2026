@@ -16,7 +16,7 @@ get_header();
         RECEPTIONISTの全ての機能を無料でお試しいただけます。
       </p>
 
-      <form class="trial__form" id="trialForm" novalidate>
+      <form class="contact-form trial__form" id="trialForm" novalidate>
         <div class="trial__group">
           <label for="email" class="trial__label">メールアドレス</label>
           <input

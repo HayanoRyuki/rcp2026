@@ -277,3 +277,64 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
+/* =========================================================
+   自由記入フォーム共通スタイル（全固定ページ共通）
+========================================================= */
+.contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+.contact-form textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.contact-form .required {
+  color: #e53935;
+  margin-left: 4px;
+  font-size: 1.4rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.8rem;
+}
+
+.contact-form .btn-submit {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.contact-form .btn-submit:hover {
+  background-color: var(--color-primary-dark, #004fa2);
+}

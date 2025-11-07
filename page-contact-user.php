@@ -11,7 +11,7 @@ get_header();
     アカウントをお持ちでない方は<a href="/contact">こちら</a>よりお問い合わせください。
   </p>
 
-  <form name="contact" class="kv-contact-form">
+<form name="contact" class="contact-form kv-contact-form">
     <input type="hidden" name="contact_type" value="user">
 
     <div class="kv-form-group has-floating-label">
