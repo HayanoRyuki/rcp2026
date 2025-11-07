@@ -467,3 +467,26 @@ input[name="hp"],
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(0, 181, 226, 0.2);
 }
+
+
+/* =========================================================
+   フォーム内リンク（個人情報保護方針・利用規約など）の見た目統一
+========================================================= */
+.contact-proposal__privacy a,
+.contact-new__privacy a,
+.contact-partner__privacy a,
+.contact-user a[href*="privacy"],
+.contact-user a[href*="policy"] {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.contact-proposal__privacy a:hover,
+.contact-new__privacy a:hover,
+.contact-partner__privacy a:hover,
+.contact-user a[href*="privacy"]:hover,
+.contact-user a[href*="policy"]:hover {
+  color: var(--color-primary-hover);
+  text-decoration: none;
+}
