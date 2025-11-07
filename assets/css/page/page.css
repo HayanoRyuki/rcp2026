@@ -492,11 +492,17 @@ input[name="hp"],
 }
 
 /* ==============================
-   フォーム スマホ調整
+   フォーム スマホ調整（共通）
 ============================== */
 @media screen and (max-width: 768px) {
+  /* すべての contact〜 系フォームを対象 */
   .contact-new form,
-  .contact-new__inner form {
+  .contact-new__inner form,
+  .contact-partner form,
+  .contact-partner__inner form,
+  .contact-proposal form,
+  .contact-proposal__inner form,
+  .contact-form {
     width: 90%;
     max-width: 90%;
     margin: 0 auto;
@@ -504,7 +510,16 @@ input[name="hp"],
 
   .contact-new input,
   .contact-new textarea,
-  .contact-new select {
+  .contact-new select,
+  .contact-partner input,
+  .contact-partner textarea,
+  .contact-partner select,
+  .contact-proposal input,
+  .contact-proposal textarea,
+  .contact-proposal select,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
     width: 100%;
     box-sizing: border-box;
   }
