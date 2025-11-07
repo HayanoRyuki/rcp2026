@@ -391,6 +391,29 @@
 
 
 /* =========================================================
+   お問い合わせフォームのタイトル・イントロ配置調整
+========================================================= */
+.contact-proposal__title,
+.contact-partner__title,
+.contact-new__title {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact-proposal__intro,
+.contact-partner__intro,
+.contact-new__intro {
+  text-align: center;       /* 全体を中央配置 */
+  max-width: 700px;         /* 横幅を絞ると読みやすい */
+  margin: 0 auto 2.5rem;    /* 上下中央余白 */
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+
+/* =========================================================
    honeypotフィールド（スパム対策）を非表示化
 ========================================================= */
 input[name="hp"],
