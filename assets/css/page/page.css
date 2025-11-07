@@ -426,3 +426,20 @@ input[name="hp"],
   margin: 0 !important;
   padding: 0 !important;
 }
+/* =========================================================
+   姓名フィールドを2カラム横並びに
+========================================================= */
+.contact-proposal__row,
+.contact-new__row,
+.contact-partner__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* カラム間のすき間 */
+}
+
+.contact-proposal__row .contact-proposal__group,
+.contact-new__row .contact-new__group,
+.contact-partner__row .contact-partner__group {
+  flex: 1 1 calc(50% - 0.5rem); /* 半分ずつ配置 */
+  min-width: 200px;
+}
