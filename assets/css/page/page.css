@@ -490,3 +490,22 @@ input[name="hp"],
   color: var(--color-primary-hover);
   text-decoration: none;
 }
+
+/* ==============================
+   フォーム スマホ調整
+============================== */
+@media screen and (max-width: 768px) {
+  .contact-new form,
+  .contact-new__inner form {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .contact-new input,
+  .contact-new textarea,
+  .contact-new select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

@@ -38,28 +38,36 @@ document.addEventListener('DOMContentLoaded', function () {
     // リサイズ時に再計算（レスポンシブ対応）
     window.addEventListener('resize', adjustPadding);
   }
-
 });
 
-// ===== マーカーアニメーション =====
+
+// =========================================================
+//  マーカーアニメーション
+// =========================================================
 document.addEventListener('DOMContentLoaded', function () {
   const markers = document.querySelectorAll('.case-marker');
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target); // 一度きり発火
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
+  if (markers.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target); // 一度きり発火
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
-  markers.forEach((el) => observer.observe(el));
+    markers.forEach((el) => observer.observe(el));
+  }
 });
 
+
+// =========================================================
+//  パートナーヘッダー用メニュー開閉処理
+// =========================================================
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.querySelector('.header-partner__menu-toggle');
   const nav = document.querySelector('.header-partner__nav');
@@ -68,6 +76,26 @@ document.addEventListener('DOMContentLoaded', function () {
     toggle.addEventListener('click', function () {
       toggle.classList.toggle('active');
       nav.classList.toggle('open');
+    });
+  }
+});
+
+
+// =========================================================
+//  通常ヘッダー用メニュー開閉処理（.menu-toggle × .main-nav）
+// =========================================================
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', function () {
+      // ハンバーガー自体にクラス付与（アニメーション対応）
+      menuToggle.classList.toggle('active');
+      // ナビ開閉
+      mainNav.classList.toggle('open');
+      // 背景スクロール固定（任意）
+      document.body.classList.toggle('nav-open');
     });
   }
 });
