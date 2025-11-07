@@ -1665,3 +1665,61 @@ svg {
     display: none !important;
   }
 }
+
+/* =========================================================
+   講習会LP 修正版スタイル
+   （フォーム削除・1カラム構成・ボタン整列）
+========================================================= */
+
+.p-fv__container.single-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+}
+
+.p-fv__info.center {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.p-fv__image {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 64rem;
+}
+.p-fv__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.6rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* 申し込みボタンエリア */
+.p-fv__btn-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+@media screen and (max-width: 767px) {
+  .p-fv__btn-area {
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-top: 2.4rem;
+  }
+}
+
+/* HERO背景を少し明るく補正（フォーム削除後の空間調整） */
+.p-fv {
+  padding-block: 8rem 6rem;
+  background: url(../img/img_fv--pc.webp) no-repeat center bottom / cover;
+  background-color: #f7fbfc;
+}
+
+/* ヘッダーCTA削除時のナビ余白調整 */
+.l-header__nav-cta {
+  display: none !important;
+}

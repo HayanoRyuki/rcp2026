@@ -1,7 +1,7 @@
 <?php
 /*
-Template Name: 講習会LP
-Description: RECEPTIONIST講習会のランディングページ（独自プラグイン連動）
+Template Name: 講習会LP（修正版）
+Description: RECEPTIONIST講習会LP 修正対応版（フォーム削除・リンク統一）
 */
 get_header();
 
@@ -18,24 +18,31 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
 <main class="l-main">
 
   <!-- ==============================
-       ヒーローセクション
+       HEROセクション（フォーム削除・画像左配置）
   =============================== -->
   <section class="p-fv">
     <div class="l-inner js-in-view fade-in-up">
-      <div class="p-fv__container">
-        <div class="p-fv__info">
+      <div class="p-fv__container single-col">
+        <div class="p-fv__info center">
           <p class="p-fv__label">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_online.svg" alt="オンライン開催" width="12" height="15">
             オンライン開催
           </p>
 
+          <!-- HEROタイトル画像 -->
           <h2 class="p-fv__title">
             <img class="p-fv__title-img"
               src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_fv-title--pc.webp"
-              alt="120分でわかる！RECEPTIONIST講習会 導入前の疑問や不安をすべて解決し、導入後の定着までサポートします"
+              alt="120分でわかる！RECEPTIONIST講習会"
               width="460" height="331">
           </h2>
 
+          <!-- HERO新メイン画像 -->
+          <div class="p-fv__image">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_fv-main--pc.webp" alt="RECEPTIONIST講習会イメージ" width="640" height="360">
+          </div>
+
+          <!-- 日程 -->
           <div class="p-fv__date">
             <div class="p-fv__date-item">
               <h4>基礎編の開催日程</h4>
@@ -51,67 +58,21 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- ===== フォーム部分 ===== -->
-        <div class="p-fv__form u-pc">
-          <div class="p-fv__form-inner">
-            <form id="form">
-              <div class="c-form-group-set">
-                <div class="c-form-group">
-                  <label>姓<span class="required">必須</span></label>
-                  <div class="c-form-input"><input type="text" placeholder="山田"></div>
-                </div>
-                <div class="c-form-group">
-                  <label>名<span class="required">必須</span></label>
-                  <div class="c-form-input"><input type="text" placeholder="太郎"></div>
-                </div>
-              </div>
-              <div class="c-form-group">
-                <label>貴社名<span class="required">必須</span></label>
-                <div class="c-form-input"><input type="text" placeholder="貴社名"></div>
-              </div>
-              <div class="c-form-group">
-                <label>メールアドレス<span class="required">必須</span></label>
-                <div class="c-form-input"><input type="text" placeholder="example@company.com"></div>
-              </div>
-              <div class="c-form-group">
-                <label>参加日時<span class="required">必須</span></label>
-                <div class="c-form-select">
-                  <select>
-                    <option>開催日を選択してください</option>
-                  </select>
-                </div>
-              </div>
-              <div class="c-form-group">
-                <label>この講習会をどこで知りましたか？<span class="cap">（任意）</span></label>
-                <div class="c-form-select">
-                  <select><option>選択してください</option></select>
-                </div>
-              </div>
-              <div class="c-form-group">
-                <label>導入目的<span class="cap">（任意）</span></label>
-                <div class="c-form-input"><input type="text" placeholder="導入目的をご記入ください"></div>
-              </div>
-              <div class="c-form-group">
-                <label>現在の課題<span class="cap">（任意）</span></label>
-                <div class="c-form-input"><input type="text" placeholder="現在の課題をご記入ください"></div>
-              </div>
-              <div class="c-form-btn-area">
-                <a href="#" class="c-button c-button-blue">
-                  <span>今すぐ申し込む</span><span>基礎編はこちら</span>
-                </a>
-                <a href="#" class="c-button">
-                  <span>今すぐ申し込む</span><span>応用編はこちら</span>
-                </a>
-              </div>
-            </form>
+          <!-- 申し込みボタン -->
+          <div class="p-fv__btn-area">
+            <a href="https://pi.pardot.com/form/read/id/54816" target="_blank" rel="noopener" class="c-button c-button-blue">
+              <span>今すぐ申し込む</span><span>基礎編はこちら</span>
+            </a>
+            <a href="https://pi.pardot.com/form/read/id/54693" target="_blank" rel="noopener" class="c-button">
+              <span>今すぐ申し込む</span><span>応用編はこちら</span>
+            </a>
           </div>
+
         </div>
       </div>
     </div>
   </section>
-
 
   <!-- ==============================
        カリキュラムセクション
@@ -136,7 +97,6 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
       </div>
 
       <div class="p-curriculum__container js-in-view fade-in-up">
-
         <div class="p-curriculum__card">
           <div class="p-curriculum__card-img">
             <h3><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_curriculum-title1--pc.webp" alt="基礎編"></h3>
@@ -158,7 +118,6 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
