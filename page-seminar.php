@@ -4,15 +4,24 @@ Template Name: 講習会LP（最終修正版・既存CSS対応）
 Description: 既存CSS構造（.p-fv, .p-curriculum等）に準拠しつつ、フォーム削除・ボタン統一版
 */
 
-$post_id = get_the_ID();
-$basic1 = get_post_meta($post_id, 'basic_date_1', true);
-$basic2 = get_post_meta($post_id, 'basic_date_2', true);
-$adv1   = get_post_meta($post_id, 'advanced_date_1', true);
+$post_id   = get_the_ID();
+$basic1    = get_post_meta($post_id, 'basic_date_1', true);
+$basic2    = get_post_meta($post_id, 'basic_date_2', true);
+$adv1      = get_post_meta($post_id, 'advanced_date_1', true);
 $cur_title = get_post_meta($post_id, 'curriculum_title', true);
 $cur_text  = get_post_meta($post_id, 'curriculum_text', true);
 $cur_basic = get_post_meta($post_id, 'curriculum_basic', true);
 $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
 ?>
+
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+  <meta charset="<?php bloginfo('charset'); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <?php wp_head(); // ← CSS・JSを出力するため必須 ?>
+</head>
+<body <?php body_class(); ?>>
 
 <!-- ==============================
      LP専用ヘッダー
@@ -32,9 +41,6 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
      FV（メインビジュアル）
 ============================== -->
 <main class="l-main">
-  <!-- ==============================
-       ヒーローセクション
-  =============================== -->
   <section class="p-fv">
     <div class="l-inner js-in-view fade-in-up">
       <div class="p-fv__container">
@@ -79,9 +85,6 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
           </div>
 
         </div><!-- /.p-fv__info -->
-
-        <!-- ===== 右カラム削除済み：p-fv__formなし ===== -->
-
       </div><!-- /.p-fv__container -->
     </div>
   </section>
@@ -142,4 +145,6 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
   </section>
 </main>
 
-<?php get_footer(); ?>
+<?php wp_footer(); // JSを出力するため必須 ?>
+</body>
+</html>
