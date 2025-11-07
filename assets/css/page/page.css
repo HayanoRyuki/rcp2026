@@ -443,3 +443,27 @@ input[name="hp"],
   flex: 1 1 calc(50% - 0.5rem); /* 半分ずつ配置 */
   min-width: 200px;
 }
+
+/* =========================================================
+   無料トライアルフォーム専用：入力欄共通化
+========================================================= */
+.contact-new__input[type="password"],
+.contact-new__input[type="email"] {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background-color: var(--color-white);
+  box-sizing: border-box;
+  color: var(--color-text);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-new__input[type="password"]:focus,
+.contact-new__input[type="email"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 181, 226, 0.2);
+}
