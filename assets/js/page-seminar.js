@@ -37,21 +37,25 @@ viewport固定（375px以下は小さくさせない）
 // });
 
 /* ===================================================
-スムーススクロール（ノーマル）
+スムーススクロール（ノーマル）＋ 初期化維持
 =====================================================*/
-// document.addEventListener('DOMContentLoaded', function() {
-// 	const links = document.querySelectorAll('a[href^="#"]');
-// 	links.forEach(item => {
-// 		item.addEventListener("click", event => {
-// 			event.preventDefault();
-// 			const targetId = item.getAttribute("href");
-// 			const target = document.querySelector(targetId);
-// 			if (target) {
-// 				target.scrollIntoView({
-// 					behavior: "smooth",
-// 					block: "start"
-// 				});
-// 			}
-// 		});
-// 	});
-// });
+document.addEventListener('DOMContentLoaded', function() {
+  // 初期化確認
+  console.log('page-seminar.js initialized');
+
+  // スムーススクロール（元のまま）
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(item => {
+    item.addEventListener("click", event => {
+      event.preventDefault();
+      const targetId = item.getAttribute("href");
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    });
+  });
+});
