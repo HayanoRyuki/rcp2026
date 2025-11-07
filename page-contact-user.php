@@ -3,49 +3,57 @@
 get_header();
 ?>
 
-<main class="site-main page-contact page-contact--user">
-  <section class="contact-form-wrapper">
-    <div class="contact-form-inner">
-      <h1 class="contact-title">お問い合わせ（アカウントをお持ちの方）</h1>
-      <p class="contact-description">
+<main class="site-main contact-new">
+  <section class="contact-new__section">
+    <div class="contact-new__inner">
+      <h1 class="contact-new__title">お問い合わせ（アカウントをお持ちの方）</h1>
+
+      <p class="contact-new__intro">
         ご質問、ご相談は以下のフォームよりお送りください。<br>
         内容確認後、担当より通常2〜4営業日以内にご連絡いたします。<br>
-        アカウントをお持ちでない方は<a href="/contact" target="_blank" rel="noopener">こちら</a>よりお問い合わせください。
+        アカウントをお持ちでない方は
+        <a href="/contact-without-account/" target="_blank" rel="noopener">こちら</a>
+        よりお問い合わせください。
       </p>
 
-      <form name="contact" class="contact-form">
+      <form name="contact_user"
+            class="contact-form contact-new__form form-track download-form pardot-form"
+            action="" method="post"
+            data-event="request_contact_user"
+            data-form-id="contact_user">
+
         <input type="hidden" name="contact_type" value="user">
 
-        <div class="form-group">
-          <label for="company_name" class="required">貴社名</label>
-          <input type="text" id="company_name" name="company_name" placeholder="株式会社RECEPTIONIST" required>
+        <div class="contact-new__group">
+          <label for="company_name" class="contact-new__label required">貴社名</label>
+          <input type="text" name="company_name" id="company_name" class="contact-new__input" required>
         </div>
 
-        <div class="form-group form-group--two-column">
-          <div>
-            <label for="last_name" class="required">ご担当者名（姓）</label>
-            <input type="text" id="last_name" name="last_name" placeholder="姓" required>
+        <div class="contact-new__row">
+          <div class="contact-new__group">
+            <label for="last_name" class="contact-new__label required">姓</label>
+            <input type="text" name="last_name" id="last_name" class="contact-new__input" required>
           </div>
-          <div>
-            <label for="first_name" class="required">ご担当者名（名）</label>
-            <input type="text" id="first_name" name="first_name" placeholder="名" required>
+          <div class="contact-new__group">
+            <label for="first_name" class="contact-new__label required">名</label>
+            <input type="text" name="first_name" id="first_name" class="contact-new__input" required>
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="email" class="required">メールアドレス</label>
-          <input type="email" id="email" name="email" placeholder="例）example@chouseiapo.co.jp" required>
+        <div class="contact-new__group">
+          <label for="email" class="contact-new__label required">メールアドレス</label>
+          <input type="email" name="email" id="email" class="contact-new__input" required>
         </div>
 
-        <div class="form-group">
-          <label for="phone_no">電話番号</label>
-          <input type="tel" id="phone_no" name="phone_no" placeholder="例）03-1234-5678">
+        <div class="contact-new__group">
+          <label for="phone_no" class="contact-new__label">電話番号</label>
+          <input type="tel" name="phone_no" id="phone_no" class="contact-new__input">
         </div>
 
-        <div class="form-group">
-          <label for="contact_category_id" class="required">お問い合わせ種別</label>
-          <select id="contact_category_id" name="contact_category_id" required>
-            <option value="" disabled selected>選択してください</option>
+        <div class="contact-new__group">
+          <label for="contact_category_id" class="contact-new__label required">お問い合わせ種別</label>
+          <select name="contact_category_id" id="contact_category_id" class="contact-new__select" required>
+            <option value="">選択してください</option>
             <option value="2">アカウント情報について</option>
             <option value="3">チャット連携について</option>
             <option value="4">担当者への通知について</option>
@@ -59,22 +67,23 @@ get_header();
           </select>
         </div>
 
-        <div class="form-group">
-          <label for="body" class="required">お問い合わせ内容</label>
-          <textarea id="body" name="body" rows="6" placeholder="例）今すぐ利用開始できますか？" required></textarea>
+        <div class="contact-new__group">
+          <label for="body" class="contact-new__label required">お問い合わせ内容</label>
+          <textarea name="body" id="body" rows="6" class="contact-new__textarea" required></textarea>
         </div>
 
-        <div class="check-box">
-          <label>
-            <input type="checkbox" name="agree" required>
+        <div class="contact-new__privacy">
+          <label for="privacy_policy" class="contact-new__privacy-label">
+            <input type="checkbox" id="privacy_policy" name="privacy_policy" required>
             （株）RECEPTIONISTの
-            <a href="/privacy-policy" target="_blank" rel="noopener">個人情報の取り扱い</a>
-            に同意します。<span class="asterisk">*</span>
+            <a href="/privacy" target="_blank" rel="noopener noreferrer">個人情報の取り扱いについて</a> に同意します。
           </label>
         </div>
 
-        <div class="form-group">
-          <button type="submit" id="send" class="btn-submit">送信する</button>
+        <input type="text" name="hp" tabindex="-1" autocomplete="off" class="contact-new__honeypot">
+
+        <div class="contact-new__actions">
+          <button type="submit" class="contact-new__button">送信する</button>
         </div>
       </form>
     </div>
@@ -82,28 +91,49 @@ get_header();
 </main>
 
 <script>
-document.querySelector('#send').addEventListener('click', function (e) {
-  e.preventDefault();
-  const form = document.querySelector('form[name="contact"]');
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
+(function () {
+  function hasSpam(form) {
+    const hp = form.querySelector('input[name="hp"]');
+    return hp && hp.value.trim() !== '';
   }
-  const params = {
-    contact: Object.fromEntries(new FormData(form))
-  };
-  fetch('https://api.receptionist.jp/api/contacts', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(params)
-  })
-  .then(r => {
-    if (!r.ok) throw new Error('送信エラー');
-    return r.json();
-  })
-  .then(() => window.location.href = '/thanks')
-  .catch(() => alert('送信に失敗しました。時間を置いてお試しください。'));
-});
+
+  document.addEventListener('submit', function (e) {
+    const form = e.target;
+    if (!form.matches('form[name="contact_user"]')) return;
+
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const consent = form.querySelector('input[name="privacy_policy"]');
+    if (consent && !consent.checked) {
+      alert('プライバシーポリシーに同意してください。');
+      return;
+    }
+
+    if (hasSpam(form)) return;
+
+    if (window.contactUtil && typeof window.contactUtil.sendRequest === 'function') {
+      const rawData = {};
+      new FormData(form).forEach((value, key) => {
+        rawData[key] = value;
+      });
+
+      console.log("[contact_user] 送信データ", rawData);
+
+      window.contactUtil.sendRequest({
+        formName: 'contact_user',
+        isNew: true,
+        requestParams: rawData
+      });
+    } else {
+      console.error('contactUtil.sendRequest が見つかりません。');
+    }
+  }, true);
+})();
 </script>
 
 <?php get_footer(); ?>
