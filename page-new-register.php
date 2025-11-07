@@ -3,12 +3,12 @@
 get_header();
 ?>
 
-<main class="site-main trial">
-  <section class="trial__section">
-    <div class="trial__inner">
-      <h2 class="trial__title">1分で登録完了</h2>
+<main class="site-main contact-new">
+  <section class="contact-new__section">
+    <div class="contact-new__inner">
+      <h1 class="contact-new__title">1分で登録完了</h1>
 
-      <p class="trial__intro">
+      <p class="contact-new__intro">
         企業アカウント・管理者アカウントの発行になります。<br>
         既存のお客さまの社員アカウント発行は、<br>
         ご利用企業の管理者にお問い合わせください。<br><br>
@@ -16,52 +16,52 @@ get_header();
         RECEPTIONISTの全ての機能を無料でお試しいただけます。
       </p>
 
-      <form class="contact-form trial__form" id="trialForm" novalidate>
-        <div class="trial__group">
-          <label for="email" class="trial__label">メールアドレス</label>
+      <form class="contact-form contact-new__form" id="trialForm" novalidate>
+        <div class="contact-new__group">
+          <label for="email" class="contact-new__label required">メールアドレス</label>
           <input
             type="email"
             id="email"
             name="email"
-            class="trial__input"
+            class="contact-new__input"
             placeholder="会社のメールアドレスを入れてください"
             required
           >
-          <p id="error-email" class="trial__error"></p>
+          <p id="error-email" class="error-message"></p>
         </div>
 
-        <div class="trial__group">
-          <label for="password" class="trial__label">パスワード</label>
-          <p class="trial__note">
-            8文字以上（大文字英字・小文字英字・数字・特殊記号のうち３種類以上）で設定してください。
+        <div class="contact-new__group">
+          <label for="password" class="contact-new__label required">パスワード</label>
+          <p class="contact-new__note">
+            8文字以上（大文字英字・小文字英字・数字・特殊記号のうち3種類以上）で設定してください。
           </p>
           <input
             type="password"
             id="password"
             name="password"
-            class="trial__input"
+            class="contact-new__input"
             placeholder="パスワード"
             required
           >
-          <p id="error-password" class="trial__error"></p>
+          <p id="error-password" class="error-message"></p>
         </div>
 
-        <div class="trial__agreement">
-          <input type="checkbox" name="agree" id="agree" required>
-          <label for="agree" class="trial__agree-label">
+        <div class="contact-new__privacy">
+          <label for="agree" class="contact-new__privacy-label">
+            <input type="checkbox" name="agree" id="agree" required>
             私は
             <a href="https://help.receptionist.jp/?p=398" target="_blank" rel="noopener noreferrer">利用規約</a>
             及び
             <a href="https://help.receptionist.jp/?p=402" target="_blank" rel="noopener noreferrer">個人情報保護方針</a>
             を読み、これに同意します。
           </label>
-          <p id="error-check" class="trial__error"></p>
+          <p id="error-check" class="error-message"></p>
         </div>
 
-        <div class="trial__actions">
-          <button type="button" class="trial__button" id="sub-mit">無料で試してみる</button>
-          <p id="loading" class="trial__loading" style="display:none;">loading.....</p>
-          <p id="error" class="trial__error"></p>
+        <div class="contact-new__actions">
+          <button type="button" class="contact-new__button" id="sub-mit">無料で試してみる</button>
+          <p id="loading" class="contact-new__loading" style="display:none;">loading.....</p>
+          <p id="error" class="error-message"></p>
         </div>
       </form>
     </div>
