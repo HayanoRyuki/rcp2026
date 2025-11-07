@@ -328,13 +328,17 @@
   resize: vertical;
 }
 
-/* 必須マーク */
-.contact-form .required,
-.contact-form .asterisk {
+/* 必須マーク — ラベル全体ではなくマークのみに適用 */
+.contact-form label.required {
+  color: var(--color-text); /* ラベル文字は黒 */
+}
+
+/* 必須マーク部分だけ赤くする（:after 疑似要素で制御） */
+.contact-form label.required::after {
+  content: " *";
   color: var(--color-danger);
-  margin-left: 4px;
-  font-size: 0.9rem;
   font-weight: 600;
+  font-size: 0.9rem;
 }
 
 /* フィールド間隔 */
