@@ -4,14 +4,25 @@ Template Name: 講習会LP（最終修正版・既存CSS対応）
 Description: 既存CSS構造（.p-fv, .p-curriculum等）に準拠しつつ、フォーム削除・ボタン統一版
 */
 
-$post_id   = get_the_ID();
-$basic1    = get_post_meta($post_id, 'basic_date_1', true);
-$basic2    = get_post_meta($post_id, 'basic_date_2', true);
-$adv1      = get_post_meta($post_id, 'advanced_date_1', true);
+$post_id = get_the_ID();
+
+// ✅ 新しいリピーター形式を優先的に取得
+$basic_dates    = get_post_meta($post_id, 'basic_dates', true);
+$advanced_dates = get_post_meta($post_id, 'advanced_dates', true);
+
+// ✅ カリキュラム関連
 $cur_title = get_post_meta($post_id, 'curriculum_title', true);
 $cur_text  = get_post_meta($post_id, 'curriculum_text', true);
 $cur_basic = get_post_meta($post_id, 'curriculum_basic', true);
 $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
+
+// ✅ 配列初期化（旧形式フォールバック対応）
+if (!is_array($basic_dates)) {
+  $basic_dates = array_filter([$basic1, $basic2]);
+}
+if (!is_array($advanced_dates)) {
+  $advanced_dates = array_filter([$adv1]);
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +30,7 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <?php wp_head(); // ← CSS・JSを出力するため必須 ?>
+  <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 
@@ -45,6 +56,7 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
     <div class="l-inner js-in-view fade-in-up">
       <div class="p-fv__container">
         <div class="p-fv__info">
+
           <p class="p-fv__label">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_online.svg" alt="オンライン開催" width="12" height="15">
             オンライン開催
@@ -57,24 +69,39 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
                  width="460" height="331">
           </h2>
 
+          <!-- ==============================
+               日程リピーター対応部分
+          =============================== -->
           <div class="p-fv__date">
             <div class="p-fv__date-item">
               <h4>基礎編の開催日程</h4>
               <div class="p-fv__date-item-inner">
-                <?php if($basic1): ?><p><?php echo esc_html($basic1); ?></p><?php endif; ?>
-                <?php if($basic2): ?><p><?php echo esc_html($basic2); ?></p><?php endif; ?>
+                <?php if (!empty($basic_dates)): ?>
+                  <?php foreach ($basic_dates as $date): ?>
+                    <p><?php echo esc_html($date); ?></p>
+                  <?php endforeach; ?>
+                <?php else: ?>
+                  <p>現在日程は調整中です。</p>
+                <?php endif; ?>
               </div>
             </div>
 
             <div class="p-fv__date-item">
               <h4>応用編の開催日程</h4>
               <div class="p-fv__date-item-inner">
-                <?php if($adv1): ?><p><?php echo esc_html($adv1); ?></p><?php endif; ?>
+                <?php if (!empty($advanced_dates)): ?>
+                  <?php foreach ($advanced_dates as $date): ?>
+                    <p><?php echo esc_html($date); ?></p>
+                  <?php endforeach; ?>
+                <?php else: ?>
+                  <p>現在日程は調整中です。</p>
+                <?php endif; ?>
               </div>
             </div>
           </div>
+          <!-- ============================== -->
 
-          <!-- ======= フォーム削除 → ボタン設置 ======= -->
+          <!-- ボタン部分 -->
           <div class="p-fv__btn-area fade-in-up">
             <a href="https://pi.pardot.com/form/read/id/54816" target="_blank" rel="noopener" class="c-button c-button-blue">
               <span>基礎編に申し込む</span><span>無料参加</span>
@@ -109,6 +136,7 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
       </div>
 
       <div class="p-curriculum__container js-in-view fade-in-up">
+        <!-- 基礎編 -->
         <div class="p-curriculum__card">
           <div class="p-curriculum__card-img">
             <h3><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_curriculum-title1--pc.webp" alt="基礎編"></h3>
@@ -125,6 +153,7 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
           </div>
         </div>
 
+        <!-- 応用編 -->
         <div class="p-curriculum__card">
           <div class="p-curriculum__card-img">
             <h3><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_curriculum-title2--pc.webp" alt="応用編"></h3>
@@ -140,7 +169,7 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
             </div>
           </div>
         </div>
-      </div>
+      </div><!-- /.p-curriculum__container -->
     </div>
   </section>
 </main>
