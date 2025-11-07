@@ -145,6 +145,6 @@ $cur_adv   = get_post_meta($post_id, 'curriculum_advanced', true);
   </section>
 </main>
 
-<?php wp_footer(); // JSを出力するため必須 ?>
+<?php get_footer(); ?>
 </body>
 </html>
