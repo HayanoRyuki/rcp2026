@@ -389,3 +389,17 @@
   padding: 3rem 1rem;
 }
 
+
+/* =========================================================
+   honeypotフィールド（スパム対策）を非表示化
+========================================================= */
+input[name="hp"],
+.contact-proposal__honeypot,
+.contact-new__honeypot,
+.contact-partner__honeypot {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
