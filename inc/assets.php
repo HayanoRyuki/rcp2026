@@ -193,21 +193,20 @@ function rcp2026_enqueue_assets() {
     }
   }
 
-    // ===================================
-  // 講習会LP専用CSS（/assets/css/page/seminar/style.css）
-  // ===================================
-  if (is_page_template('page-seminar.php')) {
-    $seminar_css = "{$theme_dir}/assets/css/page/seminar/style.css";
-    if (file_exists($seminar_css)) {
-      wp_enqueue_style(
-        'rcp2026-page-seminar',
-        "{$theme_uri}/assets/css/page/seminar/style.css",
-        ['rcp2026-page-common'],
-        filemtime($seminar_css)
-      );
-    }
+// ===================================
+// 講習会LP専用CSS（page-seminar.css）
+// ===================================
+if (is_page_template('page-seminar.php')) {
+  $seminar_css = "{$theme_dir}/assets/css/page/page-seminar.css";
+  if (file_exists($seminar_css)) {
+    wp_enqueue_style(
+      'rcp2026-page-seminar',
+      "{$theme_uri}/assets/css/page/page-seminar.css",
+      ['rcp2026-page-common'],
+      filemtime($seminar_css)
+    );
   }
-  
+}
   // ===================================
   // 固定ページ専用JS（自動検出）
   // ===================================
