@@ -492,35 +492,23 @@ input[name="hp"],
 }
 
 /* ==============================
-   フォーム スマホ調整（共通）
+   フォーム スマホ内側余白調整（共通）
 ============================== */
 @media screen and (max-width: 768px) {
-  /* すべての contact〜 系フォームを対象 */
-  .contact-new form,
-  .contact-new__inner form,
-  .contact-partner form,
-  .contact-partner__inner form,
-  .contact-proposal form,
-  .contact-proposal__inner form,
-  .contact-form {
-    width: 90%;
-    max-width: 90%;
-    margin: 0 auto;
+  .contact-new__inner,
+  .contact-partner__inner,
+  .contact-proposal__inner,
+  .contact-form-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
-  .contact-new input,
-  .contact-new textarea,
-  .contact-new select,
-  .contact-partner input,
-  .contact-partner textarea,
-  .contact-partner select,
-  .contact-proposal input,
-  .contact-proposal textarea,
-  .contact-proposal select,
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form select {
-    width: 100%;
+  /* form自体にも最低限の余白を確保 */
+  .contact-form,
+  .contact-new__form,
+  .contact-partner__form,
+  .contact-proposal__form {
+    padding: 1.5rem 1rem;
     box-sizing: border-box;
   }
 }
