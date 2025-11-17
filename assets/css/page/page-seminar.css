@@ -1,17 +1,3 @@
-/* =========================================================
-   Reset（必要最小限）
-========================================================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 
 /* =========================================================
    Fade Animation
@@ -24,27 +10,6 @@ img {
 .fade-in-up.is-in-view {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* =========================================================
-   Layout Basic
-========================================================= */
-.l-main {
-  width: 100%;
-  margin-top: 7.2rem;
-}
-@media screen and (max-width: 767px) {
-  .l-main { margin-top: 6rem; }
-}
-
-.l-inner {
-  width: 100%;
-  max-width: 101rem;
-  padding: 0 2rem;
-  margin: 0 auto;
-}
-@media screen and (max-width: 767px) {
-  .l-inner { max-width: 63.2rem; padding: 0 1.6rem; }
 }
 
 /* =========================================================
