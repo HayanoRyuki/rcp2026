@@ -306,3 +306,63 @@ body {
   .u-sp { display: block !important; }
   .u-pc { display: none !important; }
 }
+
+/* =========================================================
+   Event Section（講習会概要）
+========================================================= */
+
+.p-event {
+  padding: 8rem 0;
+}
+
+.p-event__container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.p-event__contents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+@media (max-width: 767px) {
+  .p-event__contents {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+}
+
+.p-event__step-num-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.p-event__step-num-text img {
+  width: 24px;
+  height: auto;
+}
+
+.p-event__step-text {
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 1.8;
+  margin-top: 1rem;
+}
+
+/* イベントのボタン（セクション下） */
+.p-cta {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+@media (max-width: 767px) {
+  .p-cta {
+    flex-direction: column;
+  }
+}
