@@ -34,7 +34,7 @@ if (!is_array($advanced_dates)) $advanced_dates = array_filter([]);
 <header class="lp-header">
   <div class="lp-header__inner">
     <div class="lp-header__logo">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-receptionist.svg" alt="RECEPTIONIST" width="140">
+      <img src="<?php echo get_template_directory_uri(); ?>assets/img/logo/img-logo-reception.webp" alt="RECEPTIONIST" width="140">
     </div>
     <div class="lp-header__text">
       <p>受付システムをもっと活用したい方へ！<span class="highlight">無料講習会</span> にご招待！</p>
