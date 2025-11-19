@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-
 // =========================================================
 //  RECEPTIONIST 共通フォーム送信（WP 側）
 // =========================================================
@@ -135,12 +134,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
       await postToLambda(payload);
 
+      // ★ 成功時リダイレクトはコメントアウト（デバッグ用）
       // window.location.href = "https://staging.receptionist.jp/thanks/";
       return;
 
     } catch (err) {
       console.error("フォーム送信エラー:", err);
-      window.location.href = "https://staging.receptionist.jp/thanks/";
+
+      // ★ 失敗時リダイレクトもコメントアウト（デバッグ用）
+      // window.location.href = "https://staging.receptionist.jp/thanks/";
       return;
 
     } finally {
@@ -150,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.textContent = originalText;
       }
     }
-  }
+  } // ← ← ← handleFormSubmit 正式クローズ
 
   function bindRcpForms() {
     const forms = document.querySelectorAll("form.js-rcp-contact-form");
