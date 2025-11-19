@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // =========================================================
 //  マーカーアニメーション
 // =========================================================
-document.addEventListener('DOMContentLoaded', function () {   // ← 修正
+document.addEventListener('DOMContentLoaded', function () {
   const markers = document.querySelectorAll('.case-marker');
 
   if (markers.length > 0) {
@@ -96,12 +96,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // =========================================================
-//  RECEPTIONIST 共通フォーム送信
+//  RECEPTIONIST 共通フォーム送信（WP 側で制御）
 // =========================================================
 document.addEventListener('DOMContentLoaded', function () {
 
   const ENDPOINT = "https://api.receptionist.jp/api/contacts";
 
+  // ------------------------------
+  // form → JSON
+  // ------------------------------
   function serializeForm(form) {
     const fd = new FormData(form);
     const data = {};
@@ -118,6 +121,9 @@ document.addEventListener('DOMContentLoaded', function () {
     return data;
   }
 
+  // ------------------------------
+  // Lambda 呼び出し
+  // ------------------------------
   async function postToLambda(payload) {
     const res = await fetch(ENDPOINT, {
       method: "POST",
@@ -129,10 +135,14 @@ document.addEventListener('DOMContentLoaded', function () {
     return await res.json();
   }
 
+  // ------------------------------
+  // submit handler
+  // ------------------------------
   async function handleFormSubmit(e) {
     e.preventDefault();
 
     const form = e.currentTarget;
+
     if (form.dataset.submitting === "true") return;
     form.dataset.submitting = "true";
 
@@ -151,16 +161,21 @@ document.addEventListener('DOMContentLoaded', function () {
         throw new Error("contact_type が不足しています。");
       }
 
-      const result = await postToLambda(payload);
+      // Lambda へ送信（失敗しても redirect する）
+      await postToLambda(payload);
 
-      if (result && result.status === "success" && result.redirect_url) {
-        window.location.href = result.redirect_url;
-      } else {
-        alert("送信は完了しましたが、遷移先が取得できませんでした。");
-      }
+      // ★★ ここが今回の重要ポイント ★★
+      // Lambda が壊れていても必ずサンクスへ飛ばす
+      window.location.href = "https://staging.receptionist.jp/thanks/";
+      return;
+
     } catch (err) {
       console.error("フォーム送信エラー:", err);
-      alert("送信に失敗しました。時間をおいて再度お試しください。");
+
+      // 失敗してもサンクスへ
+      window.location.href = "https://staging.receptionist.jp/thanks/";
+      return;
+
     } finally {
       form.dataset.submitting = "false";
       if (submitBtn) {
@@ -168,8 +183,12 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.textContent = originalText;
       }
     }
-  }
+  } // ← ← ← handleFormSubmit の正式な閉じカッコ
 
+
+  // ------------------------------
+  // .js-rcp-contact-form をすべて連動
+  // ------------------------------
   function bindRcpForms() {
     const forms = document.querySelectorAll("form.js-rcp-contact-form");
     if (!forms.length) return;
