@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // =========================================================
 document.addEventListener('DOMContentLoaded', function () {
 
-  const ENDPOINT = "https://staging.api.receptionist.jp/api/contacts";
+  const ENDPOINT = "https://t8k8whvjnj.execute-api.ap-northeast-1.amazonaws.com/test/";
 
   function serializeForm(form) {
     const fd = new FormData(form);
