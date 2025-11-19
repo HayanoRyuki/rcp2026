@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // =========================================================
 //  マーカーアニメーション
 // =========================================================
-document.addEventListener('DOMContentLoaded', function () {
+document.addaddEventListener('DOMContentLoaded', function () {
   const markers = document.querySelectorAll('.case-marker');
 
   if (markers.length > 0) {
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // =========================================================
-//  パートナーヘッダー用メニュー開閉処理
+–  パートナーヘッダー用メニュー開閉処理
 // =========================================================
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.querySelector('.header-partner__menu-toggle');
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // =========================================================
-//  通常ヘッダー用メニュー開閉処理（.menu-toggle × .main-nav）
+//  通常ヘッダー用メニュー開閉処理
 // =========================================================
 document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
@@ -90,12 +90,111 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (menuToggle && mainNav) {
     menuToggle.addEventListener('click', function () {
-      // ハンバーガー自体にクラス付与（アニメーション対応）
       menuToggle.classList.toggle('active');
-      // ナビ開閉
       mainNav.classList.toggle('open');
-      // 背景スクロール固定（任意）
       document.body.classList.toggle('nav-open');
     });
   }
+});
+
+
+// =========================================================
+//  RECEPTIONIST 共通フォーム送信
+// =========================================================
+document.addEventListener('DOMContentLoaded', function () {
+
+  const ENDPOINT = "https://api.receptionist.jp/api/contacts";
+
+  /**
+   * form → JSON
+   */
+  function serializeForm(form) {
+    const fd = new FormData(form);
+    const data = {};
+
+    fd.forEach((value, key) => {
+      if (Object.prototype.hasOwnProperty.call(data, key)) {
+        if (!Array.isArray(data[key])) {
+          data[key] = [data[key]];
+        }
+        data[key].push(value);
+      } else {
+        data[key] = value;
+      }
+    });
+
+    return data;
+  }
+
+  /**
+   * LambdaへPOST
+   */
+  async function postToLambda(payload) {
+    const res = await fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) throw new Error("Lambda request failed");
+    return await res.json();
+  }
+
+  /**
+   * submit handler
+   */
+  async function handleFormSubmit(e) {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    if (form.dataset.submitting === "true") return;
+    form.dataset.submitting = "true";
+
+    const submitBtn = form.querySelector("[type=submit]");
+    const originalText = submitBtn ? submitBtn.textContent : "";
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "送信中…";
+    }
+
+    try {
+      const payload = serializeForm(form);
+
+      if (!payload.contact_type) {
+        throw new Error("contact_type が不足しています。");
+      }
+
+      const result = await postToLambda(payload);
+
+      if (result && result.status === "success" && result.redirect_url) {
+        window.location.href = result.redirect_url;
+      } else {
+        alert("送信は完了しましたが、遷移先が取得できませんでした。");
+      }
+    } catch (err) {
+      console.error("フォーム送信エラー:", err);
+      alert("送信に失敗しました。時間をおいて再度お試しください。");
+    } finally {
+      form.dataset.submitting = "false";
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    }
+  }
+
+  /**
+   * bind all .js-rcp-contact-form
+   */
+  function bindRcpForms() {
+    const forms = document.querySelectorAll("form.js-rcp-contact-form");
+    if (!forms.length) return;
+
+    forms.forEach((form) => {
+      form.addEventListener("submit", handleFormSubmit);
+    });
+  }
+
+  bindRcpForms();
 });

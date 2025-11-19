@@ -13,12 +13,11 @@ get_header();
         内容を確認のうえ、担当者よりご連絡差し上げます。
       </p>
 
-      <form name="proposal"
-      class="contact-form contact-proposal__form form-track download-form pardot-form"
-      action="" method="post"
-      data-event="proposal_submit"
-      data-form-id="proposal">
-
+      <!-- ★ Lambda送信用：js-rcp-contact-form を必ず付与 -->
+      <form
+        name="proposal"
+        class="contact-form contact-proposal__form js-rcp-contact-form"
+      >
 
         <input type="hidden" name="contact_type" value="suggest_company">
 
@@ -58,9 +57,11 @@ get_header();
             <input type="checkbox" id="privacy_policy" name="privacy_policy" required>
             （株）RECEPTIONISTの
             <a href="/privacy" target="_blank" rel="noopener noreferrer">個人情報の取り扱いについて</a> に同意します。
+            <span class="required">*</span>
           </label>
         </div>
 
+        <!-- ハニーポット -->
         <input type="text" name="hp" tabindex="-1" autocomplete="off" class="contact-proposal__honeypot">
 
         <div class="contact-proposal__actions">
@@ -70,51 +71,5 @@ get_header();
     </div>
   </section>
 </main>
-
-<script>
-(function () {
-  function hasSpam(form) {
-    const hp = form.querySelector('input[name="hp"]');
-    return hp && hp.value.trim() !== '';
-  }
-
-  document.addEventListener('submit', function (e) {
-    const form = e.target;
-    if (!form.matches('form[name="proposal"]')) return;
-
-    e.preventDefault();
-
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    const consent = form.querySelector('input[name="privacy_policy"]');
-    if (consent && !consent.checked) {
-      alert('プライバシーポリシーに同意してください。');
-      return;
-    }
-
-    if (hasSpam(form)) return;
-
-    if (window.contactUtil && typeof window.contactUtil.sendRequest === 'function') {
-      const rawData = {};
-      new FormData(form).forEach((value, key) => {
-        rawData[key] = value;
-      });
-
-      console.log("[proposal] 送信データ", rawData);
-
-      window.contactUtil.sendRequest({
-        formName: 'proposal',
-        isNew: true,
-        requestParams: rawData
-      });
-    } else {
-      console.error('contactUtil.sendRequest が見つかりません。');
-    }
-  }, true);
-})();
-</script>
 
 <?php get_footer(); ?>

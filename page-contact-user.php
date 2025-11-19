@@ -16,11 +16,11 @@ get_header();
         よりお問い合わせください。
       </p>
 
-      <form name="contact_user"
-            class="contact-form contact-new__form form-track download-form pardot-form"
-            action="" method="post"
-            data-event="request_contact_user"
-            data-form-id="contact_user">
+      <!-- ★ Lambda送信用：js-rcp-contact-form 必須 -->
+      <form
+        name="contact_user"
+        class="contact-form contact-new__form js-rcp-contact-form"
+      >
 
         <input type="hidden" name="contact_type" value="user">
 
@@ -80,60 +80,16 @@ get_header();
           </label>
         </div>
 
+        <!-- ハニーポット -->
         <input type="text" name="hp" tabindex="-1" autocomplete="off" class="contact-new__honeypot">
 
         <div class="contact-new__actions">
           <button type="submit" class="contact-new__button">送信する</button>
         </div>
       </form>
+
     </div>
   </section>
 </main>
-
-<script>
-(function () {
-  function hasSpam(form) {
-    const hp = form.querySelector('input[name="hp"]');
-    return hp && hp.value.trim() !== '';
-  }
-
-  document.addEventListener('submit', function (e) {
-    const form = e.target;
-    if (!form.matches('form[name="contact_user"]')) return;
-
-    e.preventDefault();
-
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    const consent = form.querySelector('input[name="privacy_policy"]');
-    if (consent && !consent.checked) {
-      alert('プライバシーポリシーに同意してください。');
-      return;
-    }
-
-    if (hasSpam(form)) return;
-
-    if (window.contactUtil && typeof window.contactUtil.sendRequest === 'function') {
-      const rawData = {};
-      new FormData(form).forEach((value, key) => {
-        rawData[key] = value;
-      });
-
-      console.log("[contact_user] 送信データ", rawData);
-
-      window.contactUtil.sendRequest({
-        formName: 'contact_user',
-        isNew: true,
-        requestParams: rawData
-      });
-    } else {
-      console.error('contactUtil.sendRequest が見つかりません。');
-    }
-  }, true);
-})();
-</script>
 
 <?php get_footer(); ?>

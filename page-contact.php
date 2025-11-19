@@ -13,12 +13,12 @@ get_header();
         内容確認後、担当より通常2〜4営業日以内にご連絡いたします。
       </p>
 
-     <form name="new_user"
-      class="contact-form contact-new__form form-track download-form pardot-form"
-      action="" method="post"
-      data-event="request_materials"
-      data-form-id="new_user">
-        
+      <!-- ★ Lambda送信用：js-rcp-contact-form が必須 -->
+      <form
+        name="new_user"
+        class="contact-form contact-new__form js-rcp-contact-form"
+      >
+
         <div class="contact-new__group">
           <label for="company_name" class="contact-new__label required">貴社名</label>
           <input type="text" name="company_name" id="company_name" class="contact-new__input" required>
@@ -69,14 +69,18 @@ get_header();
           <label for="agree_privacy" class="contact-new__privacy-label">
             <input type="checkbox" id="agree_privacy" name="privacy_policy" required>
             （株）RECEPTIONISTの
-            <a href="/privacy" target="_blank" rel="noopener noreferrer">個人情報の取り扱いについて</a> に同意します。
+            <a href="/privacy" target="_blank" rel="noopener noreferrer">個人情報の取り扱いについて</a>
+            に同意します。
           </label>
         </div>
 
+        <!-- ハニーポット -->
         <input type="text" name="hp" tabindex="-1" autocomplete="off" class="contact-new__honeypot">
 
+        <!-- contact type -->
         <input type="hidden" name="contact_type" value="new_user">
 
+        <!-- UTM -->
         <input type="hidden" name="utm_source" id="utm_source_input">
         <input type="hidden" name="utm_medium" id="utm_medium_input">
         <input type="hidden" name="utm_campaign" id="utm_campaign_input">
@@ -87,54 +91,9 @@ get_header();
           <button type="submit" class="contact-new__button">送信する</button>
         </div>
       </form>
+
     </div>
   </section>
 </main>
-
-<script>
-(function () {
-  function hasSpam(form) {
-    const hp = form.querySelector('input[name="hp"]');
-    return hp && hp.value.trim() !== '';
-  }
-
-  document.addEventListener('submit', function (e) {
-    const form = e.target;
-    if (!form.matches('form[name="new_user"]')) return;
-
-    e.preventDefault();
-
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    const consent = form.querySelector('input[name="privacy_policy"]');
-    if (consent && !consent.checked) {
-      alert('プライバシーポリシーに同意してください。');
-      return;
-    }
-
-    if (hasSpam(form)) return;
-
-    if (window.contactUtil && typeof window.contactUtil.sendRequest === 'function') {
-      const rawData = {};
-      new FormData(form).forEach((value, key) => {
-        rawData[key] = value;
-      });
-
-      console.log("[new_user] 送信データ", rawData);
-
-      window.contactUtil.sendRequest({
-        formName: 'new_user',
-        isNew: true,
-        requestParams: rawData
-      });
-    } else {
-      console.error('contactUtil.sendRequest が見つかりません。');
-    }
-  }, true);
-})();
-</script>
 
 <?php get_footer(); ?>

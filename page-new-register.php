@@ -16,7 +16,13 @@ get_header();
         RECEPTIONISTの全ての機能を無料でお試しいただけます。
       </p>
 
-      <form class="contact-form contact-new__form" id="trialForm" novalidate>
+      <!-- ★ Lambda送信用クラスを追加 -->
+      <form
+        class="contact-form contact-new__form js-rcp-contact-form"
+        id="trialForm"
+        novalidate
+      >
+
         <div class="contact-new__group">
           <label for="email" class="contact-new__label required">メールアドレス</label>
           <input
@@ -35,13 +41,13 @@ get_header();
             8文字以上（大文字英字・小文字英字・数字・特殊記号のうち3種類以上）で設定してください。
           </p>
           <input
-  type="password"
-  id="password"
-  name="password"
-  class="contact-new__input contact-new__input--password"
-  placeholder="パスワード"
-  required
->
+            type="password"
+            id="password"
+            name="password"
+            class="contact-new__input contact-new__input--password"
+            placeholder="パスワード"
+            required
+          >
         </div>
 
         <div class="contact-new__privacy">
@@ -55,9 +61,24 @@ get_header();
           </label>
         </div>
 
+        <!-- ★ ハニーポット -->
+        <input type="text" name="hp" tabindex="-1" autocomplete="off"
+               style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
+
+        <!-- ★ contact_type -->
+        <input type="hidden" name="contact_type" value="trial">
+
+        <!-- ★ UTM hidden -->
+        <input type="hidden" name="utm_source" id="utm_source_input">
+        <input type="hidden" name="utm_medium" id="utm_medium_input">
+        <input type="hidden" name="utm_campaign" id="utm_campaign_input">
+        <input type="hidden" name="utm_term" id="utm_term_input">
+        <input type="hidden" name="utm_content" id="utm_content_input">
+
         <div class="contact-new__actions">
           <button type="submit" class="contact-new__button">無料で試してみる</button>
         </div>
+
       </form>
     </div>
   </section>
