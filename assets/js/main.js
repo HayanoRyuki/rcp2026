@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       await postToLambda(payload);
 
-      window.location.href = "https://staging.receptionist.jp/thanks/";
+      // window.location.href = "https://staging.receptionist.jp/thanks/";
       return;
 
     } catch (err) {
