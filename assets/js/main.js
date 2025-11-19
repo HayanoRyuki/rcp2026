@@ -32,10 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
       main.style.paddingTop = `${headerHeight}px`;
     };
 
-    // 初回実行
     adjustPadding();
-
-    // リサイズ時に再計算（レスポンシブ対応）
     window.addEventListener('resize', adjustPadding);
   }
 });
@@ -44,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // =========================================================
 //  マーカーアニメーション
 // =========================================================
-document.addaddEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {   // ← 修正
   const markers = document.querySelectorAll('.case-marker');
 
   if (markers.length > 0) {
@@ -53,7 +50,7 @@ document.addaddEventListener('DOMContentLoaded', function () {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target); // 一度きり発火
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -66,7 +63,7 @@ document.addaddEventListener('DOMContentLoaded', function () {
 
 
 // =========================================================
-–  パートナーヘッダー用メニュー開閉処理
+//  パートナーヘッダー用メニュー開閉処理
 // =========================================================
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.querySelector('.header-partner__menu-toggle');
@@ -105,13 +102,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const ENDPOINT = "https://api.receptionist.jp/api/contacts";
 
-  /**
-   * form → JSON
-   */
   function serializeForm(form) {
     const fd = new FormData(form);
     const data = {};
-
     fd.forEach((value, key) => {
       if (Object.prototype.hasOwnProperty.call(data, key)) {
         if (!Array.isArray(data[key])) {
@@ -122,13 +115,9 @@ document.addEventListener('DOMContentLoaded', function () {
         data[key] = value;
       }
     });
-
     return data;
   }
 
-  /**
-   * LambdaへPOST
-   */
   async function postToLambda(payload) {
     const res = await fetch(ENDPOINT, {
       method: "POST",
@@ -140,9 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
     return await res.json();
   }
 
-  /**
-   * submit handler
-   */
   async function handleFormSubmit(e) {
     e.preventDefault();
 
@@ -184,9 +170,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  /**
-   * bind all .js-rcp-contact-form
-   */
   function bindRcpForms() {
     const forms = document.querySelectorAll("form.js-rcp-contact-form");
     if (!forms.length) return;
