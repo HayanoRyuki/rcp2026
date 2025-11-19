@@ -1,12 +1,81 @@
-/* =========================================================
-   PAGE - THANKS（個別修飾）
-========================================================= */
+/* ========================================
+   Thanks Page
+======================================== */
 
-/* 青系ボタンバリエーション */
-.page-thanks--blue .page-thanks__button {
-  background-color: var(--color-link); /* 共通リンクカラーを利用 */
+.thanks-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  color: var(--color-text);
 }
 
-.page-thanks--blue .page-thanks__number {
-  color: var(--color-link);
+.thanks-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.thanks-lead {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.thanks-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* ボタン：基本（赤） */
+.btn-thanks {
+  display: block;
+  width: 100%;
+  padding: 1.2rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  line-height: 1.5;
+  transition: background-color 0.3s ease;
+}
+
+.btn-thanks:hover {
+  background-color: var(--color-danger-hover);
+}
+
+/* ボタン：青バージョン */
+.btn-thanks.blue {
+  background-color: var(--color-primary);
+}
+
+.btn-thanks.blue:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.highlight-number {
+  font-size: 120%;
+  font-weight: 900;
+}
+
+/* 下部リンク */
+.thanks-links {
+  margin-top: 3rem;
+  text-align: left;
+  line-height: 1.8;
+}
+
+.thanks-links a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.thanks-links p strong {
+  display: block;
+  margin-bottom: 0.2rem;
 }
