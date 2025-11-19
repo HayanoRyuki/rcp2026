@@ -5,7 +5,7 @@
 /* ===== ベースレイアウト ===== */
 .archive-section {
   padding: 0 20px 60px;
-  background-color: var(--color-bg-alt); /* #f9fafb → 統一背景 */
+    background-color: var(--color-bg); /* ← color-bg-altから統一 */
 }
 
 .container {
