@@ -63,19 +63,53 @@
   font-weight: 900;
 }
 
-/* 下部リンク */
+/* ========================================
+   下部リンク（デザイン強化）
+======================================== */
+
 .thanks-links {
   margin-top: 3rem;
+  padding: 2rem;
+  background: var(--color-bg-alt); /* うっすらグレー背景 */
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
   text-align: left;
   line-height: 1.8;
 }
 
-.thanks-links a {
-  color: var(--color-primary);
-  text-decoration: underline;
-}
-
+/* 見出し */
 .thanks-links p strong {
   display: block;
-  margin-bottom: 0.2rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: .4rem;
+}
+
+/* ブロック間の余白 */
+.thanks-links .section-block {
+  margin-bottom: 2rem;
+}
+.thanks-links .section-block:last-child {
+  margin-bottom: 0;
+}
+
+/* リンク一覧（点を揃える） */
+.thanks-links .link-list {
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* 各リンク */
+.thanks-links a {
+  display: inline-block;
+  padding: 6px 0;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color .3s ease;
+}
+
+.thanks-links a:hover {
+  color: var(--color-primary-hover);
 }
