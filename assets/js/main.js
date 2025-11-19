@@ -81,32 +81,32 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+
 // =========================================================
 //  RECEPTIONIST 共通フォーム送信（WP 側）
 // =========================================================
 document.addEventListener('DOMContentLoaded', function () {
 
+  // ★ API Gateway (staging)
   const ENDPOINT = "https://t8k8whvjnj.execute-api.ap-northeast-1.amazonaws.com/test/";
 
-  function serializeForm(form) {
+  // contact[foo]=bar 形式に変換
+  function buildContactParams(form) {
     const fd = new FormData(form);
-    const data = {};
+    const params = new URLSearchParams();
+
     fd.forEach((value, key) => {
-      if (data[key]) {
-        if (!Array.isArray(data[key])) data[key] = [data[key]];
-        data[key].push(value);
-      } else {
-        data[key] = value;
-      }
+      params.append(`contact[${key}]`, value);
     });
-    return data;
+
+    const contactType = fd.get('contact_type') || "";
+    return { params, contactType };
   }
 
-  async function postToLambda(payload) {
+  async function postToLambda(params) {
     const res = await fetch(ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+      body: params, // URLSearchParams → application/x-www-form-urlencoded
     });
     if (!res.ok) throw new Error("Lambda request failed");
     return await res.json();
@@ -129,20 +129,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     try {
-      const payload = serializeForm(form);
-      if (!payload.contact_type) throw new Error("contact_type が不足しています。");
+      const { params, contactType } = buildContactParams(form);
+      if (!contactType) throw new Error("contact_type が不足しています。");
 
-      await postToLambda(payload);
+      const result = await postToLambda(params);
 
-      // ★ 成功時リダイレクトはコメントアウト（デバッグ用）
-      // window.location.href = "https://staging.receptionist.jp/thanks/";
+      // Lambda から redirect_url が来ればそれを優先
+      if (result && result.redirect_url) {
+        window.location.href = result.redirect_url;
+      } else {
+        window.location.href = "https://staging.receptionist.jp/thanks/";
+      }
       return;
 
     } catch (err) {
       console.error("フォーム送信エラー:", err);
-
-      // ★ 失敗時リダイレクトもコメントアウト（デバッグ用）
-      // window.location.href = "https://staging.receptionist.jp/thanks/";
+      window.location.href = "https://staging.receptionist.jp/thanks/";
       return;
 
     } finally {
@@ -152,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.textContent = originalText;
       }
     }
-  } // ← ← ← handleFormSubmit 正式クローズ
+  }
 
   function bindRcpForms() {
     const forms = document.querySelectorAll("form.js-rcp-contact-form");
