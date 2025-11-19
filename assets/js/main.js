@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // =========================================================
 document.addEventListener('DOMContentLoaded', function () {
 
-  const ENDPOINT = "https://api.receptionist.jp/api/contacts";
+  const ENDPOINT = "https://staging.api.receptionist.jp/api/contacts";
 
   // ------------------------------
   // form → JSON
