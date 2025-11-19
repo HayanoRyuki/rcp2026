@@ -6,7 +6,7 @@
 /* ===== ページ全体 ===== */
 .event-archive-section {
   padding: 0 20px 60px;
-  background-color: var(--color-bg-alt);
+  /* background-color: var(--color-bg-alt); ← 削除して archive.css に委譲 */
 }
 
 .page-title {
@@ -19,12 +19,13 @@
 
 /* ===== 固定イベント（上部ピックアップなど） ===== */
 .event-fixed {
-  background-color: var(--color-bg-light); /* #f9f9f9 */
-  border: 2px solid var(--color-border);   /* #ccc */
+  /* background-color: var(--color-bg-light); ← 削除 */
+  border: 2px solid var(--color-border);
   padding: 20px;
   margin-bottom: 40px;
   border-radius: 6px;
 }
+
 
 .event-fixed-title {
   font-size: 1.25rem;
