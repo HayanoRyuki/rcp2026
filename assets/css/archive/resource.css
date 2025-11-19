@@ -6,7 +6,7 @@
 /* ===== セクション全体 ===== */
 .archive-resource {
   padding-bottom: 60px;
-  background-color: var(--color-bg-alt); /* #f9fafb → 統一サブ背景 */
+  background-color: var(--color-bg);
 }
 
 /* ===== タイトル下説明文 ===== */
