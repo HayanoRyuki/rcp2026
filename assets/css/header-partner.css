@@ -60,22 +60,24 @@
   color: var(--color-text);
 }
 
-/* ===== CTAボタン ===== */
-.header-partner__cta .btn-cta {
-  background-color: var(--color-secondary);
+/* ===== CTAボタン（通常ヘッダーと完全一致） ===== */
+.header-partner__cta {
+  background-color: var(--color-danger);
   color: var(--color-white);
-  padding: 0.6rem 1.5rem;
+  padding: 0.6rem 1.8rem;
   border-radius: 9999px;
-  font-size: 0.9375rem;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 700;
   white-space: nowrap;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  display: inline-block; /* ← aタグでも安定 */
 }
 
-.header-partner__cta .btn-cta:hover {
-  background-color: var(--color-primary);
+.header-partner__cta:hover {
+  background-color: var(--color-danger-hover);
 }
+
 
 /* ===== モバイル（表示ルールは通常と共通） ===== */
 @media (max-width: 767px) {
