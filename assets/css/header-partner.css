@@ -1,5 +1,5 @@
 /* =========================================================
-   HEADER - PARTNER（root変数対応・ハイフン統一版）
+   HEADER - PARTNER（root変数対応・完全統一版）
 ========================================================= */
 
 /* ===== 固定ヘッダー共通 ===== */
@@ -13,17 +13,17 @@
   border-bottom: 1px solid var(--color-border);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+
+  /* 通常ヘッダーと同じ思想：外側にも余白を確保 */
+  padding: 1.2rem 0;
+  box-sizing: border-box;
 }
 
-body.partner-page {
-  padding-top: 68px;
-}
-
-/* ===== 内側ラッパー ===== */
+/* ===== 内側ラッパー（完全一致） ===== */
 .header-partner__inner {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 1.2rem 2rem; /* ← 通常ヘッダーに合わせた */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -77,7 +77,7 @@ body.partner-page {
   background-color: var(--color-primary);
 }
 
-/* ===== モバイル対応 ===== */
+/* ===== モバイル（表示ルールは通常と共通） ===== */
 @media (max-width: 767px) {
   .header-partner__nav,
   .header-partner__cta {
@@ -86,10 +86,6 @@ body.partner-page {
 
   .header-partner__logo img {
     height: 28px;
-  }
-
-  body.partner-page {
-    padding-top: 64px;
   }
 }
 
@@ -121,7 +117,7 @@ body.partner-page {
     flex-direction: column;
     background-color: var(--color-white);
     position: absolute;
-    top: 64px;
+    top: 100%; /* ← 外側 padding 分も含め常にヘッダー直下へ */
     left: 0;
     width: 100%;
     padding: 1rem 1.5rem;
