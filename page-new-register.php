@@ -18,10 +18,11 @@ get_header();
 
       <!-- ★ Lambda送信用クラスを追加 -->
       <form
-        class="contact-form contact-new__form js-rcp-contact-form"
-        id="trialForm"
-        novalidate
-      >
+  class="contact-form contact-new__form js-rcp-contact-form"
+  id="trialForm"
+  novalidate
+  data-api="staging-auth" 
+>
 
         <div class="contact-new__group">
           <label for="email" class="contact-new__label required">メールアドレス</label>
