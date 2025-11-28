@@ -1,143 +1,113 @@
 /* =========================================================
-   PARTNER CONTACT SELECT SECTION（PC＋SP最適化・小さめ版）
+   PARTNER - CONTACT SELECT（contact-select 構造準拠・新規作成）
 ========================================================= */
 
-/* ===== セクション全体 ===== */
 .partner-contact {
+  padding: 0 20px;
+  margin-bottom: 40px;
   background-color: var(--color-bg);
-  padding: 0rem 2rem;
+  color: var(--color-text);
+  font-family: var(--font-base);
   text-align: center;
 }
 
-/* ===== コンテナ ===== */
-.partner-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-/* ===== タイトル・リード ===== */
+/* ===== タイトル ===== */
 .partner-title {
-  font-size: 2.0rem;     /* ← 小さめ */
+  text-align: center;
+  font-size: 2rem;
   font-weight: 700;
-  color: var(--color-primary-hover);
-  margin-bottom: 1.4rem;
-}
-
-.partner-lead {
-  font-size: 1.05rem;    /* ← 小さめ */
+  margin: 60px auto 20px;
+  max-width: 1200px;
   color: var(--color-text);
-  margin-bottom: 3.2rem;
-  line-height: 1.75;
 }
 
-/* ===== カードグリッド ===== */
+@media (max-width: 768px) {
+  .partner-title {
+    margin-top: 60px;
+    font-size: 22px;
+  }
+}
+
+/* ===== リード文 ===== */
+.partner-lead {
+  font-size: 1rem;
+  color: var(--color-text);
+  opacity: 0.85;
+  margin: -10px auto 40px;
+  max-width: 900px;
+  line-height: 1.7;
+}
+
+/* ===== グリッド ===== */
 .partner-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.6rem;            /* ← 少しコンパクトに */
-}
-
-/* ===== 各カード ===== */
-.partner-card {
-  background-color: var(--color-white);
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  padding: 2.6rem 1.8rem; /* ← 小さめの余白 */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.partner-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-}
-
-/* ===== アイコン ===== */
-.partner-icon {
-  margin-bottom: 1.4rem;
-}
-
-.partner-icon img {
-  width: 72px;           /* ← 少し縮小 */
-  height: auto;
-  display: block;
+  gap: 2rem;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-/* ===== カードタイトル ===== */
-.partner-card-title {
-  font-size: 1.6rem;     /* ← 小さめ */
-  font-weight: 600;
-  color: var(--color-primary-hover);
-  margin-bottom: 0.8rem;
+@media screen and (max-width: 768px) {
+  .partner-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* ===== 説明文 ===== */
-.partner-card-desc {
-  font-size: 1.15rem;    /* ← 少しだけ縮小 */
+/* ===== カード ===== */
+.partner-card {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* アイコン */
+.partner-card img.icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+}
+
+/* 見出し（カードタイトル） */
+.partner-card-title {
+  font-size: 1.1rem;
   color: var(--color-text);
-  line-height: 1.65;
-  margin-bottom: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* 説明文 */
+.partner-card-desc {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+/* ===== ボタン群 ===== */
+.partner-card .btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 /* ===== ボタン ===== */
-.partner-button .btn {
-  display: inline-block;
-  padding: 0.8rem 2rem;  /* ← 小さめ */
-  background-color: var(--color-primary);
-  color: #fff;
-  border-radius: 6px;
+.partner-card .btn {
+  background: var(--color-primary);
+  color: var(--color-white);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;    /* ← やや小さめ */
-  transition: background 0.3s ease;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: background 0.3s ease, opacity 0.3s ease;
 }
 
-.partner-button .btn:hover {
-  background-color: var(--color-primary-hover);
-}
-
-/* =========================================================
-   Responsive（スマホ最適化・小さめ版）
-========================================================= */
-@media (max-width: 900px) {
-  .partner-contact {
-    padding: 3rem 1.5rem;
-  }
-
-  .partner-title {
-    font-size: 1.7rem;
-  }
-
-  .partner-lead {
-    font-size: 1rem;
-    margin-bottom: 2.6rem;
-  }
-
-  .partner-grid {
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
-  }
-
-  .partner-card {
-    padding: 2rem 1.4rem;
-  }
-
-  .partner-card-title {
-    font-size: 1.4rem;
-  }
-
-  .partner-card-desc {
-    font-size: 1.05rem;
-    margin-bottom: 1.4rem;
-  }
-
-  .partner-button .btn {
-    width: 100%;
-    font-size: 1.05rem;
-    padding: 0.9rem 0;
-  }
+.partner-card .btn:hover {
+  background: var(--color-primary-hover);
+  opacity: 0.9;
 }
