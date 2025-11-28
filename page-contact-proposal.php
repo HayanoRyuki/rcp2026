@@ -19,7 +19,7 @@ get_header();
         class="contact-form contact-proposal__form js-rcp-contact-form"
       >
 
-        <input type="hidden" name="contact_type" value="suggest_company">
+        <input type="hidden" name="contact_type" value="proposal">
 
         <div class="contact-proposal__group">
           <label for="company_name" class="contact-proposal__label required">会社名</label>
