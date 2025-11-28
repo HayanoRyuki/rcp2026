@@ -7,7 +7,8 @@
   background: #fafafa;
 }
 
-.section-contact-document-partner .container_l {
+/* ←←← ★ ここをスコープ化！！ */
+.contact-document-partner-page .section-contact-document-partner .container_l {
   display: flex;
   align-items: flex-start;
   gap: 40px;
@@ -121,7 +122,7 @@
    レスポンシブ
 ===================== */
 @media (max-width: 768px) {
-  .section-contact-document-partner .container_l {
+  .contact-document-partner-page .section-contact-document-partner .container_l {
     flex-direction: column;
     gap: 30px;
   }
