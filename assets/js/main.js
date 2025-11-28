@@ -129,22 +129,39 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   try {
-    const { params, contactType } = buildContactParams(form);
+
+    // contact_type はどちらでも必要
+    const fd = new FormData(form);
+    const contactType = fd.get("contact_type") || "";
     if (!contactType) throw new Error("contact_type が不足しています。");
 
-    // ★★★ API 出し分け（無料トライアルだけ別APIに送る）★★★
-    const apiType = form.dataset.api; // ← data-api="staging-auth"
-    let endpoint = ENDPOINT;          // ← デフォルトは Lambda
+    // ★★★ 無料トライアルかどうか判定 ★★★
+    const apiType = form.dataset.api; // data-api="staging-auth"
+
+    let endpoint = ENDPOINT;  // デフォルト（Lambda）
+    let body = null;
 
     if (apiType === "staging-auth") {
-      // 無料トライアルだけ auth API に直送
+      // ★ 無料トライアル → auth API 向け payload（email/password のみ）
       endpoint = "https://staging.api.receptionist.jp/api/auth";
+
+      body = new URLSearchParams();
+      body.append("email", fd.get("email"));
+      body.append("password", fd.get("password"));
+
+    } else {
+      // ★ 通常フォーム → Lambda 用の contact[...] payload
+      const params = new URLSearchParams();
+      fd.forEach((value, key) => {
+        params.append(`contact[${key}]`, value);
+      });
+      body = params;
     }
 
-    // ★ POST（Lambda or auth API）
+    // ★ POST 実行
     const res = await fetch(endpoint, {
       method: "POST",
-      body: params,
+      body: body,
     });
 
     if (!res.ok) throw new Error("API request failed");
@@ -154,7 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
       result = await res.json();
     } catch (_) {}
 
-    // redirect_url が返ってきたら優先
     if (result && result.redirect_url) {
       window.location.href = result.redirect_url;
     } else {
