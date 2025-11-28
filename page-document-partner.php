@@ -128,7 +128,7 @@ get_header('partner');
                  style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
 
           <!-- contact_type -->
-          <input type="hidden" name="contact_type" value="document_partner">
+          <input type="hidden" name="contact_type" value="partner_guide">
 
           <!-- UTM hidden -->
           <input type="hidden" name="utm_source" id="utm_source_input">
