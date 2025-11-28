@@ -95,11 +95,11 @@ if (!is_array($advanced_dates)) $advanced_dates = array_filter([]);
 
         <!-- CTA -->
         <div class="p-fv__btn-area fade-in-up">
-          <a href="https://pi.pardot.com/form/read/id/54816" target="_blank" rel="noopener" class="c-button c-button-blue">
+          <a href="https://t.receptionist.jp/l/436112/2025-09-29/8m2fgb" target="_blank" rel="noopener" class="c-button c-button-blue">
             <span>基礎編に申し込む</span>
             <span>無料参加</span>
           </a>
-          <a href="https://pi.pardot.com/form/read/id/54693" target="_blank" rel="noopener" class="c-button">
+          <a href="https://t.receptionist.jp/l/436112/2025-09-16/8m1k4b" target="_blank" rel="noopener" class="c-button">
             <span>応用編に申し込む</span>
             <span>無料参加</span>
           </a>
@@ -186,11 +186,11 @@ if (!is_array($advanced_dates)) $advanced_dates = array_filter([]);
 
   <div class="l-inner u-pc">
     <div class="p-cta js-in-view fade-in-up">
-      <a href="https://pi.pardot.com/form/read/id/54816" target="_blank" rel="noopener" class="c-button c-button-blue c-button-l">
+      <a href="https://t.receptionist.jp/l/436112/2025-09-29/8m2fgb" target="_blank" rel="noopener" class="c-button c-button-blue c-button-l">
         <span>今すぐ申し込む</span>
         <span>基礎編はこちら</span>
       </a>
-      <a href="https://pi.pardot.com/form/read/id/54693" target="_blank" rel="noopener" class="c-button c-button-l">
+      <a href="https://t.receptionist.jp/l/436112/2025-09-16/8m1k4b" target="_blank" rel="noopener" class="c-button c-button-l">
         <span>今すぐ申し込む</span>
         <span>応用編はこちら</span>
       </a>
@@ -234,7 +234,7 @@ if (!is_array($advanced_dates)) $advanced_dates = array_filter([]);
             <?php echo wpautop(esc_html($cur_basic)); ?>
           </div>
           <div class="p-curriculum-btn">
-            <a href="https://pi.pardot.com/form/read/id/54816" class="c-button c-button-blue" target="_blank" rel="noopener">
+            <a href="https://t.receptionist.jp/l/436112/2025-09-29/8m2fgb" class="c-button c-button-blue" target="_blank" rel="noopener">
               <span>基礎編に申し込む</span><span>無料参加</span>
             </a>
           </div>
@@ -251,7 +251,7 @@ if (!is_array($advanced_dates)) $advanced_dates = array_filter([]);
             <?php echo wpautop(esc_html($cur_adv)); ?>
           </div>
           <div class="p-curriculum-btn">
-            <a href="https://pi.pardot.com/form/read/id/54693" class="c-button" target="_blank" rel="noopener">
+            <a href="https://t.receptionist.jp/l/436112/2025-09-16/8m1k4b" class="c-button" target="_blank" rel="noopener">
               <span>応用編に申し込む</span><span>無料参加</span>
             </a>
           </div>

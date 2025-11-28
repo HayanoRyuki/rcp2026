@@ -1,0 +1,133 @@
+/* =========================================================
+   パートナー資料ダウンロード（contact-document-partner-page）
+========================================================= */
+
+.contact-document-partner-page {
+  padding: 60px 0;
+  background: #fafafa;
+}
+
+.section-contact-document-partner .container_l {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* 左カラム */
+.doc-left {
+  flex: 0 0 40%;
+}
+
+.doc-left .txt-box h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.doc-left .doclist {
+  margin-left: 0;
+  padding-left: 1.2rem;
+}
+.doc-left .doclist li {
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.image-box {
+  margin-top: 20px;
+}
+.document-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+/* 右カラム（フォーム） */
+.doc-right {
+  flex: 0 0 60%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.contact-document-partner-form .form-row {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-document-partner-form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+.contact-document-partner-form label.required::after {
+  content: " *";
+  color: red;
+}
+
+.contact-document-partner-form input,
+.contact-document-partner-form select,
+.contact-document-partner-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+.contact-document-partner-form textarea {
+  resize: vertical;
+}
+
+/* プライバシー同意 */
+.privacy-policy {
+  margin-top: 10px;
+}
+.privacy-policy label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+.privacy-policy a {
+  text-decoration: underline;
+}
+
+/* 送信ボタン */
+.form-submit {
+  margin-top: 30px;
+}
+.form-submit button {
+  width: 100%;
+  padding: 14px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--color-primary, #0074c8);
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+.form-submit button:hover {
+  opacity: 0.9;
+}
+
+/* =====================
+   レスポンシブ
+===================== */
+@media (max-width: 768px) {
+  .section-contact-document-partner .container_l {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .doc-left,
+  .doc-right {
+    flex: 1 1 auto;
+  }
+}
