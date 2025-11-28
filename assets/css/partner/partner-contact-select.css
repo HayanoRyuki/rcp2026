@@ -1,10 +1,10 @@
 /* =========================================================
-   PARTNER CONTACT SELECT SECTION（PC＋SP最適化版）
+   PARTNER CONTACT SELECT SECTION（PC＋SP最適化・小さめ版）
 ========================================================= */
 
 /* ===== セクション全体 ===== */
 .partner-contact {
-  background-color: var(--color-bg-alt);
+  background-color: var(--color-bg);
   padding: 0rem 2rem;
   text-align: center;
 }
@@ -17,24 +17,24 @@
 
 /* ===== タイトル・リード ===== */
 .partner-title {
-  font-size: 2.4rem;
+  font-size: 2.0rem;     /* ← 小さめ */
   font-weight: 700;
   color: var(--color-primary-hover);
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.4rem;
 }
 
 .partner-lead {
-  font-size: 1.2rem;
+  font-size: 1.05rem;    /* ← 小さめ */
   color: var(--color-text);
-  margin-bottom: 4rem;
-  line-height: 1.8;
+  margin-bottom: 3.2rem;
+  line-height: 1.75;
 }
 
 /* ===== カードグリッド ===== */
 .partner-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 2.6rem;            /* ← 少しコンパクトに */
 }
 
 /* ===== 各カード ===== */
@@ -42,7 +42,7 @@
   background-color: var(--color-white);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  padding: 3rem 2rem;
+  padding: 2.6rem 1.8rem; /* ← 小さめの余白 */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,41 +57,42 @@
 
 /* ===== アイコン ===== */
 .partner-icon {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.4rem;
 }
 
 .partner-icon img {
-  width: 80px;
+  width: 72px;           /* ← 少し縮小 */
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
-/* ===== タイトル ===== */
+/* ===== カードタイトル ===== */
 .partner-card-title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;     /* ← 小さめ */
   font-weight: 600;
   color: var(--color-primary-hover);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 /* ===== 説明文 ===== */
 .partner-card-desc {
-  font-size: 1.3rem;
+  font-size: 1.15rem;    /* ← 少しだけ縮小 */
   color: var(--color-text);
-  line-height: 1.7;
-  margin-bottom: 2rem;
+  line-height: 1.65;
+  margin-bottom: 1.8rem;
 }
 
 /* ===== ボタン ===== */
 .partner-button .btn {
   display: inline-block;
-  padding: 1rem 2.4rem;
+  padding: 0.8rem 2rem;  /* ← 小さめ */
   background-color: var(--color-primary);
   color: #fff;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
+  font-size: 0.95rem;    /* ← やや小さめ */
   transition: background 0.3s ease;
 }
 
@@ -100,43 +101,43 @@
 }
 
 /* =========================================================
-   Responsive（スマホ最適化）
+   Responsive（スマホ最適化・小さめ版）
 ========================================================= */
 @media (max-width: 900px) {
   .partner-contact {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.5rem;
   }
 
   .partner-title {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .partner-lead {
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
+    font-size: 1rem;
+    margin-bottom: 2.6rem;
   }
 
   .partner-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.8rem;
   }
 
   .partner-card {
-    padding: 2.4rem 1.6rem;
+    padding: 2rem 1.4rem;
   }
 
   .partner-card-title {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .partner-card-desc {
-    font-size: 1.2rem;
-    margin-bottom: 1.6rem;
+    font-size: 1.05rem;
+    margin-bottom: 1.4rem;
   }
 
   .partner-button .btn {
     width: 100%;
-    font-size: 1.3rem;
-    padding: 1rem 0;
+    font-size: 1.05rem;
+    padding: 0.9rem 0;
   }
 }
