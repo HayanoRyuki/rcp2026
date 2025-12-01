@@ -1,0 +1,165 @@
+/* =========================================================
+   パートナー資料ダウンロードページ（contact-document-partner-page）
+========================================================= */
+
+/* ===== 全体 ===== */
+.contact-document-partner-page {
+  padding: 60px 0;
+  background: var(--color-bg);
+}
+
+.section-contact-document-partner .container_l {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* =========================================================
+   左カラム
+========================================================= */
+.doc-left {
+  flex: 0 0 40%;
+}
+
+.doc-left .txt-box h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-primary-hover);
+}
+
+.doclist {
+  margin-left: 0;
+  padding-left: 1.2rem;
+}
+
+.doclist li {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.image-box {
+  margin-top: 20px;
+}
+
+.document-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+/* =========================================================
+   右カラム（フォーム）
+========================================================= */
+.doc-right {
+  flex: 0 0 60%;
+  background: #fff;
+  padding: 40px 35px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== form ===== */
+.contact-document-partner-form {
+  width: 100%;
+}
+
+.form-row {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.form-row label.required::after {
+  content: " *";
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+/* ===== プライバシーポリシー ===== */
+.privacy-policy {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.privacy-policy label {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.privacy-policy a {
+  text-decoration: underline;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ===== 送信ボタン ===== */
+.form-submit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-submit button {
+  width: 100%;
+  max-width: 260px;
+  padding: 14px 0;
+  border: none;
+  border-radius: 30px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form-submit button:hover {
+  background: var(--color-primary-hover);
+}
+
+
+/* =========================================================
+   SP 最適化（〜768px）
+========================================================= */
+@media (max-width: 768px) {
+  .section-contact-document-partner .container_l {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .doc-left,
+  .doc-right {
+    flex: 1 1 auto;
+  }
+
+  .doc-right {
+    padding: 30px 20px;
+  }
+}
