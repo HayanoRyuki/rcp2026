@@ -165,3 +165,10 @@ body.admin-bar .function-header {
 .required-asterisk {
   white-space: nowrap;
 }
+
+/* 同意チェックの必須マーク（*）の色を統一 */
+.required-asterisk {
+  color: var(--color-danger); /* 赤に統一 */
+  white-space: nowrap;
+  font-weight: bold; /* 見え方を他の必須印と統一 */
+}
