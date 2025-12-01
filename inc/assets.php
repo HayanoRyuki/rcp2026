@@ -23,13 +23,14 @@ function rcp2026_enqueue_assets() {
   }
 
   // ===================================
-  // ヘッダーCSSの切り替え（ここを追加）
+  // ヘッダーCSSの切り替え
   // ===================================
   $partner_templates = [
     'page-partner.php',
     'page-partner-list.php',
     'page-partner-contact-select.php',
-    'page-partner-contact-select.php',
+    'page-partner-contact.php',
+    'page-document-partner.php', // ←★ 追加！！
   ];
 
   $use_partner_header = false;
@@ -44,7 +45,9 @@ function rcp2026_enqueue_assets() {
   if (
     is_page('partner') ||
     is_page('partner-list') ||
-    is_page('partner-contact-select') 
+    is_page('partner-contact') ||
+    is_page('partner-contact-select') ||
+    is_page('document-partner') // ←★ 追加！！
   ) {
     $use_partner_header = true;
   }
