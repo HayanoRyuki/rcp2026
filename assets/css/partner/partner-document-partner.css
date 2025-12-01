@@ -9,6 +9,9 @@
 }
 
 .section-contact-document-partner .container_l {
+  max-width: 1080px;      /* 中央揃え */
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   gap: 40px;
   align-items: flex-start;
@@ -19,6 +22,7 @@
 ========================================================= */
 .doc-left {
   flex: 0 0 40%;
+  padding-right: 10px;     /* テキストと画像の余白調整 */
 }
 
 .doc-left .txt-box h3 {
@@ -55,7 +59,7 @@
 .doc-right {
   flex: 0 0 60%;
   background: #fff;
-  padding: 40px 35px;
+  padding: 40px 45px;      /* フォーム左右の余白最適化 */
   border-radius: 8px;
   box-shadow: var(--shadow-sm);
 }
@@ -144,13 +148,14 @@
   background: var(--color-primary-hover);
 }
 
-
 /* =========================================================
    SP 最適化（〜768px）
 ========================================================= */
 @media (max-width: 768px) {
   .section-contact-document-partner .container_l {
     flex-direction: column;
+    max-width: 100%;
+    padding: 0 16px;
     gap: 30px;
   }
 
@@ -160,6 +165,6 @@
   }
 
   .doc-right {
-    padding: 30px 20px;
+    padding: 25px 18px;    /* SP最適幅 */
   }
 }
