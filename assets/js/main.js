@@ -83,6 +83,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // =========================================================
+//  サンクスページ分岐ロジック
+// =========================================================
+const RESOURCE_TYPES = [
+  "ms365",
+  "security",
+  "backoffice-dx",
+  "installation_case",
+  "document_gate",
+  "document_price",
+  "document_factory",
+  "guide-3min",
+  "reception_lp",
+  "partner_guide",
+];
+
+const FREE_TYPES = [
+  "new_user",
+  "user",
+  "proposal",
+  "agency",
+];
+
+function resolveThanksUrl(contactType) {
+  if (RESOURCE_TYPES.includes(contactType)) {
+    return "https://staging.receptionist.jp/resource-thanks/";
+  }
+  if (FREE_TYPES.includes(contactType)) {
+    return "https://staging.receptionist.jp/thanks/";
+  }
+  return "https://staging.receptionist.jp/thanks/";
+}
+
+
+// =========================================================
 //  RECEPTIONIST 共通フォーム送信（WP 側）
 // =========================================================
 document.addEventListener('DOMContentLoaded', function () {
@@ -90,107 +124,82 @@ document.addEventListener('DOMContentLoaded', function () {
   // ★ API Gateway (staging)
   const ENDPOINT = "https://t8k8whvjnj.execute-api.ap-northeast-1.amazonaws.com/test/";
 
-  // contact[foo]=bar 形式に変換
-  function buildContactParams(form) {
-    const fd = new FormData(form);
-    const params = new URLSearchParams();
-
-    fd.forEach((value, key) => {
-      params.append(`contact[${key}]`, value);
-    });
-
-    const contactType = fd.get('contact_type') || "";
-    return { params, contactType };
-  }
-
-  async function postToLambda(params) {
-    const res = await fetch(ENDPOINT, {
-      method: "POST",
-      body: params, // URLSearchParams → application/x-www-form-urlencoded
-    });
-    if (!res.ok) throw new Error("Lambda request failed");
-    return await res.json();
-  }
 
   async function handleFormSubmit(e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  const form = e.currentTarget;
-  if (form.dataset.submitting === "true") return;
+    const form = e.currentTarget;
+    if (form.dataset.submitting === "true") return;
 
-  form.dataset.submitting = "true";
+    form.dataset.submitting = "true";
 
-  const submitBtn = form.querySelector("[type=submit]");
-  const originalText = submitBtn?.textContent || "";
+    const submitBtn = form.querySelector("[type=submit]");
+    const originalText = submitBtn?.textContent || "";
 
-  if (submitBtn) {
-    submitBtn.disabled = true;
-    submitBtn.textContent = "送信中…";
-  }
-
-  try {
-
-    // contact_type はどちらでも必要
-    const fd = new FormData(form);
-    const contactType = fd.get("contact_type") || "";
-    if (!contactType) throw new Error("contact_type が不足しています。");
-
-    // ★★★ 無料トライアルかどうか判定 ★★★
-    const apiType = form.dataset.api; // data-api="staging-auth"
-
-    let endpoint = ENDPOINT;  // デフォルト（Lambda）
-    let body = null;
-
-    if (apiType === "staging-auth") {
-      // ★ 無料トライアル → auth API 向け payload（email/password のみ）
-      endpoint = "https://staging.api.receptionist.jp/api/auth";
-
-      body = new URLSearchParams();
-      body.append("email", fd.get("email"));
-      body.append("password", fd.get("password"));
-
-    } else {
-      // ★ 通常フォーム → Lambda 用の contact[...] payload
-      const params = new URLSearchParams();
-      fd.forEach((value, key) => {
-        params.append(`contact[${key}]`, value);
-      });
-      body = params;
-    }
-
-    // ★ POST 実行
-    const res = await fetch(endpoint, {
-      method: "POST",
-      body: body,
-    });
-
-    if (!res.ok) throw new Error("API request failed");
-
-    let result = {};
-    try {
-      result = await res.json();
-    } catch (_) {}
-
-    if (result && result.redirect_url) {
-      window.location.href = result.redirect_url;
-    } else {
-      window.location.href = "https://staging.receptionist.jp/thanks/";
-    }
-    return;
-
-  } catch (err) {
-    console.error("フォーム送信エラー:", err);
-    window.location.href = "https://staging.receptionist.jp/thanks/";
-    return;
-
-  } finally {
-    form.dataset.submitting = "false";
     if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "送信中…";
+    }
+
+    try {
+      const fd = new FormData(form);
+      const contactType = fd.get("contact_type") || "";
+      if (!contactType) throw new Error("contact_type が不足しています。");
+
+      const apiType = form.dataset.api; // data-api="staging-auth"
+
+      let endpoint = ENDPOINT;
+      let body = null;
+
+      if (apiType === "staging-auth") {
+        endpoint = "https://staging.api.receptionist.jp/api/auth";
+        body = new URLSearchParams();
+        body.append("email", fd.get("email"));
+        body.append("password", fd.get("password"));
+      } else {
+        const params = new URLSearchParams();
+        fd.forEach((value, key) => {
+          params.append(`contact[${key}]`, value);
+        });
+        body = params;
+      }
+
+      const res = await fetch(endpoint, {
+        method: "POST",
+        body: body,
+      });
+
+      if (!res.ok) throw new Error("API request failed");
+
+      let result = {};
+      try {
+        result = await res.json();
+      } catch (_) {}
+
+      // --- ★ ここでサンクスURLを決定 ★ ---
+      const thanksUrl = resolveThanksUrl(contactType);
+
+      if (result && result.redirect_url) {
+        window.location.href = result.redirect_url;
+      } else {
+        window.location.href = thanksUrl;
+      }
+      return;
+
+    } catch (err) {
+      console.error("フォーム送信エラー:", err);
+      window.location.href = "https://staging.receptionist.jp/thanks/";
+      return;
+
+    } finally {
+      form.dataset.submitting = "false";
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
     }
   }
-}
+
 
   function bindRcpForms() {
     const forms = document.querySelectorAll("form.js-rcp-contact-form");

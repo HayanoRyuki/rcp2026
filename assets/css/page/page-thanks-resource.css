@@ -1,0 +1,131 @@
+/* ========================================
+   資料専用 Thanks Page
+======================================== */
+
+.thanks-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.thanks-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.thanks-lead {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+/* ========================================
+   CTA Buttons（資料版）
+======================================== */
+
+.thanks-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* 赤ボタン */
+.btn-thanks {
+  display: block;
+  width: 100%;
+  padding: 1.2rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  line-height: 1.5;
+  transition: background-color 0.3s ease;
+}
+.btn-thanks:hover {
+  background-color: var(--color-danger-hover);
+}
+
+/* 青バージョン（1,001名以上） */
+.btn-thanks.blue {
+  background-color: var(--color-primary);
+}
+.btn-thanks.blue:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.highlight-number {
+  font-size: 120%;
+  font-weight: 900;
+}
+
+/* ========================================
+   Link Block（資料版）
+======================================== */
+.thanks-links {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--color-bg-alt);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  line-height: 1.8;
+}
+
+/* セクション見出し */
+.thanks-links p strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: .4rem;
+}
+
+/* セクション間余白 */
+.thanks-links .section-block {
+  margin-bottom: 2rem;
+}
+.thanks-links .section-block:last-child {
+  margin-bottom: 0;
+}
+
+/* 行頭揃え用リスト */
+.thanks-links .link-list {
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* 個別リンク */
+.thanks-links a {
+  display: inline-block;
+  padding: 6px 0;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color .3s ease;
+}
+.thanks-links a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* ========================================
+   Responsive
+======================================== */
+@media (max-width: 560px) {
+  .thanks-page {
+    padding: 3rem 1.2rem;
+  }
+  .thanks-title {
+    font-size: 1.7rem;
+  }
+  .btn-thanks {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
