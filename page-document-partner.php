@@ -10,23 +10,35 @@ get_header('partner');
     <div class="container_l">
 
       <!-- 左カラム -->
-      <div class="doc-left">
-        <div class="txt-box" style="margin-bottom: 20px;">
-          <h3>この資料の内容</h3>
-          <ul class="doclist">
-            <li>・リーフレット</li>
-            <li>・各種ご紹介資料</li>
-            <li>・市場状況</li>
-            <li>・製品機能</li>
-            <li>・料金プラン</li>
-          </ul>
-        </div>
-        <div class="image-box">
-          <img class="document-image"
-               src="/wp-content/uploads/2025/10/reception_banner-1.gif"
-               alt="資料イメージ">
-        </div>
-      </div>
+<div class="doc-left">
+
+  <!-- ★ 追加：タイトル + リード文 -->
+  <div class="doc-intro">
+    <h2 class="doc-intro-title">パートナー資料ダウンロードページ</h2>
+    <p class="doc-intro-text">
+      本フォーム入力後、メールアドレス宛に自動返信メールに、資料を送付させて頂きます。
+    </p>
+  </div>
+
+  <div class="txt-box" style="margin-bottom: 20px;">
+    <h3>この資料の内容</h3>
+    <ul class="doclist">
+      <li>・リーフレット</li>
+      <li>・各種ご紹介資料</li>
+      <li>・市場状況</li>
+      <li>・製品機能</li>
+      <li>・料金プラン</li>
+    </ul>
+  </div>
+
+  <div class="image-box">
+    <img class="document-image"
+         src="/wp-content/uploads/2025/10/reception_banner-1.gif"
+         alt="資料イメージ">
+  </div>
+
+</div>
+
 
       <!-- 右カラム -->
       <div class="doc-right">

@@ -168,3 +168,17 @@
     padding: 25px 18px;    /* SP最適幅 */
   }
 }
+
+.doc-intro-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.doc-intro-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  color: var(--color-text-muted);
+}
