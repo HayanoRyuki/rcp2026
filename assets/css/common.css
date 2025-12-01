@@ -132,3 +132,25 @@ body.admin-bar .function-header {
     top: 46px !important;
   }
 }
+
+/* ========================================
+   フォーム：同意チェックボックスのはみ出し修正（全フォーム共通）
+======================================== */
+.form-group.privacy-policy label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.form-group.privacy-policy label span {
+  display: block;
+  line-height: 1.6;
+  white-space: normal;     /* 長文を折り返す */
+  word-break: break-word;  /* リンク途中でも折り返し可 */
+  max-width: calc(100% - 24px);
+}
+
+.form-group.privacy-policy a {
+  color: var(--color-primary);
+}
