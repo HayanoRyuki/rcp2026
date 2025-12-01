@@ -154,3 +154,15 @@ body.admin-bar .function-header {
 .form-group.privacy-policy a {
   color: var(--color-primary);
 }
+
+/* 同意チェックの必須マークが改行されないようにする */
+.privacy-policy label span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  flex-wrap: nowrap;
+}
+
+.privacy-policy label span span[style*="color: red"] {
+  white-space: nowrap;
+}
