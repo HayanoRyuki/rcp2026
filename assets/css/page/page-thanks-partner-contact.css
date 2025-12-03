@@ -1,0 +1,50 @@
+/* =========================================================
+   PARTNER CONTACT THANKS PAGE
+   専用サンクスページのデザイン
+========================================================= */
+
+/* ページ全体 */
+.thanks-page {
+  padding: 120px 0;
+  background: #ffffff;
+  text-align: center;
+}
+
+/* コンテナ */
+.thanks-page .container_l {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* タイトル */
+.thanks-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+/* リード文 */
+.thanks-lead {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #333;
+}
+
+/* スマホ対応 */
+@media (max-width: 767px) {
+  .thanks-page {
+    padding: 60px 20px;
+  }
+
+  .thanks-title {
+    font-size: 1.6rem;
+  }
+
+  .thanks-lead {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
