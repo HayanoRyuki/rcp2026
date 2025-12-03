@@ -15,8 +15,8 @@
 
   <div class="hero-user-image"></div>
 
-  <p class="hero-note">※1 2024年RECEPTIONIST年間受付利用者数実績</p>
-  <p class="hero-note">※2 クラウドiPad無人受付システム市場の実態と将来展望（ミックITリポート 2024年11月）<br>
+  <p class="hero-note">※1 2025年RECEPTIONIST年間受付利用者数実績</p>
+  <p class="hero-note">※2 クラウドiPad無人受付システム市場の実態と将来展望（ミックITリポート 2025年11月）<br>
   （デロイト トーマツ ミック経済研究所株式会社 調べ）</p>
 
 </div><!-- /.container_l -->
@@ -84,20 +84,20 @@
             </div>
 
             <!-- 従業員数 -->
-            <div class="kv-form-group has-floating-label">
-              <label class="floating-label">従業員数<span class="asterisk">*</span></label>
-              <select name="employee_number" required>
-                <option value="" selected disabled>クリックして選択してください</option>
-                <option value="1〜10名">1-10名</option>
-                <option value="11〜50名">11-50名</option>
-                <option value="51〜100名">51-100名</option>
-                <option value="101〜200名">101-200名</option>
-                <option value="201〜300名">201-300名</option>
-                <option value="301〜500名">301-500名</option>
-                <option value="501〜1000名">501-1000名</option>
-                <option value="1001名以上">1001名以上</option>
-              </select>
-            </div>
+<div class="kv-form-group has-floating-label">
+  <label class="floating-label">従業員数<span class="asterisk">*</span></label>
+  <select name="employee_number" required>
+    <option value="" selected disabled>クリックして選択してください</option>
+    <option value="1-10名">1-10名</option>
+    <option value="11-50名">11-50名</option>
+    <option value="51-100名">51-100名</option>
+    <option value="101-200名">101-200名</option>
+    <option value="201-300名">201-300名</option>
+    <option value="301-500名">301-500名</option>
+    <option value="501-1000名">501-1000名</option>
+    <option value="1001名以上">1001名以上</option>
+  </select>
+</div>
 
             <!-- 導入予定時期 -->
             <div class="kv-form-group has-floating-label">
