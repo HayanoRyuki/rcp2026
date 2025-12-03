@@ -98,20 +98,36 @@ const RESOURCE_TYPES = [
   "partner_guide",
 ];
 
+// ★ 新規登録系（REGISTER TYPES）
+const REGISTER_TYPES = [
+  "new_user",     // /new-register/ の contact_type
+];
+
+// ★ 無料問い合わせ系（FREE TYPES）
 const FREE_TYPES = [
-  "new_user",
   "user",
   "proposal",
   "agency",
 ];
 
 function resolveThanksUrl(contactType) {
+
+  // ★ 1) 登録フォーム専用
+  if (REGISTER_TYPES.includes(contactType)) {
+    return "https://staging.receptionist.jp/register-thanks/";
+  }
+
+  // ★ 2) 資料請求系
   if (RESOURCE_TYPES.includes(contactType)) {
     return "https://staging.receptionist.jp/resource-thanks/";
   }
+
+  // ★ 3) 無料問い合わせ系
   if (FREE_TYPES.includes(contactType)) {
     return "https://staging.receptionist.jp/thanks/";
   }
+
+  // ★ 4) デフォルト
   return "https://staging.receptionist.jp/thanks/";
 }
 
