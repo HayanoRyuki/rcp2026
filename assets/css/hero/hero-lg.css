@@ -117,13 +117,13 @@
   }
 
   .hero-note {
-    font-size: 0.85rem;
-    color: var(--color-white);
-    line-height: 1.2;
-    margin: 1rem 1rem;
-    padding-right: 1rem;
-    text-align: left;
-  }
+  font-size: 0.85rem;
+  color: var(--color-white);
+  line-height: 1.25;
+  margin: 0.25rem 1rem;  /* ← 上下の行間を大幅に詰める */
+  padding-right: 1rem;
+  text-align: left;
+}
 
   .document-guidance-box {
     display: flex;

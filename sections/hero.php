@@ -15,7 +15,7 @@
 
   <div class="hero-user-image"></div>
 
-  <p class="hero-note">※1 2025年RECEPTIONIST年間受付利用者数実績</p>
+  <p class="hero-note">※1 2024年RECEPTIONIST年間受付利用者数実績</p>
   <p class="hero-note">※2 クラウドiPad無人受付システム市場の実態と将来展望（ミックITリポート 2025年11月）<br>
   （デロイト トーマツ ミック経済研究所株式会社 調べ）</p>
 

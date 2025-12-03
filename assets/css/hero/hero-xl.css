@@ -172,15 +172,14 @@
 }
 
 
-  /* HERO補足テキスト */
   .hero-note {
-    font-size: 0.85rem;
-    color: var(--color-white);
-    line-height: 1.2;
-    margin: 1rem 1rem;
-    padding-right: 1rem;
-    text-align: left;
-  }
+  font-size: 0.85rem;
+  color: var(--color-white);
+  line-height: 1.2;
+  margin: 1rem 1rem;   /* ← これが行間が大きく見える原因 */
+  padding-right: 1rem;
+  text-align: left;
+}
 
   /* 資料案内 */
   .document-guidance-box {

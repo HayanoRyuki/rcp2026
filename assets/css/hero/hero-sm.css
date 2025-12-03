@@ -239,7 +239,7 @@
   font-size: 0.75rem;
   color: var(--color-white);
   line-height: 1;
-  margin-top: 1rem;
+  margin-top: 1rem;   /* ← ここが大問題！ */
   padding-right: 1rem;
   text-align: left;
 }
