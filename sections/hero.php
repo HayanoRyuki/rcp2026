@@ -87,13 +87,13 @@
               <label class="floating-label">従業員数<span class="asterisk">*</span></label>
               <select name="employee_number" required>
                 <option value="" selected disabled>クリックして選択してください</option>
-                <option value="1〜10名">1〜10名</option>
-                <option value="11〜50名">11〜50名</option>
-                <option value="51〜100名">51〜100名</option>
-                <option value="101〜200名">101〜200名</option>
-                <option value="201〜300名">201〜300名</option>
-                <option value="301〜500名">301〜500名</option>
-                <option value="501〜1000名">501〜1000名</option>
+                <option value="1〜10名">1-10名</option>
+                <option value="11〜50名">11-50名</option>
+                <option value="51〜100名">51-100名</option>
+                <option value="101〜200名">101-200名</option>
+                <option value="201〜300名">201-300名</option>
+                <option value="301〜500名">301-500名</option>
+                <option value="501〜1000名">501-1000名</option>
                 <option value="1001名以上">1001名以上</option>
               </select>
             </div>
