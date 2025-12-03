@@ -95,41 +95,62 @@ const RESOURCE_TYPES = [
   "document_factory",
   "guide-3min",
   "reception_lp",
-  "partner_guide",
+  "partner_guide", // ★ パートナー資料DL もここ（資料扱い）
 ];
 
 // ★ 新規登録系（REGISTER TYPES）
 const REGISTER_TYPES = [
-  "new_user",     // /new-register/ の contact_type
+  "new_user", // /new-register/
 ];
 
 // ★ 無料問い合わせ系（FREE TYPES）
 const FREE_TYPES = [
   "user",
   "proposal",
+  // "agency" はパートナー問い合わせ専用 thanks に飛ばすため除外
+];
+
+// ★ パートナー資料DL（resource とは別の thanks）
+const PARTNER_RESOURCE_TYPES = [
+  "partner_guide",
+];
+
+// ★ パートナー問い合わせ（agency）
+const PARTNER_CONTACT_TYPES = [
   "agency",
 ];
 
 function resolveThanksUrl(contactType) {
 
-  // ★ 1) 登録フォーム専用
+  // ★ 1) 新規登録フォーム
   if (REGISTER_TYPES.includes(contactType)) {
     return "https://staging.receptionist.jp/register-thanks/";
   }
 
-  // ★ 2) 資料請求系
+  // ★ 2) パートナー資料DL専用
+  if (PARTNER_RESOURCE_TYPES.includes(contactType)) {
+    return "https://staging.receptionist.jp/partner-resource-thanks/";
+  }
+
+  // ★ 3) パートナー問い合わせ専用
+  if (PARTNER_CONTACT_TYPES.includes(contactType)) {
+    return "https://staging.receptionist.jp/partner-contact-thanks/";
+  }
+
+  // ★ 4) 資料請求系（一般）
   if (RESOURCE_TYPES.includes(contactType)) {
     return "https://staging.receptionist.jp/resource-thanks/";
   }
 
-  // ★ 3) 無料問い合わせ系
+  // ★ 5) 無料問い合わせ系（一般）
   if (FREE_TYPES.includes(contactType)) {
     return "https://staging.receptionist.jp/thanks/";
   }
 
-  // ★ 4) デフォルト
+  // ★ 6) デフォルト
   return "https://staging.receptionist.jp/thanks/";
 }
+
 
 
 // =========================================================
