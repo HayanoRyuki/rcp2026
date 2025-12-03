@@ -261,8 +261,10 @@ if (
   is_page('partner') ||
   is_page('partner-list') ||
   is_page('partner-contact') ||
-  is_page('partner-contact-select') || // ←★ これを追加！
-  is_page('partner-series')
+  is_page('partner-contact-select') ||
+  is_page('partner-series') ||
+  is_page('partner-contact-thanks') ||     // ★ 追加
+  is_page('partner-resource-thanks')       // ★ 追加
 ) {
   $is_partner_template = true;
 }
