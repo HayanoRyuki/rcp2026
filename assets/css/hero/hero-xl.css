@@ -175,8 +175,8 @@
   .hero-note {
   font-size: 0.85rem;
   color: var(--color-white);
-  line-height: 1.2;
-  margin: 1rem 1rem;   /* ← これが行間が大きく見える原因 */
+  line-height: 1.25;
+  margin: 0.25rem 1rem;   /* ← これで全デバイスと統一 */
   padding-right: 1rem;
   text-align: left;
 }
