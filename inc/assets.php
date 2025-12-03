@@ -22,48 +22,52 @@ function rcp2026_enqueue_assets() {
     }
   }
 
-  // ===================================
-  // ヘッダーCSSの切り替え
-  // ===================================
-  $partner_templates = [
-    'page-partner.php',
-    'page-partner-list.php',
-    'page-partner-contact-select.php',
-    'page-partner-contact.php',
-    'page-document-partner.php', // ←★ 追加！！
-  ];
+ // ===================================
+// ヘッダーCSSの切り替え
+// ===================================
+$partner_templates = [
+  'page-partner.php',
+  'page-partner-list.php',
+  'page-partner-contact-select.php',
+  'page-partner-contact.php',
+  'page-document-partner.php',
+  'page-thanks-partner-contact.php',   // ★ 追加
+  'page-thanks-partner-resource.php',  // ★ 追加
+];
 
-  $use_partner_header = false;
-  foreach ($partner_templates as $tpl) {
-    if (is_page_template($tpl)) {
-      $use_partner_header = true;
-      break;
-    }
-  }
-
-  // スラッグでも判定
-  if (
-    is_page('partner') ||
-    is_page('partner-list') ||
-    is_page('partner-contact') ||
-    is_page('partner-contact-select') ||
-    is_page('document-partner') // ←★ 追加！！
-  ) {
+$use_partner_header = false;
+foreach ($partner_templates as $tpl) {
+  if (is_page_template($tpl)) {
     $use_partner_header = true;
+    break;
   }
+}
 
-  // header-partner.css か header.css を出し分け
-  $header_css = $use_partner_header ? 'header-partner' : 'header';
-  $header_path = "{$theme_dir}/assets/css/{$header_css}.css";
+// スラッグでも判定
+if (
+  is_page('partner') ||
+  is_page('partner-list') ||
+  is_page('partner-contact') ||
+  is_page('partner-contact-select') ||
+  is_page('document-partner') ||
+  is_page('partner-contact-thanks') ||   // ★ 追加
+  is_page('partner-resource-thanks')     // ★ 追加
+) {
+  $use_partner_header = true; // ★ ここが本当に重要
+}
 
-  if (file_exists($header_path)) {
-    wp_enqueue_style(
-      'rcp2026-header',
-      "{$theme_uri}/assets/css/{$header_css}.css",
-      [],
-      filemtime($header_path)
-    );
-  }
+// header-partner.css か header.css を出し分け
+$header_css = $use_partner_header ? 'header-partner' : 'header';
+$header_path = "{$theme_dir}/assets/css/{$header_css}.css";
+
+if (file_exists($header_path)) {
+  wp_enqueue_style(
+    'rcp2026-header',
+    "{$theme_uri}/assets/css/{$header_css}.css",
+    [],
+    filemtime($header_path)
+  );
+}
   
   // ===================================
   // 共通JS（全ページ読み込み）
