@@ -3,22 +3,23 @@
     <div class="hero-body">
       
       <!-- 左カラム -->
-      <div class="container_l adView">
+<div class="container_l adView">
 
-        <div class="hero-title-box">
-          <h1>
-            <img class="hero-title-img"
-                 src="<?php echo get_template_directory_uri(); ?>/assets/img/hero/RECEPTIONIST_LP_h1_4million_trans.png"
-                 alt="年間400万人が利用・導入法人No.1 クラウド受付システム">
-          </h1>
-        </div>
+  <div class="hero-title-box">
+    <h1>
+      <img class="hero-title-img"
+           src="<?php echo get_template_directory_uri(); ?>/assets/img/hero/RECEPTIONIST_LP_h1_4million_trans.png"
+           alt="年間400万人が利用・導入法人No.1 クラウド受付システム">
+    </h1>
+  </div>
 
-        <div class="hero-user-image"></div>
+  <div class="hero-user-image"></div>
 
-        <p class="hero-note">※1 2024年RECEPTIONIST年間受付利用者数実績</p>
-        <p class="hero-note">※2『年平均成長率35％で急増するクラウドiPad無人受付システム市場（ミックITリポート2024年10月号）』（デロイト トーマツ ミック経済研究所調べ）</p>
-      
-      </div><!-- /.container_l -->
+  <p class="hero-note">※1 2024年RECEPTIONIST年間受付利用者数実績</p>
+  <p class="hero-note">※2 クラウドiPad無人受付システム市場の実態と将来展望（ミックITリポート 2024年11月）<br>
+  （デロイト トーマツ ミック経済研究所株式会社 調べ）</p>
+
+</div><!-- /.container_l -->
 
       <!-- 右カラム（フォーム） -->
       <div class="container_r">
