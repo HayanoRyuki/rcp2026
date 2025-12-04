@@ -63,6 +63,7 @@
 /* カード本体（画像左 + テキスト右） */
 .partner-card {
   display: flex;
+  flex-direction: row; /* PCは横並び */
   gap: 24px;
   background: #fff;
   padding: 28px;
@@ -71,6 +72,7 @@
   box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   flex: 1 1 48%;
   align-items: flex-start;
+  text-align: left; /* PCは左揃え */
 }
 
 /* 左の画像 */
@@ -110,6 +112,7 @@
 ========================================================= */
 
 @media (max-width: 960px) {
+
   .partner-top {
     flex-direction: column;
     text-align: center;
@@ -123,9 +126,9 @@
     width: 280px;
   }
 
-  /* カード：縦積み */
+  /* カード：縦積み・中央揃え */
   .partner-card {
-    flex-direction: column;
+    flex-direction: column !important;
     text-align: center;
     align-items: center;
   }
@@ -139,8 +142,4 @@
   .partner-card-img {
     width: 120px;
   }
-}
-
-.partner-card {
-  flex-direction: row !important;
 }
