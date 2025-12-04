@@ -132,3 +132,76 @@
     width: 90px;
   }
 }
+
+/* =========================================================
+   PARTNER LIST — 認定パートナーカード完全再現（元サイト同等）
+========================================================= */
+
+/* カード外枠 */
+.partner-card {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e5e5e5;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  overflow: hidden;
+  width: 100%;
+  max-width: 520px;
+}
+
+/* ★これが重要：バッジ画像を float させて右にテキストを回り込ませる */
+.partner-card figure img {
+  float: left;
+  width: 160px;
+  height: auto;
+  margin-right: 16px;
+  margin-bottom: 8px;
+}
+
+/* カードタイトル */
+.partner-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  color: #222;
+  line-height: 1.4;
+}
+
+/* 説明文 */
+.partner-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+  margin-top: 0;
+}
+
+/* float解除 */
+.partner-card::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* カード2枚を横に並べる */
+.partner-cards,
+.partner-tiers,
+.secTtlWrap ~ div {
+  display: flex !important;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+/* SP レスポンシブ */
+@media (max-width: 768px) {
+  .partner-card {
+    max-width: 100%;
+  }
+
+  .partner-card figure img {
+    width: 120px;
+  }
+}
