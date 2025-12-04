@@ -2,9 +2,7 @@
 /*
 Template Name: 広告用ランディングページ（Ads）
 */
-
-// ★ Ads 専用ヘッダーを呼ぶ（絶対必要）
-get_header('ads');
+get_header();
 ?>
 
 <main class="site-main front-page">
