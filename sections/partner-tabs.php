@@ -19,12 +19,11 @@ wp_enqueue_style(
 );
 wp_enqueue_script(
   'rcp-partnerlist',
-  get_template_directory_uri() . '/assets/js/rcp-partnerlist.js',
+  get_template_directory_uri() . '/assets/js/partner-list.js',
   [],
-  filemtime(get_theme_file_path('/assets/js/rcp-partnerlist.js')),
+  filemtime(get_theme_file_path('/assets/js/partner-list.js')),
   true
 );
-
 // タブ構成とカテゴリースラッグの対応
 $partner_sections = [
   'sales-partner' => [
