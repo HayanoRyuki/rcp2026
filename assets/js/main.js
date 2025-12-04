@@ -15,19 +15,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ▼ 修正ポイント：トップページの site-header と LP の lp-header の両方に対応
-  const header =
-    document.querySelector('.site-header') ||
-    document.querySelector('.lp-header');
+const header =
+  document.querySelector('.site-header') ||
+  document.querySelector('.lp-header');
 
-  const main = document.querySelector('.site-main');
+const main = document.querySelector('.site-main');
 
-  if (header && main) {
-    const adjustPadding = () => {
-      main.style.paddingTop = `${header.offsetHeight}px`;
-    };
-    adjustPadding();
-    window.addEventListener('resize', adjustPadding);
-  }
+// LP 固定ページ（page-ads.php）だけ無効化
+if (header && main && !document.body.classList.contains('page-template-page-ads')) {
+  const adjustPadding = () => {
+    main.style.paddingTop = `${header.offsetHeight}px`;
+  };
+  adjustPadding();
+  window.addEventListener('resize', adjustPadding);
+}
 });
 
 
