@@ -49,61 +49,59 @@
 }
 
 /* =========================================================
-   下段：認定パートナー 2カード（元サイト完全再現）
+   下段：認定パートナー 2カード（横並びレイアウト）
 ========================================================= */
 
 .partner-tiers {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 32px;
   margin-top: 40px;
-  flex-wrap: nowrap;
 }
 
-/* カード本体 */
+/* カード本体（画像左・テキスト右） */
 .partner-card {
+  display: flex;
+  gap: 24px;
   background: #fff;
-  border-radius: 20px;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   border: 1px solid #e5e5e5;
-  padding: 24px 28px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  flex: 1 1 48%;
+  align-items: flex-start;
+}
+
+/* 左の画像 */
+.partner-card-img {
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.partner-card-img img {
   width: 100%;
-  max-width: 520px;
-  overflow: hidden;
-}
-
-/* ★ バッジ画像 float：元サイト同じ挙動 */
-.partner-card .partner-badge img {
-  float: left;
-  width: 150px;
   height: auto;
-  margin-right: 16px;
-  margin-bottom: 8px;
+  display: block;
 }
 
-/* カードタイトル */
-.partner-card h3 {
+/* 右テキスト部分 */
+.partner-card-body {
+  flex: 1;
+}
+
+.partner-card-title {
+  margin: 0 0 8px;
   font-size: 19px;
   font-weight: 700;
-  margin-top: 6px;
-  margin-bottom: 10px;
-  color: #222;
   line-height: 1.4;
+  color: #222;
 }
 
-/* 説明文 */
-.partner-card p {
+.partner-card-text {
+  margin: 0;
   font-size: 15px;
   line-height: 1.7;
   color: #444;
-  margin-top: 0;
-}
-
-/* float解除 */
-.partner-card::after {
-  content: "";
-  display: block;
-  clear: both;
 }
 
 /* =========================================================
@@ -124,73 +122,19 @@
     width: 280px;
   }
 
-  .partner-tiers {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .partner-card {
-    max-width: 100%;
-  }
-
-  .partner-card .partner-badge img {
-    width: 120px;
-  }
-}
-
-@media (max-width: 768px) {
-  .partner-card .partner-badge img {
-    width: 110px;
-  }
-}
-
-/* --- 認定カード（画像横並び）--- */
-.partner-tiers {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.partner-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  background: #fff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  flex: 1 1 48%;
-}
-
-/* 画像部分を固定幅に */
-.partner-badge {
-  width: 120px;
-  flex-shrink: 0;
-}
-
-.partner-badge img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* テキスト部分は自然に右側へ流れる */
-.partner-card h3 {
-  margin: 0 0 8px;
-  font-size: 1.2rem;
-}
-
-.partner-card p {
-  margin: 0;
-  line-height: 1.6;
-}
-
-/* --- スマホでは縦並びに --- */
-@media (max-width: 768px) {
   .partner-card {
     flex-direction: column;
     text-align: center;
     align-items: center;
   }
+
+  .partner-card-img {
+    width: 140px;
+  }
 }
 
+@media (max-width: 768px) {
+  .partner-card-img {
+    width: 120px;
+  }
+}
