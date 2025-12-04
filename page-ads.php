@@ -2,7 +2,7 @@
 /*
 Template Name: 広告用ランディングページ（Ads）
 */
-get_header();
+get_header('lp');
 ?>
 
 <main class="site-main front-page">
