@@ -115,9 +115,9 @@ $filter_labels = ['すべて','ICT機器販売','オフィス設計・デザイ�
       ?>
 
       <div id="panel-<?php echo esc_attr($id); ?>"
-           class="rcp-partnerlist__section<?php echo $id === 'sales-partner' ? ' is-active' : ''; ?>"
-           role="tabpanel"
-           data-panel="<?php echo esc_attr($id); ?>">
+     class="rcp-partnerlist__section is-active"
+     role="tabpanel"
+     data-panel="<?php echo esc_attr($id); ?>">
 
         <div class="rcp-partnerlist__block">
           <h3 class="rcp-partnerlist__block-title"><?php echo esc_html($section['title']); ?></h3>

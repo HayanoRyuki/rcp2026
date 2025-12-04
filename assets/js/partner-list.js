@@ -32,20 +32,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterBtns = document.querySelectorAll('.rcp-partnerlist__filterbtn');
 
   const applyFilter = (label) => {
-    const activePanel = document.querySelector('.rcp-partnerlist__section.is-active');
-    if (!activePanel) return;
+    // 全パネルのアイテムを対象にフィルタ
+    panels.forEach(activePanel => {
+      const items = activePanel.querySelectorAll('.rcp-partnerlist__item');
+      items.forEach(item => {
+        const tags = (item.dataset.tags || '')
+          .split(',')
+          .map(s => s.trim())
+          .filter(Boolean);
 
-    const items = activePanel.querySelectorAll('.rcp-partnerlist__item');
-
-    items.forEach(item => {
-      const tags = (item.dataset.tags || '')
-        .split(',')
-        .map(s => s.trim())
-        .filter(Boolean);
-
-      const isAll = label === 'すべて';
-      const visible = isAll || tags.includes(label);
-      item.style.display = visible ? '' : 'none';
+        const isAll = label === 'すべて';
+        const visible = isAll || tags.includes(label);
+        item.style.display = visible ? '' : 'none';
+      });
     });
   };
 
@@ -60,20 +59,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== Priority sort (RAP -> RSP -> その他) =====
   document.querySelectorAll('.rcp-partnerlist__list').forEach(list => {
     const items = Array.from(list.children);
-
     items.sort((a, b) => {
       const pa = Number(a.dataset.priority || 2);
       const pb = Number(b.dataset.priority || 2);
       return pa - pb;
     });
-
     items.forEach(i => list.appendChild(i));
   });
 
   // ===== 初期状態 =====
-  const initTab = document.querySelector('.rcp-partnerlist__tab.is-active');
-  if (initTab) activatePanel(initTab.dataset.target);
+  // 全パネルを表示
+  panels.forEach(p => p.classList.add('is-active'));
 
+  // 初期フィルタ適用
   const initFilter = document.querySelector('.rcp-partnerlist__filterbtn.is-active');
   if (initFilter) applyFilter(initFilter.dataset.filter);
 
