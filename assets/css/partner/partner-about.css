@@ -140,3 +140,7 @@
     width: 120px;
   }
 }
+
+.partner-card {
+  flex-direction: row !important;
+}
