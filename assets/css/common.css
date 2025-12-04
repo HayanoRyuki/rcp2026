@@ -172,3 +172,38 @@ body.admin-bar .function-header {
   white-space: nowrap;
   font-weight: bold; /* 見え方を他の必須印と統一 */
 }
+
+.page-404 {
+  padding: 100px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.page-404-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+
+.page-404-text {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 35px;
+  line-height: 1.7;
+}
+
+.page-404-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.page-404-button:hover {
+  opacity: 0.85;
+}
