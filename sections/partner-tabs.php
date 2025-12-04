@@ -26,27 +26,23 @@ wp_enqueue_script(
   true
 );
 
-
 // タブ構成とカテゴリースラッグの対応
 $partner_sections = [
   'sales-partner' => [
     'title' => 'セールスパートナー',
     'lead'  => 'RECEPTIONISTシリーズを安心して販売・紹介いただけるパートナー',
-    // partner-category のスラッグ
     'slugs' => ['salespartner-rap', 'salespartner-rsp', 'salespartner'],
-    // カテゴリー毎のバッジ画像(任意)
     'badges' => [
       'salespartner-rap' => 'partner_badge01_s.png', // RAP
       'salespartner-rsp' => 'partner_badge02_s.png', // RSP
     ],
   ],
+
   'alliance-partner' => [
     'title' => 'アライアンスパートナー',
     'lead'  => 'RECEPTIONISTシリーズとサービス連携や業務提携をしているパートナー',
     'slugs' => ['alliancepartner'],
-    'badges' => [
-      'alliancepartner' => 'partner_badge02_s.png',
-    ],
+    'badges' => [], // ★ここでバッジ無効化！
   ],
 ];
 
