@@ -7,8 +7,7 @@
   background: #f4f8fb;
 }
 
-.partner-container,
-.partner-inner {
+.partner-container {
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
@@ -19,8 +18,7 @@
    上段：テキスト + 画像
 ========================================================= */
 
-.partner-top,
-.partner-intro {
+.partner-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,8 +26,7 @@
   margin-bottom: 60px;
 }
 
-.partner-top-text,
-.partner-lead {
+.partner-top-text {
   flex: 1;
 }
 
@@ -40,15 +37,13 @@
   color: #222;
 }
 
-.partner-top-text p,
-.partner-lead p {
+.partner-top-text p {
   font-size: 16px;
   line-height: 1.8;
   color: #444;
 }
 
-.partner-top-image img,
-.partner-image img {
+.partner-top-image img {
   width: 360px;
   height: auto;
 }
@@ -57,7 +52,6 @@
    下段：認定パートナー 2カード（元サイト完全再現）
 ========================================================= */
 
-/* カードを横並びにする */
 .partner-tiers {
   display: flex;
   justify-content: center;
@@ -78,9 +72,8 @@
   overflow: hidden;
 }
 
-/* ★ バッジ画像を左に寄せてテキスト右回り込み（元サイトと同じ） */
-.partner-card .partner-badge img,
-.partner-card figure img {
+/* ★ バッジ画像 float：元サイト同じ挙動 */
+.partner-card .partner-badge img {
   float: left;
   width: 150px;
   height: auto;
@@ -89,8 +82,7 @@
 }
 
 /* カードタイトル */
-.partner-card h3,
-.partner-card .partner-card-title {
+.partner-card h3 {
   font-size: 19px;
   font-weight: 700;
   margin-top: 6px;
@@ -100,15 +92,14 @@
 }
 
 /* 説明文 */
-.partner-card p,
-.partner-card .partner-card-desc {
+.partner-card p {
   font-size: 15px;
   line-height: 1.7;
   color: #444;
   margin-top: 0;
 }
 
-/* float 解除 */
+/* float解除 */
 .partner-card::after {
   content: "";
   display: block;
@@ -120,25 +111,19 @@
 ========================================================= */
 
 @media (max-width: 960px) {
-
-  /* 上段縦並び */
-  .partner-top,
-  .partner-intro {
+  .partner-top {
     flex-direction: column;
     text-align: center;
   }
 
-  .partner-top-text,
-  .partner-lead {
+  .partner-top-text {
     text-align: left;
   }
 
-  .partner-top-image img,
-  .partner-image img {
+  .partner-top-image img {
     width: 280px;
   }
 
-  /* 下段カード縦並び */
   .partner-tiers {
     flex-direction: column;
     gap: 24px;
@@ -148,13 +133,13 @@
     max-width: 100%;
   }
 
-  .partner-card figure img {
+  .partner-card .partner-badge img {
     width: 120px;
   }
 }
 
 @media (max-width: 768px) {
-  .partner-card figure img {
+  .partner-card .partner-badge img {
     width: 110px;
   }
 }
