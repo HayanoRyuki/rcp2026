@@ -280,3 +280,11 @@
   margin-left: auto;
   margin-right: -80px;
 }
+
+@media (min-width: 1280px) {
+  .kv-form-agree label {
+    flex: 0 1 auto !important;
+    margin-left: 0 !important;
+    text-align: left !important;
+  }
+}
