@@ -319,3 +319,27 @@
   background: #fff !important;
   color: #444 !important;
 }
+
+/* --- 企業紹介テキスト（excerpt）を小さくして読みやすく --- */
+.rcp-partnerlist__excerpt {
+  font-size: 1.15rem !important;
+  line-height: 1.6 !important;
+  color: #444 !important;
+  margin-bottom: 1.2rem !important;
+}
+
+/* --- タグ（全体左揃えに変更） --- */
+.rcp-partnerlist__tags {
+  justify-content: flex-start !important;
+  margin-top: 0.5rem !important;
+}
+
+/* --- タグ1つ1つのサイズをさらに小さく --- */
+.rcp-partnerlist__tags span {
+  font-size: 0.95rem !important;
+  padding: 0.2rem 0.55rem !important;
+  border-radius: 10px !important;
+  border: 1px solid #ccc !important;
+  background: #fff !important;
+  color: #555 !important;
+}
