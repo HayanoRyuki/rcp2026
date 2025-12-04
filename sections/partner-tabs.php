@@ -6,8 +6,9 @@
  * - Tailwind不使用
  * - セールス/アライアンスのタブ切替
  * - タグフィルタ（表示/非表示）
- * - RAP→RSP→その他 の優先度ソート
- * - 画像/バッジはテーマ内 assets/img/partner/ 配下を想定
+ * - partner_order（メタボックス）による手動ソート
+ * - RAP→RSP→その他 の優先度を fallback として保持
+ * - 画像/バッジはテーマ内 assets/img/partner/ 配下
  */
 
 // 必要CSS/JSを読み込み
@@ -26,12 +27,12 @@ wp_enqueue_script(
   true
 );
 
-// タブ構成とカテゴリースラッグの対応
+// ▼ タブ構成と partner-category スラッグ対応
 $partner_sections = [
   'sales-partner' => [
-    'title' => 'セールスパートナー',
-    'lead'  => 'RECEPTIONISTシリーズを安心して販売・紹介いただけるパートナー',
-    'slugs' => ['salespartner-rap', 'salespartner-rsp', 'salespartner'],
+    'title'  => 'セールスパートナー',
+    'lead'   => 'RECEPTIONISTシリーズを安心して販売・紹介いただけるパートナー',
+    'slugs'  => ['salespartner-rap', 'salespartner-rsp', 'salespartner'],
     'badges' => [
       'salespartner-rap' => 'partner_badge01_s.png', // RAP
       'salespartner-rsp' => 'partner_badge02_s.png', // RSP
@@ -39,14 +40,14 @@ $partner_sections = [
   ],
 
   'alliance-partner' => [
-    'title' => 'アライアンスパートナー',
-    'lead'  => 'RECEPTIONISTシリーズとサービス連携や業務提携をしているパートナー',
-    'slugs' => ['alliancepartner'],
-    'badges' => [], // ★ここでバッジ無効化！
+    'title'  => 'アライアンスパートナー',
+    'lead'   => 'RECEPTIONISTシリーズとサービス連携や業務提携をしているパートナー',
+    'slugs'  => ['alliancepartner'],
+    'badges' => [], // バッジ非表示
   ],
 ];
 
-// 画面上に出すフィルタ（partner-tag の表示名と完全一致で判定）
+// ▼ フィルタボタン（partner-tag の name と一致）
 $filter_labels = ['すべて','ICT機器販売','オフィス設計・デザイン','入退・ゲート連携','導入設計・SI構築支援','流通'];
 ?>
 
@@ -68,6 +69,7 @@ $filter_labels = ['すべて','ICT機器販売','オフィス設計・デザイ�
                 aria-selected="true"
                 aria-controls="panel-sales-partner"
                 data-target="sales-partner">セールス<br class="sp">パートナー</button>
+
         <button type="button"
                 class="rcp-partnerlist__tab"
                 role="tab"
@@ -82,15 +84,21 @@ $filter_labels = ['すべて','ICT機器販売','オフィス設計・デザイ�
       <div class="rcp-partnerlist__filter">
         <?php foreach ($filter_labels as $i => $label): ?>
           <button type="button"
-                  class="rcp-partnerlist__filterbtn<?php echo $i===0 ? ' is-active' : ''; ?>"
-                  data-filter="<?php echo esc_attr($label); ?>">
+            class="rcp-partnerlist__filterbtn<?php echo $i === 0 ? ' is-active' : ''; ?>"
+            data-filter="<?php echo esc_attr($label); ?>">
             <?php echo esc_html($label); ?>
           </button>
         <?php endforeach; ?>
       </div>
     </div>
 
-    <?php foreach ($partner_sections as $id => $section): ?>
+    <?php
+    // =============================
+    // 各タブごとのループ
+    // =============================
+    foreach ($partner_sections as $id => $section):
+    ?>
+
       <?php
       // 投稿取得
       $query = new WP_Query([
@@ -107,9 +115,8 @@ $filter_labels = ['すべて','ICT機器販売','オフィス設計・デザイ�
       ?>
 
       <div id="panel-<?php echo esc_attr($id); ?>"
-           class="rcp-partnerlist__section<?php echo $id==='sales-partner' ? ' is-active' : ''; ?>"
+           class="rcp-partnerlist__section<?php echo $id === 'sales-partner' ? ' is-active' : ''; ?>"
            role="tabpanel"
-           aria-labelledby=""
            data-panel="<?php echo esc_attr($id); ?>">
 
         <div class="rcp-partnerlist__block">
@@ -117,19 +124,22 @@ $filter_labels = ['すべて','ICT機器販売','オフィス設計・デザイ�
           <p class="rcp-partnerlist__block-lead"><?php echo esc_html($section['lead']); ?></p>
 
           <div class="rcp-partnerlist__block-contents">
+
             <?php if ($query->have_posts()): ?>
               <?php
               $posts = [];
+
               while ($query->have_posts()): $query->the_post();
 
-                // タグ（表示名をカンマ連結して data-tags に入れる）
-                $tags = get_the_terms(get_the_ID(), 'partner-tag');
-                $tag_names = ($tags && !is_wp_error($tags)) ? wp_list_pluck($tags, 'name') : [];
-                $tag_names_str = implode(',', $tag_names);
+                $post_id = get_the_ID();
 
-                // カテゴリーからバッジ判定
+                // ▼ タグ
+                $tags      = get_the_terms($post_id, 'partner-tag');
+                $tag_names = ($tags && !is_wp_error($tags)) ? wp_list_pluck($tags, 'name') : [];
+
+                // ▼ バッジ判定
                 $badge = '';
-                $cats = get_the_terms(get_the_ID(), 'partner-category');
+                $cats = get_the_terms($post_id, 'partner-category');
                 if ($cats && !is_wp_error($cats)) {
                   foreach ($cats as $cat) {
                     if (isset($section['badges'][$cat->slug])) {
@@ -139,42 +149,62 @@ $filter_labels = ['すべて','ICT機器販売','オフィス設計・デザイ�
                   }
                 }
 
-                // 優先度（RAP→RSP→その他）
+                // ▼ 優先度（RAP → RSP → その他）
                 $priority = 2;
                 if ($badge) {
                   if (strpos($badge, 'badge01') !== false) $priority = 0;
                   elseif (strpos($badge, 'badge02') !== false) $priority = 1;
                 }
 
+                // ▼ 並び順（メタボックス）
+                $order = get_post_meta($post_id, 'partner_order', true);
+                $order = $order ? intval($order) : 999; // 未指定は最後
+
+                // ▼ 配列にまとめる
                 $posts[] = [
-                  'ID'        => get_the_ID(),
+                  'ID'        => $post_id,
                   'title'     => get_the_title(),
                   'excerpt'   => get_the_excerpt(),
-                  'url'       => get_post_meta(get_the_ID(), 'partner_url', true),
-                  'thumb'     => get_the_post_thumbnail(get_the_ID(), 'medium'),
+                  'url'       => get_post_meta($post_id, 'partner_url', true),
+                  'thumb'     => get_the_post_thumbnail($post_id, 'medium'),
                   'tag_names' => $tag_names,
                   'badge'     => $badge,
                   'priority'  => $priority,
+                  'order'     => $order,
                 ];
+
               endwhile;
               wp_reset_postdata();
 
-              // PHP側でも優先度ソート（JS側でも再保証）
-              usort($posts, fn($a,$b) => $a['priority'] <=> $b['priority']);
+              // ================================================
+              // 手動順（order） → 優先度（priority）順でソート
+              // ================================================
+              usort($posts, function($a, $b) {
+                // 1) 手動順（小さいほど上）
+                if ($a['order'] !== $b['order']) {
+                  return $a['order'] <=> $b['order'];
+                }
+                // 2) RAP → RSP → 通常
+                return $a['priority'] <=> $b['priority'];
+              });
               ?>
 
+              <!-- リスト表示 -->
               <div class="rcp-partnerlist__list">
                 <?php foreach ($posts as $p): ?>
                   <article class="rcp-partnerlist__item"
                            data-tags="<?php echo esc_attr(implode(',', $p['tag_names'])); ?>"
                            data-priority="<?php echo esc_attr($p['priority']); ?>">
-                    <?php if ($p['badge']): ?>
+
+                    <!-- バッジ（アライアンスは出ない） -->
+                    <?php if (!empty($p['badge'])): ?>
                       <div class="rcp-partnerlist__badge" aria-hidden="true">
-                        <img src="<?php echo esc_url(get_template_directory_uri().'/assets/img/partner/'.$p['badge']); ?>" alt="">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/partner/' . $p['badge']); ?>" alt="">
                       </div>
                     <?php endif; ?>
 
                     <div class="rcp-partnerlist__item-inner">
+
                       <h4 class="rcp-partnerlist__name"><?php echo esc_html($p['title']); ?></h4>
 
                       <figure class="rcp-partnerlist__img">
@@ -200,18 +230,21 @@ $filter_labels = ['すべて','ICT機器販売','オフィス設計・デザイ�
                           <?php endforeach; ?>
                         </div>
                       <?php endif; ?>
+
                     </div>
                   </article>
                 <?php endforeach; ?>
-              </div><!-- /.rcp-partnerlist__list -->
+              </div>
 
             <?php else: ?>
               <p class="rcp-partnerlist__empty">現在、該当するパートナーはありません。</p>
             <?php endif; ?>
-          </div><!-- /.rcp-partnerlist__block-contents -->
-        </div><!-- /.rcp-partnerlist__block -->
-      </div><!-- /tabpanel -->
+
+          </div><!-- block-contents -->
+        </div><!-- block -->
+      </div><!-- panel -->
+
     <?php endforeach; ?>
 
-  </div><!-- /.rcp-partnerlist__inner -->
+  </div><!-- inner -->
 </section>
