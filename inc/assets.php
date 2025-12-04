@@ -340,16 +340,6 @@ function rcp2026_enqueue_assets() {
 }
 add_action('wp_enqueue_scripts', 'rcp2026_enqueue_assets');
 
-// ===================================
-// page-ads.php 専用：page-ads.css を強制で読まない
-// ===================================
-function rcp2026_remove_page_ads_css() {
-  if (is_page_template('page-ads.php')) {
-    wp_dequeue_style('rcp2026-page-ads');
-    wp_deregister_style('rcp2026-page-ads');
-  }
-}
-add_action('wp_print_styles', 'rcp2026_remove_page_ads_css', 100);
 
 // ===================================
 // Swiper
