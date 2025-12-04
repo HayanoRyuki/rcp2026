@@ -6,7 +6,7 @@ function rcp2026_enqueue_assets() {
   $theme_uri = get_template_directory_uri();
   $theme_dir = get_template_directory();
 
-// ===================================
+  // ===================================
   // 共通CSS（全ページ読み込み）
   // ===================================
   $common_css = ['reset', 'common', 'footer'];
@@ -22,53 +22,53 @@ function rcp2026_enqueue_assets() {
     }
   }
 
- // ===================================
-// ヘッダーCSSの切り替え
-// ===================================
-$partner_templates = [
-  'page-partner.php',
-  'page-partner-list.php',
-  'page-partner-contact-select.php',
-  'page-partner-contact.php',
-  'page-document-partner.php',
-  'page-thanks-partner-contact.php',   // ★ 追加
-  'page-thanks-partner-resource.php',  // ★ 追加
-];
+  // ===================================
+  // ヘッダーCSSの切り替え
+  // ===================================
+  $partner_templates = [
+    'page-partner.php',
+    'page-partner-list.php',
+    'page-partner-contact-select.php',
+    'page-partner-contact.php',
+    'page-document-partner.php',
+    'page-thanks-partner-contact.php',
+    'page-thanks-partner-resource.php',
+  ];
 
-$use_partner_header = false;
-foreach ($partner_templates as $tpl) {
-  if (is_page_template($tpl)) {
-    $use_partner_header = true;
-    break;
+  $use_partner_header = false;
+  foreach ($partner_templates as $tpl) {
+    if (is_page_template($tpl)) {
+      $use_partner_header = true;
+      break;
+    }
   }
-}
 
-// スラッグでも判定
-if (
-  is_page('partner') ||
-  is_page('partner-list') ||
-  is_page('partner-contact') ||
-  is_page('partner-contact-select') ||
-  is_page('document-partner') ||
-  is_page('partner-contact-thanks') ||   // ★ 追加
-  is_page('partner-resource-thanks')     // ★ 追加
-) {
-  $use_partner_header = true; // ★ ここが本当に重要
-}
+  // スラッグでも判定
+  if (
+    is_page('partner') ||
+    is_page('partner-list') ||
+    is_page('partner-contact') ||
+    is_page('partner-contact-select') ||
+    is_page('document-partner') ||
+    is_page('partner-contact-thanks') ||
+    is_page('partner-resource-thanks')
+  ) {
+    $use_partner_header = true;
+  }
 
-// header-partner.css か header.css を出し分け
-$header_css = $use_partner_header ? 'header-partner' : 'header';
-$header_path = "{$theme_dir}/assets/css/{$header_css}.css";
+  // header-partner.css か header.css を出し分け
+  $header_css = $use_partner_header ? 'header-partner' : 'header';
+  $header_path = "{$theme_dir}/assets/css/{$header_css}.css";
 
-if (file_exists($header_path)) {
-  wp_enqueue_style(
-    'rcp2026-header',
-    "{$theme_uri}/assets/css/{$header_css}.css",
-    [],
-    filemtime($header_path)
-  );
-}
-  
+  if (file_exists($header_path)) {
+    wp_enqueue_style(
+      'rcp2026-header',
+      "{$theme_uri}/assets/css/{$header_css}.css",
+      [],
+      filemtime($header_path)
+    );
+  }
+
   // ===================================
   // 共通JS（全ページ読み込み）
   // ===================================
@@ -90,7 +90,6 @@ if (file_exists($header_path)) {
 
   // ===================================
   // セクションCSS（sections ディレクトリ配下）
-  // トップページでも他ページでも再利用される共通ブロック群
   // ===================================
   $sections = [
     'logo-slider', 'about', 'cost', 'logo-grid', 'reasons', 'solutions',
@@ -200,22 +199,20 @@ if (file_exists($header_path)) {
     }
   }
 
-// ===================================
-// 講習会LP専用CSS（page-seminar.css）
-// ===================================
-if (is_page_template('page-seminar.php')) {
-  $seminar_css = "{$theme_dir}/assets/css/page/page-seminar.css";
-  if (file_exists($seminar_css)) {
-    wp_enqueue_style(
-      'rcp2026-page-seminar',
-      "{$theme_uri}/assets/css/page/page-seminar.css",
-      ['rcp2026-page-common'],
-      filemtime($seminar_css)
-    );
+  // ===================================
+  // 講習会LP専用CSS
+  // ===================================
+  if (is_page_template('page-seminar.php')) {
+    $seminar_css = "{$theme_dir}/assets/css/page/page-seminar.css";
+    if (file_exists($seminar_css)) {
+      wp_enqueue_style(
+        'rcp2026-page-seminar',
+        "{$theme_uri}/assets/css/page/page-seminar.css",
+        ['rcp2026-page-common'],
+        filemtime($seminar_css)
+      );
+    }
   }
-}
-
-
 
   // ===================================
   // 固定ページ専用JS（自動検出）
@@ -235,87 +232,83 @@ if (is_page_template('page-seminar.php')) {
     }
   }
 
-// ===================================
-// パートナーページ群CSS（共通＋自動検出・安全版）
-// ===================================
-$partner_templates = [
-  'page-partner.php',
-  'page-partner-list.php',
-  'page-partner-contact.php',
-  'page-partner-contact-select.php',
-  'page-document-partner.php',
-  'page-partner-series.php',
-];
+  // ===================================
+  // パートナーページ群
+  // ===================================
+  $partner_templates = [
+    'page-partner.php',
+    'page-partner-list.php',
+    'page-partner-contact.php',
+    'page-partner-contact-select.php',
+    'page-document-partner.php',
+    'page-partner-series.php',
+  ];
 
-// partnerページを判定（テンプレート or 固定ページスラッグ）
-$is_partner_template = false;
-foreach ($partner_templates as $tpl) {
-  if (is_page_template($tpl)) {
+  $is_partner_template = false;
+  foreach ($partner_templates as $tpl) {
+    if (is_page_template($tpl)) {
+      $is_partner_template = true;
+      break;
+    }
+  }
+
+  if (
+    is_page('partner') ||
+    is_page('partner-list') ||
+    is_page('partner-contact') ||
+    is_page('partner-contact-select') ||
+    is_page('partner-series') ||
+    is_page('partner-contact-thanks') ||
+    is_page('partner-resource-thanks')
+  ) {
     $is_partner_template = true;
-    break;
-  }
-}
-
-// 固定ページスラッグでも判定（←ここを拡張）
-if (
-  is_page('partner') ||
-  is_page('partner-list') ||
-  is_page('partner-contact') ||
-  is_page('partner-contact-select') ||
-  is_page('partner-series') ||
-  is_page('partner-contact-thanks') ||     // ★ 追加
-  is_page('partner-resource-thanks')       // ★ 追加
-) {
-  $is_partner_template = true;
-}
-
-if ($is_partner_template) {
-  // 共通CSS
-  $partner_common_path = "{$theme_dir}/assets/css/page/page-partner.css";
-  $partner_common_handle = 'rcp2026-partner-common';
-  $deps_for_child = [];
-
-  if (file_exists($partner_common_path)) {
-    wp_enqueue_style(
-      $partner_common_handle,
-      "{$theme_uri}/assets/css/page/page-partner.css",
-      [],
-      filemtime($partner_common_path)
-    );
-    $deps_for_child = [$partner_common_handle];
   }
 
-  // 個別CSS（/assets/css/page/page-partner*.css）
-  $partner_page_dir = "{$theme_dir}/assets/css/page/";
-  if (is_dir($partner_page_dir)) {
-    foreach (glob($partner_page_dir . 'page-partner*.css') as $path) {
-      $basename = basename($path, '.css');
-      if ($basename === 'page-partner') continue;
+  if ($is_partner_template) {
+    $partner_common_path = "{$theme_dir}/assets/css/page/page-partner.css";
+    $partner_common_handle = 'rcp2026-partner-common';
+    $deps_for_child = [];
+
+    if (file_exists($partner_common_path)) {
       wp_enqueue_style(
-        "rcp2026-{$basename}",
-        "{$theme_uri}/assets/css/page/{$basename}.css",
-        $deps_for_child,
-        filemtime($path)
+        $partner_common_handle,
+        "{$theme_uri}/assets/css/page/page-partner.css",
+        [],
+        filemtime($partner_common_path)
       );
+      $deps_for_child = [$partner_common_handle];
+    }
+
+    $partner_page_dir = "{$theme_dir}/assets/css/page/";
+    if (is_dir($partner_page_dir)) {
+      foreach (glob($partner_page_dir . 'page-partner*.css') as $path) {
+        $basename = basename($path, '.css');
+        if ($basename === 'page-partner') continue;
+        wp_enqueue_style(
+          "rcp2026-{$basename}",
+          "{$theme_uri}/assets/css/page/{$basename}.css",
+          $deps_for_child,
+          filemtime($path)
+        );
+      }
+    }
+
+    $partner_section_dir = "{$theme_dir}/assets/css/partner/";
+    if (is_dir($partner_section_dir)) {
+      foreach (glob($partner_section_dir . 'partner-*.css') as $path) {
+        $basename = basename($path, '.css');
+        wp_enqueue_style(
+          "rcp2026-{$basename}",
+          "{$theme_uri}/assets/css/partner/{$basename}.css",
+          $deps_for_child,
+          filemtime($path)
+        );
+      }
     }
   }
 
-  // セクションCSS（/assets/css/partner/partner-*.css）
-  $partner_section_dir = "{$theme_dir}/assets/css/partner/";
-  if (is_dir($partner_section_dir)) {
-    foreach (glob($partner_section_dir . 'partner-*.css') as $path) {
-      $basename = basename($path, '.css');
-      wp_enqueue_style(
-        "rcp2026-{$basename}",
-        "{$theme_uri}/assets/css/partner/{$basename}.css",
-        $deps_for_child,
-        filemtime($path)
-      );
-    }
-  }
-}
-
-  // 資料ダウンロード（resource投稿タイプ）専用
+  // ===================================
+  // resource 投稿タイプ専用
   // ===================================
   if (is_singular('resource')) {
     $resource_common = ['header-minimam.css', 'footer-minimam.css'];
@@ -348,12 +341,24 @@ if ($is_partner_template) {
 add_action('wp_enqueue_scripts', 'rcp2026_enqueue_assets');
 
 // ===================================
-// Swiper (CDN固定)
+// page-ads.php 専用：page-ads.css を強制で読まない
+// ===================================
+function rcp2026_remove_page_ads_css() {
+  if (is_page_template('page-ads.php')) {
+    wp_dequeue_style('rcp2026-page-ads');
+    wp_deregister_style('rcp2026-page-ads');
+  }
+}
+add_action('wp_print_styles', 'rcp2026_remove_page_ads_css', 100);
+
+// ===================================
+// Swiper
 // ===================================
 function rcp2026_enqueue_swiper() {
   if (is_front_page() || is_page_template('page-partner-list.php')) {
     wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@10.3.1/swiper-bundle.min.css', [], '10.3.1');
     wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@10.3.1/swiper-bundle.min.js', [], '10.3.1', true);
+
     $theme_dir = get_template_directory();
     $theme_uri = get_template_directory_uri();
     $swiper_custom = "{$theme_dir}/assets/js/logo-slider.js";
@@ -376,6 +381,7 @@ add_action('wp_enqueue_scripts', 'rcp2026_enqueue_swiper', 15);
 function rcp2026_enqueue_hero_css() {
   $dir  = get_template_directory();
   $uri  = get_template_directory_uri();
+
   $hero_sizes = [
     'sm' => 'screen and (max-width: 767px)',
     'md' => 'screen and (min-width: 768px) and (max-width: 1023px)',
@@ -386,6 +392,7 @@ function rcp2026_enqueue_hero_css() {
   foreach ($hero_sizes as $key => $media) {
     $file = "hero-{$key}.css";
     $path = "{$dir}/assets/css/hero/{$file}";
+
     if (file_exists($path)) {
       wp_enqueue_style(
         "rcp2026-hero-{$key}",
