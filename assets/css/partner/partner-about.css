@@ -155,3 +155,10 @@
     flex-direction: row !important;
   }
 }
+
+@media (min-width: 961px) {
+  .partner-card-body {
+    text-align: left !important;
+    align-items: flex-start;
+  }
+}
