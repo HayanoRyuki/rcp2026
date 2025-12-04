@@ -111,3 +111,70 @@
     width: 100%;
   }
 }
+
+/* =========================================================
+   元サイトと同じ「画像の回り込みレイアウト」
+========================================================= */
+
+/* カード本体 */
+.partner-card {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+/* ※ここがポイント：画像を float させる */
+.partner-card .partner-badge {
+  float: left;
+  margin-right: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.partner-card .partner-badge img {
+  width: 110px;    /* ちょうど“元サイトと同じ大きさ” */
+  height: auto;
+}
+
+/* テキストは float 画像の右に自然に回り込む */
+.partner-card .partner-text h3 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.partner-card .partner-text p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #39404a;
+}
+
+/* float解除：カード末尾で回り込みをリセット */
+.partner-card::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* PCで横並びにする */
+.partner-tiers {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+/* SPでは縦並び */
+@media (max-width: 768px) {
+  .partner-tiers {
+    flex-direction: column;
+  }
+  
+  .partner-card .partner-badge img {
+    width: 90px;
+  }
+}
