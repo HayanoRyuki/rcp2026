@@ -19,26 +19,16 @@
     </div>
 
     <div class="partner-tiers">
+
+      <!-- RAP -->
       <div class="partner-card">
         <figure class="partner-badge">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner_badge01.png" alt="RECEPTIONIST Authorized Partner (RAP)">
         </figure>
-        <h3 class="partner-card-title">RECEPTIONIST Authorized Partner (RAP)</h3>
-        <p class="partner-card-desc">
-          RECEPTIONISTシリーズについて、非常に高い販売力や体制を持つ、最上位の認定パートナー
-        </p>
-      </div>
 
-      <div class="partner-card">
-        <figure class="partner-badge">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner_badge02.png" alt="RECEPTIONIST Success Partner (RSP)">
-        </figure>
-        <h3 class="partner-card-title">RECEPTIONIST Success Partner (RSP)</h3>
-        <p class="partner-card-desc">
-          RECEPTIONISTシリーズについて、高い販売力や体制を持つ認定パートナー
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
+        <div class="partner-text">
+          <h3 class="partner-card-title">RECEPTIONIST Authorized Partner (RAP)</h3>
+          <p class="partner-card-desc">
+            RECEPTIONISTシリーズについて、非常に高い販売力や体制を持つ、最上位の認定パートナー
+          </p>
+        </div
