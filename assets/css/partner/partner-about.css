@@ -46,10 +46,11 @@
 .partner-top-image img {
   width: 360px;
   height: auto;
+  display: block;
 }
 
 /* =========================================================
-   下段：認定パートナー 2カード（横並びレイアウト）
+   下段：認定パートナー 2カード（横並び）
 ========================================================= */
 
 .partner-tiers {
@@ -59,15 +60,15 @@
   margin-top: 40px;
 }
 
-/* カード本体（画像左・テキスト右） */
+/* カード本体（画像左 + テキスト右） */
 .partner-card {
   display: flex;
   gap: 24px;
   background: #fff;
   padding: 28px;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   flex: 1 1 48%;
   align-items: flex-start;
 }
@@ -84,7 +85,7 @@
   display: block;
 }
 
-/* 右テキスト部分 */
+/* 右のテキスト */
 .partner-card-body {
   flex: 1;
 }
@@ -122,6 +123,7 @@
     width: 280px;
   }
 
+  /* カード：縦積み */
   .partner-card {
     flex-direction: column;
     text-align: center;
