@@ -1,5 +1,5 @@
 /* =========================================================
-   PARTNER ABOUT SECTION（スコープ限定・ハイフン1本仕様）
+   PARTNER ABOUT SECTION（リニューアル版）
 ========================================================= */
 
 .partner-about {
@@ -40,7 +40,10 @@
   color: var(--color-primary-hover);
 }
 
-/* ===== 導入テキスト・画像 ===== */
+/* =========================================================
+   上部イントロ部分
+========================================================= */
+
 .partner-about .partner-intro {
   display: flex;
   align-items: center;
@@ -53,9 +56,13 @@
 .partner-about .partner-lead {
   flex: 1;
   min-width: 300px;
-  font-size: 1.5rem;
-  line-height: 1.8;
+  font-size: 1.35rem; /* ← 読みやすい最適値 */
+  line-height: 1.75;
   color: var(--color-text);
+}
+
+.partner-about .partner-lead p {
+  margin-bottom: 1.4rem;
 }
 
 .partner-about .partner-image {
@@ -69,58 +76,88 @@
   max-height: 320px;
 }
 
-/* ===== 認定バッジエリア ===== */
+/* =========================================================
+   認定バッジカード（RAP / RSP）
+========================================================= */
+
 .partner-about .partner-tiers {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+  gap: 2.8rem;
+  margin-top: 3rem;
 }
 
+/* ===== カード ===== */
 .partner-about .partner-card {
-  flex: 1 1 400px;
-  background: var(--color-white);
-  padding: 2.4rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  background: #fff;
+  padding: 2.8rem 2.4rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  border: 1px solid #eee;
 }
 
-.partner-about .partner-badge {
-  margin-bottom: 1.6rem;
-}
-
+/* ===== バッジ ===== */
 .partner-about .partner-badge img {
-  width: 120px;
+  width: 200px;
+  max-width: 100%;
   height: auto;
+  display: block;
+}
+
+/* ===== テキスト ===== */
+.partner-about .partner-text {
+  flex: 1;
 }
 
 .partner-about .partner-card-title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--color-primary-hover);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #222;
 }
 
 .partner-about .partner-card-desc {
-  font-size: 1.4rem;
-  color: var(--color-text);
+  font-size: 1.35rem;
+  color: #39404a;
   line-height: 1.7;
 }
 
-/* ===== Responsive ===== */
+/* =========================================================
+   Responsive
+========================================================= */
 @media (max-width: 767px) {
+
   .partner-about .partner-intro {
     flex-direction: column;
     text-align: center;
   }
 
-  .partner-about .partner-tiers {
-    flex-direction: column;
-    gap: 2.4rem;
+  .partner-about .partner-lead {
+    font-size: 1.4rem;
   }
 
-  .partner-about .partner-title {
-    font-size: 2rem;
+  .partner-about .partner-tiers {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .partner-about .partner-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .partner-about .partner-badge img {
+    width: 160px;
+  }
+
+  .partner-about .partner-card-title {
+    font-size: 1.8rem;
+  }
+
+  .partner-about .partner-card-desc {
+    font-size: 1.3rem;
   }
 }
