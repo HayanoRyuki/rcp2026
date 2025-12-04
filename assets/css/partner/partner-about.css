@@ -144,21 +144,16 @@
   }
 }
 
-/* =========================================================
-   ★ PC の強制横並び（必ず残す）
-   — SP の flex-direction: column !important を上書きしないため
-   — PC に戻る幅では必ず横並びにする
-========================================================= */
+/* ============================================
+   ★ partner-contact-select ページ専用の PC 横並び
+   （他ページに影響させない）
+============================================ */
 
-@media (min-width: 961px) {
-  .partner-card {
-    flex-direction: row !important;
-  }
+.page-partner-contact-select .partner-card {
+  flex-direction: row !important;
 }
 
-@media (min-width: 961px) {
-  .partner-card-body {
-    text-align: left !important;
-    align-items: flex-start;
-  }
+.page-partner-contact-select .partner-card-body {
+  text-align: left !important;
+  align-items: flex-start;
 }
