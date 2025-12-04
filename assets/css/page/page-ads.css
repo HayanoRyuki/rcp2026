@@ -1,3 +1,8 @@
+/* インラインのpadding-topを無効化して左上から詰める */
+main.site-main.front-page {
+  padding-top: 0 !important;
+}
+
 /* LP Ads ページだけ上余白をなくす */
 body.page-template-page-ads .site-main {
   padding-top: 0;
