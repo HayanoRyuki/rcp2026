@@ -1,12 +1,12 @@
 /* =========================================================
-   PARTNER ABOUT — 完全リセット & 再構築版
+   PARTNER ABOUT（見本完全再現）
 ========================================================= */
 
-/* ===== 全体エリア ===== */
+/* ===== 全体 ===== */
 .partner-about {
+  background: var(--color-bg-alt);
+  padding: 6rem 2rem 8rem;
   position: relative;
-  background-color: var(--color-bg-alt);
-  padding: 6rem 2rem;
   overflow: hidden;
 }
 
@@ -21,132 +21,127 @@
     no-repeat top right;
   background-size: contain;
   opacity: 0.35;
+  pointer-events: none;
 }
 
-.partner-about .partner-inner {
-  position: relative;
-  z-index: 1;
+.partner-inner {
   max-width: 1080px;
   margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
 /* ===== タイトル ===== */
-.partner-about .partner-title {
+.partner-title {
   text-align: center;
   font-size: 2.4rem;
   font-weight: 700;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
   color: var(--color-primary-hover);
 }
 
 /* =========================================================
-   上部イントロ（文章 + 画像）
+   上段：説明（左）＋画像（右）
 ========================================================= */
-.partner-about .partner-intro {
+.partner-intro {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 4rem;
-  flex-wrap: wrap;
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
 }
 
-.partner-about .partner-lead {
+.partner-lead {
   flex: 1;
-  min-width: 300px;
-  font-size: 1.35rem;
+  min-width: 320px;
+  font-size: 1.32rem;
   line-height: 1.75;
-  color: var(--color-text);
+  color: #333;
 }
 
-.partner-about .partner-image {
+.partner-image {
   flex: 1;
   text-align: center;
 }
 
-.partner-about .partner-image img {
+.partner-image img {
   max-width: 100%;
   height: auto;
-  max-height: 320px;
+  max-height: 300px;
 }
 
 /* =========================================================
-   認定パートナー（RAP / RSP）
+   下段：認定パートナー（左右2カード）
 ========================================================= */
 
-.partner-about .partner-tiers {
+.partner-tiers {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
 }
 
-/* ===== カード ===== */
-.partner-about .partner-card {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 3rem 2.4rem;
+/* カード本体 */
+.partner-card {
   background: #fff;
   border-radius: 20px;
+  padding: 3rem 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
   border: 1px solid #e5e5e5;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-.partner-about .partner-badge {
-  flex-shrink: 0;
-}
-
-.partner-about .partner-badge img {
+/* バッジ */
+.partner-badge img {
   width: 200px;
   height: auto;
+  display: block;
 }
 
-/* ===== テキスト ===== */
-.partner-about .partner-text {
+/* テキスト部分 */
+.partner-text {
   flex: 1;
 }
 
-.partner-about .partner-card-title {
-  font-size: 1.9rem;
+.partner-card-title {
+  font-size: 1.85rem;
   font-weight: 700;
+  margin-bottom: 0.8rem;
   color: #222;
-  margin-bottom: 0.6rem;
-  text-align: left;
 }
 
-.partner-about .partner-card-desc {
-  font-size: 1.35rem;
+.partner-card-desc {
+  font-size: 1.32rem;
   line-height: 1.7;
-  color: #424242;
-  text-align: left;
+  color: #444;
 }
 
 /* =========================================================
-   Responsive
+   Responsive（スマホ）
 ========================================================= */
-
 @media (max-width: 900px) {
-  .partner-about .partner-tiers {
+  .partner-tiers {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .partner-about .partner-intro {
+  .partner-intro {
     flex-direction: column;
     text-align: center;
   }
 
-  .partner-about .partner-card {
+  .partner-card {
     flex-direction: column;
     text-align: center;
   }
 
-  .partner-about .partner-badge img {
-    width: 160px;
+  .partner-badge img {
+    width: 150px;
   }
 
-  .partner-about .partner-text {
-    text-align: center;
+  .partner-card-title {
+    font-size: 1.6rem;
   }
 }
