@@ -1,147 +1,113 @@
-/* =========================================================
-   PARTNER ABOUT（見本完全再現）
-========================================================= */
-
-/* ===== 全体 ===== */
+/* ---------------------------------------------------------
+   認定パートナー：全体
+--------------------------------------------------------- */
 .partner-about {
-  background: var(--color-bg-alt);
-  padding: 6rem 2rem 8rem;
-  position: relative;
-  overflow: hidden;
+  padding: 60px 0 40px;
+  background: #f4f8fb;
 }
 
-.partner-about::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 900px;
-  height: 100%;
-  background: url("/wp-content/themes/RCP2026/assets/img/partner/ptr_kv_img_bg.png")
-    no-repeat top right;
-  background-size: contain;
-  opacity: 0.35;
-  pointer-events: none;
-}
-
-.partner-inner {
-  max-width: 1080px;
+.partner-container {
+  width: 100%;
+  max-width: 1120px;
   margin: 0 auto;
-  position: relative;
-  z-index: 10;
+  padding: 0 24px;
 }
 
-/* ===== タイトル ===== */
-.partner-title {
-  text-align: center;
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 3.5rem;
-  color: var(--color-primary-hover);
-}
-
-/* =========================================================
-   上段：説明（左）＋画像（右）
-========================================================= */
-.partner-intro {
+/* ---------------------------------------------------------
+   上段：テキスト + 画像
+--------------------------------------------------------- */
+.partner-top {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  gap: 4rem;
-  margin-bottom: 5rem;
+  gap: 40px;
+  margin-bottom: 60px;
 }
 
-.partner-lead {
-  flex: 1;
-  min-width: 320px;
-  font-size: 1.32rem;
-  line-height: 1.75;
-  color: #333;
-}
-
-.partner-image {
-  flex: 1;
-  text-align: center;
-}
-
-.partner-image img {
-  max-width: 100%;
-  height: auto;
-  max-height: 300px;
-}
-
-/* =========================================================
-   下段：認定パートナー（左右2カード）
-========================================================= */
-
-.partner-tiers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
-/* カード本体 */
-.partner-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 3rem 2.4rem;
-  display: flex;
-  align-items: center;
-  gap: 2.4rem;
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-}
-
-/* バッジ */
-.partner-badge img {
-  width: 200px;
-  height: auto;
-  display: block;
-}
-
-/* テキスト部分 */
-.partner-text {
+.partner-top-text {
   flex: 1;
 }
 
-.partner-card-title {
-  font-size: 1.85rem;
+.partner-title {
+  font-size: 30px;
   font-weight: 700;
-  margin-bottom: 0.8rem;
+  margin-bottom: 24px;
   color: #222;
 }
 
-.partner-card-desc {
-  font-size: 1.32rem;
-  line-height: 1.7;
+.partner-top-text p {
+  font-size: 16px;
+  line-height: 1.8;
   color: #444;
 }
 
-/* =========================================================
-   Responsive（スマホ）
-========================================================= */
-@media (max-width: 900px) {
-  .partner-tiers {
-    grid-template-columns: 1fr;
-  }
+.partner-top-image img {
+  width: 360px;
+  height: auto;
 }
 
-@media (max-width: 768px) {
-  .partner-intro {
+/* ---------------------------------------------------------
+   下段：カード2つ横並び
+--------------------------------------------------------- */
+.partner-cards {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+}
+
+.partner-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  width: calc(50% - 14px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.partner-badge {
+  width: 160px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.partner-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.partner-card p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* ---------------------------------------------------------
+   Responsive（必要最小限）
+--------------------------------------------------------- */
+@media (max-width: 960px) {
+
+  .partner-top {
     flex-direction: column;
     text-align: center;
+  }
+
+  .partner-top-text {
+    text-align: left;
+  }
+
+  .partner-top-image img {
+    width: 280px;
+  }
+
+  .partner-cards {
+    flex-direction: column;
   }
 
   .partner-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .partner-badge img {
-    width: 150px;
-  }
-
-  .partner-card-title {
-    font-size: 1.6rem;
+    width: 100%;
   }
 }
