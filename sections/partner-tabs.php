@@ -13,10 +13,11 @@
 // 必要CSS/JSを読み込み
 wp_enqueue_style(
   'rcp-partnerlist',
-  get_template_directory_uri() . '/assets/css/sections/rcp-partnerlist.css',
+  get_template_directory_uri() . '/assets/css/partner/partner-list.css',
   [],
-  filemtime(get_theme_file_path('/assets/css/sections/rcp-partnerlist.css'))
+  filemtime(get_theme_file_path('/assets/css/partner/partner-list.css'))
 );
+
 wp_enqueue_script(
   'rcp-partnerlist',
   get_template_directory_uri() . '/assets/js/partner-list.js',
@@ -24,6 +25,8 @@ wp_enqueue_script(
   filemtime(get_theme_file_path('/assets/js/partner-list.js')),
   true
 );
+
+
 // タブ構成とカテゴリースラッグの対応
 $partner_sections = [
   'sales-partner' => [
