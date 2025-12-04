@@ -7,7 +7,7 @@
   background: #f4f8fb;
 }
 
-.partner-container {
+.partner-about .partner-container {
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
@@ -18,7 +18,7 @@
    上段：テキスト + 画像
 ========================================================= */
 
-.partner-top {
+.partner-about .partner-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,24 +26,24 @@
   margin-bottom: 60px;
 }
 
-.partner-top-text {
+.partner-about .partner-top-text {
   flex: 1;
 }
 
-.partner-title {
+.partner-about .partner-title {
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 24px;
   color: #222;
 }
 
-.partner-top-text p {
+.partner-about .partner-top-text p {
   font-size: 16px;
   line-height: 1.8;
   color: #444;
 }
 
-.partner-top-image img {
+.partner-about .partner-top-image img {
   width: 360px;
   height: auto;
   display: block;
@@ -53,7 +53,7 @@
    下段：認定パートナー 2カード（横並び）
 ========================================================= */
 
-.partner-tiers {
+.partner-about .partner-tiers {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
@@ -61,7 +61,7 @@
 }
 
 /* カード本体（画像左 + テキスト右） */
-.partner-card {
+.partner-about .partner-card {
   display: flex;
   flex-direction: row; /* PCは横並び */
   gap: 24px;
@@ -76,23 +76,23 @@
 }
 
 /* 左の画像 */
-.partner-card-img {
+.partner-about .partner-card-img {
   flex-shrink: 0;
   width: 120px;
 }
 
-.partner-card-img img {
+.partner-about .partner-card-img img {
   width: 100%;
   height: auto;
   display: block;
 }
 
 /* 右のテキスト */
-.partner-card-body {
+.partner-about .partner-card-body {
   flex: 1;
 }
 
-.partner-card-title {
+.partner-about .partner-card-title {
   margin: 0 0 8px;
   font-size: 19px;
   font-weight: 700;
@@ -100,7 +100,7 @@
   color: #222;
 }
 
-.partner-card-text {
+.partner-about .partner-card-text {
   margin: 0;
   font-size: 15px;
   line-height: 1.7;
@@ -113,33 +113,33 @@
 
 @media (max-width: 960px) {
 
-  .partner-top {
+  .partner-about .partner-top {
     flex-direction: column;
     text-align: center;
   }
 
-  .partner-top-text {
+  .partner-about .partner-top-text {
     text-align: left;
   }
 
-  .partner-top-image img {
+  .partner-about .partner-top-image img {
     width: 280px;
   }
 
   /* カード：縦積み・中央揃え */
-  .partner-card {
+  .partner-about .partner-card {
     flex-direction: column !important;
     text-align: center;
     align-items: center;
   }
 
-  .partner-card-img {
+  .partner-about .partner-card-img {
     width: 140px;
   }
 }
 
 @media (max-width: 768px) {
-  .partner-card-img {
+  .partner-about .partner-card-img {
     width: 120px;
   }
 }
