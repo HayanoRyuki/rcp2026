@@ -1,22 +1,26 @@
-/* ---------------------------------------------------------
-   認定パートナー：全体
---------------------------------------------------------- */
+/* =========================================================
+   PARTNER ABOUT — 全体
+========================================================= */
+
 .partner-about {
   padding: 60px 0 40px;
   background: #f4f8fb;
 }
 
-.partner-container {
+.partner-container,
+.partner-inner {
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* ---------------------------------------------------------
+/* =========================================================
    上段：テキスト + 画像
---------------------------------------------------------- */
-.partner-top {
+========================================================= */
+
+.partner-top,
+.partner-intro {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,7 +28,8 @@
   margin-bottom: 60px;
 }
 
-.partner-top-text {
+.partner-top-text,
+.partner-lead {
   flex: 1;
 }
 
@@ -35,173 +40,121 @@
   color: #222;
 }
 
-.partner-top-text p {
+.partner-top-text p,
+.partner-lead p {
   font-size: 16px;
   line-height: 1.8;
   color: #444;
 }
 
-.partner-top-image img {
+.partner-top-image img,
+.partner-image img {
   width: 360px;
   height: auto;
 }
 
-/* ---------------------------------------------------------
-   下段カード（float を使い、元サイト同様の回り込み）
---------------------------------------------------------- */
+/* =========================================================
+   下段：認定パートナー 2カード（元サイト完全再現）
+========================================================= */
 
+/* カードを横並びにする */
 .partner-tiers {
-  margin-top: 40px;
   display: flex;
-  gap: 28px;
   justify-content: center;
+  gap: 32px;
+  margin-top: 40px;
+  flex-wrap: nowrap;
 }
 
 /* カード本体 */
 .partner-card {
-  width: calc(50% - 14px);
-  background: #fff;
-  border-radius: 20px;
-  border: 1px solid #eee;
-  padding: 2rem;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  overflow: hidden;
-}
-
-/* 画像を float：回り込みの要になる */
-.partner-card .partner-badge {
-  float: left;
-  margin-right: 16px;
-  margin-bottom: 12px;
-}
-
-.partner-card .partner-badge img {
-  width: 110px;
-  height: auto;
-}
-
-/* テキスト右回り込み */
-.partner-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #222;
-}
-
-.partner-card p {
-  font-size: 15px;
-  color: #444;
-  line-height: 1.7;
-}
-
-/* float解除 */
-.partner-card::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-/* ---------------------------------------------------------
-   Responsive
---------------------------------------------------------- */
-@media (max-width: 960px) {
-  .partner-top {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .partner-top-text {
-    text-align: left;
-  }
-
-  .partner-top-image img {
-    width: 280px;
-  }
-
-  .partner-tiers {
-    flex-direction: column;
-  }
-
-  .partner-card {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .partner-card .partner-badge img {
-    width: 90px;
-  }
-}
-
-/* =========================================================
-   PARTNER LIST — 認定パートナーカード完全再現（元サイト同等）
-========================================================= */
-
-/* カード外枠 */
-.partner-card {
   background: #fff;
   border-radius: 20px;
   border: 1px solid #e5e5e5;
-  padding: 24px;
-  margin-bottom: 32px;
+  padding: 24px 28px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  overflow: hidden;
   width: 100%;
   max-width: 520px;
+  overflow: hidden;
 }
 
-/* ★これが重要：バッジ画像を float させて右にテキストを回り込ませる */
+/* ★ バッジ画像を左に寄せてテキスト右回り込み（元サイトと同じ） */
+.partner-card .partner-badge img,
 .partner-card figure img {
   float: left;
-  width: 160px;
+  width: 150px;
   height: auto;
   margin-right: 16px;
   margin-bottom: 8px;
 }
 
 /* カードタイトル */
-.partner-card h3 {
-  font-size: 18px;
+.partner-card h3,
+.partner-card .partner-card-title {
+  font-size: 19px;
   font-weight: 700;
-  margin-top: 4px;
-  margin-bottom: 8px;
+  margin-top: 6px;
+  margin-bottom: 10px;
   color: #222;
   line-height: 1.4;
 }
 
 /* 説明文 */
-.partner-card p {
-  font-size: 14px;
+.partner-card p,
+.partner-card .partner-card-desc {
+  font-size: 15px;
   line-height: 1.7;
-  color: #555;
+  color: #444;
   margin-top: 0;
 }
 
-/* float解除 */
+/* float 解除 */
 .partner-card::after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* カード2枚を横に並べる */
-.partner-cards,
-.partner-tiers,
-.secTtlWrap ~ div {
-  display: flex !important;
-  gap: 32px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+/* =========================================================
+   Responsive
+========================================================= */
 
+@media (max-width: 960px) {
 
-/* SP レスポンシブ */
-@media (max-width: 768px) {
+  /* 上段縦並び */
+  .partner-top,
+  .partner-intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .partner-top-text,
+  .partner-lead {
+    text-align: left;
+  }
+
+  .partner-top-image img,
+  .partner-image img {
+    width: 280px;
+  }
+
+  /* 下段カード縦並び */
+  .partner-tiers {
+    flex-direction: column;
+    gap: 24px;
+  }
+
   .partner-card {
     max-width: 100%;
   }
 
   .partner-card figure img {
     width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partner-card figure img {
+    width: 110px;
   }
 }
