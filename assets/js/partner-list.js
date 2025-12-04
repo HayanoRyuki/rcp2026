@@ -5,25 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const panels = document.querySelectorAll('.rcp-partnerlist__section');
 
   const activatePanel = (targetId) => {
+    // タブの色切替
     tabs.forEach(t => {
       const isActive = t.dataset.target === targetId;
       t.classList.toggle('is-active', isActive);
       t.setAttribute('aria-selected', isActive);
     });
 
+    // パネルの表示切替
     panels.forEach(p =>
       p.classList.toggle('is-active', p.dataset.panel === targetId)
     );
   };
 
+  // タブクリック時
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       activatePanel(tab.dataset.target);
 
       // フィルタをリセット
-      const allBtn = document.querySelector(
-        '.rcp-partnerlist__filterbtn[data-filter="すべて"]'
-      );
+      const allBtn = document.querySelector('.rcp-partnerlist__filterbtn[data-filter="すべて"]');
       if (allBtn) allBtn.click();
     });
   });
@@ -33,17 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const applyFilter = (label) => {
     // 全パネルのアイテムを対象にフィルタ
-    panels.forEach(activePanel => {
-      const items = activePanel.querySelectorAll('.rcp-partnerlist__item');
+    panels.forEach(panel => {
+      const items = panel.querySelectorAll('.rcp-partnerlist__item');
       items.forEach(item => {
-        const tags = (item.dataset.tags || '')
-          .split(',')
-          .map(s => s.trim())
-          .filter(Boolean);
-
+        const tags = (item.dataset.tags || '').split(',').map(s => s.trim()).filter(Boolean);
         const isAll = label === 'すべて';
-        const visible = isAll || tags.includes(label);
-        item.style.display = visible ? '' : 'none';
+        item.style.display = isAll || tags.includes(label) ? '' : 'none';
       });
     });
   };
@@ -68,10 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===== 初期状態 =====
-  // 全パネルを表示
+  // パネルは両方表示、タブは押されていない状態
   panels.forEach(p => p.classList.add('is-active'));
-
-  // 初期フィルタ適用
+  // タブの is-active は初期では付与しない
+  // 初期フィルタ（すべて）は自動適用
   const initFilter = document.querySelector('.rcp-partnerlist__filterbtn.is-active');
   if (initFilter) applyFilter(initFilter.dataset.filter);
 
