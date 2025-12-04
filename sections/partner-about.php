@@ -1,9 +1,12 @@
 <section id="partner-about" class="partner-about">
   <div class="partner-inner">
 
+    <!-- タイトル -->
     <h1 class="partner-title">認定パートナー制度について</h1>
 
+    <!-- 上部：説明 + 画像 -->
     <div class="partner-intro">
+
       <div class="partner-lead">
         <p>
           RECEPTIONISTシリーズは幅広いパートナーに販売・紹介いただけます。
@@ -16,19 +19,53 @@
       <div class="partner-image">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/ptr_kv_img.png" alt="認定パートナー制度について">
       </div>
-    </div>
 
+    </div><!-- /partner-intro -->
+
+
+
+    <!-- 認定パートナー（RAP / RSP） -->
     <div class="partner-tiers">
 
       <!-- RAP -->
       <div class="partner-card">
+
         <figure class="partner-badge">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner_badge01.png" alt="RECEPTIONIST Authorized Partner (RAP)">
         </figure>
 
         <div class="partner-text">
-          <h3 class="partner-card-title">RECEPTIONIST Authorized Partner (RAP)</h3>
+          <h3 class="partner-card-title">
+            RECEPTIONIST Authorized Partner (RAP)
+          </h3>
           <p class="partner-card-desc">
             RECEPTIONISTシリーズについて、非常に高い販売力や体制を持つ、最上位の認定パートナー
           </p>
-        </div
+        </div>
+
+      </div><!-- /partner-card -->
+
+
+
+      <!-- RSP -->
+      <div class="partner-card">
+
+        <figure class="partner-badge">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/partner/partner_badge02.png" alt="RECEPTIONIST Success Partner (RSP)">
+        </figure>
+
+        <div class="partner-text">
+          <h3 class="partner-card-title">
+            RECEPTIONIST Success Partner (RSP)
+          </h3>
+          <p class="partner-card-desc">
+            RECEPTIONISTシリーズについて、高い販売力や体制を持つ認定パートナー
+          </p>
+        </div>
+
+      </div><!-- /partner-card -->
+
+    </div><!-- /partner-tiers -->
+
+  </div><!-- /partner-inner -->
+</section>
