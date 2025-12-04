@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  const header = document.querySelector('header');
+  // ▼ 修正ポイント：トップページの site-header と LP の lp-header の両方に対応
+  const header =
+    document.querySelector('.site-header') ||
+    document.querySelector('.lp-header');
+
   const main = document.querySelector('.site-main');
 
   if (header && main) {
@@ -25,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', adjustPadding);
   }
 });
+
 
 
 // =========================================================
