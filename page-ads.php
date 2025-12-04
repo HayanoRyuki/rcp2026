@@ -2,7 +2,7 @@
 /*
 Template Name: 広告用ランディングページ（Ads）
 */
-get_header('lp');
+get_header('ads'); // ← Ads専用ヘッダーを読み込む
 ?>
 
 <main class="site-main front-page">
@@ -57,8 +57,4 @@ get_header('lp');
 
 </main>
 
-<!-- フッター -->
-<?php include get_template_directory() . '/sections/footer-ads.php'; ?>
-<?php wp_footer(); ?>
-</body>
-</html>
+<?php get_footer('ads'); // Ads専用フッター ?>
