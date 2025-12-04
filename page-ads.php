@@ -5,7 +5,7 @@ Template Name: 広告用ランディングページ（Ads）
 get_header();
 ?>
 
-<main class="site-main page-ads">
+<main class="site-main front-page">
 
   <!-- HEROセクション（共通） -->
   <?php get_template_part('sections/hero'); ?>
@@ -56,22 +56,6 @@ get_header();
   </section>
 
 </main>
-
-<!-- スムーススクロール -->
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        window.scrollTo({
-          top: target.offsetTop - 80,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-</script>
 
 <!-- フッター -->
 <?php include get_template_directory() . '/sections/footer-ads.php'; ?>
