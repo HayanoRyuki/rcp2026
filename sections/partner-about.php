@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <!-- 下段：認定 2カード -->
+      <!-- 下段：認定パートナー 2カード -->
 <div class="partner-tiers">
 
   <!-- RAP -->
@@ -56,6 +56,7 @@
   </div>
 
 </div><!-- /.partner-tiers -->
+
 
     </div><!-- /.partner-container -->
   </section>
