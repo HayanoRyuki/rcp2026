@@ -2,7 +2,9 @@
 /*
 Template Name: 広告用ランディングページ（Ads）
 */
-get_header('ads'); // ← Ads専用ヘッダーを読み込む
+
+// ★ Ads 専用ヘッダーを呼ぶ（絶対必要）
+get_header('ads');
 ?>
 
 <main class="site-main front-page">
@@ -57,4 +59,6 @@ get_header('ads'); // ← Ads専用ヘッダーを読み込む
 
 </main>
 
-<?php get_footer('ads'); // Ads専用フッター ?>
+<?php
+// ★ Ads 専用フッター
+get_footer('ads');
