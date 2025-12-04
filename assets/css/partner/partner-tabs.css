@@ -294,3 +294,28 @@
   color: #777;
   padding: 3rem 0;
 }
+
+
+/* --- 会社名を小さめ＋左揃えに調整 --- */
+.rcp-partnerlist__name {
+  font-size: 1.4rem !important;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  text-align: left;
+  color: #222;
+}
+
+/* --- ロゴと同じ左揃えにするためカード内のテキストエリアも左揃え --- */
+.rcp-partnerlist__item-inner {
+  text-align: left;
+}
+
+/* --- タグサイズを小さめに最適化 --- */
+.rcp-partnerlist__tags span {
+  font-size: 1.0rem !important;
+  padding: 0.25rem 0.6rem !important;
+  border-radius: 12px !important;
+  border: 1px solid #ccc !important;
+  background: #fff !important;
+  color: #444 !important;
+}
