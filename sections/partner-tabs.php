@@ -64,7 +64,7 @@ $filter_labels = ['すべて','ICT機器販売','オフィス設計・デザイ�
     <div class="rcp-partnerlist__tabwrap" role="tablist" aria-label="パートナー種別タブ">
       <div class="rcp-partnerlist__tabs">
         <button type="button"
-                class="rcp-partnerlist__tab is-active"
+                class="rcp-partnerlist__tab"
                 role="tab"
                 aria-selected="true"
                 aria-controls="panel-sales-partner"
