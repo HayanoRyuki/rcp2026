@@ -95,7 +95,6 @@ const RESOURCE_TYPES = [
   "document_factory",
   "guide-3min",
   "reception_lp",
-  "partner_guide", // ★ パートナー資料DL もここ（資料扱い）
 ];
 
 // ★ 新規登録系（REGISTER TYPES）
