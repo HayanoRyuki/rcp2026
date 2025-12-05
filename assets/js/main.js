@@ -143,7 +143,8 @@ function resolveThanksUrl(contactType) {
 // =========================================================
 document.addEventListener('DOMContentLoaded', function () {
 
-  const ENDPOINT = "https://t8k8whvjnj.execute-api.ap-northeast-1.amazonaws.com/test/";
+  const ENDPOINT =
+    "https://t8k8whvjnj.execute-api.ap-northeast-1.amazonaws.com/test/";
 
   async function handleFormSubmit(e) {
     e.preventDefault();
@@ -160,13 +161,55 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     try {
+      // ----------------------------------------------------
+      // ★★ 1) /new-register/ は旧仕様扱い（contact_type 無視）★★
+      // ----------------------------------------------------
+      if (window.location.pathname.includes("new-register")) {
+
+        const fd = new FormData(form);
+        const email = fd.get("email");
+        const password = fd.get("password");
+
+        let endpoint = "";
+        let redirectUrl = "";
+
+        if (location.hostname.includes("staging")) {
+          endpoint = "https://staging.api.receptionist.jp/api/auth";
+          redirectUrl = "https://staging.receptionist.jp/register-thanks/";
+        } else {
+          endpoint = "https://api.receptionist.jp/api/auth";
+          redirectUrl = "https://receptionist.jp/register-thanks/";
+        }
+
+        const body = new URLSearchParams();
+        body.append("email", email);
+        body.append("password", password);
+
+        try {
+          await fetch(endpoint, {
+            method: "POST",
+            body: body
+          });
+        } catch (err) {
+          console.error("旧register API error:", err);
+          // 旧仕様はエラーでもリダイレクト
+        }
+
+        window.location.href = redirectUrl;
+        return;
+      }
+
+      // ----------------------------------------------------
+      // ★★ 2) 通常フォーム（新仕様）★★
+      // ----------------------------------------------------
       const fd = new FormData(form);
       const contactType = fd.get("contact_type") || "";
       if (!contactType) throw new Error("contact_type が不足しています。");
 
-      // ★ テスト：trial は API 呼ばずに即 thanks
+      // trialは即Thanks
       if (contactType === "trial") {
-        window.location.href = "https://staging.receptionist.jp/register-thanks/";
+        window.location.href =
+          "https://staging.receptionist.jp/register-thanks/";
         return;
       }
 
@@ -174,6 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let endpoint = ENDPOINT;
       let body = null;
 
+      // staging-auth の場合（Auth API）
       if (apiType === "staging-auth") {
         endpoint = "https://staging.api.receptionist.jp/api/auth";
         body = new URLSearchParams();
@@ -182,7 +226,6 @@ document.addEventListener('DOMContentLoaded', function () {
         body.append("password", fd.get("password"));
         body.append("contact_type", contactType);
 
-        // 暫定追加
         body.append("company_name", "Temporary Test Company");
         body.append("contact_person_name", "Temporary User");
         body.append("phone", "000-0000-0000");
@@ -195,6 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
         body.append("utm_content", fd.get("utm_content") || "");
 
       } else {
+        // 通常問い合わせ
         const params = new URLSearchParams();
         fd.forEach((value, key) => {
           params.append(`contact[${key}]`, value);
@@ -202,6 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
         body = params;
       }
 
+      // --- API 呼び出し ---
       const res = await fetch(endpoint, {
         method: "POST",
         body: body,
@@ -236,7 +281,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   }
-
 
   function bindRcpForms() {
     const forms = document.querySelectorAll("form.js-rcp-contact-form");
