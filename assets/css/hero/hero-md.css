@@ -263,3 +263,7 @@
 body.page .hero.page-title.wrapper {
   margin-top: 0 !important;
 }
+
+body.page main.site-main {
+  padding-top: 0 !important;
+}
