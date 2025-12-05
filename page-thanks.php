@@ -37,7 +37,7 @@ get_header();
       <div class="link-list">
         <a href="https://t.receptionist.jp/gb_gate/" target="_blank" rel="noopener">
           ・従業員数1,000名以下の企業様
-        </a><br>
+        </a>
         <a href="https://t.receptionist.jp/gate/" target="_blank" rel="noopener">
           ・従業員数1,001名以上の企業様
         </a>
