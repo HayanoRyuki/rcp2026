@@ -75,9 +75,20 @@ function rcp2026_enqueue_assets() {
   wp_enqueue_script('jquery', includes_url('/js/jquery/jquery.js'), [], null, true);
 
   $common_js = ['main', 'footer'];
-  foreach ($common_js as $file) {
-    $path = "{$theme_dir}/assets/js/{$file}.js";
-    if (file_exists($path)) {
+foreach ($common_js as $file) {
+  $path = "{$theme_dir}/assets/js/{$file}.js";
+  if (file_exists($path)) {
+
+    // ▼ main.js だけ強制キャッシュ破壊
+    if ($file === 'main') {
+      wp_enqueue_script(
+        "rcp2026-{$file}",
+        "{$theme_uri}/assets/js/{$file}.js?v=20251204-1",
+        ['jquery'],
+        null,
+        true
+      );
+    } else {
       wp_enqueue_script(
         "rcp2026-{$file}",
         "{$theme_uri}/assets/js/{$file}.js",
@@ -86,7 +97,9 @@ function rcp2026_enqueue_assets() {
         true
       );
     }
+
   }
+}
 
   // ===================================
   // セクションCSS（sections ディレクトリ配下）
