@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
       // ----------------------------------------------------
-      // ★★ 1) /new-register/ は旧仕様扱い（contact_type 無視）★★
+      // ★★ 1) /new-register/ は高橋さん仕様（contact_type 無視）★★
       // ----------------------------------------------------
       if (window.location.pathname.includes("new-register")) {
 
@@ -185,20 +185,31 @@ document.addEventListener('DOMContentLoaded', function () {
         body.append("email", email);
         body.append("password", password);
 
-        try {
-          await fetch(endpoint, {
-            method: "POST",
-            body: body
-          });
-        } catch (err) {
-          console.error("旧register API error:", err);
+        const res = await fetch(endpoint, {
+          method: "POST",
+          body: body
+        });
+
+        // -------------------------
+        // ★ 200 → サンクスへ遷移
+        // -------------------------
+        if (res.ok) {
+          window.location.href = redirectUrl;
+          return;
         }
 
-        // ★ thanks で 2回目 POST するために保存（旧本番と同じ）
-        sessionStorage.setItem("register_email", email);
-        sessionStorage.setItem("register_password", password);
+        // -------------------------
+        // ★ 200 以外 → エラー表示
+        // -------------------------
+        let result = {};
+        try { result = await res.json(); } catch (_) {}
 
-        window.location.href = redirectUrl;
+        const msg =
+          result?.message ||
+          result?.error?.message ||
+          "登録に失敗しました。";
+
+        showErrorMessage(msg);
         return;
       }
 
@@ -254,9 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!res.ok) throw new Error("API request failed");
 
       let result = {};
-      try {
-        result = await res.json();
-      } catch (_) {}
+      try { result = await res.json(); } catch (_) {}
 
       const thanksUrl = resolveThanksUrl(contactType);
 
@@ -293,36 +302,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // =========================================================
-//  register-thanks：旧本番と同じく 2回目の POST を送る
+//  NEW：エラー表示（ボタン下）
 // =========================================================
-document.addEventListener("DOMContentLoaded", function () {
-
-  if (!location.pathname.includes("register-thanks")) return;
-
-  const email = sessionStorage.getItem("register_email");
-  const password = sessionStorage.getItem("register_password");
-
-  if (!email || !password) return;
-
-  const endpoint = location.hostname.includes("staging")
-    ? "https://staging.api.receptionist.jp/api/auth"
-    : "https://api.receptionist.jp/api/auth";
-
-  const body = new URLSearchParams();
-  body.append("email", email);
-  body.append("password", password);
-
-  fetch(endpoint, {
-    method: "POST",
-    body: body,
-  })
-    .then(() => {
-      sessionStorage.removeItem("register_email");
-      sessionStorage.removeItem("register_password");
-    })
-    .catch(() => {
-      sessionStorage.removeItem("register_email");
-      sessionStorage.removeItem("register_password");
-    });
-
-});
+function showErrorMessage(msg) {
+  let area = document.querySelector(".form-error-area");
+  if (!area) {
+    // フォーム内に自動生成（安全）
+    area = document.createElement("div");
+    area.className = "form-error-area";
+    area.style.color = "red";
+    area.style.marginTop = "12px";
+    area.style.fontSize = "14px";
+    const form = document.querySelector(".js-rcp-contact-form");
+    form.appendChild(area);
+  }
+  area.textContent = msg;
+  area.style.display = "block";
+}
