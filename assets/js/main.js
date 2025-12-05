@@ -105,7 +105,8 @@ const RESOURCE_TYPES = [
 
 // ★ 新規登録系（REGISTER TYPES）
 const REGISTER_TYPES = [
-  "new_user", // /new-register/
+  "new_user",
+  "trial", // ← ★ 追加（無料トライアルを新規登録として扱う）
 ];
 
 // ★ 無料問い合わせ系（FREE TYPES）
