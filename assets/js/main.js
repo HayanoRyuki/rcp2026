@@ -192,8 +192,11 @@ document.addEventListener('DOMContentLoaded', function () {
           });
         } catch (err) {
           console.error("旧register API error:", err);
-          // 旧仕様はエラーでもリダイレクト
         }
+
+        // ★ thanks で 2回目 POST するために保存（旧本番と同じ）
+        sessionStorage.setItem("register_email", email);
+        sessionStorage.setItem("register_password", password);
 
         window.location.href = redirectUrl;
         return;
@@ -206,7 +209,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const contactType = fd.get("contact_type") || "";
       if (!contactType) throw new Error("contact_type が不足しています。");
 
-      // trialは即Thanks
       if (contactType === "trial") {
         window.location.href =
           "https://staging.receptionist.jp/register-thanks/";
@@ -217,7 +219,6 @@ document.addEventListener('DOMContentLoaded', function () {
       let endpoint = ENDPOINT;
       let body = null;
 
-      // staging-auth の場合（Auth API）
       if (apiType === "staging-auth") {
         endpoint = "https://staging.api.receptionist.jp/api/auth";
         body = new URLSearchParams();
@@ -238,7 +239,6 @@ document.addEventListener('DOMContentLoaded', function () {
         body.append("utm_content", fd.get("utm_content") || "");
 
       } else {
-        // 通常問い合わせ
         const params = new URLSearchParams();
         fd.forEach((value, key) => {
           params.append(`contact[${key}]`, value);
@@ -246,7 +246,6 @@ document.addEventListener('DOMContentLoaded', function () {
         body = params;
       }
 
-      // --- API 呼び出し ---
       const res = await fetch(endpoint, {
         method: "POST",
         body: body,
@@ -290,4 +289,40 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   bindRcpForms();
+});
+
+
+// =========================================================
+//  register-thanks：旧本番と同じく 2回目の POST を送る
+// =========================================================
+document.addEventListener("DOMContentLoaded", function () {
+
+  if (!location.pathname.includes("register-thanks")) return;
+
+  const email = sessionStorage.getItem("register_email");
+  const password = sessionStorage.getItem("register_password");
+
+  if (!email || !password) return;
+
+  const endpoint = location.hostname.includes("staging")
+    ? "https://staging.api.receptionist.jp/api/auth"
+    : "https://api.receptionist.jp/api/auth";
+
+  const body = new URLSearchParams();
+  body.append("email", email);
+  body.append("password", password);
+
+  fetch(endpoint, {
+    method: "POST",
+    body: body,
+  })
+    .then(() => {
+      sessionStorage.removeItem("register_email");
+      sessionStorage.removeItem("register_password");
+    })
+    .catch(() => {
+      sessionStorage.removeItem("register_email");
+      sessionStorage.removeItem("register_password");
+    });
+
 });
