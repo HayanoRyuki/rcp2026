@@ -14,23 +14,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ▼ 修正ポイント：トップページの site-header と LP の lp-header の両方に対応
-const header =
-  document.querySelector('.site-header') ||
-  document.querySelector('.lp-header');
+  const header =
+    document.querySelector('.site-header') ||
+    document.querySelector('.lp-header');
 
-const main = document.querySelector('.site-main');
+  const main = document.querySelector('.site-main');
 
-// LP 固定ページ（page-ads.php）だけ無効化
-if (header && main && !document.body.classList.contains('page-template-page-ads')) {
-  const adjustPadding = () => {
-    main.style.paddingTop = `${header.offsetHeight}px`;
-  };
-  adjustPadding();
-  window.addEventListener('resize', adjustPadding);
-}
+  if (header && main && !document.body.classList.contains('page-template-page-ads')) {
+    const adjustPadding = () => {
+      main.style.paddingTop = `${header.offsetHeight}px`;
+    };
+    adjustPadding();
+    window.addEventListener('resize', adjustPadding);
+  }
 });
-
 
 
 // =========================================================
@@ -103,60 +100,42 @@ const RESOURCE_TYPES = [
   "reception_lp",
 ];
 
-// ★ 新規登録系（REGISTER TYPES）
 const REGISTER_TYPES = [
   "new_user",
-  "trial", // ← ★ 追加（無料トライアルを新規登録として扱う）
+  "trial",
 ];
 
-// ★ 無料問い合わせ系（FREE TYPES）
 const FREE_TYPES = [
   "user",
   "proposal",
-  // "agency" はパートナー問い合わせ専用 thanks に飛ばすため除外
 ];
 
-// ★ パートナー資料DL（resource とは別の thanks）
 const PARTNER_RESOURCE_TYPES = [
   "partner_guide",
 ];
 
-// ★ パートナー問い合わせ（agency）
 const PARTNER_CONTACT_TYPES = [
   "agency",
 ];
 
 function resolveThanksUrl(contactType) {
-
-  // ★ 1) 新規登録フォーム
   if (REGISTER_TYPES.includes(contactType)) {
     return "https://staging.receptionist.jp/register-thanks/";
   }
-
-  // ★ 2) パートナー資料DL専用
   if (PARTNER_RESOURCE_TYPES.includes(contactType)) {
     return "https://staging.receptionist.jp/partner-resource-thanks/";
   }
-
-  // ★ 3) パートナー問い合わせ専用
   if (PARTNER_CONTACT_TYPES.includes(contactType)) {
     return "https://staging.receptionist.jp/partner-contact-thanks/";
   }
-
-  // ★ 4) 資料請求系（一般）
   if (RESOURCE_TYPES.includes(contactType)) {
     return "https://staging.receptionist.jp/resource-thanks/";
   }
-
-  // ★ 5) 無料問い合わせ系（一般）
   if (FREE_TYPES.includes(contactType)) {
     return "https://staging.receptionist.jp/thanks/";
   }
-
-  // ★ 6) デフォルト
   return "https://staging.receptionist.jp/thanks/";
 }
-
 
 
 // =========================================================
@@ -164,21 +143,17 @@ function resolveThanksUrl(contactType) {
 // =========================================================
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ★ API Gateway (staging)
   const ENDPOINT = "https://t8k8whvjnj.execute-api.ap-northeast-1.amazonaws.com/test/";
-
 
   async function handleFormSubmit(e) {
     e.preventDefault();
 
     const form = e.currentTarget;
     if (form.dataset.submitting === "true") return;
-
     form.dataset.submitting = "true";
 
     const submitBtn = form.querySelector("[type=submit]");
     const originalText = submitBtn?.textContent || "";
-
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = "送信中…";
@@ -189,49 +164,43 @@ document.addEventListener('DOMContentLoaded', function () {
       const contactType = fd.get("contact_type") || "";
       if (!contactType) throw new Error("contact_type が不足しています。");
 
-      const apiType = form.dataset.api; // data-api="staging-auth"
+      // ★ テスト：trial は API 呼ばずに即 thanks
+      if (contactType === "trial") {
+        window.location.href = "https://staging.receptionist.jp/register-thanks/";
+        return;
+      }
 
+      const apiType = form.dataset.api;
       let endpoint = ENDPOINT;
       let body = null;
 
       if (apiType === "staging-auth") {
-  endpoint = "https://staging.api.receptionist.jp/api/auth";
-  body = new URLSearchParams();
+        endpoint = "https://staging.api.receptionist.jp/api/auth";
+        body = new URLSearchParams();
 
-  // 入力値
-  const email = fd.get("email");
-  const password = fd.get("password");
-  const contactType = fd.get("contact_type") || "";
+        body.append("email", fd.get("email"));
+        body.append("password", fd.get("password"));
+        body.append("contact_type", contactType);
 
-  // 必須（ログインAPI）
-  body.append("email", email);
-  body.append("password", password);
+        // 暫定追加
+        body.append("company_name", "Temporary Test Company");
+        body.append("contact_person_name", "Temporary User");
+        body.append("phone", "000-0000-0000");
+        body.append("agree", "1");
 
-  // ★ contact_type を送らないと thanks 分岐が必ず通常 thanks になる
-  body.append("contact_type", contactType);
+        body.append("utm_source", fd.get("utm_source") || "");
+        body.append("utm_medium", fd.get("utm_medium") || "");
+        body.append("utm_campaign", fd.get("utm_campaign") || "");
+        body.append("utm_term", fd.get("utm_term") || "");
+        body.append("utm_content", fd.get("utm_content") || "");
 
-  // ★ 暫定：Auth API が要求する可能性がある追加項目（存在しないと 422 になる）
-  body.append("company_name", "Temporary Test Company");
-  body.append("contact_person_name", "Temporary User");
-  body.append("phone", "000-0000-0000");
-  body.append("agree", "1");
-
-  // UTM（存在すれば追加）
-  body.append("utm_source", fd.get("utm_source") || "");
-  body.append("utm_medium", fd.get("utm_medium") || "");
-  body.append("utm_campaign", fd.get("utm_campaign") || "");
-  body.append("utm_term", fd.get("utm_term") || "");
-  body.append("utm_content", fd.get("utm_content") || "");
-
-} else {
-  const params = new URLSearchParams();
-  fd.forEach((value, key) => {
-    params.append(`contact[${key}]`, value);
-  });
-  body = params;
-}
-
-
+      } else {
+        const params = new URLSearchParams();
+        fd.forEach((value, key) => {
+          params.append(`contact[${key}]`, value);
+        });
+        body = params;
+      }
 
       const res = await fetch(endpoint, {
         method: "POST",
@@ -245,7 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
         result = await res.json();
       } catch (_) {}
 
-      // --- ★ ここでサンクスURLを決定 ★ ---
       const thanksUrl = resolveThanksUrl(contactType);
 
       if (result && result.redirect_url) {
