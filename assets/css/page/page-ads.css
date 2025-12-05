@@ -8,3 +8,19 @@ body.page-template-page-ads .site-main {
   padding-top: 0;
   margin-top: 0;
 }
+
+
+/* page-ads.css の最後に追記 */
+main.site-main.front-page {
+  padding-top: 0 !important;
+}
+
+
+/* 固定ページ（page）の時だけヒーロー余白を 0 にする */
+body.page .hero.page-title.wrapper {
+  margin-top: -10px !important;
+}
+
+body.page main.site-main {
+  padding-top: 0 !important;
+}

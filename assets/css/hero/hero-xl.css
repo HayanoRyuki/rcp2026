@@ -289,11 +289,3 @@
   }
 }
 
-/* 固定ページ（page）の時だけヒーロー余白を 0 にする */
-body.page .hero.page-title.wrapper {
-  margin-top: -10px !important;
-}
-
-body.page main.site-main {
-  padding-top: 0 !important;
-}
