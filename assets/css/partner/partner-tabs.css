@@ -89,12 +89,6 @@
   border-color: var(--color-primary);
 }
 
-/* ===== Panels ===== */
-/* 初期表示で両方表示する */
-.rcp-partnerlist__section {
-  display: block !important;
-}
-
 .rcp-partnerlist__block-title {
   font-size: 1.8rem;
   font-weight: 700;
