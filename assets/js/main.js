@@ -197,11 +197,32 @@ document.addEventListener('DOMContentLoaded', function () {
       if (apiType === "staging-auth") {
   endpoint = "https://staging.api.receptionist.jp/api/auth";
   body = new URLSearchParams();
-  body.append("email", fd.get("email"));
-  body.append("password", fd.get("password"));
 
-  // ★ 追加：contact_type も送らないと thanks 分岐が誤る
-  body.append("contact_type", fd.get("contact_type") || "");
+  // 入力値
+  const email = fd.get("email");
+  const password = fd.get("password");
+  const contactType = fd.get("contact_type") || "";
+
+  // 必須（ログインAPI）
+  body.append("email", email);
+  body.append("password", password);
+
+  // ★ contact_type を送らないと thanks 分岐が必ず通常 thanks になる
+  body.append("contact_type", contactType);
+
+  // ★ 暫定：Auth API が要求する可能性がある追加項目（存在しないと 422 になる）
+  body.append("company_name", "Temporary Test Company");
+  body.append("contact_person_name", "Temporary User");
+  body.append("phone", "000-0000-0000");
+  body.append("agree", "1");
+
+  // UTM（存在すれば追加）
+  body.append("utm_source", fd.get("utm_source") || "");
+  body.append("utm_medium", fd.get("utm_medium") || "");
+  body.append("utm_campaign", fd.get("utm_campaign") || "");
+  body.append("utm_term", fd.get("utm_term") || "");
+  body.append("utm_content", fd.get("utm_content") || "");
+
 } else {
   const params = new URLSearchParams();
   fd.forEach((value, key) => {
@@ -209,6 +230,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   body = params;
 }
+
 
 
       const res = await fetch(endpoint, {
