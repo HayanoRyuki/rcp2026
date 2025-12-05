@@ -90,11 +90,9 @@
 }
 
 /* ===== Panels ===== */
+/* 初期表示で両方表示する */
 .rcp-partnerlist__section {
-  display: none;
-}
-.rcp-partnerlist__section.is-active {
-  display: block;
+  display: block !important;
 }
 
 .rcp-partnerlist__block-title {
@@ -342,4 +340,10 @@
   border: 1px solid #ccc !important;
   background: #fff !important;
   color: #555 !important;
+}
+
+/* ===== 見出しの上余白（セールス + アライアンス） ===== */
+#panel-sales-partner .rcp-partnerlist__block-title,
+#panel-alliance-partner .rcp-partnerlist__block-title {
+  padding-top: 40px;
 }
