@@ -195,17 +195,21 @@ document.addEventListener('DOMContentLoaded', function () {
       let body = null;
 
       if (apiType === "staging-auth") {
-        endpoint = "https://staging.api.receptionist.jp/api/auth";
-        body = new URLSearchParams();
-        body.append("email", fd.get("email"));
-        body.append("password", fd.get("password"));
-      } else {
-        const params = new URLSearchParams();
-        fd.forEach((value, key) => {
-          params.append(`contact[${key}]`, value);
-        });
-        body = params;
-      }
+  endpoint = "https://staging.api.receptionist.jp/api/auth";
+  body = new URLSearchParams();
+  body.append("email", fd.get("email"));
+  body.append("password", fd.get("password"));
+
+  // ★ 追加：contact_type も送らないと thanks 分岐が誤る
+  body.append("contact_type", fd.get("contact_type") || "");
+} else {
+  const params = new URLSearchParams();
+  fd.forEach((value, key) => {
+    params.append(`contact[${key}]`, value);
+  });
+  body = params;
+}
+
 
       const res = await fetch(endpoint, {
         method: "POST",
