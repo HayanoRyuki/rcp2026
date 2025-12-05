@@ -347,3 +347,12 @@
 #panel-alliance-partner .rcp-partnerlist__block-title {
   padding-top: 40px;
 }
+
+/* タブ切替モード */
+.rcp-partnerlist__section {
+  display: block;
+}
+
+.rcp-partnerlist__section:not(.is-active) {
+  display: none;
+}
