@@ -239,7 +239,7 @@ get_header();
             </ul>
 
             <div class="p-curriculum-btn">
-              <a class="c-button c-button-lg"
+              <a class="c-button c-button-green c-button-lg"
                  href="https://t.receptionist.jp/l/436112/2025-09-16/8m1k4b"
                  target="_blank" rel="noopener">
                 <span>応用編に申し込む</span>
