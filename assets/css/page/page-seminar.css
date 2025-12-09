@@ -1,0 +1,266 @@
+/********************************************
+ * Seminar LP 専用スタイル
+ * /page-seminar.php 用
+ ********************************************/
+
+:root {
+  --primary: var(--color-primary);
+  --primary-hover: var(--color-primary-hover);
+  --white: #fff;
+  --text: var(--color-text);
+  --text-light: var(--color-text-light);
+  --bg: var(--color-bg);
+  --bg-alt: var(--color-bg-alt);
+  --border: var(--color-border);
+}
+
+/* =======================================
+   全体
+======================================= */
+.seminar-page {
+  background: var(--bg);
+  padding-bottom: 80px;
+  color: var(--text);
+}
+
+.l-inner {
+  width: 92%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* 固定ページタイトルを強制非表示 */
+.seminar-page .page-title {
+  display: none !important;
+}
+
+/* =======================================
+   FV
+======================================= */
+.p-fv {
+  padding: 40px 0 60px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.p-fv__label {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.p-fv__title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.p-fv__date {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.p-fv__date-heading {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+/* =======================================
+   ボタン
+======================================= */
+
+.c-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: 340px;
+  padding: 16px 24px;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+
+  border-radius: 8px;
+  border: 2px solid var(--primary);
+
+  transition: 0.25s ease;
+}
+
+.c-button-blue {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.c-button-blue:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.c-button:hover {
+  opacity: 0.9;
+}
+
+.c-button__sub {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* ボタンの並び */
+.p-fv__btn-area,
+.p-support__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.p-support__cta {
+  justify-content: center;
+}
+
+/* =======================================
+   Section Head
+======================================= */
+.c-section-head {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.c-section-head__sub {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.c-section-head__title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* =======================================
+   講習会概要
+======================================= */
+.p-event {
+  padding: 60px 0;
+  background: var(--white);
+}
+
+.p-event__container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.p-event__step {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.p-event__step-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* =======================================
+   Support
+======================================= */
+.p-support {
+  padding: 80px 0;
+  background: var(--bg-alt);
+}
+
+.p-support-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.p-support__title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.p-support__text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+/* =======================================
+   Curriculum（基礎編 / 応用編）
+======================================= */
+.p-curriculum {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.p-curriculum__container {
+  display: grid;
+  gap: 32px;
+}
+
+/* PC 2カラム */
+@media (min-width: 768px) {
+  .p-curriculum__container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.p-curriculum__card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  padding: 24px;
+}
+
+.p-curriculum__card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.p-curriculum-list {
+  margin-bottom: 24px;
+  padding-left: 20px;
+}
+
+.p-curriculum-list li {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+/* カリキュラムボタン */
+.p-curriculum-btn {
+  margin-top: 12px;
+}
+
+/* =======================================
+   SP 調整
+======================================= */
+
+@media (max-width: 767px) {
+  .p-fv__title {
+    font-size: 26px;
+  }
+
+  .c-button {
+    max-width: 100%;
+  }
+}
