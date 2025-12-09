@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
       // ----------------------------------------------------
-      // ★★ 1) /new-register/ は高橋さん仕様（contact_type 無視）★★
+      // ★★ 1) /new-register/ は従来仕様（contact_type 無視）★★
       // ----------------------------------------------------
       if (window.location.pathname.includes("new-register")) {
 
