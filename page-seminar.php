@@ -40,7 +40,7 @@ get_header();
               <span class="c-button__sub">無料参加</span>
             </a>
 
-            <a class="c-button c-button-green c-button-lg"
+            <a class="c-button c-button-lg"
                href="https://t.receptionist.jp/l/436112/2025-09-16/8m1k4b"
                target="_blank" rel="noopener">
               <span>応用編に申し込む</span>
@@ -119,7 +119,7 @@ get_header();
           <span class="c-button__sub">基礎編はこちら</span>
         </a>
 
-        <a class="c-button c-button-green c-button-lg"
+        <a class="c-button c-button-lg"
            href="https://t.receptionist.jp/l/436112/2025-09-16/8m1k4b"
            target="_blank" rel="noopener">
           <span>今すぐ申し込む</span>
@@ -149,7 +149,44 @@ get_header();
           <h3 class="p-curriculum__card-title">基礎編</h3>
           <div class="p-curriculum__card-body">
             <ul class="p-curriculum-list">
-              <?php /* 略 */ ?>
+              <li>はじめに</li>
+              <li>来客フローについて</li>
+              <li>アポイントメントの種類</li>
+              <li>WEB管理画面ログイン</li>
+              <li>WEB管理画面メニュー</li>
+              <li>社員情報（利用者登録）</li>
+              <li>社員登録の全体フロー</li>
+              <li>社員登録と利用登録の違い</li>
+              <li>利用登録したら何ができるのか</li>
+              <li>各社員の利用登録状況チェック</li>
+              <li>外部連携とは</li>
+              <li>外部連携の方法</li>
+              <li>外部連携状況チェック</li>
+              <li>CSV一括で更新する方法</li>
+              <li>チャット設定</li>
+              <li>各種チャットツール</li>
+              <li>【実践】メール通知設定</li>
+              <li>来訪者設定</li>
+              <li>来訪者設定画面について</li>
+              <li>来訪者種別とは</li>
+              <li>受付完了時の画像表示について</li>
+              <li>受付アプリ設定</li>
+              <li>受付アプリ設定画面</li>
+              <li>デバイス情報の設定</li>
+              <li>受付モードの種類</li>
+              <li>画面表示設定</li>
+              <li>各種ボタン設定</li>
+              <li>カスタムボタン設定</li>
+              <li>iPad設定</li>
+              <li>権限設定</li>
+              <li>権限設定画面について</li>
+              <li>ユーザー権限について</li>
+              <li>主管理者を変更する方法</li>
+              <li>経理担当者を付与する方法</li>
+              <li>アポイントメントの権限設定</li>
+              <li>来訪者記録の権限設定</li>
+              <li>プランアップ</li>
+              <li>エンタープライズ・プレミアムプランでできること</li>
             </ul>
 
             <div class="p-curriculum-btn">
@@ -168,11 +205,41 @@ get_header();
           <h3 class="p-curriculum__card-title">応用編</h3>
           <div class="p-curriculum__card-body">
             <ul class="p-curriculum-list">
-              <?php /* 略 */ ?>
+              <li>はじめに</li>
+              <li>来客フローについて</li>
+              <li>アポイントメントの種類</li>
+              <li>【実践】WEB管理画面ログイン</li>
+              <li>チャット設定</li>
+              <li>各種チャットツール</li>
+              <li>受付アプリ設定</li>
+              <li>オフィス機能</li>
+              <li>ホールディングス機能</li>
+              <li>受付アプリ設定画面</li>
+              <li>デバイス情報の設定</li>
+              <li>受付モードの種類</li>
+              <li>画面表示設定</li>
+              <li>各種ボタン設定</li>
+              <li>権限設定</li>
+              <li>権限設定画面について</li>
+              <li>ユーザー権限について</li>
+              <li>【実践】受付担当者の付与</li>
+              <li>ブラウザプッシュ通知について</li>
+              <li>ユーザー権限の削除方法</li>
+              <li>アポイントメントの権限設定</li>
+              <li>来訪者記録の権限設定</li>
+              <li>来訪者設定</li>
+              <li>来訪者設定画面について</li>
+              <li>来訪者向けメール設定について</li>
+              <li>来訪者種別とは</li>
+              <li>カスタム設定とは</li>
+              <li>【実践】アポ作成時カスタム設定</li>
+              <li>【実践】受付時カスタム設定</li>
+              <li>受付完了時の画像について</li>
+              <li>【実践】受付完了時の画像</li>
             </ul>
 
             <div class="p-curriculum-btn">
-              <a class="c-button c-button-green c-button-lg"
+              <a class="c-button c-button-lg"
                  href="https://t.receptionist.jp/l/436112/2025-09-16/8m1k4b"
                  target="_blank" rel="noopener">
                 <span>応用編に申し込む</span>
