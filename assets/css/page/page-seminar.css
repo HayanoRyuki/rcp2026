@@ -6,6 +6,10 @@
 :root {
   --primary: var(--color-primary);
   --primary-hover: var(--color-primary-hover);
+
+  --success: var(--color-success);              /* グリーン */
+  --success-hover: var(--color-success-hover);  /* グリーン濃いめ */
+
   --white: #fff;
   --text: var(--color-text);
   --text-light: var(--color-text-light);
@@ -29,7 +33,7 @@
   margin: 0 auto;
 }
 
-/* 固定ページタイトルを強制非表示 */
+/* 固定ページタイトル非表示 */
 .seminar-page .page-title {
   display: none !important;
 }
@@ -73,9 +77,8 @@
 }
 
 /* =======================================
-   ボタン
+   ボタン（共通）
 ======================================= */
-
 .c-button {
   display: flex;
   flex-direction: column;
@@ -88,23 +91,12 @@
 
   font-size: 18px;
   font-weight: 700;
-  line-height: 1.4;
   text-align: center;
 
   border-radius: 8px;
-  border: 2px solid var(--primary);
+  border: 2px solid transparent;
 
   transition: 0.25s ease;
-}
-
-.c-button-blue {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.c-button-blue:hover {
-  background: var(--primary-hover);
-  border-color: var(--primary-hover);
 }
 
 .c-button:hover {
@@ -115,6 +107,30 @@
   font-size: 14px;
   font-weight: 400;
   margin-top: 4px;
+}
+
+/* ▼ 基礎編（ブルー） */
+.c-button-blue {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+.c-button-blue:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+/* ▼ 応用編（グリーン） */
+.c-button-green {
+  background: var(--success);
+  border-color: var(--success);
+  color: var(--white);
+}
+
+.c-button-green:hover {
+  background: var(--success-hover);
+  border-color: var(--success-hover);
 }
 
 /* ボタンの並び */
@@ -254,12 +270,10 @@
 /* =======================================
    SP 調整
 ======================================= */
-
 @media (max-width: 767px) {
   .p-fv__title {
     font-size: 26px;
   }
-
   .c-button {
     max-width: 100%;
   }
