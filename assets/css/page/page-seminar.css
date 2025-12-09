@@ -4,13 +4,34 @@
  ********************************************/
 
 :root {
+  /* ===== 基本カラー ===== */
+  --color-primary: #00B5E2;          /* メインのアクセントカラー */
+  --color-primary-hover: #009CC1;    /* ホバー時の濃いブルー */
+  --color-secondary: #01b695;        /* サブカラー（グリーン系） */
+  --color-accent: #f0f6fa;           /* アクセント背景用 */
+
+  /* ===== モノトーン ===== */
+  --color-text: #333333;
+  --color-text-light: #555555;
+  --color-bg: #f9fbfd;
+  --color-bg-alt: #eef3f7;
+  --color-border: #ddd;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* ===== 強調（赤系） ===== */
+  --color-danger: #FF5A5A;
+  --color-danger-hover: #E04E4E;
+  --color-danger-light: #FFECEC;
+
+  /* ===== Seminar LP 内 alias（フル定義） ===== */
   --primary: var(--color-primary);
   --primary-hover: var(--color-primary-hover);
 
-  --success: var(--color-success);              /* グリーン */
-  --success-hover: var(--color-success-hover);  /* グリーン濃いめ */
+  --success: var(--color-secondary);     /* 応用編（グリーン） */
+  --success-hover: #019e82;              /* secondary を少し濃く */
 
-  --white: #fff;
+  --white: var(--color-white);
   --text: var(--color-text);
   --text-light: var(--color-text-light);
   --bg: var(--color-bg);
@@ -220,7 +241,7 @@
 }
 
 /* =======================================
-   Curriculum（基礎編 / 応用編）
+   Curriculum
 ======================================= */
 .p-curriculum {
   padding: 80px 0;
