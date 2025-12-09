@@ -1,8 +1,5 @@
 <?php
-/*
-Template Name: 講習会LP（完全修正版）
-Description: seminar LP / event overview 修正・画像パス修正・2カラムレイアウト最適化版
-*/
+
 
 $post_id = get_the_ID();
 
