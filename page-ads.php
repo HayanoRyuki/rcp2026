@@ -20,15 +20,16 @@ get_header();
     <?php get_template_part('sections/about'); ?>
   </section>
 
-  <!-- 非表示ブロック（お客様の声 + コスト削減）
+  <!-- 非表示ブロック（お客様の声 
   <section id="voice">
     <?php get_template_part('sections/4voice'); ?>
-  </section>
+  </section>-->
 
+  <!-- 非表示ブロック（お客様の声 
   <section id="cost">
     <?php get_template_part('sections/cost'); ?>
-  </section>
-  -->
+</section>-->
+  
   
   <!-- 解決する課題 -->
   <section id="solutions">
