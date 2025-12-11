@@ -20,6 +20,7 @@ get_header();
     <?php get_template_part('sections/about'); ?>
   </section>
 
+  <!--
   <!-- お客様の声（4Voice） -->
   <section id="voice">
     <?php get_template_part('sections/4voice'); ?>
@@ -29,7 +30,8 @@ get_header();
   <section id="cost">
     <?php get_template_part('sections/cost'); ?>
   </section>
-
+  -->
+  
   <!-- 解決する課題 -->
   <section id="solutions">
     <?php get_template_part('sections/solutions'); ?>

@@ -23,12 +23,12 @@ get_header();
           <div class="p-fv__date">
             <div class="p-fv__date-item">
               <h2 class="p-fv__date-heading">基礎編の開催日程</h2>
-              <p>現在日程は調整中です。</p>
+              <p>2025年12月25日</p>
             </div>
 
             <div class="p-fv__date-item">
               <h2 class="p-fv__date-heading">応用編の開催日程</h2>
-              <p>現在日程は調整中です。</p>
+              <p>2026年1月22日</p>
             </div>
           </div>
 
