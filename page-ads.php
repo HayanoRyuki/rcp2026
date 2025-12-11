@@ -48,5 +48,5 @@ get_header();
 </main>
 
 <?php
-// ★ Ads 専用フッター
-get_footer('ads');
+// ★ LP専用フッターに変更
+get_footer('lp');
