@@ -19,17 +19,6 @@ get_header();
   <section id="about">
     <?php get_template_part('sections/about'); ?>
   </section>
-
-  <!-- 非表示ブロック（お客様の声 
-  <section id="voice">
-    <?php get_template_part('sections/4voice'); ?>
-  </section>-->
-
-  <!-- 非表示ブロック（お客様の声 
-  <section id="cost">
-    <?php get_template_part('sections/cost'); ?>
-</section>-->
-  
   
   <!-- 解決する課題 -->
   <section id="solutions">
