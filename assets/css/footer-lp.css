@@ -54,3 +54,8 @@
   font-size: 13px;
   color: var(--color-text-light);
 }
+
+/* LP01（page-ads.php）専用：下余白を消す */
+.page-template-page-ads .site-main {
+  padding-bottom: 0 !important;
+}
