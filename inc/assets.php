@@ -408,3 +408,21 @@ function rcp2026_enqueue_hero_css() {
   }
 }
 add_action('wp_enqueue_scripts', 'rcp2026_enqueue_hero_css', 20);
+
+// ===================================
+// LP01（page-ads.php）専用フッターCSS
+// ===================================
+function rcp2026_enqueue_lp_footer_css() {
+  if (is_page_template('page-ads.php')) {
+    $path = get_template_directory() . '/assets/css/footer-lp.css';
+    if (file_exists($path)) {
+      wp_enqueue_style(
+        'rcp2026-footer-lp',
+        get_template_directory_uri() . '/assets/css/footer-lp.css',
+        [],
+        filemtime($path)
+      );
+    }
+  }
+}
+add_action('wp_enqueue_scripts', 'rcp2026_enqueue_lp_footer_css');
