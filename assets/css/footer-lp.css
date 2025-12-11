@@ -1,24 +1,55 @@
-/* LP専用フッター */
+/* =========================================
+   LP専用フッター
+   /assets/css/footer-lp.css
+========================================= */
+
 .lp-footer {
-  background: #ffffff;       /* 背景は白に統一（LPのトーンに合わせる） */
-  padding: 24px 0;           /* 適度な縦パディング */
-  text-align: center;        /* コピーライト中央揃え */
-  border-top: 1px solid #eee; /* LPならこれくらいの薄いラインが自然 */
+  background: #f9fafb;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
 }
 
-.lp-footer-inner small {
-  font-size: 12px;
-  color: #888;               /* コピーライトの定番カラー */
+.lp-footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
-/* 不要な余白が発生している場合の対策 */
-.site-main {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+/* ==============================
+   リンク一覧
+============================== */
+.lp-footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* LP01 固定ページで共通フッター余白を切る（最強版） */
-body.page-template-page-ads .site-main {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+.lp-footer-links a {
+  color: #555;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.lp-footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* PC時：横並び */
+@media (min-width: 768px) {
+  .lp-footer-links ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+
+/* ==============================
+   コピーライト
+============================== */
+.lp-footer-copy small {
+  font-size: 13px;
+  color: #777;
 }
