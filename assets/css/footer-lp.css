@@ -1,13 +1,13 @@
 /* =========================================
-   LP専用フッター
-   /assets/css/footer-lp.css
+   LP専用フッター（root を尊重・衝突ゼロ）
+   ※ 変数(:root) は触らない
 ========================================= */
 
 .lp-footer {
-  background: #f9fafb;
+  background: var(--color-white);
   padding: 40px 20px;
   text-align: center;
-  border-top: 1px solid #e5e7eb;
+  /* border-top: 1px solid var(--color-border);  ← 削除済み */
 }
 
 .lp-footer-inner {
@@ -28,16 +28,17 @@
 }
 
 .lp-footer-links a {
-  color: #555;
+  color: var(--color-text-light);
   font-size: 14px;
   text-decoration: none;
 }
 
 .lp-footer-links a:hover {
+  color: var(--color-text);
   text-decoration: underline;
 }
 
-/* PC時：横並び */
+/* PC：横並び */
 @media (min-width: 768px) {
   .lp-footer-links ul {
     flex-direction: row;
@@ -51,5 +52,5 @@
 ============================== */
 .lp-footer-copy small {
   font-size: 13px;
-  color: #777;
+  color: var(--color-text-light);
 }
