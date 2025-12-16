@@ -34,6 +34,7 @@
         <div class="case-content">
           <?php the_content(); ?>
         </div>
+        <?php get_template_part('template-parts/case/cta'); ?>
       </article>
     </div>
 
