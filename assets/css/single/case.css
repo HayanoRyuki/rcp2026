@@ -336,3 +336,23 @@ h2.case {
 .case-marker.is-visible {
   background-size: 100% 100%;
 }
+
+/* =========================================================
+   CASE STUDY CTA (CONTENT INLINE)
+========================================================= */
+
+/* デフォルト：PC想定 */
+.case-study-banner-sp {
+  display: none;
+}
+
+/* SP表示 */
+@media screen and (max-width: 768px) {
+  .case-study-banner-pc {
+    display: none;
+  }
+
+  .case-study-banner-sp {
+    display: block;
+  }
+}
