@@ -3,24 +3,24 @@
 ======================================== */
 :root {
   /* ===== 基本カラー ===== */
-  --color-primary: #00B5E2;          /* メインのアクセントカラー（ボタン・見出しなど） */
-  --color-primary-hover: #009CC1;    /* ホバー時の濃いブルー */
-  --color-secondary: #01b695;        /* サブカラー（強調や補助要素） */
-  --color-accent: #f0f6fa;           /* アクセント背景用の淡い色 */
+  --color-primary: #0098BB;          /* メインのアクセントカラー（ボタン・見出しなど） */
+  --color-primary-hover: #00AED4;    /* ホバー時の濃いブルー */
+  --color-secondary: #00AED4;        /* サブカラー（強調や補助要素） */
+  --color-accent: #F1F5F9;           /* アクセント背景用の淡い色 */
 
   /* ===== モノトーン ===== */
-  --color-text: #333333;             /* 本文 */
-  --color-text-light: #555555;       /* 薄い本文・補足テキスト */
-  --color-bg: #f9fbfd;               /* 背景（ページ全体） */
-  --color-bg-alt: #eef3f7;           /* 代替背景（セクションなど） */
-  --color-border: #ddd;              /* 標準ボーダー */
+  --color-text: #112D48;             /* 本文 */
+  --color-text-light: #66657C;       /* 薄い本文・補足テキスト */
+  --color-bg: #F1F5F9;               /* 背景（ページ全体） */
+  --color-bg-alt: #EBFAFE;           /* 代替背景（セクションなど） */
+  --color-border: #EEEEEE;           /* 標準ボーダー */
   --color-white: #ffffff;            /* ホワイト */
   --color-black: #000000;            /* ブラック */
 
   /* ===== アラート・強調カラー（赤系） ===== */
-  --color-danger: #FF5A5A;           /* CTAボタンなどに使うコーラルレッド */
-  --color-danger-hover: #E04E4E;     /* ホバー時の濃い赤 */
-  --color-danger-light: #FFECEC;     /* 背景・装飾用の淡い赤 */
+  --color-danger: #FF6262;           /* CTAボタンなどに使うコーラルレッド */
+  --color-danger-hover: #F43B3B;     /* ホバー時の濃い赤 */
+  --color-danger-light: #FFE8EA;     /* 背景・装飾用の淡い赤 */
 }
 
 /* ========================================
