@@ -94,7 +94,7 @@ const RESOURCE_TYPES = [
   "backoffice-dx",
   "installation_case",
   "document_gate",
-  "document_price",
+  "new_document_price",
   "document_factory",
   "guide-3min",
   "reception_lp",
