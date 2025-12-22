@@ -49,7 +49,7 @@
       <!-- イベント受付 -->
       <a href="https://event.receptionist.jp/" class="series-card" aria-label="イベント受付 詳細ページ" target="_blank" rel="noopener">
         <div class="series-head">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/icon-EVT.svg" alt="イベント受付ロゴ" class="series-icon">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/icon-EVT.png" alt="イベント受付ロゴ" class="series-icon">
           <div class="series-meta">
             <p class="series-sub">イベント受付システム</p>
             <h3 class="series-name">イベント受付</h3>
@@ -62,7 +62,7 @@
       <!-- IVR -->
       <a href="https://ivr.receptionist.jp/" class="series-card" aria-label="IVR 詳細ページ" target="_blank" rel="noopener">
         <div class="series-head">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/icon-IVR.svg" alt="IVRロゴ" class="series-icon">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/icon-IVR.png" alt="IVRロゴ" class="series-icon">
           <div class="series-meta">
             <p class="series-sub">代表電話自動応答</p>
             <h3 class="series-name">IVR</h3>
