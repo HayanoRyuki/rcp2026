@@ -33,18 +33,28 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  text-align: left;
 }
 
-/* 3 + 2 中央寄せ（FIX版） */
+/* =========================
+   2段目（4・5枚目）を中央寄せ
+========================= */
+
+/* 4枚目を行全体に広げる */
 .series-card:nth-child(4) {
-  grid-column: 1 / 2;
-  justify-self: end;
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
 }
 
+/* 4・5枚目の実カード幅を揃える */
+.series-card:nth-child(4),
 .series-card:nth-child(5) {
-  grid-column: 2 / 3;
-  justify-self: start;
+  width: calc((100% - 2rem) / 3);
+}
+
+/* 5枚目を4枚目の右に配置 */
+.series-card:nth-child(5) {
+  margin-left: 2rem;
 }
 
 /* =========================
@@ -109,7 +119,8 @@
   .series-card:nth-child(4),
   .series-card:nth-child(5) {
     grid-column: auto;
-    justify-self: auto;
+    width: auto;
+    margin-left: 0;
   }
 }
 
