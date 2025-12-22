@@ -57,7 +57,7 @@
               <h3 class="series-name">招待レセプション</h3>
             </div>
           </div>
-          <p class="series-desc">受付混雑をスマートに解消</p>
+          <p class="series-desc">イベント受付もQRでスムーズに</p>
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/series-EVT.webp" class="series-img">
         </a>
 
@@ -66,11 +66,11 @@
           <div class="series-head">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/icon-IVR.png" class="series-icon">
             <div class="series-meta">
-              <p class="series-sub">クラウド電話システム</p>
+              <p class="series-sub">電話応答自動システム</p>
               <h3 class="series-name">代表電話コネクト</h3>
             </div>
           </div>
-          <p class="series-desc">代表電話対応を自動化</p>
+          <p class="series-desc">代表電話はシステムで一次受け</p>
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/series-IVR.webp" class="series-img">
         </a>
       </div>
