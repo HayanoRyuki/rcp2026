@@ -36,14 +36,14 @@
   text-align: left;
 }
 
-/* 3 + 2 中央寄せ（修正版） */
+/* 3 + 2 中央寄せ（FIX版） */
 .series-card:nth-child(4) {
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
   justify-self: end;
 }
 
 .series-card:nth-child(5) {
-  grid-column: 3 / 4;
+  grid-column: 2 / 3;
   justify-self: start;
 }
 
