@@ -3,14 +3,12 @@
   padding: 80px 0;
 }
 
-
 /* 横幅統一用コンテナ */
 .series-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
-
 
 .section-title {
   font-size: 2.25rem;
@@ -28,6 +26,9 @@
   text-align: center;
 }
 
+/* =========================
+   Grid（PC）
+========================= */
 .series-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -35,6 +36,20 @@
   text-align: left;
 }
 
+/* 3 + 2 中央寄せ */
+.series-card:nth-child(4) {
+  grid-column: 1 / 2;
+  justify-self: end;
+}
+
+.series-card:nth-child(5) {
+  grid-column: 2 / 3;
+  justify-self: start;
+}
+
+/* =========================
+   Card
+========================= */
 .series-card {
   background-color: var(--color-white);
   border-radius: 1rem;
@@ -83,6 +98,24 @@
   object-fit: cover;
 }
 
+/* =========================
+   Tablet
+========================= */
+@media (max-width: 1024px) {
+  .series-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .series-card:nth-child(4),
+  .series-card:nth-child(5) {
+    grid-column: auto;
+    justify-self: auto;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
 @media (max-width: 768px) {
   .series-section {
     padding: 48px 1rem;
@@ -112,22 +145,22 @@
     text-align: center;
   }
 
+  .series-meta,
+  .series-desc,
+  .series-name {
+    text-align: center;
+  }
+
   .series-sub {
     font-size: 0.75rem;
   }
 
   .series-name {
     font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .series-meta {
-    text-align: center;
   }
 
   .series-desc {
     font-size: 0.85rem;
-    text-align: center;
   }
 
   .series-img {

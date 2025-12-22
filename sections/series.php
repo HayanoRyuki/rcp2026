@@ -45,6 +45,33 @@
         <p class="series-desc">会議室の利用マナーを整える</p>
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/series-RMS.webp" alt="予約ルームズ画像" class="series-img">
       </a>
+
+      <!-- イベント受付 -->
+      <a href="https://event.receptionist.jp/" class="series-card" aria-label="イベント受付 詳細ページ" target="_blank" rel="noopener">
+        <div class="series-head">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/icon-EVT.svg" alt="イベント受付ロゴ" class="series-icon">
+          <div class="series-meta">
+            <p class="series-sub">イベント受付システム</p>
+            <h3 class="series-name">イベント受付</h3>
+          </div>
+        </div>
+        <p class="series-desc">受付混雑をスマートに解消</p>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/series-EVT.webp" alt="イベント受付画像" class="series-img">
+      </a>
+
+      <!-- IVR -->
+      <a href="https://ivr.receptionist.jp/" class="series-card" aria-label="IVR 詳細ページ" target="_blank" rel="noopener">
+        <div class="series-head">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/icon-IVR.svg" alt="IVRロゴ" class="series-icon">
+          <div class="series-meta">
+            <p class="series-sub">代表電話自動応答</p>
+            <h3 class="series-name">IVR</h3>
+          </div>
+        </div>
+        <p class="series-desc">代表電話対応を自動化</p>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/products/series-IVR.webp" alt="IVR画像" class="series-img">
+      </a>
+
     </div>
   </div>
 </section>
