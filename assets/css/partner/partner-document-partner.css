@@ -188,3 +188,10 @@
   margin-bottom: 28px;
   color: var(--color-text-muted);
 }
+
+/* SP */
+@media (max-width: 768px) {
+  .section-contact-document-partner {
+    padding-top: 80px;
+  }
+}
