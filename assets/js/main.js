@@ -138,7 +138,6 @@ function resolveThanksUrl(contactType) {
 }
 
 
-
 // =========================================================
 //  RECEPTIONIST 共通フォーム送信（WP 側）
 // =========================================================
@@ -162,14 +161,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     try {
+
       // ----------------------------------------------------
-      // ★★ 1) /new-register/ は従来仕様（contact_type 無視）★★
+      // ★★ 1) /new-register/（従来仕様）
       // ----------------------------------------------------
       if (window.location.pathname.includes("new-register")) {
 
         const fd = new FormData(form);
         const email = fd.get("email");
         const password = fd.get("password");
+
+        if (!validatePassword(password)) {
+          showErrorMessage(
+            "パスワードは8文字以上で、大文字英字・小文字英字・数字・記号のうち3種類以上を含めて設定してください。"
+          );
+          return;
+        }
 
         let endpoint = "";
         let redirectUrl = "";
@@ -191,17 +198,11 @@ document.addEventListener('DOMContentLoaded', function () {
           body: body
         });
 
-        // -------------------------
-        // ★ 200 → サンクスへ遷移
-        // -------------------------
         if (res.ok) {
           window.location.href = redirectUrl;
           return;
         }
 
-        // -------------------------
-        // ★ 200 以外 → エラー表示
-        // -------------------------
         let result = {};
         try { result = await res.json(); } catch (_) {}
 
@@ -215,28 +216,35 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // ----------------------------------------------------
-      // ★★ 2) 通常フォーム（新仕様）★★
+      // ★★ 2) 通常フォーム（新仕様）
       // ----------------------------------------------------
       const fd = new FormData(form);
       const contactType = fd.get("contact_type") || "";
       if (!contactType) throw new Error("contact_type が不足しています。");
 
-      if (contactType === "trial") {
-        window.location.href =
-          "https://staging.receptionist.jp/register-thanks/";
-        return;
-      }
-
       const apiType = form.dataset.api;
       let endpoint = ENDPOINT;
       let body = null;
 
+      // -------------------------------
+      // staging-auth（無料トライアル）
+      // -------------------------------
       if (apiType === "staging-auth") {
+
         endpoint = "https://staging.api.receptionist.jp/api/auth";
         body = new URLSearchParams();
 
+        const password = fd.get("password");
+
+        if (!validatePassword(password)) {
+          showErrorMessage(
+            "パスワードは8文字以上で、大文字英字・小文字英字・数字・記号のうち3種類以上を含めて設定してください。"
+          );
+          return;
+        }
+
         body.append("email", fd.get("email"));
-        body.append("password", fd.get("password"));
+        body.append("password", password);
         body.append("contact_type", contactType);
 
         body.append("company_name", "Temporary Test Company");
@@ -251,6 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
         body.append("utm_content", fd.get("utm_content") || "");
 
       } else {
+
         const params = new URLSearchParams();
         fd.forEach((value, key) => {
           params.append(`contact[${key}]`, value);
@@ -303,12 +312,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // =========================================================
-//  NEW：エラー表示（ボタン下）
+//  エラー表示（ボタン下）
 // =========================================================
 function showErrorMessage(msg) {
   let area = document.querySelector(".form-error-area");
   if (!area) {
-    // フォーム内に自動生成（安全）
     area = document.createElement("div");
     area.className = "form-error-area";
     area.style.color = "red";
@@ -319,4 +327,20 @@ function showErrorMessage(msg) {
   }
   area.textContent = msg;
   area.style.display = "block";
+}
+
+
+// =========================================================
+//  パスワードポリシーバリデーション（ヘルプ準拠）
+// =========================================================
+function validatePassword(password) {
+  if (!password || password.length < 8) return false;
+
+  let count = 0;
+  if (/[A-Z]/.test(password)) count++;
+  if (/[a-z]/.test(password)) count++;
+  if (/[0-9]/.test(password)) count++;
+  if (/[^A-Za-z0-9]/.test(password)) count++;
+
+  return count >= 3;
 }
