@@ -10,16 +10,19 @@ get_header();
     資料請求ありがとうございます。入力いただいたメールアドレス宛に資料をお送りしておりますので、ご確認お願いいたします。
   </p>
 
+  
   <div class="thanks-buttons">
-    <a href="https://booking.receptionist.jp/500_receptionist/60min" target="_blank" rel="noopener" class="btn-thanks">
-  従業員数<span class="highlight-number">1,000名以下</span>の企業様：<br>
-  RECEPTIONISTオンライン相談を予約する！
-</a>
+    <a href="https://booking.receptionist.jp/500_receptionist/60min"
+       target="_blank" rel="noopener" class="btn-thanks">
+      従業員数<span class="highlight-number">1,000名以下</span>の企業様：<br>
+      RECEPTIONISTオンライン相談を予約する！
+    </a>
 
-<a href="https://booking.receptionist.jp/501_receptionist/60min" target="_blank" rel="noopener" class="btn-thanks blue">
-  従業員数<span class="highlight-number">1,001名以上</span>の企業様：<br>
-  RECEPTIONISTオンライン相談を予約する！
-</a>
+    <a href="https://booking.receptionist.jp/501_receptionist/60min"
+       target="_blank" rel="noopener" class="btn-thanks blue">
+      従業員数<span class="highlight-number">1,001名以上</span>の企業様：<br>
+      RECEPTIONISTオンライン相談を予約する！
+    </a>
   </div>
 
   <!-- ============================= -->
