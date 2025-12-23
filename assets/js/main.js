@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     } catch (err) {
       console.error("フォーム送信エラー:", err);
-      window.location.href = "https://staging.receptionist.jp/thanks/";
+      window.location.href = "https://receptionist.jp/thanks/";
       return;
 
     } finally {
