@@ -62,9 +62,10 @@ add_action('template_redirect', function () {
     '/partnerlist/'    => 'https://receptionist.jp/partner-list/',
     '/downloads/'     => 'https://receptionist.jp/resources/',
     '/column/'        => 'https://receptionist.jp/?post_type=post/',
-
-    // ★ 追記：料金プランページ
     '/plan/'          => 'https://receptionist.jp/resources/price-book/',
+
+    // ★ 追記：ニュース一覧（外部）
+    '/news/'          => 'https://receptionist.co.jp/news/release',
   ];
 
   $request_uri = $_SERVER['REQUEST_URI'] ?? '';
@@ -76,4 +77,3 @@ add_action('template_redirect', function () {
     }
   }
 });
-
