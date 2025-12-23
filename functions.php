@@ -57,23 +57,23 @@ add_filter('document_title_parts', function ($title) {
  * ------------------------------------------------------------- */
 add_action('template_redirect', function () {
   $redirects = [
-    '/document-price/' => 'https://receptionist.jp/resources/price-book/',
-    '/document-200/'   => 'https://receptionist.jp/resources/document-general/',
-    '/partnerlist/'    => 'https://receptionist.jp/partner-list/',
-    '/downloads/'     => 'https://receptionist.jp/resources/',
-    '/column/'        => 'https://receptionist.jp/?post_type=post/',
-    '/plan/'          => 'https://receptionist.jp/resources/price-book/',
-
-    // ★ 追記：ニュース一覧（外部）
-    '/news/'          => 'https://receptionist.co.jp/news/release',
+    '/document-price' => 'https://receptionist.jp/resources/price-book/',
+    '/document-200'   => 'https://receptionist.jp/resources/document-general/',
+    '/partnerlist'    => 'https://receptionist.jp/partner-list/',
+    '/downloads'      => 'https://receptionist.jp/resources/',
+    '/column'         => 'https://receptionist.jp/?post_type=post/',
+    '/plan'           => 'https://receptionist.jp/resources/price-book/',
+    '/news'           => 'https://receptionist.co.jp/news/release',
   ];
 
   $request_uri = $_SERVER['REQUEST_URI'] ?? '';
+  $request_uri = rtrim($request_uri, '/');
 
   foreach ($redirects as $old => $new) {
-    if (stripos($request_uri, $old) === 0) {
+    if ($request_uri === $old || str_starts_with($request_uri, $old . '/')) {
       wp_redirect($new, 301);
       exit;
     }
   }
 });
+
