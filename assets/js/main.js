@@ -123,7 +123,7 @@ function resolveThanksUrl(contactType) {
     return "https://receptionist.jp/register-thanks/";
   }
   if (PARTNER_RESOURCE_TYPES.includes(contactType)) {
-    return "https://receptionist.jp/partner-resource-thanks/";
+    return "https://receptionist.jp/resource-thanks/";
   }
   if (PARTNER_CONTACT_TYPES.includes(contactType)) {
     return "https://receptionist.jp/partner-contact-thanks/";
