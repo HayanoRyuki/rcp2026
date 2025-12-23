@@ -8,6 +8,12 @@
   background: var(--color-bg);
 }
 
+/* partner 資料DLページ：header被り対策 */
+.section-contact-document-partner {
+  padding-top: 140px;
+}
+
+
 .section-contact-document-partner .container_l {
   max-width: 1080px;      /* 中央揃え */
   margin: 0 auto;
