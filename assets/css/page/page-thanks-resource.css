@@ -136,3 +136,8 @@
   color: var(--color-primary);
   margin-bottom: 0.6rem;
 }
+
+/* ▼セクション見出しを中央揃えにする */
+.thanks-links .section-block > p {
+  text-align: center;
+}
