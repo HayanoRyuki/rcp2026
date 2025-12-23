@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // =========================================================
-//  サンクスページ分岐ロジック
+//  サンクスページ分岐ロジック（本番）
 // =========================================================
 const RESOURCE_TYPES = [
   "ms365",
@@ -120,22 +120,23 @@ const PARTNER_CONTACT_TYPES = [
 
 function resolveThanksUrl(contactType) {
   if (REGISTER_TYPES.includes(contactType)) {
-    return "https://staging.receptionist.jp/register-thanks/";
+    return "https://receptionist.jp/register-thanks/";
   }
   if (PARTNER_RESOURCE_TYPES.includes(contactType)) {
-    return "https://staging.receptionist.jp/partner-resource-thanks/";
+    return "https://receptionist.jp/partner-resource-thanks/";
   }
   if (PARTNER_CONTACT_TYPES.includes(contactType)) {
-    return "https://staging.receptionist.jp/partner-contact-thanks/";
+    return "https://receptionist.jp/partner-contact-thanks/";
   }
   if (RESOURCE_TYPES.includes(contactType)) {
-    return "https://staging.receptionist.jp/resource-thanks/";
+    return "https://receptionist.jp/resource-thanks/";
   }
   if (FREE_TYPES.includes(contactType)) {
-    return "https://staging.receptionist.jp/thanks/";
+    return "https://receptionist.jp/thanks/";
   }
-  return "https://staging.receptionist.jp/thanks/";
+  return "https://receptionist.jp/thanks/";
 }
+
 
 
 // =========================================================
