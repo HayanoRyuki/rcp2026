@@ -114,6 +114,19 @@
   color: var(--color-primary-hover);
 }
 
+/* ▼お客様への紹介や協業について▼ の下の余白を詰める */
+.thanks-links .section-block > p {
+  margin-bottom: 0;
+}
+
+/* section 見出し（thanksページ専用） */
+.thanks-links .section-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 0.6rem;
+}
+
 /* ========================================
    Responsive
 ======================================== */
