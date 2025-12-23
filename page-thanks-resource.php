@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <main class="thanks-page">
-  <h1 class="thanks-title">資料をダウンロードいただき、ありがとうございます。</h1>
+  <h1 class="thanks-title">資料をダウンロードいただき、<br>ありがとうございます。</h1>
 
   <p class="thanks-lead">
     資料請求ありがとうございます。入力いただいたメールアドレス宛に資料をお送りしておりますので、ご確認お願いいたします。
