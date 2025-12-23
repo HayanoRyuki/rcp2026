@@ -145,7 +145,7 @@ function resolveThanksUrl(contactType) {
 document.addEventListener('DOMContentLoaded', function () {
 
   const ENDPOINT =
-    "https://t8k8whvjnj.execute-api.ap-northeast-1.amazonaws.com/test/";
+    "https://zng21zoto0.execute-api.ap-northeast-1.amazonaws.com/production/contacts";
 
   async function handleFormSubmit(e) {
     e.preventDefault();
