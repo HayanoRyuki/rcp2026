@@ -44,15 +44,18 @@ get_header();
       </div>
     </div>
 
-    <!-- パートナー関連 -->
+        <!-- パートナー関連 -->
+
     <div class="section-block">
-      <p><strong>▼お客様への紹介や協業について▼</strong></p>
-      <div class="link-list">
-        <a href="/partner-contact-select/" target="_blank" rel="noopener">
-          パートナーお問い合わせはこちら
-        </a>
-      </div>
-    </div>
+  <div class="section-title">
+    ▼お客様への紹介や協業について▼
+  </div>
+  <div class="link-list">
+    <a href="/partner-contact-select/" target="_blank" rel="noopener">
+      パートナーお問い合わせはこちら
+    </a>
+  </div>
+</div> 
 
   </div><!-- /.thanks-links -->
 
