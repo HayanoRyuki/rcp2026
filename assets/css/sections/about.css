@@ -57,6 +57,15 @@
   margin-bottom: 1rem;
 }
 
+/* PCでは1行に固定（安全版） */
+@media screen and (min-width: 1024px) {
+  .about-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 .about-lead {
   background-color: var(--color-white);
   color: var(--color-primary-hover);
