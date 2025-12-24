@@ -61,20 +61,13 @@
   color: var(--color-white);
 }
 
-/* タイトル */
+/* タイトル（可変サイズ・はみ出し防止） */
 .about-title {
-  font-size: 32px;
   font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-/* PCでは1行固定（安全版） */
-@media screen and (min-width: 1024px) {
-  .about-title {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  font-size: 28px;          /* ← 32 → 28 に */
+  line-height: 1.35;
+  letter-spacing: -0.02em; /* ← 日本語で効く最小単位 */
+  margin-bottom: 0.75rem;
 }
 
 /* リード */
