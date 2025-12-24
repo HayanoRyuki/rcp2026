@@ -77,3 +77,16 @@ add_action('template_redirect', function () {
   }
 });
 
+/* -------------------------------------------------------------
+ * /cases → /case リダイレクト
+ * ------------------------------------------------------------- */
+add_action('template_redirect', function () {
+    $request_uri = $_SERVER['REQUEST_URI'] ?? '';
+    $request_uri = rtrim($request_uri, '/');
+
+    if ($request_uri === '/cases' || str_starts_with($request_uri, '/cases/')) {
+        $new_uri = preg_replace('#^/cases#', '/case', $request_uri);
+        wp_redirect($new_uri . '/', 301);
+        exit;
+    }
+});
