@@ -116,6 +116,7 @@ const PARTNER_RESOURCE_TYPES = [
 
 const PARTNER_CONTACT_TYPES = [
   "agency",
+  "new_agency",
 ];
 
 function resolveThanksUrl(contactType) {
@@ -123,7 +124,7 @@ function resolveThanksUrl(contactType) {
     return "https://receptionist.jp/register-thanks/";
   }
   if (PARTNER_RESOURCE_TYPES.includes(contactType)) {
-    return "https://receptionist.jp/resource-thanks/";
+    return "https://receptionist.jp/partner-resource-thanks/";
   }
   if (PARTNER_CONTACT_TYPES.includes(contactType)) {
     return "https://receptionist.jp/partner-contact-thanks/";
@@ -288,7 +289,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     } catch (err) {
       console.error("フォーム送信エラー:", err);
-      window.location.href = "https://receptionist.jp/thanks/";
+
+      try {
+        const fd = new FormData(form);
+        const contactType = fd.get("contact_type") || "";
+        const thanksUrl = resolveThanksUrl(contactType);
+        window.location.href = thanksUrl;
+      } catch (_) {
+        window.location.href = "https://receptionist.jp/thanks/";
+      }
+
       return;
 
     } finally {
@@ -298,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.textContent = originalText;
       }
     }
-  }
+    }
 
   function bindRcpForms() {
     const forms = document.querySelectorAll("form.js-rcp-contact-form");
