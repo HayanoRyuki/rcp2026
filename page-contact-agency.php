@@ -66,7 +66,7 @@ get_header();
         <input type="text" name="hp" tabindex="-1" autocomplete="off" class="contact-partner__honeypot">
 
         <!-- 種別 -->
-        <input type="hidden" name="contact_type" value="agency">
+        <input type="hidden" name="contact_type" value="new_agency">
 
         <div class="contact-partner__actions">
           <button type="submit" class="contact-partner__button">送信する</button>
