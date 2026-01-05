@@ -53,9 +53,10 @@ add_filter('document_title_parts', function ($title) {
 
 
 /* -------------------------------------------------------------
- *  旧URL → 新URL のリダイレクト（WordPress内のみ）
+ *  旧URL → 新URL のリダイレクト
  * ------------------------------------------------------------- */
 add_action('template_redirect', function () {
+
   $redirects = [
     '/document-price' => 'https://receptionist.jp/resources/price-book/',
     '/document-200'   => 'https://receptionist.jp/resources/document-general/',
@@ -64,9 +65,11 @@ add_action('template_redirect', function () {
     '/column'         => 'https://receptionist.jp/?post_type=post/',
     '/plan'           => 'https://receptionist.jp/resources/price-book/',
     '/news'           => 'https://receptionist.co.jp/news/release',
+    '/company'        => 'https://receptionist.co.jp/about',
   ];
 
-  $request_uri = $_SERVER['REQUEST_URI'] ?? '';
+  // リクエストURI取得（クエリ除外）
+  $request_uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
   $request_uri = rtrim($request_uri, '/');
 
   foreach ($redirects as $old => $new) {
@@ -76,6 +79,7 @@ add_action('template_redirect', function () {
     }
   }
 });
+
 
 /* -------------------------------------------------------------
  * /cases → /case リダイレクト
