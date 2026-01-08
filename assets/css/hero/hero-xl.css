@@ -58,8 +58,9 @@
   }
 
   .hero-title-box {
-    max-width: 560px;
-  }
+  max-width: 560px;
+  position: relative; /* ← これを追加 */
+}
 
   .hero-title {
     position: relative;
@@ -69,7 +70,12 @@
     font-weight: 700;
     color: #2B2B2B;
     margin-bottom: 1rem;
-  }
+  background: linear-gradient(
+    transparent 60%,
+    #ffffff 60%
+  );
+}
+
 
   /* 白アンダーライン */
   .hero-title::after {
@@ -294,4 +300,34 @@
 .kv-form-group select {
   color: var(--color-text);
   font-size: 0.95rem;
+}
+
+.hero-badge {
+  position: absolute;
+  top: 40px;
+  right: -40px; /* 今の見た目に合わせて微調整 */
+  width: 120px;
+  height: 120px;
+  border: 2px solid #222;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-badge .badge-main {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #222;
+}
+
+.hero-badge .badge-note {
+  position: absolute;
+  bottom: 10px;
+  right: 18px;
+  font-size: 0.7rem;
+  color: #222;
 }

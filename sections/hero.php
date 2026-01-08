@@ -12,6 +12,11 @@
       シンプルな受付へ
     </h1>
 
+    <div class="hero-badge">
+  <span class="badge-main">シェア<br>No.1</span>
+  <span class="badge-note">※</span>
+</div>
+
     <p class="hero-lead">
       内線対応や来客取次の手間をなくし、<br>
       受付業務をもっとスムーズに。
