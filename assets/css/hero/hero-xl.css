@@ -29,6 +29,7 @@
     display: flex;
     align-items: center;
     margin-top: 60px;
+    margin-bottom: auto;
     background-color: #EAF6F9;
   }
 
