@@ -3,6 +3,7 @@
 ========================================================= */
 @media (max-width: 767px) {
 
+  /* ---------- 上部余白 ---------- */
   body.top,
   body.home,
   main.site-main.front-page {
@@ -10,289 +11,240 @@
     margin-top: 0 !important;
   }
 
-  body.page-template-front-page .site-header {
-    padding-bottom: 0 !important;
-  }
-
+  body.page-template-front-page .site-header,
   .site-header {
     margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   body .section-hero {
     padding: 0;
   }
 
+  /* ---------- HERO本体 ---------- */
   .hero.page-title.wrapper {
-    margin-top: 65px;
-    padding-top: 0;
     width: 100%;
     min-height: auto;
-    display: flex;
-    align-items: center;
-    background-color: var(--color-primary); /* #00B5E2 */
-    margin-bottom: 0 !important;
+    padding: 48px 0 32px;
+    background-color: #EAF6F9;
   }
 
   .hero-body {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-    margin-bottom: 0 !important;
-  }
-
-  .container_l.adView {
-    width: 100%;
-    padding: 0;
-    background-color: var(--color-primary); /* #00B5E2 */
-  }
-
-  .mv_txt-box {
-    margin-bottom: 16px;
-    text-align: center;
-    position: relative;
-    z-index: 3;
-  }
-
-  .hero-title-img {
-    width: 100%;
-    height: auto;
-    display: block;
+    max-width: 100%;
     margin: 0 auto;
   }
 
-  .hero-user-image {
-    background-image: url("../../img/hero/hero-user-sm.png");
-    width: 100%;
-    max-width: 700px;
-    aspect-ratio: 700 / 400;
-    background-size: contain;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    margin: 1.5rem auto 0;
-    position: static;
-    left: auto;
-    transform: none;
-  }
-
-  .container_r {
-    width: 100%;
-    max-width: 100%;
-    background-color: var(--color-bg-alt);
-    padding: 1.5rem;
-    margin: 2rem 0 0;
-    box-sizing: border-box;
-    color: var(--color-text);
-  }
-
-  .download-form {
-    width: 100% !important;
-    max-width: 100% !important;
-    border-radius: 8px;
-    padding: 0 !important;
-  }
-
-  .kv-form {
-    background-color: var(--color-white);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    padding: 1rem;
+  /* =========================================================
+     LEFT COLUMN
+  ========================================================= */
+  .container_l.adView {
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
   }
 
-  .kv-form-wrap > div,
-  .kv-form-group {
-    margin-bottom: 0.8rem;
+  .hero-title-box {
     position: relative;
+    margin-left: 0;
+    max-width: 100%;
+    text-align: left;
   }
 
-  /* チェックボックス＋文言 */
-  .kv-form-agree {
-    font-size: 0.75rem;
-    line-height: 1.4;
-    color: var(--color-text);
-    opacity: 0.8;
-    display: flex;
-    align-items: flex-start;
-    gap: 6px;
-    margin: 0.5rem 0;
+  .hero-title {
+    display: inline;
+    font-size: 1.9rem;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #2B2B2B;
+
+    /* 行ごと白アンダーライン */
+    background-image: linear-gradient(
+      transparent 65%,
+      #ffffff 65%
+    );
+    background-size: 100% 1.4em;
+    background-repeat: repeat-y;
   }
 
-  .kv-form-agree a {
-    text-decoration: underline;
-    color: var(--color-link);
+  .hero-title .em {
+    color: #4fb3d6;
+    font-size: 1.1em;
   }
 
- /* ダウンロードボタン */
-.btn.btn_dl {
-  display: block;
-  width: 100%;
-  height: 52px;
-  padding: 12px;
-  background-color: var(--color-danger); /* ← 赤系に変更 */
-  color: var(--color-white);
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-align: center;
-  border: none;
-  border-radius: 6px;
-  margin: 1.5rem 0 2rem;
-  transition: background-color 0.3s ease; /* ← opacity ではなく色変化 */
-}
-
-.btn.btn_dl:hover {
-  cursor: pointer;
-  background-color: var(--color-danger-hover); /* ← hoverも赤系 */
-}
-
-
-  /* アイコン＋テキスト */
-  .document-guidance-box {
+  /* ---------- BADGE ---------- */
+  .hero-badge {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 72px;
+    height: 72px;
+    border: 2px solid #222;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 1.5rem;
+    justify-content: center;
+    text-align: center;
   }
 
-  .document-guidance-box img {
+  .hero-badge .badge-main {
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #222;
+  }
+
+  .hero-badge .badge-note {
+    position: absolute;
+    bottom: 28px;
+    right: 18px;
+    font-size: 0.55rem;
+    color: #222;
+  }
+
+  .hero-lead {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .hero-benefits {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .hero-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.35em 0.8em;
+    background: #4fb3d6;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .hero-benefits li::before {
+    content: "→";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 0.9rem;
     flex-shrink: 0;
   }
 
-  .document-guidance-text {
-    font-size: 1.2rem;
-    text-align: center;
+  .hero-user-image {
+    width: 100%;
+    height: 220px;
+    margin-top: 8px;
+    background: url("../../img/hero/hero-user-xl.png") center bottom / contain no-repeat;
+  }
+
+  /* =========================================================
+     RIGHT COLUMN（FORM）
+  ========================================================= */
+  .container_r {
+    margin: 20px 16px 0;
+    padding: 20px;
+    background: #4FA3BF;
+    border-radius: 12px;
+  }
+
+  .kv-form {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .document-guidance-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1rem;
     font-weight: 700;
-    color: var(--color-text);
-    line-height: 1.4;
+    margin-bottom: 12px;
+    color: #ffffff;
+  }
+
+  /* =========================================================
+     FORM：インナーラベル型（SM）
+  ========================================================= */
+  .kv-form-group {
+    position: relative;
+    margin-bottom: 0.65rem;
+  }
+
+  .kv-form-group .floating-label {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #555;
+    pointer-events: none;
+  }
+
+  .kv-form-group input,
+  .kv-form-group select {
+    width: 100%;
+    height: 48px;
+    padding: 22px 10px 6px;
+    font-size: 0.85rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  .kv-form-group input::placeholder,
+  .kv-form-group select:invalid {
+    color: #aaa;
+  }
+
+  .kv-form-agree {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #ffffff;
+    opacity: 0.85;
+  }
+
+  .kv-form-agree a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  .btn.btn_dl {
+    width: 100%;
+    height: 48px;
+    margin-top: 1rem;
+    background: var(--color-danger);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    border: none;
+  }
+
+  .btn.btn_dl:hover {
+    background: var(--color-danger-hover);
   }
 }
-
-/* =========================================================
-   FORM ELEMENTS（共通 / sm含む）
-========================================================= */
-.kv-form-group {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.kv-form-group input,
-.kv-form-group select {
-  width: 100%;
-  height: 44px;
-  padding: 10px 12px;
-  font-size: 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  background-color: var(--color-white);
-  color: var(--color-text);
-  box-sizing: border-box;
-  appearance: auto;
-}
-
-.kv-form-group select option[value=""] {
-  color: #aaa;
-}
-
-.floating-label {
-  position: absolute;
-  top: -10px;
-  left: 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--color-text);
-  background: var(--color-white);
-  padding: 0 6px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.kv-form-group input::placeholder,
-.kv-form-group select::placeholder {
-  color: #888;
-  font-size: 0.95rem;
-}
-
-.asterisk {
-  color: var(--color-accent);
-  font-size: 11px;
-  margin-left: 4px;
-  vertical-align: top;
-}
-
-.kv-form-group.uk-flex {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.kv-form-group.uk-flex span {
-  flex: 1;
-  min-width: 100px;
-}
-
-.hero-note {
-  font-size: 0.75rem;
-  color: var(--color-white);
-  line-height: 1;
-  margin-top: 1rem;   /* ← ここが大問題！ */
-  padding-right: 1rem;
-  text-align: left;
-}
-
-/* プレースホルダー */
-.kv-form-group input::placeholder,
-.kv-form-group textarea::placeholder {
-  font-size: 0.85rem;
-  color: #888;
-  opacity: 1;
-}
-
-/* select 未選択・選択後 */
-.kv-form-group select:invalid {
-  color: #888;
-  font-size: 0.85rem;
-}
-
-.kv-form-group select {
-  color: var(--color-text);
-  font-size: 0.95rem;
-}
-
-/* 資料案内ボックス余白 */
-.document-guidance-box {
-  margin-bottom: 1.5rem;
-}
-
-/* ===== チェックボックス横並び強制 ===== */
-.download-form .kv-form-agree {
-  display: flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  flex-wrap: nowrap !important;
-}
-
-.download-form .kv-form-agree input[type="checkbox"] {
-  width: auto !important;
-  height: auto !important;
-  margin: 0 !important;
-  flex: 0 0 auto !important;
-}
-
-.download-form .kv-form-agree label {
-  display: inline !important;
-  width: auto !important;
-  flex: 0 1 auto !important;
-  white-space: normal;
-}
-
-.download-form .kv-form-agree a {
-  display: inline !important;
-  white-space: nowrap !important;
-  text-decoration: underline;
-}
-

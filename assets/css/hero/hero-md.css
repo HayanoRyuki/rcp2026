@@ -3,6 +3,7 @@
 ========================================================= */
 @media (min-width: 768px) and (max-width: 1023px) {
 
+  /* ---------- 上部余白 ---------- */
   body.top,
   body.home,
   main.site-main.front-page {
@@ -10,251 +11,247 @@
     margin-top: 0 !important;
   }
 
-  body.page-template-front-page .site-header {
-    padding-bottom: 0 !important;
-  }
-
+  body.page-template-front-page .site-header,
   .site-header {
     margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   body .section-hero {
     padding: 0;
   }
 
+  /* ---------- HERO本体 ---------- */
   .hero.page-title.wrapper {
-    margin-top: 65px;
-    padding-top: 0;
     width: 100%;
-    min-height: auto;
+    height: 640px;
+    min-height: 640px;
     display: flex;
     align-items: center;
-    background-color: var(--color-primary); /* #00B5E2 */
-    margin-bottom: 0 !important;
+    margin-top: 56px;
+    background-color: #EAF6F9;
   }
 
   .hero-body {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
     width: 100%;
-    padding: 1.5rem;
-    box-sizing: border-box;
-    margin-bottom: 0 !important;
-  }
-
-  .container_l.adView {
-    background-color: var(--color-primary); /* #00B5E2 */
-    overflow-x: visible;
+    max-width: 960px;
     margin: 0 auto;
-  }
-
-  .mv_txt-box {
-    margin-bottom: 16px;
-    text-align: center;
-    position: relative;
-    z-index: 3;
-  }
-
-  .hero-title-img {
-    width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .hero-user-image {
-    background-image: url("../../img/hero/hero-user-md.png");
-    width: 100%;
-    height: 450px;
-    background-size: contain;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    position: relative;
-    margin-top: 10px;
-  }
-
-  .container_r {
-    width: 100%;
-    max-width: 660px;
-    background-color: var(--color-white);
-    padding: 2rem;
-    margin: 2rem 0 0;
-    box-sizing: border-box;
-    color: var(--color-text);
-  }
-
-  .kv-form {
-    background-color: var(--color-white);
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-  }
-
-  .kv-form-wrap > div,
-  .kv-form-group {
-    margin-bottom: 1rem;
-    position: relative;
-  }
-
-  .kv-form-agree {
-    font-size: 0.8rem;
-    line-height: 1.5;
-    color: var(--color-text);
-    opacity: 0.75;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    margin: 0.5rem 0;
-  }
-
-  .kv-form-agree input[type="checkbox"] {
-    margin-right: 0.5rem;
-    margin-top: 4px;
-  }
-
-  .kv-form-agree a {
-    text-decoration: underline;
-    color: var(--color-link);
-  }
-
-  /* ダウンロードボタン */
-  .btn.btn_dl {
-    display: block;
-    width: 100%;
-    height: 52px;
-    padding: 12px;
-    background-color: var(--color-danger); /* ← 赤系に変更 */
-    color: var(--color-white);
-    font-size: 1.15rem;
-    font-weight: 700;
-    text-align: center;
-    border: none;
-    border-radius: 6px;
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
-    transition: background-color 0.3s ease; /* ← opacity ではなく背景色変化 */
-  }
-
-  .btn.btn_dl:hover {
-    cursor: pointer;
-    background-color: var(--color-danger-hover); /* ← 赤系hoverに変更 */
   }
 
   /* =========================================================
-     FORM ELEMENTS（共通 / md含む）
+     LEFT COLUMN
   ========================================================= */
+  .container_l.adView {
+    padding: 48px 32px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-title-box {
+    max-width: 100%;
+    margin-left: 0;
+    position: relative;
+  }
+
+  .hero-title {
+    display: inline;
+    font-size: 2.4rem;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #2B2B2B;
+
+    background-image: linear-gradient(
+      transparent 65%,
+      #ffffff 65%
+    );
+    background-size: 100% 1.4em;
+    background-repeat: repeat-y;
+  }
+
+  .hero-title .em {
+    color: #4fb3d6;
+    font-size: 1.1em;
+  }
+
+  .hero-lead {
+    margin-top: 16px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .hero-benefits {
+    list-style: none;
+    margin: 28px 0 0;
+    padding: 0;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.35em 0.9em;
+    background: #4fb3d6;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .hero-benefits li::before {
+    content: "→";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .hero-user-image {
+    width: 100%;
+    height: 260px;
+    margin-top: -24px;
+    background: url("../../img/hero/hero-user-xl.png") center bottom / contain no-repeat;
+  }
+
+  /* ---------- BADGE ---------- */
+  .hero-badge {
+    position: absolute;
+    top: -12px;
+    right: 0;
+    width: 96px;
+    height: 96px;
+    border: 2px solid #222;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-badge .badge-main {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #222;
+  }
+
+  .hero-badge .badge-note {
+    position: absolute;
+    bottom: 40px;
+    right: 24px;
+    font-size: 0.65rem;
+    color: #222;
+  }
+
+  /* =========================================================
+     RIGHT COLUMN（FORM）
+  ========================================================= */
+  .container_r {
+    margin: 24px auto 0;
+    width: calc(100% - 64px);
+    max-width: 560px;
+    background: #4FA3BF;
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  .kv-form {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .document-guidance-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ffffff;
+  }
+}
+
+/* =========================================================
+   FORM：インナーラベル型（MD）
+========================================================= */
+@media (min-width: 768px) and (max-width: 1023px) {
+
   .kv-form-group {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 0.75rem;
+  }
+
+  .kv-form-group .floating-label {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #555;
+    pointer-events: none;
   }
 
   .kv-form-group input,
   .kv-form-group select {
     width: 100%;
-    height: 44px;
-    padding: 10px 12px;
-    font-size: 1rem;
+    height: 52px;
+    padding: 24px 12px 8px;
+    font-size: 0.9rem;
     border: 1px solid var(--color-border);
     border-radius: 6px;
-    background-color: var(--color-white);
-    color: var(--color-text);
-    box-sizing: border-box;
-    appearance: auto;
+    background: #fff;
   }
 
-  .kv-form-group select option[value=""] {
+  .kv-form-group input::placeholder,
+  .kv-form-group select:invalid {
     color: #aaa;
   }
 
-  .floating-label {
-    position: absolute;
-    top: -10px;
-    left: 12px;
-    font-size: 0.75rem;
+  .kv-form-agree {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #ffffff;
+    opacity: 0.85;
+  }
+
+  .kv-form-agree a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  .btn.btn_dl {
+    width: 100%;
+    height: 50px;
+    margin-top: 1.2rem;
+    background: var(--color-danger);
+    color: #fff;
+    font-size: 1.05rem;
     font-weight: 700;
-    color: var(--color-text);
-    background: var(--color-white);
-    padding: 0 6px;
-    pointer-events: none;
-    z-index: 1;
+    border-radius: 6px;
+    border: none;
   }
 
-  .kv-form-group input::placeholder,
-  .kv-form-group select::placeholder {
-    color: #888;
-    font-size: 0.95rem;
+  .btn.btn_dl:hover {
+    background: var(--color-danger-hover);
   }
-
-  .kv-form-group.uk-flex {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .kv-form-group.uk-flex span {
-    flex: 1;
-    min-width: 100px;
-  }
-
-  .asterisk {
-    color: var(--color-accent);
-    font-size: 11px;
-    margin-left: 4px;
-    vertical-align: top;
-  }
-
-  .hero-note {
-  font-size: 0.95rem;
-  color: var(--color-white);
-  line-height: 1.2;
-  margin-top: 1rem;   /* ← これが広すぎる原因 */
-  padding-right: 1rem;
-  text-align: left;
 }
-
-
-  /* プレースホルダー */
-  .kv-form-group input::placeholder,
-  .kv-form-group textarea::placeholder {
-    font-size: 0.85rem;
-    color: #888;
-    opacity: 1;
-  }
-
-  /* select 未選択 / 選択後 */
-  .kv-form-group select:invalid {
-    color: #888;
-    font-size: 0.85rem;
-  }
-
-  .kv-form-group select {
-    color: var(--color-text);
-    font-size: 0.95rem;
-  }
-
-  /* 資料案内ボックス */
-  .document-guidance-box {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 1.5rem;
-    color: var(--color-text);
-  }
-
-  .document-guidance-box img {
-    flex: 0 0 auto;
-    width: 30px;
-    height: 30px;
-  }
-
-  .document-guidance-text {
-    margin: 0;
-    line-height: 1.4;
-    /* white-space: nowrap;  ← 必要なら再度有効化 */
-  }
-
-} /* ← ★ここで @media を閉じる */
