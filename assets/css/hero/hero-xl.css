@@ -66,6 +66,7 @@
   line-height: 1.25;
   font-weight: 700;
   color: #2B2B2B;
+  letter-spacing: 0.2em;
 
   /* 行ごとに白アンダーライン */
   background-image: linear-gradient(
@@ -78,8 +79,9 @@
 
 
   .hero-title .em {
-    color: #4fb3d6;
-  }
+  color: #4fb3d6;
+  font-size: 1.1em;
+}
 
   .hero-lead {
     font-size: 1.1rem;
