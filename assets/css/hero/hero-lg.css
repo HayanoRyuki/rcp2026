@@ -1,8 +1,9 @@
 /* =========================================================
-   HERO SECTION（1024px〜1279px対応 / root統一版）
+   HERO SECTION：PC（1280px以上）
 ========================================================= */
-@media (min-width: 1024px) and (max-width: 1279px) {
+@media (min-width: 1280px) {
 
+  /* ---------- 上部余白 ---------- */
   body.top,
   body.home,
   main.site-main.front-page {
@@ -10,322 +11,278 @@
     margin-top: 0 !important;
   }
 
-  body.page-template-front-page .site-header {
-    padding-bottom: 0 !important;
-  }
-
+  body.page-template-front-page .site-header,
   .site-header {
     margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   body .section-hero {
     padding: 0;
   }
 
+  /* ---------- HERO本体 ---------- */
   .hero.page-title.wrapper {
     width: 100%;
-    min-height: 650px;
+      height: 700px;
+  min-height: 700px;
     display: flex;
     align-items: center;
-    margin-top: 70px;
-    padding-top: 0;
-  background-color: #EAF6F9;
-    margin-bottom: 0 !important;
+    margin-top: 60px;
+    margin-bottom: auto;
+    background-color: #EAF6F9;
   }
 
   .hero-body {
+      height: 100%;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    justify-content: space-between;
+    align-items: stretch;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
-    margin-bottom: 0 !important;
-    box-sizing: border-box;
   }
 
+  /* =========================================================
+     LEFT COLUMN
+  ========================================================= */
   .container_l.adView {
-    background-color: transparent;
+    background: transparent;
+    padding: 60px 0px 0 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   .hero-title-box {
-    position: relative;
-    z-index: 3;
+  text-align: left;
+  max-width: 560px;
+  position: relative;
+  margin-left: 190px;
+}
+
+  .hero-title {
+  display: inline;
+  font-size: 3rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #2B2B2B;
+  letter-spacing: 0.2em;
+
+  /* 行ごとに白アンダーライン */
+  background-image: linear-gradient(
+    transparent 65%,
+    #ffffff 65%
+  );
+  background-size: 100% 1.4em;
+  background-repeat: repeat-y;
+}
+
+
+  .hero-title .em {
+  color: #4fb3d6;
+  font-size: 1.1em;
+}
+
+  .hero-lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1.75rem;
   }
 
-  
+  .hero-benefits {
+    list-style: none;
+    padding: 38px 0px;
+    margin: 0;
+    max-width: 344px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    align-items: flex-start;   /* ← flexでも左寄せ */
+    text-align: left;
+  }
+
+  .hero-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+
+    width: 100%;        /* ← ★ これが肝 */
+    box-sizing: border-box;
+
+    padding: 0.2em 0.8em;
+    background: #4fb3d6;
+    color: #fff;
+    border-radius: 999px;
+
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /* 丸囲み → アイコン */
+  .hero-benefits li::before {
+    content: "→";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
 
   .hero-user-image {
     width: 110%;
-    height: 450px;
-    background-image: url("../../img/hero/hero-user-lg.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    margin-top: -120px;
-    position: relative;
-    z-index: 1;
+    height: 465px;
+    margin-top: -177px;
+    background: url("../../img/hero/hero-user-xl.png") center bottom / contain no-repeat;
   }
 
+  /* ---------- BADGE ---------- */
+  .hero-badge {
+    position: absolute;
+    top: 20px;
+    right: -80px;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #222;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-badge .badge-main {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #222;
+  }
+
+  .hero-badge .badge-note {
+    position: absolute;
+    bottom: 50px;
+    right: 32px;
+    font-size: 0.7rem;
+    line-height: 1;
+    color: #222;
+  }
+
+  /* =========================================================
+     RIGHT COLUMN（FORM）
+  ========================================================= */
   .container_r {
-    width: 35%;
-    max-width: 450px;
-    min-width: 420px;
-    background-color: #4A9FBE; /* 指定に近い濃ブルー */
+    width: 40%;
+    min-width: 490px;
+    max-width: 490px;
+    background: #4FA3BF;
     padding: 30px;
-    margin-left: 30px;
-    box-sizing: border-box;
-    color: var(--color-text);
+    margin-left: auto;
+    margin-right: -80px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
   }
 
   .kv-form {
-    background-color: var(--color-white);
+    background: #fff;
     border-radius: 10px;
     padding: 0.5em;
-    height: 650px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-sizing: border-box;
   }
-
-  .kv-form-wrap > div,
-  .kv-form-group {
-    margin-bottom: 0.8rem;
-    position: relative;
-  }
-
-  .kv-form-group.uk-flex {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .kv-form-group.uk-flex span {
-    flex: 1;
-    min-width: 100px;
-  }
-
 
   .document-guidance-box {
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
+    gap: 8px;
+    font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: var(--color-text);
+    color: #ffffff;
   }
 }
 
 /* =========================================================
-   HERO LEFT COLUMN（lg差し替え）
+   FORM：インナーラベル型
 ========================================================= */
-@media (min-width: 1024px) and (max-width: 1279px) {
-
-  /* 左カラム全体 */
-  .container_l.adView {
-    padding-top: 40px;
-    padding-right: 40px;
-    background-color: var(--color-primary);
-  }
-
-  /* タイトルブロック */
-  .hero-title-box {
-    z-index: 3;
-    max-width: 520px;
-  }
-
-  /* メインコピー */
-  .hero-title {
-    font-size: 2.6rem;
-    line-height: 1.25;
-    font-weight: 700;
-    color: var(--color-white);
-    margin-bottom: 1rem;
-  }
-
-  .hero-title .em {
-    color: #bfefff; /* 仮：ブランド寄せは後で */
-  }
-
-  /* リード文 */
-  .hero-lead {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 1.5rem;
-  }
-
-  /* ベネフィット（ボタンUI化） */
-  .hero-benefits {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    max-width: 360px;
-  }
-
-  .hero-benefits li {
-    background: rgba(255, 255, 255, 0.18);
-    color: #fff;
-    padding: 0.65em 1.2em;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    backdrop-filter: blur(2px);
-  }
-
+.kv-form-group {
+  position: relative;
+  margin-bottom: 0.8rem;
 }
 
-
-/* =========================================================
-   FORM ELEMENTS（共通）
-========================================================= */
-.kv-form-group input,
-.kv-form-group select {
-  width: 100%;
-  height: 54px;
-  padding: 10px 12px;
-  font-size: 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  background-color: var(--color-white);
-  color: var(--color-text);
-  box-sizing: border-box;
-  appearance: auto;
-}
-
-.kv-form-group select option[value=""] {
-  color: #aaa;
-}
-
-.floating-label {
+.kv-form-group .floating-label {
   position: absolute;
-  top: -10px;
+  top: 6px;
   left: 12px;
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color-text);
-  background: var(--color-white);
-  padding: 0 6px;
+  color: #555;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
+}
+
+.kv-form-group input,
+.kv-form-group select {
+  width: 100%;
+  height: 55px;
+  padding: 26px 12px 8px;
+  font-size: 0.95rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: #fff;
 }
 
 .kv-form-group input::placeholder,
-.kv-form-group select::placeholder,
-.kv-form-group select,
-.kv-form-group select option {
-  font-size: 0.9rem;
-  color: #888;
-}
-
 .kv-form-group select:invalid {
-  color: #888;
+  color: #aaa;
 }
 
+/* ---------- 氏名2カラム調整 ---------- */
+.kv-form-group > div[style*="display: flex"] input {
+  padding-top: 22px;
+}
+
+/* ---------- 同意 ---------- */
 .kv-form-agree {
   display: flex;
   align-items: flex-start;
-  flex-wrap: wrap;
-  font-size: 0.75rem;
-  color: var(--color-text);
-  opacity: 0.7;
-  margin: 0.5rem 0;
-}
-
-.kv-form-agree input[type="checkbox"] {
-  margin-right: 0.5rem;
-  margin-top: 4px;
-}
-
-.kv-form-agree label {
-  flex: 1;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  gap: 6px;
+  color: #ffffff;
 }
 
 .kv-form-agree a {
-  text-decoration: underline;
-  color: var(--color-link);
-  word-break: break-word;
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+.kv-form-agree input {
+  margin-top: 4px;
 }
 
-/* ===== ダウンロードボタン ===== */
+/* ---------- ボタン ---------- */
 .btn.btn_dl {
-  display: block;
   width: 100%;
   height: 52px;
-  padding: 12px;
   margin-top: 1.5rem;
-  margin-bottom: 2rem;
-  background-color: var(--color-danger); /* ← 赤系に変更 */
-  color: var(--color-white);
+  background: var(--color-danger);
+  color: #fff;
   font-size: 1.15rem;
   font-weight: 700;
-  text-align: center;
-  border: none;
   border-radius: 6px;
-  transition: background-color 0.3s ease; /* ← opacity ではなく色変化に */
+  border: none;
 }
 
 .btn.btn_dl:hover {
-  background-color: var(--color-danger-hover); /* ← ホバー時も赤系 */
-}
-
-
-/* =========================================================
-   LAYOUT FIX（等高・整列調整）
-========================================================= */
-.download-form {
-  width: 100%;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border-radius: 0 !important;
-}
-
-.hero-body {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.container_l.adView,
-.container_r {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.container_r {
-  width: 45%;
-  max-width: 490px;
-  background-color: var(--color-white);
-  padding: 30px;
-  box-sizing: border-box;
-  color: var(--color-text);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-left: auto;
-  margin-right: 0;
-}
-
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .kv-form-agree label {
-    flex: 0 1 auto !important;
-    margin-left: 0 !important;
-    text-align: left !important;
-  }
+  background: var(--color-danger-hover);
 }
