@@ -54,6 +54,7 @@
   }
 
   .hero-title-box {
+      text-align: left;
     max-width: 560px;
     position: relative;
   }
@@ -98,21 +99,43 @@
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
+    align-items: flex-start;   /* ← flexでも左寄せ */
+    text-align: left;
   }
 
   .hero-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.9em 1.6em;
     background: #4fb3d6;
     color: #fff;
-    padding: 0.7em 1.4em;
     border-radius: 999px;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /* 丸囲み → アイコン */
+  .hero-benefits li::before {
+    content: "→";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    flex-shrink: 0;
   }
 
   .hero-user-image {
     width: 110%;
-    height: 450px;
-    margin-top: -40px;
+    height: 465px;
+    margin-top: -177px;
     background: url("../../img/hero/hero-user-xl.png") center bottom / contain no-repeat;
   }
 
@@ -140,8 +163,8 @@
 
   .hero-badge .badge-note {
     position: absolute;
-    bottom: 8px;
-    right: 12px;
+    bottom: 50px;
+    right: 32px;
     font-size: 0.7rem;
     line-height: 1;
     color: #222;
