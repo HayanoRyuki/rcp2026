@@ -201,9 +201,10 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    color: #ffffff;
   }
 }
 
@@ -254,7 +255,13 @@
   font-size: 0.95rem;
   opacity: 0.8;
   gap: 6px;
+  color: #ffffff;
 }
+
+.kv-form-agree a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
 
 .kv-form-agree input {
   margin-top: 4px;
