@@ -6,18 +6,26 @@
 <div class="container_l adView">
 
   <div class="hero-title-box">
-    <h1>
-      <img class="hero-title-img"
-           src="<?php echo get_template_directory_uri(); ?>/assets/img/hero/RECEPTIONIST_LP_h1_4million_trans.png"
-           alt="年間400万人が利用・導入法人No.1 クラウド受付システム">
+
+    <h1 class="hero-title">
+      もっと<span class="em">ラク</span>で、<br>
+      シンプルな受付へ
     </h1>
-  </div>
+
+    <p class="hero-lead">
+      内線対応や来客取次の手間をなくし、<br>
+      受付業務をもっとスムーズに。
+    </p>
+
+    <ul class="hero-benefits">
+      <li>内線電話の取次から解放</li>
+      <li>離席中でも来客にすぐ気付ける</li>
+      <li>誰でも使いやすい画面設計</li>
+    </ul>
+
+  </div><!-- /.hero-title-box -->
 
   <div class="hero-user-image"></div>
-
-  <p class="hero-note">※1 2024年RECEPTIONIST年間受付利用者数実績</p>
-  <p class="hero-note">※2 クラウドiPad無人受付システム市場の実態と将来展望（ミックITリポート 2025年11月）<br>
-  （デロイト トーマツ ミック経済研究所株式会社 調べ）</p>
 
 </div><!-- /.container_l -->
 
