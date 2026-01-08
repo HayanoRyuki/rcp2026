@@ -31,7 +31,7 @@
     align-items: center;
     margin-top: 70px;
     padding-top: 0;
-    background-color: var(--color-primary); /* #00B5E2 */
+    background-color: #EAF6F9; /* 薄いブルー */
     margin-bottom: 0 !important;
   }
 
@@ -47,7 +47,7 @@
   }
 
   .container_l.adView {
-    background-color: var(--color-primary); /* #00B5E2 */
+    background-color: transparent;
   }
 
   .hero-title-box {
@@ -68,10 +68,62 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
-    margin-top: -100px;
+    margin-top: -60px;
     position: relative;
     z-index: 1;
   }
+
+  /* =========================================================
+   HERO LEFT COLUMN（xl）
+========================================================= */
+
+.container_l.adView {
+  padding-top: 60px;
+  padding-right: 60px;
+}
+
+.hero-title-box {
+  max-width: 560px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #222; /* ← 薄背景なので黒系 */
+  margin-bottom: 1rem;
+}
+
+.hero-title .em {
+  color: #4fb3d6;
+}
+
+.hero-lead {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.75rem;
+}
+
+.hero-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 420px;
+}
+
+.hero-benefits li {
+  background: #4fb3d6;
+  color: #fff;
+  padding: 0.7em 1.4em;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 
   /* --- フォームエリア（右） --- */
   .container_r {
