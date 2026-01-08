@@ -74,11 +74,11 @@
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0.15em;
+    bottom: 0.15em;      /* 文字との距離（微調整OK） */
     width: 100%;
-    height: 0.5em;
-    background: #fff;
-    z-index: -1;
+    height: 0.45em;     /* アンダーラインの太さ */
+    background: #ffffff;
+    z-index: -1;        /* 文字の後ろに回す */
   }
 
   .hero-title .em {
@@ -255,7 +255,7 @@
 .kv-form-agree {
   display: flex;
   align-items: flex-start;
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   opacity: 0.8;
   gap: 6px;
 }
