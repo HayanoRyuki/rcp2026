@@ -64,7 +64,7 @@
   }
 
   .hero-user-image {
-    background-image: url("/wp-content/themes/rcp2026/assets/img/hero/hero-user-sm.png");
+    background-image: url("../../img/hero/hero-user-sm.png");
     width: 100%;
     max-width: 700px;
     aspect-ratio: 700 / 400;

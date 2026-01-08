@@ -63,7 +63,7 @@
   .hero-user-image {
     width: 110%;
     height: 450px;
-    background-image: url("/wp-content/themes/rcp2026/assets/img/hero/hero-user-lg.png");
+    background-image: url("../../img/hero/hero-user-lg.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
