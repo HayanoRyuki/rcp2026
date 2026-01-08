@@ -26,12 +26,12 @@
   /* --- HERO本体 --- */
   .hero.page-title.wrapper {
     width: 100%;
-    min-height: 650px;
+    min-height: 550px;          /* ← 650 → 550（100px削減） */
     display: flex;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 60px;           /* ← 70 → 60 */
     padding-top: 0;
-    background-color: #EAF6F9; /* 薄いブルー */
+    background-color: #EAF6F9;  /* 薄いブルー */
     margin-bottom: 0 !important;
   }
 
@@ -58,9 +58,9 @@
   }
 
   .hero-title-box {
-  max-width: 560px;
-  position: relative; /* ← これを追加 */
-}
+    max-width: 560px;
+    position: relative; /* ← バッジの基準 */
+  }
 
   .hero-title {
     position: relative;
@@ -70,12 +70,7 @@
     font-weight: 700;
     color: #2B2B2B;
     margin-bottom: 1rem;
-  background: linear-gradient(
-    transparent 60%,
-    #ffffff 60%
-  );
-}
-
+  }
 
   /* 白アンダーライン */
   .hero-title::after {
@@ -126,9 +121,43 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
-    margin-top: -60px;
+    margin-top: -40px;  /* ← 少しだけ詰める */
     position: relative;
     z-index: 1;
+  }
+
+  /* =========================================================
+     HERO BADGE（シェア No.1）
+  ========================================================= */
+  .hero-badge {
+    position: absolute;
+    top: 20px;          /* ← 上に寄せる */
+    right: -80px;       /* ← 右へ寄せる */
+    width: 120px;
+    height: 120px;
+    border: 2px solid #222;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-badge .badge-main {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #222;
+  }
+
+  .hero-badge .badge-note {
+    position: absolute;
+    bottom: 8px;        /* ← ズレ修正 */
+    right: 12px;
+    font-size: 0.7rem;
+    line-height: 1;
+    color: #222;
   }
 
   /* =========================================================
@@ -138,7 +167,7 @@
     width: 40%;
     min-width: 490px;
     max-width: 490px;
-    background-color: #4FA3BF; /* 指定ブルー */
+    background-color: #4FA3BF;
     padding: 30px;
     box-sizing: border-box;
     color: var(--color-text);
@@ -179,7 +208,6 @@
     min-width: 100px;
   }
 
-  /* 同意チェック */
   .kv-form-agree {
     display: flex;
     align-items: flex-start;
@@ -209,7 +237,6 @@
     word-break: break-word;
   }
 
-  /* ダウンロードボタン */
   .btn.btn_dl {
     display: block;
     width: 100%;
@@ -249,85 +276,4 @@
     margin-bottom: 1rem;
     color: var(--color-text);
   }
-}
-
-/* =========================================================
-   FORM ELEMENTS（共通）
-========================================================= */
-.kv-form-group input,
-.kv-form-group select {
-  width: 100%;
-  height: 55px;
-  padding: 10px 12px;
-  font-size: 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  background-color: var(--color-white);
-  color: var(--color-text);
-  box-sizing: border-box;
-  appearance: auto;
-}
-
-.kv-form-group select option[value=""] {
-  color: #aaa;
-}
-
-.floating-label {
-  position: absolute;
-  top: -10px;
-  left: 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--color-text);
-  background: var(--color-white);
-  padding: 0 6px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.kv-form-group input::placeholder,
-.kv-form-group textarea::placeholder {
-  font-size: 0.85rem;
-  color: #888;
-  opacity: 1;
-}
-
-.kv-form-group select:invalid {
-  color: #888;
-  font-size: 0.85rem;
-}
-
-.kv-form-group select {
-  color: var(--color-text);
-  font-size: 0.95rem;
-}
-
-.hero-badge {
-  position: absolute;
-  top: 40px;
-  right: -40px; /* 今の見た目に合わせて微調整 */
-  width: 120px;
-  height: 120px;
-  border: 2px solid #222;
-  border-radius: 50%;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-badge .badge-main {
-  font-size: 1.1rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #222;
-}
-
-.hero-badge .badge-note {
-  position: absolute;
-  bottom: 10px;
-  right: 18px;
-  font-size: 0.7rem;
-  color: #222;
 }
