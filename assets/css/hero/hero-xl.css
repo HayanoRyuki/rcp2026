@@ -23,7 +23,7 @@
     padding: 0;
   }
 
-  /* --- HERO本体レイアウト --- */
+  /* --- HERO本体 --- */
   .hero.page-title.wrapper {
     width: 100%;
     min-height: 650px;
@@ -37,28 +37,80 @@
 
   .hero-body {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    justify-content: space-between;
+    align-items: stretch;
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    margin-bottom: 0 !important;
     box-sizing: border-box;
   }
 
+  /* =========================================================
+     HERO LEFT COLUMN（XL）
+  ========================================================= */
   .container_l.adView {
     background-color: transparent;
+    padding-top: 60px;
+    padding-right: 60px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   .hero-title-box {
-    position: relative;
-    z-index: 3;
+    max-width: 560px;
   }
 
-  .hero-title-img {
-    width: 90%;
-    max-width: 580px;
-    height: auto;
+  .hero-title {
+    position: relative;
+    display: inline-block;
+    font-size: 3rem;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #2B2B2B;
+    margin-bottom: 1rem;
+  }
+
+  /* 白アンダーライン */
+  .hero-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.15em;
+    width: 100%;
+    height: 0.5em;
+    background-color: #ffffff;
+    z-index: -1;
+  }
+
+  .hero-title .em {
+    color: #4fb3d6;
+  }
+
+  .hero-lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    max-width: 420px;
+  }
+
+  .hero-benefits li {
+    background: #4fb3d6;
+    color: #fff;
+    padding: 0.7em 1.4em;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 600;
   }
 
   .hero-user-image {
@@ -74,69 +126,21 @@
   }
 
   /* =========================================================
-   HERO LEFT COLUMN（xl）
-========================================================= */
-
-.container_l.adView {
-  padding-top: 60px;
-  padding-right: 60px;
-}
-
-.hero-title-box {
-  max-width: 560px;
-}
-
-.hero-title {
-  font-size: 3rem;
-  line-height: 1.25;
-  font-weight: 700;
-  color: #222; /* ← 薄背景なので黒系 */
-  margin-bottom: 1rem;
-}
-
-.hero-title .em {
-  color: #4fb3d6;
-}
-
-.hero-lead {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 1.75rem;
-}
-
-.hero-benefits {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  max-width: 420px;
-}
-
-.hero-benefits li {
-  background: #4fb3d6;
-  color: #fff;
-  padding: 0.7em 1.4em;
-  border-radius: 999px;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-
-  /* --- フォームエリア（右） --- */
+     HERO RIGHT COLUMN（FORM）
+  ========================================================= */
   .container_r {
-    width: 35%;
+    width: 40%;
     min-width: 490px;
-    background-color: var(--color-white);
+    max-width: 490px;
+    background-color: #4FA3BF; /* 指定ブルー */
     padding: 30px;
-    margin-left: 30px;
     box-sizing: border-box;
     color: var(--color-text);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: auto;
+    margin-right: -80px;
     position: relative;
     z-index: 2;
   }
@@ -174,8 +178,6 @@
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    white-space: normal;
     font-size: 0.75rem;
     line-height: 1.4;
     color: var(--color-text);
@@ -189,8 +191,9 @@
   }
 
   .kv-form-agree label {
-    flex: 1;
+    flex: 0 1 auto;
     min-width: 0;
+    text-align: left;
   }
 
   .kv-form-agree a {
@@ -201,39 +204,37 @@
   }
 
   /* ダウンロードボタン */
-.btn.btn_dl {
-  display: block;
-  width: 100%;
-  height: 52px;
-  padding: 12px;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-  background-color: var(--color-danger); /* ← 赤系に変更 */
-  color: var(--color-white);
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-align: center;
-  border: none;
-  border-radius: 6px;
-  transition: background-color 0.3s ease; /* ← opacity から変更 */
-}
+  .btn.btn_dl {
+    display: block;
+    width: 100%;
+    height: 52px;
+    padding: 12px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
 
-.btn.btn_dl:hover {
-  cursor: pointer;
-  background-color: var(--color-danger-hover); /* ← hoverも赤系 */
-}
-
+  .btn.btn_dl:hover {
+    cursor: pointer;
+    background-color: var(--color-danger-hover);
+  }
 
   .hero-note {
-  font-size: 0.85rem;
-  color: var(--color-white);
-  line-height: 1.25;
-  margin: 0.25rem 1rem;   /* ← これで全デバイスと統一 */
-  padding-right: 1rem;
-  text-align: left;
-}
+    font-size: 0.85rem;
+    color: var(--color-white);
+    line-height: 1.25;
+    margin: 0.25rem 1rem;
+    padding-right: 1rem;
+    text-align: left;
+  }
 
-  /* 資料案内 */
   .document-guidance-box {
     display: flex;
     align-items: center;
@@ -278,7 +279,6 @@
   z-index: 1;
 }
 
-/* プレースホルダー */
 .kv-form-group input::placeholder,
 .kv-form-group textarea::placeholder {
   font-size: 0.85rem;
@@ -286,7 +286,6 @@
   opacity: 1;
 }
 
-/* select 未選択 / 選択後 */
 .kv-form-group select:invalid {
   color: #888;
   font-size: 0.85rem;
@@ -296,48 +295,3 @@
   color: var(--color-text);
   font-size: 0.95rem;
 }
-
-/* =========================================================
-   LAYOUT（等高配置）
-========================================================= */
-.hero-body {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-/* 左右カラム等高 */
-.container_l.adView,
-.container_r {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/* 右カラム寄せ */
-.container_r {
-  width: 40%;
-  max-width: 490px;
-  background-color: var(--color-white);
-  padding: 30px;
-  box-sizing: border-box;
-  color: var(--color-text);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-left: auto;
-  margin-right: -80px;
-}
-
-@media (min-width: 1280px) {
-  .kv-form-agree label {
-    flex: 0 1 auto !important;
-    margin-left: 0 !important;
-    text-align: left !important;
-  }
-}
-
