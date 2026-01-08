@@ -1,7 +1,7 @@
 /* =========================================================
-   HERO SECTION：PC（1280px以上）
+   HERO SECTION：PC（LG：1024px〜1279px）
 ========================================================= */
-@media (min-width: 1280px) {
+@media (min-width: 1024px) and (max-width: 1279px) {
 
   /* ---------- 上部余白 ---------- */
   body.top,
@@ -24,22 +24,21 @@
   /* ---------- HERO本体 ---------- */
   .hero.page-title.wrapper {
     width: 100%;
-      height: 700px;
-  min-height: 700px;
+    height: 680px;
+    min-height: 680px;
     display: flex;
     align-items: center;
-    margin-top: 60px;
-    margin-bottom: auto;
+    margin-top: 56px;
     background-color: #EAF6F9;
   }
 
   .hero-body {
-      height: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     width: 100%;
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -48,109 +47,106 @@
   ========================================================= */
   .container_l.adView {
     background: transparent;
-    padding: 60px 0px 0 0;
+    padding: 56px 0 0 0;
     flex: 1;
     display: flex;
     flex-direction: column;
   }
 
   .hero-title-box {
-  text-align: left;
-  max-width: 560px;
-  position: relative;
-  margin-left: 190px;
-}
+    text-align: left;
+    max-width: 520px;
+    position: relative;
+    margin-left: 140px; /* ← XLより少し戻す */
+  }
 
   .hero-title {
-  display: inline;
-  font-size: 3rem;
-  line-height: 1.25;
-  font-weight: 700;
-  color: #2B2B2B;
-  letter-spacing: 0.2em;
+    display: inline;
+    font-size: 2.6rem;      /* ← XLより小さく */
+    line-height: 1.25;
+    font-weight: 700;
+    color: #2B2B2B;
+    letter-spacing: 0.18em;
 
-  /* 行ごとに白アンダーライン */
-  background-image: linear-gradient(
-    transparent 65%,
-    #ffffff 65%
-  );
-  background-size: 100% 1.4em;
-  background-repeat: repeat-y;
-}
-
+    /* 行ごと白アンダーライン */
+    background-image: linear-gradient(
+      transparent 65%,
+      #ffffff 65%
+    );
+    background-size: 100% 1.3em;
+    background-repeat: repeat-y;
+  }
 
   .hero-title .em {
-  color: #4fb3d6;
-  font-size: 1.1em;
-}
+    color: #4fb3d6;
+    font-size: 1.1em;
+  }
 
   .hero-lead {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.6;
     color: #333;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-benefits {
     list-style: none;
-    padding: 38px 0px;
+    padding: 32px 0;
     margin: 0;
-    max-width: 344px;
+    max-width: 320px;
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
-    align-items: flex-start;   /* ← flexでも左寄せ */
+    gap: 0.75rem;
+    align-items: flex-start;
     text-align: left;
   }
 
   .hero-benefits li {
     display: flex;
     align-items: center;
-    gap: 0.9rem;
-
-    width: 100%;        /* ← ★ これが肝 */
+    gap: 0.8rem;
+    width: 100%;
     box-sizing: border-box;
 
-    padding: 0.2em 0.8em;
+    padding: 0.25em 0.8em;
     background: #4fb3d6;
     color: #fff;
     border-radius: 999px;
 
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 700;
     line-height: 1.4;
   }
 
-  /* 丸囲み → アイコン */
   .hero-benefits li::before {
     content: "→";
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     border: 2px solid #ffffff;
     color: #ffffff;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     flex-shrink: 0;
   }
 
   .hero-user-image {
     width: 110%;
-    height: 465px;
-    margin-top: -177px;
+    height: 420px;
+    margin-top: -150px;
     background: url("../../img/hero/hero-user-xl.png") center bottom / contain no-repeat;
   }
 
   /* ---------- BADGE ---------- */
   .hero-badge {
     position: absolute;
-    top: 20px;
-    right: -80px;
-    width: 120px;
-    height: 120px;
+    top: 18px;
+    right: -64px;
+    width: 108px;
+    height: 108px;
     border: 2px solid #222;
     border-radius: 50%;
     display: flex;
@@ -160,7 +156,7 @@
   }
 
   .hero-badge .badge-main {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 1.2;
     color: #222;
@@ -168,9 +164,9 @@
 
   .hero-badge .badge-note {
     position: absolute;
-    bottom: 50px;
-    right: 32px;
-    font-size: 0.7rem;
+    bottom: 44px;
+    right: 28px;
+    font-size: 0.65rem;
     line-height: 1;
     color: #222;
   }
@@ -179,13 +175,13 @@
      RIGHT COLUMN（FORM）
   ========================================================= */
   .container_r {
-    width: 40%;
-    min-width: 490px;
-    max-width: 490px;
+    width: 42%;
+    min-width: 460px;
+    max-width: 460px;
     background: #4FA3BF;
-    padding: 30px;
+    padding: 26px;
     margin-left: auto;
-    margin-right: -80px;
+    margin-right: -64px;
     display: flex;
     flex-direction: column;
   }
@@ -204,26 +200,26 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
     color: #ffffff;
   }
 }
 
 /* =========================================================
-   FORM：インナーラベル型
+   FORM：インナーラベル型（LG）
 ========================================================= */
 .kv-form-group {
   position: relative;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.75rem;
 }
 
 .kv-form-group .floating-label {
   position: absolute;
   top: 6px;
   left: 12px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: #555;
   pointer-events: none;
@@ -233,9 +229,9 @@
 .kv-form-group input,
 .kv-form-group select {
   width: 100%;
-  height: 55px;
-  padding: 26px 12px 8px;
-  font-size: 0.95rem;
+  height: 52px;
+  padding: 24px 12px 8px;
+  font-size: 0.9rem;
   border: 1px solid var(--color-border);
   border-radius: 6px;
   background: #fff;
@@ -246,7 +242,7 @@
   color: #aaa;
 }
 
-/* ---------- 氏名2カラム調整 ---------- */
+/* ---------- 氏名2カラム ---------- */
 .kv-form-group > div[style*="display: flex"] input {
   padding-top: 22px;
 }
@@ -255,16 +251,16 @@
 .kv-form-agree {
   display: flex;
   align-items: flex-start;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   opacity: 0.8;
   gap: 6px;
   color: #ffffff;
 }
 
 .kv-form-agree a {
-    color: #ffffff;
-    text-decoration: underline;
-  }
+  color: #ffffff;
+  text-decoration: underline;
+}
 
 .kv-form-agree input {
   margin-top: 4px;
@@ -274,10 +270,10 @@
 .btn.btn_dl {
   width: 100%;
   height: 52px;
-  margin-top: 1.5rem;
+  margin-top: 1.4rem;
   background: var(--color-danger);
   color: #fff;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   border-radius: 6px;
   border: none;
