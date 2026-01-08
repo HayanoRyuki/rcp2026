@@ -17,11 +17,6 @@
   <span class="badge-note">※</span>
 </div>
 
-    <p class="hero-lead">
-      内線対応や来客取次の手間をなくし、<br>
-      受付業務をもっとスムーズに。
-    </p>
-
     <ul class="hero-benefits">
       <li>内線電話の取次から解放</li>
       <li>離席中でも来客にすぐ気付ける</li>
