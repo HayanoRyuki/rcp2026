@@ -61,26 +61,21 @@
 }
 
   .hero-title {
-    position: relative;
-    display: inline-block;
-    font-size: 3rem;
-    line-height: 1.25;
-    font-weight: 700;
-    color: #2B2B2B;
-    margin-bottom: 1rem;
-    z-index: 1; /* 明示しておくとさらに安全 */
-  }
+  display: inline;
+  font-size: 3rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #2B2B2B;
 
-  .hero-title::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0.15em;      /* 文字との距離（微調整OK） */
-    width: 100%;
-    height: 0.45em;     /* アンダーラインの太さ */
-    background: #ffffff;
-    z-index: 0;        /* 文字の後ろに回す */
-  }
+  /* 行ごとに白アンダーライン */
+  background-image: linear-gradient(
+    transparent 65%,
+    #ffffff 65%
+  );
+  background-size: 100% 1.4em;
+  background-repeat: repeat-y;
+}
+
 
   .hero-title .em {
     color: #4fb3d6;
