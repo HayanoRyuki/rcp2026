@@ -57,12 +57,12 @@
 
         <div class="solution-answer-box">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/solution/icon_kaiketu.svg" alt="" class="icon">
-          <p class="answer-text">QR受付コードでカンタン受付</p>
+          <p class="answer-text">受付QR画像でカンタン受付</p>
         </div>
 
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/solution/solution3.webp" alt="" class="w-full rounded-md">
         <p class="text-sm text-gray-600 leading-relaxed">
-          事前に発行したQR受付コードをiPadにかざすと受付完了。お客様が受付で並ぶことなく、ストレスのない受付対応が可能です。
+          事前に発行した受付QR画像をiPadにかざすと受付完了。お客様が受付で並ぶことなく、ストレスのない受付対応が可能です。
         </p>
       </div>
 
