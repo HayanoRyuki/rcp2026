@@ -15,7 +15,7 @@ get_header('seminar');
           <div class="p-fv__info">
             <p class="p-fv__label"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_online.svg" alt="オンライン開催" width="12.81" height="15.73">オンライン開催</p>
             <h2 class="p-fv__title">
-              <img class="p-fv__title-img" src="/assets/img/seminar/img_fv-title--pc.webp" alt="120分でわかる！RECEPTIONIST講演会導入前の疑問や不安をすべて解決し、導入後の定着までサポートします" width="460" height="331.75">
+              <img class="p-fv__title-img" src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_fv-title--pc.webp" alt="120分でわかる！RECEPTIONIST講演会導入前の疑問や不安をすべて解決し、導入後の定着までサポートします" width="460" height="331.75">
             </h2>
             <div class="p-fv__date">
               <div class="p-fv__date-item">
