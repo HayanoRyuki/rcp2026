@@ -426,3 +426,15 @@ function rcp2026_enqueue_lp_footer_css() {
   }
 }
 add_action('wp_enqueue_scripts', 'rcp2026_enqueue_lp_footer_css');
+
+add_action('wp_enqueue_scripts', function () {
+  if (is_page_template('page-seminar.php')) {
+    wp_enqueue_script(
+      'seminar',
+      get_theme_file_uri('/assets/js/seminar.js'),
+      [],
+      null,
+      true
+    );
+  }
+});

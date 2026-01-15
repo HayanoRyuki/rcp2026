@@ -460,9 +460,3 @@ get_header('seminar');
   <!--l-main-->
 
   <?php get_footer(); ?>
-  
-	<!-- js読み込み -->
-	<script src="./assets/js/seminar.js"></script>
-</body>
-
-</html>
