@@ -114,24 +114,24 @@ get_header('seminar');
         <div class="l-inner js-in-view fade-in-up">
           <div class="p-about-head__title-wrap">
             <h2 class="p-about-head__title">
-              <img class="p-about-head__title-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-title--pc.webp" alt="管理者の皆さん、受付システムを最大限活用できていますか？" width="972" height="237">
-              <img class="p-about-head__title-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-title--sp.webp" alt="管理者の皆さん、受付システムを最大限活用できていますか？" width="972" height="237">
+              <img class="p-about-head__title-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_about-title--pc.webp" alt="管理者の皆さん、受付システムを最大限活用できていますか？" width="972" height="237">
+              <img class="p-about-head__title-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_about-title--sp.webp" alt="管理者の皆さん、受付システムを最大限活用できていますか？" width="972" height="237">
             </h2>
           </div>
           <div class="p-about-case">
             <h3>ありがちなケースとして―<span class="u-pc">―</span></h3>
             <div class="p-about-case-box">
               <div class="p-about-case-item">
-                <img class="p-about-case-item-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-case1--pc.webp" alt="基本設定をそのままにしている…" width="321" height="148">
-                <img class="p-about-case-item-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-case1--sp.webp" alt="基本設定をそのままにしている…" width="321" height="148">
+                <img class="p-about-case-item-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_about-case1--pc.webp" alt="基本設定をそのままにしている…" width="321" height="148">
+                <img class="p-about-case-item-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_about-case1--sp.webp" alt="基本設定をそのままにしている…" width="321" height="148">
               </div>
               <div class="p-about-case-item">
-                <img class="p-about-case-item-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-case2--pc.webp" alt="管理者自身が「理解しているつもり」で止まっている" width="321" height="175">
-                <img class="p-about-case-item-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-case2--sp.webp" alt="管理者自身が「理解しているつもり」で止まっている" width="321" height="175">
+                <img class="p-about-case-item-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_about-case2--pc.webp" alt="管理者自身が「理解しているつもり」で止まっている" width="321" height="175">
+                <img class="p-about-case-item-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_about-case2--sp.webp" alt="管理者自身が「理解しているつもり」で止まっている" width="321" height="175">
               </div>
               <div class="p-about-case-item">
-                <img class="p-about-case-item-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-case3--pc.webp" alt="新機能が出ても追えていない" width="262" height="148">
-                <img class="p-about-case-item-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-case3--sp.webp" alt="新機能が出ても追えていない" width="262" height="148">
+                <img class="p-about-case-item-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_about-case3--pc.webp" alt="新機能が出ても追えていない" width="262" height="148">
+                <img class="p-about-case-item-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_about-case3--sp.webp" alt="新機能が出ても追えていない" width="262" height="148">
               </div>
             </div>
           </div>
@@ -148,22 +148,22 @@ get_header('seminar');
           <p class="p-about-body__text">RECEPTIONISTの導入直後に必要な準備から、<br class="u-pc">活用を広げるためのノウハウまでを120分で学べる講習会です。<br>
             導入前の不安を解消し、導入後に定着させるためのポイントを凝縮してお伝えします。</p>
           <div class="p-about__case_title js-in-view fade-in-up">
-            <img class="p-about__case_title-img u-pc" src="./assets/img/img_about__case_title--pc.webp" alt="この120分の講義を受けるだけで…" width="642" height="87">
-            <img class="p-about__case_title-img u-sp" src="./assets/img/img_about__case_title--sp.webp" alt="この120分の講義を受けるだけで…" width="642" height="87">
+            <img class="p-about__case_title-img u-pc" src="./assets/img/seminar/img_about__case_title--pc.webp" alt="この120分の講義を受けるだけで…" width="642" height="87">
+            <img class="p-about__case_title-img u-sp" src="./assets/img/seminar/img_about__case_title--sp.webp" alt="この120分の講義を受けるだけで…" width="642" height="87">
           </div>
           <div class="p-about__case js-in-view fade-in-up">
             <div class="p-about__case-item js-in-view fade-in-up">
-              <figure><img class="p-about__case-img" src="./assets/img/img_about__case1--pc.webp" alt="導入準備でつまづかない！" width="262" height="184"></figure>
+              <figure><img class="p-about__case-img" src="./assets/img/seminar/img_about__case1--pc.webp" alt="導入準備でつまづかない！" width="262" height="184"></figure>
               <h3>導入準備でつまづかない！</h3>
               <p>導入手順や設定のポイントをわかりやすく解説。スムーズに導入を進めるためのコツを習得できます。</p>
             </div>
             <div class="p-about__case-item js-in-view fade-in-up">
-              <figure><img class="p-about__case-img" src="./assets/img/img_about__case2--pc.webp" alt="導入後の利用定着につながる！" width="262" height="184"></figure>
+              <figure><img class="p-about__case-img" src="./assets/img/seminar/img_about__case2--pc.webp" alt="導入後の利用定着につながる！" width="262" height="184"></figure>
               <h3>導入後の利用定着につながる！</h3>
               <p>社内での活用を広げるための実践的なノウハウを共有。利用促進や社内展開のコツがつかめます。</p>
             </div>
             <div class="p-about__case-item js-in-view fade-in-up">
-              <figure><img class="p-about__case-img" src="./assets/img/img_about__case3--pc.webp" alt="新機能を理解し即活用！" width="262" height="184"></figure>
+              <figure><img class="p-about__case-img" src="./assets/img/seminar/img_about__case3--pc.webp" alt="新機能を理解し即活用！" width="262" height="184"></figure>
               <h3>新機能を理解し即活用！</h3>
               <p>RECEPTIONISTの最新機能やアップデート内容をわかりやすく解説します。</p>
             </div>
@@ -193,7 +193,7 @@ get_header('seminar');
       <div class="l-inner">
         <div class="c-section-head js-in-view fade-in-up">
           <hgroup class="c-section-head__title-wrap">
-            <p class="c-section-head__sub"><img src="./assets/img/icn_section_head.svg" alt=""> Curriculum</p>
+            <p class="c-section-head__sub"><img src="./assets/img/seminar/icn_section_head.svg" alt=""> Curriculum</p>
             <h2 class="c-section-head__title">カリキュラム</h2>
             <p class="c-section-head__text">ご利用中のプランに合わせた、<br class="u-sp">最適なカリキュラムをご用意しております。</p>
           </hgroup>
@@ -201,18 +201,18 @@ get_header('seminar');
         <div class="p-curriculum__container js-in-view fade-in-up">
           <div class="p-curriculum__card">
             <div class="p-curriculum__card-img">
-              <h3><img src="./assets/img/img_curriculum-title1--pc.webp" alt="基礎編"></h3>
+              <h3><img src="./assets/img/seminar/img_curriculum-title1--pc.webp" alt="基礎編"></h3>
             </div>
             <div class="p-curriculum__card-body">
               <div class="p-curriculum-list">
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">はじめに</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">はじめに</h3>
                 <ul>
                   <li>来客フローについて</li>
                   <li>アポイントメントの種類</li>
                   <li>WEB管理画面ログイン</li>
                   <li>WEB管理画面メニュー</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">社員情報（利用者登録）</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">社員情報（利用者登録）</h3>
                 <ul>
                   <li>社員登録の全体フロー</li>
                   <li>社員登録と利用登録の違い</li>
@@ -223,18 +223,18 @@ get_header('seminar');
                   <li>外部連携状況チェック</li>
                   <li>CSV一括で更新する方法</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">チャット設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">チャット設定</h3>
                 <ul>
                   <li>各種チャットツール</li>
                   <li>【実践】メール通知設定</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">来訪者設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">来訪者設定</h3>
                 <ul>
                   <li>来訪者設定画面について</li>
                   <li>来訪者種別とは</li>
                   <li>受付完了時の画像表示について</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">受付アプリ設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">受付アプリ設定</h3>
                 <ul>
                   <li>受付アプリ設定画面</li>
                   <li>デバイス情報の設定</li>
@@ -243,8 +243,8 @@ get_header('seminar');
                   <li>各種ボタン設定</li>
                   <li>カスタムボタン設定</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">iPad設定</h3>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">権限設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">iPad設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">権限設定</h3>
                 <ul>
                   <li>権限設定画面について</li>
                   <li>ユーザー権限について</li>
@@ -253,7 +253,7 @@ get_header('seminar');
                   <li>アポイントメントの権限設定</li>
                   <li>来訪者記録の権限設定</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">プランアップ</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">プランアップ</h3>
                 <ul>
                   <li>エンタープライズ・プレミアムプランでできること</li>
                 </ul>
@@ -272,17 +272,17 @@ get_header('seminar');
             </div>
             <div class="p-curriculum__card-body">
               <div class="p-curriculum-list">
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">はじめに</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">はじめに</h3>
                 <ul>
                   <li>来客フローについて</li>
                   <li>アポイントメントの種類</li>
                   <li>【実践】WEB管理画面ログイン</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">チャット設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">チャット設定</h3>
                 <ul>
                   <li>各種チャットツール</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">受付アプリ設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">受付アプリ設定</h3>
                 <ul>
                   <li>オフィス機能</li>
                   <li>ホールディングス機能</li>
@@ -292,7 +292,7 @@ get_header('seminar');
                   <li>画面表示設定</li>
                   <li>各種ボタン設定</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">権限設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">権限設定</h3>
                 <ul>
                   <li>権限設定画面について</li>
                   <li>ユーザー権限について</li>
@@ -302,7 +302,7 @@ get_header('seminar');
                   <li>アポイントメントの権限設定</li>
                   <li>来訪者記録の権限設定</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">来訪者設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_check.svg" alt="">来訪者設定</h3>
                 <ul>
                   <li>来訪者設定画面について</li>
                   <li>来訪者向けメール設定について</li>
@@ -332,7 +332,7 @@ get_header('seminar');
       <div class="l-inner">
         <div class="c-section-head js-in-view fade-in-up">
           <hgroup class="c-section-head__title-wrap">
-            <p class="c-section-head__sub"><img src="./assets/img/icn_section_head.svg" alt="Event Overview"> Event Overview</p>
+            <p class="c-section-head__sub"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_section_head.svg" alt="Event Overview"> Event Overview</p>
             <h2 class="c-section-head__title">講習会概要</h2>
           </hgroup>
         </div>
@@ -340,7 +340,7 @@ get_header('seminar');
           <div class="p-event__contents">
             <div class="p-event__step">
               <div class="p-event__step-num">
-                <h3 class="p-event__step-num-text"><img src="./assets/img/icn_user.svg" alt="参加対象">参加対象</h3>
+                <h3 class="p-event__step-num-text"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_user.svg" alt="参加対象">参加対象</h3>
               </div>
               <div class="p-event__step-body">
                 <p class="p-event__step-text">基礎編：トライアルご契約中の方、スタンダードプランご契約中の方<br>
@@ -349,7 +349,7 @@ get_header('seminar');
             </div>
             <div class="p-event__step">
               <div class="p-event__step-num">
-                <h3 class="p-event__step-num-text"><img src="./assets/img/icn_question.svg" alt="注意事項">注意事項</h3>
+                <h3 class="p-event__step-num-text"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_question.svg" alt="注意事項">注意事項</h3>
               </div>
               <div class="p-event__step-body">
                 <p class="p-event__step-text">本イベントは同業他社や対象者以外のお申込みについては、お断りさせていただく場合がございます。<br>
