@@ -286,3 +286,10 @@
 .btn.btn_dl:hover {
   background: var(--color-danger-hover);
 }
+
+/* =========================================================
+   SP専用：資料請求CTA（PCでは非表示）
+========================================================= */
+.hero-sp-cta {
+  display: none !important;
+}
