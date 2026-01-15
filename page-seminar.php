@@ -13,9 +13,9 @@ get_header('seminar');
       <div class="l-inner js-in-view fade-in-up">
         <div class="p-fv__container">
           <div class="p-fv__info">
-            <p class="p-fv__label"><img src="./assets/img/icn_online.svg" alt="オンライン開催" width="12.81" height="15.73">オンライン開催</p>
+            <p class="p-fv__label"><img src="./assets/img/seminar/icn_online.svg" alt="オンライン開催" width="12.81" height="15.73">オンライン開催</p>
             <h2 class="p-fv__title">
-              <img class="p-fv__title-img" src="./assets/img/img_fv-title--pc.webp" alt="120分でわかる！RECEPTIONIST講演会導入前の疑問や不安をすべて解決し、導入後の定着までサポートします" width="460" height="331.75">
+              <img class="p-fv__title-img" src="./assets/img/seminar/img_fv-title--pc.webp" alt="120分でわかる！RECEPTIONIST講演会導入前の疑問や不安をすべて解決し、導入後の定着までサポートします" width="460" height="331.75">
             </h2>
             <div class="p-fv__date">
               <div class="p-fv__date-item">
@@ -205,14 +205,14 @@ get_header('seminar');
             </div>
             <div class="p-curriculum__card-body">
               <div class="p-curriculum-list">
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">はじめに</h3>
+                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">はじめに</h3>
                 <ul>
                   <li>来客フローについて</li>
                   <li>アポイントメントの種類</li>
                   <li>WEB管理画面ログイン</li>
                   <li>WEB管理画面メニュー</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">社員情報（利用者登録）</h3>
+                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">社員情報（利用者登録）</h3>
                 <ul>
                   <li>社員登録の全体フロー</li>
                   <li>社員登録と利用登録の違い</li>
@@ -223,18 +223,18 @@ get_header('seminar');
                   <li>外部連携状況チェック</li>
                   <li>CSV一括で更新する方法</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">チャット設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">チャット設定</h3>
                 <ul>
                   <li>各種チャットツール</li>
                   <li>【実践】メール通知設定</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">来訪者設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">来訪者設定</h3>
                 <ul>
                   <li>来訪者設定画面について</li>
                   <li>来訪者種別とは</li>
                   <li>受付完了時の画像表示について</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">受付アプリ設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">受付アプリ設定</h3>
                 <ul>
                   <li>受付アプリ設定画面</li>
                   <li>デバイス情報の設定</li>
@@ -243,8 +243,8 @@ get_header('seminar');
                   <li>各種ボタン設定</li>
                   <li>カスタムボタン設定</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">iPad設定</h3>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">権限設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">iPad設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">権限設定</h3>
                 <ul>
                   <li>権限設定画面について</li>
                   <li>ユーザー権限について</li>
@@ -253,7 +253,7 @@ get_header('seminar');
                   <li>アポイントメントの権限設定</li>
                   <li>来訪者記録の権限設定</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">プランアップ</h3>
+                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">プランアップ</h3>
                 <ul>
                   <li>エンタープライズ・プレミアムプランでできること</li>
                 </ul>
@@ -272,17 +272,17 @@ get_header('seminar');
             </div>
             <div class="p-curriculum__card-body">
               <div class="p-curriculum-list">
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">はじめに</h3>
+                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">はじめに</h3>
                 <ul>
                   <li>来客フローについて</li>
                   <li>アポイントメントの種類</li>
                   <li>【実践】WEB管理画面ログイン</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">チャット設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">チャット設定</h3>
                 <ul>
                   <li>各種チャットツール</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">受付アプリ設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">受付アプリ設定</h3>
                 <ul>
                   <li>オフィス機能</li>
                   <li>ホールディングス機能</li>
@@ -292,7 +292,7 @@ get_header('seminar');
                   <li>画面表示設定</li>
                   <li>各種ボタン設定</li>
                 </ul>
-                <h3 class="p-curriculum__card-title"><img src="./assets/img/icn_check.svg" alt="">権限設定</h3>
+                <h3 class="p-curriculum__card-title"><img src="./assets/img/seminar/icn_check.svg" alt="">権限設定</h3>
                 <ul>
                   <li>権限設定画面について</li>
                   <li>ユーザー権限について</li>
