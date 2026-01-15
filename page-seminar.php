@@ -148,7 +148,7 @@ get_header('seminar');
           <p class="p-about-body__text">RECEPTIONISTの導入直後に必要な準備から、<br class="u-pc">活用を広げるためのノウハウまでを120分で学べる講習会です。<br>
             導入前の不安を解消し、導入後に定着させるためのポイントを凝縮してお伝えします。</p>
           <div class="p-about__case_title js-in-view fade-in-up">
-            <img class="p-about__case_title-img u-pc" src="<?php echo get_template_directory_uri(); ?>assets/img/seminar/img_about__case_title--pc.webp" alt="この120分の講義を受けるだけで…" width="642" height="87">
+            <img class="p-about__case_title-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_about__case_title--pc.webp" alt="この120分の講義を受けるだけで…" width="642" height="87">
             <img class="p-about__case_title-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/img_about__case_title--sp.webp" alt="この120分の講義を受けるだけで…" width="642" height="87">
           </div>
           <div class="p-about__case js-in-view fade-in-up">
