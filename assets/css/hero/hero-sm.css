@@ -146,12 +146,17 @@
     flex-shrink: 0;
   }
 
-  /* ---------- IMAGE ---------- */
   .hero-user-image {
-    width: 100%;
-    height: 220px;
-    margin-top: 8px;
-    background: url("../../img/hero/hero-user-sm.png") center bottom / contain no-repeat;
+    width: 100vw;
+    height: 245px;
+    margin: 12px 0 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    background-image: url("../../img/hero/hero-user-sm.png");
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   /* =========================================================
