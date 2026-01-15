@@ -157,15 +157,47 @@
   }
 
   /* =========================================================
-     RIGHT COLUMN（FORM）
+     SP専用：資料請求CTA
   ========================================================= */
-  .container_r {
-    margin: 20px 16px 0;
-    padding: 20px;
-    background: #4FA3BF;
-    border-radius: 12px;
+  .hero-sp-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 16px;
+
+    background: var(--color-danger);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    border-radius: 999px;
   }
 
+  .hero-sp-cta:hover {
+    background: var(--color-danger-hover);
+  }
+
+  .hero-sp-cta-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  /* =========================================================
+     RIGHT COLUMN（FORM）
+     ※ SPでは非表示
+  ========================================================= */
+  .container_r {
+    display: none;
+  }
+
+  /* =========================================================
+     以下：PC用フォームスタイル（SPでは無効化されるが保持）
+  ========================================================= */
   .kv-form {
     background: #ffffff;
     border-radius: 10px;

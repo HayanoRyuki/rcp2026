@@ -3,31 +3,37 @@
     <div class="hero-body">
       
       <!-- 左カラム -->
-<div class="container_l adView">
+      <div class="container_l adView">
 
-  <div class="hero-title-box">
+        <div class="hero-title-box">
 
-    <h1 class="hero-title">
-      もっと<span class="em">ラク</span>で、<br>
-      シンプルな受付へ
-    </h1>
+          <h1 class="hero-title">
+            もっと<span class="em">ラク</span>で、<br>
+            シンプルな受付へ
+          </h1>
 
-    <div class="hero-badge">
-  <span class="badge-main">シェア<br>No.1</span>
-  <span class="badge-note">※</span>
-</div>
+          <div class="hero-badge">
+            <span class="badge-main">シェア<br>No.1</span>
+            <span class="badge-note">※</span>
+          </div>
 
-    <ul class="hero-benefits">
-      <li>内線電話の取次から解放</li>
-      <li>離席中でも来客にすぐ気付ける</li>
-      <li>誰でも使いやすい画面設計</li>
-    </ul>
+          <ul class="hero-benefits">
+            <li>内線電話の取次から解放</li>
+            <li>離席中でも来客にすぐ気付ける</li>
+            <li>誰でも使いやすい画面設計</li>
+          </ul>
 
-  </div><!-- /.hero-title-box -->
+          <!-- SP専用：資料請求CTA -->
+          <a href="/resources/" class="hero-sp-cta">
+            <span class="hero-sp-cta-icon">⬇</span>
+            資料をもらう
+          </a>
 
-  <div class="hero-user-image"></div>
+        </div><!-- /.hero-title-box -->
 
-</div><!-- /.container_l -->
+        <div class="hero-user-image"></div>
+
+      </div><!-- /.container_l -->
 
       <!-- 右カラム（フォーム） -->
       <div class="container_r">
@@ -92,20 +98,20 @@
             </div>
 
             <!-- 従業員数 -->
-<div class="kv-form-group has-floating-label">
-  <label class="floating-label">従業員数<span class="asterisk">*</span></label>
-  <select name="employee_number" required>
-    <option value="" selected disabled>クリックして選択してください</option>
-    <option value="1-10名">1-10名</option>
-    <option value="11-50名">11-50名</option>
-    <option value="51-100名">51-100名</option>
-    <option value="101-200名">101-200名</option>
-    <option value="201-300名">201-300名</option>
-    <option value="301-500名">301-500名</option>
-    <option value="501-1000名">501-1000名</option>
-    <option value="1001名以上">1001名以上</option>
-  </select>
-</div>
+            <div class="kv-form-group has-floating-label">
+              <label class="floating-label">従業員数<span class="asterisk">*</span></label>
+              <select name="employee_number" required>
+                <option value="" selected disabled>クリックして選択してください</option>
+                <option value="1-10名">1-10名</option>
+                <option value="11-50名">11-50名</option>
+                <option value="51-100名">51-100名</option>
+                <option value="101-200名">101-200名</option>
+                <option value="201-300名">201-300名</option>
+                <option value="301-500名">301-500名</option>
+                <option value="501-1000名">501-1000名</option>
+                <option value="1001名以上">1001名以上</option>
+              </select>
+            </div>
 
             <!-- 導入予定時期 -->
             <div class="kv-form-group has-floating-label">
