@@ -176,7 +176,7 @@
            下部：SP専用 資料請求CTA
       ========================== -->
       <div class="hero-sp-cta-wrap">
-        <a href="/resources/" class="hero-sp-cta">
+        <a href="/resources/document-general/" class="hero-sp-cta">
           <span class="hero-sp-cta-icon">⬇</span>
           資料をもらう
         </a>
