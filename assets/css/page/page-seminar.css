@@ -602,7 +602,7 @@ svg {
   position: absolute;
   top: 50%;
   right: 15px;
-  background-image: url(../img/icn_pulldown.svg);
+  background-image: url(../../img/seminar/icn_pulldown.svg);
   background-repeat: no-repeat;
   background-size: contain;
   transform: translateY(-50%);
@@ -741,7 +741,7 @@ svg {
 .p-fv {
   position: relative;
   padding-block: 3rem 4.8rem;
-  background: url(../img/img_fv--pc.webp) no-repeat center bottom/cover;
+  background: url(../../img/seminar/img_fv--pc.webp) no-repeat center bottom/cover;
 }
 @media screen and (max-width: 767px) {
   .p-fv {
@@ -845,7 +845,7 @@ svg {
   width: 100%;
   max-width: 44rem;
   height: 20rem;
-  background-image: url(../img/img_fv-date--pc.webp);
+  background-image: url(../../img/seminar/img_fv-date--pc.webp);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -964,7 +964,7 @@ svg {
   width: 9.067rem;
   height: 5rem;
   display: block;
-  background-image: url(../img/img_about-arrow--pc.webp);
+  background-image: url(../../img/seminar/img_about-arrow--pc.webp);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -1118,7 +1118,7 @@ svg {
   width: 6.7rem;
   height: 3.8rem;
   display: block;
-  background-image: url(../img/img_about-arrow--pc.webp);
+  background-image: url(../../img/seminar/img_about-arrow--pc.webp);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
