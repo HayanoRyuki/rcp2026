@@ -3,7 +3,9 @@
 ========================================================= */
 @media (max-width: 767px) {
 
-  /* ---------- 上部余白 ---------- */
+  /* =========================================================
+     上部余白・ヘッダー対策
+  ========================================================= */
   body.top,
   body.home,
   main.site-main.front-page {
@@ -21,11 +23,11 @@
     padding: 0;
   }
 
-  /* ---------- HERO本体 ---------- */
+  /* HEROだけヘッダー高さ分を逃がす */
   .hero.page-title.wrapper {
     width: 100%;
     min-height: auto;
-    padding: 48px 0 32px;
+    padding: calc(48px + 64px) 0 32px;
     background-color: #EAF6F9;
   }
 
@@ -38,7 +40,7 @@
   }
 
   /* =========================================================
-     LEFT COLUMN
+     LEFT COLUMN（常時表示）
   ========================================================= */
   .container_l.adView {
     padding: 0 20px;
@@ -48,7 +50,6 @@
 
   .hero-title-box {
     position: relative;
-    margin-left: 0;
     max-width: 100%;
     text-align: left;
   }
@@ -105,13 +106,7 @@
     color: #222;
   }
 
-  .hero-lead {
-    margin-top: 14px;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #333;
-  }
-
+  /* ---------- BENEFITS ---------- */
   .hero-benefits {
     list-style: none;
     margin: 20px 0 0;
@@ -119,6 +114,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
+    align-items: center; /* 横幅揃え */
   }
 
   .hero-benefits li {
@@ -126,6 +122,7 @@
     align-items: center;
     gap: 0.6rem;
     width: 100%;
+    max-width: 320px;
     padding: 0.35em 0.8em;
     background: #4fb3d6;
     color: #fff;
@@ -149,6 +146,7 @@
     flex-shrink: 0;
   }
 
+  /* ---------- IMAGE ---------- */
   .hero-user-image {
     width: 100%;
     height: 220px;
@@ -157,8 +155,20 @@
   }
 
   /* =========================================================
-     SP専用：資料請求CTA
+     RIGHT COLUMN（PC用フォーム）
+     ※ SPでは完全非表示
   ========================================================= */
+  .container_r {
+    display: none;
+  }
+
+  /* =========================================================
+     下部：SP専用 資料請求CTA
+  ========================================================= */
+  .hero-sp-cta-wrap {
+    margin: 24px 20px 0;
+  }
+
   .hero-sp-cta {
     display: flex;
     align-items: center;
@@ -166,7 +176,6 @@
     gap: 8px;
 
     width: 100%;
-    margin-top: 20px;
     padding: 14px 16px;
 
     background: var(--color-danger);
@@ -186,119 +195,4 @@
     font-size: 1.1rem;
     line-height: 1;
   }
-
-  /* =========================================================
-     RIGHT COLUMN（FORM）
-     ※ SPでは非表示
-  ========================================================= */
-  .container_r {
-    display: none;
-  }
-
-  /* =========================================================
-     以下：PC用フォームスタイル（SPでは無効化されるが保持）
-  ========================================================= */
-  .kv-form {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .document-guidance-box {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #ffffff;
-  }
-
-  /* =========================================================
-     FORM：インナーラベル型（SM）
-  ========================================================= */
-  .kv-form-group {
-    position: relative;
-    margin-bottom: 0.65rem;
-  }
-
-  .kv-form-group .floating-label {
-    position: absolute;
-    top: 6px;
-    left: 12px;
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: #555;
-    pointer-events: none;
-  }
-
-  .kv-form-group input,
-  .kv-form-group select {
-    width: 100%;
-    height: 48px;
-    padding: 22px 10px 6px;
-    font-size: 0.85rem;
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    background: #fff;
-  }
-
-  .kv-form-group input::placeholder,
-  .kv-form-group select:invalid {
-    color: #aaa;
-  }
-
-  .kv-form-agree {
-    display: flex;
-    align-items: flex-start;
-    gap: 6px;
-    font-size: 0.8rem;
-    color: #ffffff;
-    opacity: 0.85;
-  }
-
-  .kv-form-agree a {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-
-  .btn.btn_dl {
-    width: 100%;
-    height: 48px;
-    margin-top: 1rem;
-    background: var(--color-danger);
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    border-radius: 6px;
-    border: none;
-  }
-
-  .btn.btn_dl:hover {
-    background: var(--color-danger-hover);
-  }
-}
-
-/* ---------- 上部余白（修正） ---------- */
-body.top,
-body.home,
-main.site-main.front-page {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-/* HEROだけヘッダー分を逃がす */
-.hero.page-title.wrapper {
-  padding-top: calc(48px + 64px);
-}
-
-.hero-benefits {
-  align-items: center; /* 追加 */
-}
-
-.hero-benefits li {
-  width: 100%;
-  max-width: 320px;   /* ← ここが肝 */
 }

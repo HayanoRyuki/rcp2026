@@ -1,8 +1,10 @@
 <div class="top">
   <div class="hero page-title wrapper">
     <div class="hero-body">
-      
-      <!-- 左カラム -->
+
+      <!-- =========================
+           左カラム：コピー＋画像
+      ========================== -->
       <div class="container_l adView">
 
         <div class="hero-title-box">
@@ -23,22 +25,18 @@
             <li>誰でも使いやすい画面設計</li>
           </ul>
 
-          <!-- SP専用：資料請求CTA -->
-          <a href="/resources/" class="hero-sp-cta">
-            <span class="hero-sp-cta-icon">⬇</span>
-            資料をもらう
-          </a>
-
         </div><!-- /.hero-title-box -->
 
         <div class="hero-user-image"></div>
 
       </div><!-- /.container_l -->
 
-      <!-- 右カラム（フォーム） -->
+      <!-- =========================
+           右カラム：フォーム（PC用）
+      ========================== -->
       <div class="container_r">
 
-        <!-- ★★ ここに統一クラス js-rcp-contact-form を追加 ★★ -->
+        <!-- ★★ 統一クラス js-rcp-contact-form ★★ -->
         <form name="reception-lp"
               class="form-track download-form js-rcp-contact-form"
               action=""
@@ -47,7 +45,8 @@
               data-form-id="reception-lp">
 
           <div class="document-guidance-box">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero/doc-download.svg" alt="資料アイコン" width="20" height="20">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero/doc-download.svg"
+                 alt="資料アイコン" width="20" height="20">
             <span class="document-guidance-text">3分でわかる「資料」はコチラ</span>
           </div>
 
@@ -55,13 +54,17 @@
 
             <!-- 会社名 -->
             <div class="kv-form-group has-floating-label">
-              <label class="floating-label">会社名<span class="asterisk">*</span></label>
+              <label class="floating-label">
+                会社名<span class="asterisk">*</span>
+              </label>
               <input type="text" name="company_name" placeholder="御社名" required>
             </div>
 
             <!-- 部署 -->
             <div class="kv-form-group has-floating-label">
-              <label class="floating-label">部署<span class="asterisk">*</span></label>
+              <label class="floating-label">
+                部署<span class="asterisk">*</span>
+              </label>
               <select name="department_select" required>
                 <option value="" selected disabled>クリックして選択してください</option>
                 <option value="総務">総務</option>
@@ -78,28 +81,36 @@
 
             <!-- 氏名 -->
             <div class="kv-form-group has-floating-label">
-              <label class="floating-label">ご担当者のお名前<span class="asterisk">*</span></label>
-              <div style="display: flex; gap: 8px;">
-                <input type="text" name="last_name" placeholder="姓" required style="flex: 1;">
-                <input type="text" name="first_name" placeholder="名" required style="flex: 1;">
+              <label class="floating-label">
+                ご担当者のお名前<span class="asterisk">*</span>
+              </label>
+              <div style="display:flex; gap:8px;">
+                <input type="text" name="last_name" placeholder="姓" required style="flex:1;">
+                <input type="text" name="first_name" placeholder="名" required style="flex:1;">
               </div>
             </div>
 
             <!-- 電話番号 -->
             <div class="kv-form-group has-floating-label">
-              <label class="floating-label">お電話番号<span class="asterisk">*</span></label>
+              <label class="floating-label">
+                お電話番号<span class="asterisk">*</span>
+              </label>
               <input type="tel" name="phone_no" placeholder="01-2345-6789" required>
             </div>
 
             <!-- メール -->
             <div class="kv-form-group has-floating-label">
-              <label class="floating-label">メールアドレス<span class="asterisk">*</span></label>
+              <label class="floating-label">
+                メールアドレス<span class="asterisk">*</span>
+              </label>
               <input type="email" name="email" placeholder="sample@receptionist.co.jp" required>
             </div>
 
             <!-- 従業員数 -->
             <div class="kv-form-group has-floating-label">
-              <label class="floating-label">従業員数<span class="asterisk">*</span></label>
+              <label class="floating-label">
+                従業員数<span class="asterisk">*</span>
+              </label>
               <select name="employee_number" required>
                 <option value="" selected disabled>クリックして選択してください</option>
                 <option value="1-10名">1-10名</option>
@@ -115,7 +126,9 @@
 
             <!-- 導入予定時期 -->
             <div class="kv-form-group has-floating-label">
-              <label class="floating-label">導入予定時期<span class="asterisk">*</span></label>
+              <label class="floating-label">
+                導入予定時期<span class="asterisk">*</span>
+              </label>
               <select name="implementation_time" required>
                 <option value="">クリックして選択してください</option>
                 <option value="なるべく早く">なるべく早く</option>
@@ -130,9 +143,11 @@
             <div class="kv-form-agree">
               <input type="checkbox" id="agreement" name="privacy_policy" value="1" required>
               <label for="agreement">
-                <a href="https://help.receptionist.jp/?p=402#gsc.tab=0" target="_blank" rel="noopener">
+                <a href="https://help.receptionist.jp/?p=402#gsc.tab=0"
+                   target="_blank" rel="noopener">
                   （株）RECEPTIONISTの個人情報の取り扱い
-                </a>に同意します。
+                </a>
+                に同意します。
               </label>
             </div>
 
@@ -154,7 +169,18 @@
 
           </div><!-- /.kv-form-wrap -->
         </form>
+
       </div><!-- /.container_r -->
+
+      <!-- =========================
+           下部：SP専用 資料請求CTA
+      ========================== -->
+      <div class="hero-sp-cta-wrap">
+        <a href="/resources/" class="hero-sp-cta">
+          <span class="hero-sp-cta-icon">⬇</span>
+          資料をもらう
+        </a>
+      </div>
 
     </div><!-- /.hero-body -->
   </div><!-- /.hero.page-title.wrapper -->
