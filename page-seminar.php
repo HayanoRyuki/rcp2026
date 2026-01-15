@@ -13,9 +13,9 @@ get_header('seminar');
       <div class="l-inner js-in-view fade-in-up">
         <div class="p-fv__container">
           <div class="p-fv__info">
-            <p class="p-fv__label"><img src="./assets/img/seminar/icn_online.svg" alt="オンライン開催" width="12.81" height="15.73">オンライン開催</p>
+            <p class="p-fv__label"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/icn_online.svg" alt="オンライン開催" width="12.81" height="15.73">オンライン開催</p>
             <h2 class="p-fv__title">
-              <img class="p-fv__title-img" src="./assets/img/seminar/img_fv-title--pc.webp" alt="120分でわかる！RECEPTIONIST講演会導入前の疑問や不安をすべて解決し、導入後の定着までサポートします" width="460" height="331.75">
+              <img class="p-fv__title-img" src="/assets/img/seminar/img_fv-title--pc.webp" alt="120分でわかる！RECEPTIONIST講演会導入前の疑問や不安をすべて解決し、導入後の定着までサポートします" width="460" height="331.75">
             </h2>
             <div class="p-fv__date">
               <div class="p-fv__date-item">
@@ -114,24 +114,24 @@ get_header('seminar');
         <div class="l-inner js-in-view fade-in-up">
           <div class="p-about-head__title-wrap">
             <h2 class="p-about-head__title">
-              <img class="p-about-head__title-img u-pc" src="./assets/img/img_about-title--pc.webp" alt="管理者の皆さん、受付システムを最大限活用できていますか？" width="972" height="237">
-              <img class="p-about-head__title-img u-sp" src="./assets/img/img_about-title--sp.webp" alt="管理者の皆さん、受付システムを最大限活用できていますか？" width="972" height="237">
+              <img class="p-about-head__title-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-title--pc.webp" alt="管理者の皆さん、受付システムを最大限活用できていますか？" width="972" height="237">
+              <img class="p-about-head__title-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-title--sp.webp" alt="管理者の皆さん、受付システムを最大限活用できていますか？" width="972" height="237">
             </h2>
           </div>
           <div class="p-about-case">
             <h3>ありがちなケースとして―<span class="u-pc">―</span></h3>
             <div class="p-about-case-box">
               <div class="p-about-case-item">
-                <img class="p-about-case-item-img u-pc" src="./assets/img/img_about-case1--pc.webp" alt="基本設定をそのままにしている…" width="321" height="148">
-                <img class="p-about-case-item-img u-sp" src="./assets/img/img_about-case1--sp.webp" alt="基本設定をそのままにしている…" width="321" height="148">
+                <img class="p-about-case-item-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-case1--pc.webp" alt="基本設定をそのままにしている…" width="321" height="148">
+                <img class="p-about-case-item-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-case1--sp.webp" alt="基本設定をそのままにしている…" width="321" height="148">
               </div>
               <div class="p-about-case-item">
-                <img class="p-about-case-item-img u-pc" src="./assets/img/img_about-case2--pc.webp" alt="管理者自身が「理解しているつもり」で止まっている" width="321" height="175">
-                <img class="p-about-case-item-img u-sp" src="./assets/img/img_about-case2--sp.webp" alt="管理者自身が「理解しているつもり」で止まっている" width="321" height="175">
+                <img class="p-about-case-item-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-case2--pc.webp" alt="管理者自身が「理解しているつもり」で止まっている" width="321" height="175">
+                <img class="p-about-case-item-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-case2--sp.webp" alt="管理者自身が「理解しているつもり」で止まっている" width="321" height="175">
               </div>
               <div class="p-about-case-item">
-                <img class="p-about-case-item-img u-pc" src="./assets/img/img_about-case3--pc.webp" alt="新機能が出ても追えていない" width="262" height="148">
-                <img class="p-about-case-item-img u-sp" src="./assets/img/img_about-case3--sp.webp" alt="新機能が出ても追えていない" width="262" height="148">
+                <img class="p-about-case-item-img u-pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-case3--pc.webp" alt="新機能が出ても追えていない" width="262" height="148">
+                <img class="p-about-case-item-img u-sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/img_about-case3--sp.webp" alt="新機能が出ても追えていない" width="262" height="148">
               </div>
             </div>
           </div>
