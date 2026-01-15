@@ -20,12 +20,12 @@
   <div class="l-header__inner">
     <a href="<?php echo esc_url(home_url('/')); ?>" class="l-header__logo">
       <img
-        class="l-header__logo-img"
-        src="<?php echo get_theme_file_uri('/assets/img/logo.svg'); ?>"
-        alt="RECEPTIONIST"
-        width="173"
-        height="42"
-      >
+  class="l-header__logo-img"
+  src="<?php echo get_template_directory_uri(); ?>/assets/img/seminar/logo.svg"
+  alt="RECEPTIONIST"
+  width="173"
+  height="42"
+>
     </a>
 
     <!-- pc nav -->
