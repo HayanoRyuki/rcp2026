@@ -173,7 +173,7 @@ svg {
 .l-main {
   overflow: visible;
   width: 100%;
-  margin-top: 7.2rem;
+  margin-top: 4rem;
 }
 @media screen and (max-width: 767px) {
   .l-main {
