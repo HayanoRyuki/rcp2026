@@ -5,7 +5,10 @@ viewport固定（375px以下は小さくさせない）
   const viewport = document.querySelector('meta[name="viewport"]');
 
   function switchViewport() {
-    const value = window.outerWidth > 375 ? "width=device-width,initial-scale=1" : "width=375";
+    if (!viewport) return;
+    const value = window.outerWidth > 375
+      ? "width=device-width,initial-scale=1"
+      : "width=375";
     if (viewport.getAttribute("content") !== value) {
       viewport.setAttribute("content", value);
     }
@@ -15,43 +18,43 @@ viewport固定（375px以下は小さくさせない）
 })();
 
 /* ===================================================
-スクロール監視
+DOM構築後に処理をまとめる（★重要）
 =====================================================*/
-const intersectionObserver = new IntersectionObserver(function(entries){
-  entries.forEach(function(entry) {
-    if(entry.isIntersecting){
-      entry.target.classList.add("is-in-view");
-    } else {
-      //entry.target.classList.remove("is-in-view");
-    }
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ===================================================
+  スクロール監視（in-view）
+  =====================================================*/
+  const intersectionObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-in-view");
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: "0px 0px -20% 0px",
+    threshold: 0
   });
-}, {
-  root: null, // ビューポート
-  rootMargin: "0px 0px -20% 0px", // 下から20%手前で発火
-  threshold: 0 // 0でOK（下からのスクロールにだけ対応している）
-});
 
-const inViewItems = document.querySelectorAll(".js-in-view");
-inViewItems.forEach(function(inViewItem) {
-  intersectionObserver.observe(inViewItem);
-});
+  document.querySelectorAll(".js-in-view").forEach(function(el) {
+    intersectionObserver.observe(el);
+  });
 
-/* ===================================================
-スムーススクロール（ノーマル）
-=====================================================*/
-document.addEventListener('DOMContentLoaded', function() {
-	const links = document.querySelectorAll('a[href^="#"]');
-	links.forEach(item => {
-		item.addEventListener("click", event => {
-			event.preventDefault();
-			const targetId = item.getAttribute("href");
-			const target = document.querySelector(targetId);
-			if (target) {
-				target.scrollIntoView({
-					behavior: "smooth",
-					block: "start"
-				});
-			}
-		});
-	});
+  /* ===================================================
+  スムーススクロール
+  =====================================================*/
+  document.querySelectorAll('a[href^="#"]').forEach(item => {
+    item.addEventListener("click", event => {
+      event.preventDefault();
+      const target = document.querySelector(item.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    });
+  });
+
 });
