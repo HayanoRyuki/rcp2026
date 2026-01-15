@@ -280,3 +280,25 @@
     background: var(--color-danger-hover);
   }
 }
+
+/* ---------- 上部余白（修正） ---------- */
+body.top,
+body.home,
+main.site-main.front-page {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* HEROだけヘッダー分を逃がす */
+.hero.page-title.wrapper {
+  padding-top: calc(48px + 64px);
+}
+
+.hero-benefits {
+  align-items: center; /* 追加 */
+}
+
+.hero-benefits li {
+  width: 100%;
+  max-width: 320px;   /* ← ここが肝 */
+}
