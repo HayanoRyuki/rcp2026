@@ -147,28 +147,37 @@
     flex-shrink: 0;
   }
 
-  /* ---------- USER IMAGE（フルブリード＋CTAに食い込み） ---------- */
+  /* ---------- USER IMAGE（フルブリード＋文字の下に潜る） ---------- */
   .hero-user-image {
-  width: 100vw;
+    width: 100vw;
+    height: clamp(240px, 55vw, 320px);
 
-  /* 高さは可変：横幅が広がったら一緒に増える */
-  height: clamp(240px, 55vw, 320px);
+    /* 上の文字の下・CTAの上に重ねる */
+    margin: -32px 0 -40px;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 
-  /* 上の文字の下に潜らせる */
-  margin: -32px 0 -40px;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+    background-image: url("../../img/hero/hero-user-sm.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
 
-  background-image: url("../../img/hero/hero-user-sm.png");
+    /* 基本は contain（上端を守る） */
+    background-size: contain;
 
-  /* 下端基準で、上端は絶対に切らない */
-  background-position: center bottom;
-  background-size: contain;
-  background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+  }
 
-  position: relative;
-  z-index: 1;
-}
+  /* =========================================================
+     標準スマホ幅では横を優先して cover
+     （375〜430px想定）
+  ========================================================= */
+  @media (max-width: 430px) {
+    .hero-user-image {
+      background-size: cover;
+    }
+  }
+
   /* =========================================================
      RIGHT COLUMN（PC用フォーム）
      ※ SPでは完全非表示
@@ -193,13 +202,11 @@
     height: 64px;
     margin: 0 auto;
 
-    /* SVGをボタンとして使用 */
     background-image: url("../../img/hero/hero-cv-sp.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 
-    /* 中身は視覚的に消す */
     font-size: 0;
     line-height: 0;
     text-decoration: none;
@@ -209,7 +216,6 @@
     display: none;
   }
 
-  /* タップ時フィードバック（任意・安全） */
   .hero-sp-cta:active {
     transform: scale(0.98);
   }
