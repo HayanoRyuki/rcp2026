@@ -142,33 +142,7 @@
 
   /* ---------- BADGE ---------- */
   .hero-badge {
-    position: absolute;
-    top: 18px;
-    right: -64px;
-    width: 108px;
-    height: 108px;
-    border: 2px solid #222;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .hero-badge .badge-main {
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #222;
-  }
-
-  .hero-badge .badge-note {
-    position: absolute;
-    bottom: 44px;
-    right: 28px;
-    font-size: 0.65rem;
-    line-height: 1;
-    color: #222;
+        display: none;
   }
 
   /* =========================================================
