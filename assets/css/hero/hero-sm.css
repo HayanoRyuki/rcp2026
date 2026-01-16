@@ -58,7 +58,7 @@
   }
 
   /* =========================================================
-     HERO TITLE（文字組みのみ）
+     HERO TITLE（文字組みのみ・マーカー禁止）
   ========================================================= */
   .hero-title {
     display: inline-block;
@@ -70,27 +70,41 @@
 
     /* 左に寄りすぎるのを防ぐ（基準値） */
     margin-left: 0.35em;
+
+    /* ★重要：hero-title 自体には一切マーカーを持たせない */
+    background: none !important;
+    background-image: none !important;
   }
 
-  /* マーカー対象文字 */
+  /* =========================================================
+     マーカー対象文字（白ライン）
+  ========================================================= */
   .hero-title-mark {
+    display: inline-block;
+
     background-image: linear-gradient(
       transparent 65%,
       #ffffff 65%
     );
     background-size: 100% 1.4em;
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
+
+    /* 行分割対策 */
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
   }
 
-  /* マーカー非対象（句読点） */
+  /* =========================================================
+     マーカー非対象（句読点）
+  ========================================================= */
   .hero-title-nomark {
+    display: inline-block;          /* ★継ぎ目を断つ */
     background: none !important;
+    background-image: none !important;
   }
 
   /* 強調（ラク） */
-  .hero-title .em {
+  .hero-title-mark.em {
     color: #4fb3d6;
     font-size: 1.25em;
   }
