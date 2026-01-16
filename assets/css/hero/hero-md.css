@@ -29,16 +29,16 @@
   ========================================================= */
   .hero.page-title.wrapper {
     width: 100%;
-    height: auto;              /* ← 固定禁止 */
-    min-height: auto;          /* ← 固定禁止 */
+    height: auto;
+    min-height: auto;
     margin-top: 56px;
-    padding: 48px 0 32px;      /* SP寄り */
+    padding: 48px 0 32px;
     background-color: #EAF6F9;
   }
 
   .hero-body {
     display: flex;
-    flex-direction: column;    /* ← 縦積み */
+    flex-direction: column;
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
@@ -51,11 +51,13 @@
     padding: 0 32px;
     display: flex;
     flex-direction: column;
+    align-items: center; /* ← 中央基準に */
   }
 
   .hero-title-box {
     position: relative;
     max-width: 100%;
+    text-align: center; /* ← タブレットは思い切って中央 */
   }
 
   .hero-title {
@@ -108,20 +110,24 @@
     color: #222;
   }
 
-  /* ---------- BENEFITS ---------- */
+  /* =========================================================
+     BENEFITS（MDのみ：中央寄せ）
+  ========================================================= */
   .hero-benefits {
     list-style: none;
-    margin: 28px 0 0;
+    margin: 28px auto 0;     /* ← 中央寄せ */
     padding: 0;
     max-width: 420px;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    align-items: center;     /* ← 左に流れない */
   }
 
   .hero-benefits li {
     display: flex;
     align-items: center;
+    justify-content: flex-start; /* 中身は左揃え */
     gap: 0.75rem;
     width: 100%;
     padding: 0.35em 0.9em;
@@ -156,7 +162,7 @@
 
   /* =========================================================
      RIGHT COLUMN（FORM）
-     ※ HERO内で完結させる
+     ※ HERO内で完結
   ========================================================= */
   .container_r {
     margin: 32px auto 0;
