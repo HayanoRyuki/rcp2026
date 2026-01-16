@@ -56,21 +56,24 @@
   }
 
   .hero-title {
-    display: inline;
-    font-size: 2.4rem;
-    line-height: 1.35;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    color: #2B2B2B;
+  display: inline-block; /* ← ここ重要 */
+  font-size: 2.4rem;
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #2B2B2B;
 
-    /* 行ごと白アンダーライン */
-    background-image: linear-gradient(
-      transparent 65%,
-      #ffffff 65%
-    );
-    background-size: 100% 1.4em;
-    background-repeat: repeat-y;
-  }
+  /* 左に寄りすぎるのを防ぐ */
+  margin-left: 0.15em;   /* ← 効きすぎたら 0.1em でもOK */
+
+  /* 行ごと白アンダーライン */
+  background-image: linear-gradient(
+    transparent 65%,
+    #ffffff 65%
+  );
+  background-size: 100% 1.4em;
+  background-repeat: repeat-y;
+}
 
   .hero-title .em {
     color: #4fb3d6;
