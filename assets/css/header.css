@@ -1,5 +1,5 @@
 /* =========================================================
-   HEADER STYLE / rootカラー対応版（最終整形済み）
+   HEADER STYLE / rootカラー対応版（最終整形・推奨調整適用）
 ========================================================= */
 
 /* ===============================
@@ -17,6 +17,7 @@
   transition: all 0.3s ease;
 }
 
+/* ヘッダー内コンテナ */
 .site-header .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -26,6 +27,7 @@
   justify-content: space-between;
 }
 
+/* ヘッダー分の余白確保 */
 body {
   padding-top: 80px;
 }
@@ -48,22 +50,22 @@ body {
    CTAボタン（PCのみ表示）
 ================================= */
 .site-header .cta-button {
-  background-color: var(--color-danger);      /* 赤ベース */
+  background-color: var(--color-danger);
   color: var(--color-white);
   padding: 0.6rem 1.8rem;
   border-radius: 9999px;
-  font-size: 1rem;              /* 16pxに統一 */
+  font-size: 1rem;
   font-weight: 700;
   white-space: nowrap;
   transition: background-color 0.3s ease;
 }
 
 .site-header .cta-button:hover {
-  background-color: var(--color-danger-hover); /* 濃い赤に変化 */
+  background-color: var(--color-danger-hover);
 }
 
 /* ===============================
-   ハンバーガー（SPのみ表示）
+   ハンバーガー（SP / タブレット表示）
 ================================= */
 .menu-toggle {
   display: flex;
@@ -94,9 +96,10 @@ body {
 }
 
 /* ===============================
-   PCナビゲーション（幅769px以上）
+   PCナビゲーション（1024px以上）
 ================================= */
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
+
   .menu-toggle {
     display: none;
   }
@@ -115,13 +118,13 @@ body {
   .main-nav a {
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;            /* 明確に16px指定 */
+    font-size: 1rem;
     color: var(--color-text-light);
     transition: color 0.2s ease;
   }
 
   .main-nav a:hover {
-    color: var(--color-primary); /* ホバー時は青に */
+    color: var(--color-primary);
   }
 
   .site-header .cta-button {
@@ -130,16 +133,17 @@ body {
 }
 
 /* ===============================
-   SPナビゲーション（幅768px以下）
+   SP / タブレットナビ（1023px以下）
 ================================= */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
+
   .main-nav {
     display: none;
     background-color: var(--color-white);
     width: 100%;
     padding: 1rem;
     position: absolute;
-    top: 60px;
+    top: 100%;          /* ★ 推奨：ヘッダー高さ基準 */
     left: 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -157,7 +161,7 @@ body {
 
   .main-nav li a {
     display: block;
-    font-size: 1.05rem; /* 少し拡大して押しやすく */
+    font-size: 1.05rem;
     padding: 0.6rem 0;
     color: var(--color-text);
     text-decoration: none;
@@ -173,7 +177,7 @@ body {
 }
 
 /* ===============================
-   プルダウンメニュー
+   プルダウンメニュー（PC用）
 ================================= */
 .main-nav-list .submenu {
   display: none;
