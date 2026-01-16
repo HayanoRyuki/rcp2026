@@ -149,8 +149,8 @@
   /* ---------- USER IMAGE（フルブリード＋CTAに食い込み） ---------- */
   .hero-user-image {
     width: 100vw;
-    height: 260px;
-    margin: 12px 0 -40px;
+    height: 280px;
+    margin: -8px 0 -40px;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
 
