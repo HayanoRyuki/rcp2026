@@ -114,7 +114,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    align-items: center; /* 横幅揃え */
+    align-items: center;
   }
 
   .hero-benefits li {
@@ -146,6 +146,7 @@
     flex-shrink: 0;
   }
 
+  /* ---------- USER IMAGE（フルブリード＋CTAに食い込み） ---------- */
   .hero-user-image {
     width: 100vw;
     height: 260px;
@@ -158,7 +159,7 @@
     background-size: cover;
     background-repeat: no-repeat;
 
-        position: relative;
+    position: relative;
     z-index: 1;
   }
 
@@ -171,42 +172,46 @@
   }
 
   /* =========================================================
-     下部：SP専用 資料請求CTA
+     下部：SP専用 資料請求CTA（SVGボタン化）
   ========================================================= */
   .hero-sp-cta-wrap {
     margin: 24px 20px 0;
-   position: relative;
-    z-index: 2; 
+    position: relative;
+    z-index: 2;
   }
 
   .hero-sp-cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
+    display: block;
     width: 100%;
-    padding: 14px 16px;
+    max-width: 360px;
+    height: 64px;
+    margin: 0 auto;
 
-    background: var(--color-danger);
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: 700;
+    /* SVGをボタンとして使用 */
+    background-image: url("../../img/hero/hero-cv-sp.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    /* 中身は視覚的に消す */
+    font-size: 0;
+    line-height: 0;
     text-decoration: none;
-
-    border-radius: 999px;
-  }
-
-  .hero-sp-cta:hover {
-    background: var(--color-danger-hover);
   }
 
   .hero-sp-cta-icon {
-    font-size: 1.1rem;
-    line-height: 1;
+    display: none;
+  }
+
+  /* タップ時フィードバック（任意・安全） */
+  .hero-sp-cta:active {
+    transform: scale(0.98);
   }
 }
 
-.page-title{
-  margin: 0 0 0rem;
+/* =========================================================
+   共通微調整
+========================================================= */
+.page-title {
+  margin: 0;
 }
