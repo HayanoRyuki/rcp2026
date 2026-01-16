@@ -10,9 +10,11 @@
         <div class="hero-title-box">
 
           <h1 class="hero-title">
-            もっと<span class="em">ラク</span>で、<br>
-            シンプルな受付へ
-          </h1>
+  <span class="hero-title-mark">もっと</span>
+  <span class="hero-title-mark em">ラク</span>
+  <span class="hero-title-mark">で</span><span class="hero-title-nomark">、</span><br>
+  <span class="hero-title-mark">シンプルな受付へ</span>
+</h1>
 
           <div class="hero-badge">
             <span class="badge-main">シェア<br>No.1</span>

@@ -293,3 +293,33 @@
 .hero-sp-cta {
   display: none !important;
 }
+/* =========================================================
+   HERO TITLE（XL：マーカー制御）
+========================================================= */
+
+.hero-title {
+  display: inline;
+  font-size: 3.2rem;     /* ← XL想定 */
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #2B2B2B;
+}
+
+/* マーカーを引く文字だけ */
+.hero-title .mark {
+  display: inline;
+  background-image: linear-gradient(
+    transparent 62%,
+    #ffffff 62%
+  );
+  background-size: 100% 1.45em; /* ← XLは少し深め */
+  background-repeat: repeat-y;
+  padding: 0 0.18em;            /* ← XLは余白を少し広く */
+}
+
+/* 強調語 */
+.hero-title .em {
+  color: #4fb3d6;
+  font-size: 1.15em;
+}

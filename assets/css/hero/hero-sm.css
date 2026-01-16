@@ -239,3 +239,50 @@
     margin-left: 1.5em;
   }
 }
+
+/* =========================================================
+   HERO TITLE（SM）
+========================================================= */
+@media (max-width: 767px) {
+
+  .hero-title-box {
+    position: relative;
+    max-width: 100%;
+    text-align: left;
+    z-index: 2;
+  }
+
+  /* hero-title本体：文字組みだけ担当 */
+  .hero-title {
+    display: inline-block;
+    font-size: 2.05rem;        /* 実機で少し抑えたサイズ */
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #2B2B2B;
+    margin-left: 1.2em;        /* ← 左に寄りすぎ防止（既調整） */
+  }
+
+  /* マーカーが乗る文字 */
+  .hero-title-mark {
+    background-image: linear-gradient(
+      transparent 65%,
+      #ffffff 65%
+    );
+    background-size: 100% 1.4em;
+    background-repeat: repeat-y;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  /* 読点・マーカー非対象 */
+  .hero-title-nomark {
+    background: none !important;
+  }
+
+  /* 強調（ラク） */
+  .hero-title .em {
+    color: #4fb3d6;
+    font-size: 1.25em;
+  }
+}
