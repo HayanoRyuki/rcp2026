@@ -75,7 +75,7 @@
   /* マーカー対象文字 */
   .hero-title-mark {
     background-image: linear-gradient(
-      transparent 65%,
+      transparent 30%,
       #ffffff 65%
     );
     background-size: 100% 1.4em;
