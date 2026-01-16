@@ -153,10 +153,10 @@
   /* ---------- USER IMAGE（フルブリード＋文字の下に潜る） ---------- */
   .hero-user-image {
     width: 100vw;
-    height: clamp(240px, 55vw, 320px);
+    height: clamp(260px, 55vw, 320px);
 
     /* 上の文字の下・CTAの上に重ねる */
-    margin: -32px 0 -40px;
+    margin: -10px 0 -40px;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
 
