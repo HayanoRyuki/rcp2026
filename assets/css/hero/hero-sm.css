@@ -149,21 +149,26 @@
 
   /* ---------- USER IMAGE（フルブリード＋CTAに食い込み） ---------- */
   .hero-user-image {
-    width: 100vw;
-    height: 280px;
-    margin: -8px 0 -40px;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+  width: 100vw;
 
-    background-image: url("../../img/hero/hero-user-sm.png");
-    background-position: center bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
+  /* 高さは可変：横幅が広がったら一緒に増える */
+  height: clamp(240px, 55vw, 320px);
 
-    position: relative;
-    z-index: 1;
-  }
+  /* 上の文字の下に潜らせる */
+  margin: -32px 0 -40px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 
+  background-image: url("../../img/hero/hero-user-sm.png");
+
+  /* 下端基準で、上端は絶対に切らない */
+  background-position: center bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  position: relative;
+  z-index: 1;
+}
   /* =========================================================
      RIGHT COLUMN（PC用フォーム）
      ※ SPでは完全非表示
