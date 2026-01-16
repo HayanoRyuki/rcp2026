@@ -10,9 +10,9 @@
         <div class="hero-title-box">
 
           <h1 class="hero-title">
-  <span class="hero-title-mark">もっと</span>
-  <span class="hero-title-mark em">ラク</span>
-  <span class="hero-title-mark">で</span><span class="hero-title-nomark">、</span><br>
+  <span class="hero-title-mark">
+    もっと<span class="em">ラク</span>で<span class="hero-title-nomark">、</span>
+  </span><br>
   <span class="hero-title-mark">シンプルな受付へ</span>
 </h1>
 
