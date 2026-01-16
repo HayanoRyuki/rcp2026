@@ -1,5 +1,5 @@
 /* =========================================================
-   HERO SECTION：スマホ用（〜767px） / root対応
+   HERO SECTION：スマホ用（〜767px） / 完成版
 ========================================================= */
 @media (max-width: 767px) {
 
@@ -23,7 +23,9 @@
     padding: 0;
   }
 
-  /* HEROだけヘッダー高さ分を逃がす */
+  /* =========================================================
+     HERO本体
+  ========================================================= */
   .hero.page-title.wrapper {
     width: 100%;
     min-height: auto;
@@ -40,7 +42,7 @@
   }
 
   /* =========================================================
-     LEFT COLUMN（常時表示）
+     LEFT COLUMN
   ========================================================= */
   .container_l.adView {
     padding: 0 20px;
@@ -55,32 +57,47 @@
     z-index: 2;
   }
 
+  /* =========================================================
+     HERO TITLE（文字組みのみ）
+  ========================================================= */
   .hero-title {
-  display: inline-block; /* ← ここ重要 */
-  font-size: 2.05rem;
-  line-height: 1.35;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: #2B2B2B;
+    display: inline-block;
+    font-size: 2.05rem;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #2B2B2B;
 
-  /* 左に寄りすぎるのを防ぐ */
-  margin-left: 0.35em;   /* ← 効きすぎたら 0.1em でもOK */
-
-  /* 行ごと白アンダーライン */
-  background-image: linear-gradient(
-    transparent 65%,
-    #ffffff 65%
-  );
-  background-size: 100% 1.4em;
-  background-repeat: repeat-y;
-}
-
-  .hero-title .em {
-    color: #4fb3d6;
-    font-size: 1.3em;
+    /* 左に寄りすぎるのを防ぐ（基準値） */
+    margin-left: 0.35em;
   }
 
-  /* ---------- BADGE ---------- */
+  /* マーカー対象文字 */
+  .hero-title-mark {
+    background-image: linear-gradient(
+      transparent 65%,
+      #ffffff 65%
+    );
+    background-size: 100% 1.4em;
+    background-repeat: repeat-y;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  /* マーカー非対象（句読点） */
+  .hero-title-nomark {
+    background: none !important;
+  }
+
+  /* 強調（ラク） */
+  .hero-title .em {
+    color: #4fb3d6;
+    font-size: 1.25em;
+  }
+
+  /* =========================================================
+     BADGE（SM）
+  ========================================================= */
   .hero-badge {
     position: absolute;
     top: -10px;
@@ -89,6 +106,7 @@
     height: 72px;
     border: 2px solid #222;
     border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,11 +128,14 @@
     color: #222;
   }
 
-  /* ---------- BENEFITS ---------- */
+  /* =========================================================
+     BENEFITS
+  ========================================================= */
   .hero-benefits {
     list-style: none;
     margin: 20px 0 0;
     padding: 0;
+
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
@@ -125,12 +146,15 @@
     display: flex;
     align-items: center;
     gap: 0.6rem;
+
     width: 100%;
     max-width: 320px;
     padding: 0.35em 0.8em;
+
     background: #4fb3d6;
     color: #fff;
     border-radius: 999px;
+
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.4;
@@ -141,21 +165,24 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     width: 28px;
     height: 28px;
     border-radius: 50%;
     border: 2px solid #ffffff;
+
     color: #ffffff;
     font-size: 0.9rem;
     flex-shrink: 0;
   }
 
-  /* ---------- USER IMAGE（フルブリード＋文字の下に潜る） ---------- */
+  /* =========================================================
+     USER IMAGE（フルブリード）
+  ========================================================= */
   .hero-user-image {
     width: 100vw;
     height: clamp(260px, 55vw, 320px);
 
-    /* 上の文字の下・CTAの上に重ねる */
     margin: -10px 0 -40px;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
@@ -163,18 +190,13 @@
     background-image: url("../../img/hero/hero-user-sm.png");
     background-position: center bottom;
     background-repeat: no-repeat;
-
-    /* 基本は contain（上端を守る） */
     background-size: contain;
 
     position: relative;
     z-index: 1;
   }
 
-  /* =========================================================
-     標準スマホ幅では横を優先して cover
-     （375〜430px想定）
-  ========================================================= */
+  /* 標準スマホ幅（375〜430px）は横を優先 */
   @media (max-width: 430px) {
     .hero-user-image {
       background-size: cover;
@@ -182,7 +204,7 @@
   }
 
   /* =========================================================
-     RIGHT COLUMN（PC用フォーム）
+     RIGHT COLUMN（フォーム）
      ※ SPでは完全非表示
   ========================================================= */
   .container_r {
@@ -190,7 +212,7 @@
   }
 
   /* =========================================================
-     下部：SP専用 資料請求CTA（SVGボタン化）
+     SP専用：資料請求CTA
   ========================================================= */
   .hero-sp-cta-wrap {
     margin: 24px 20px 0;
@@ -215,24 +237,13 @@
     text-decoration: none;
   }
 
-  .hero-sp-cta-icon {
-    display: none;
-  }
-
   .hero-sp-cta:active {
     transform: scale(0.98);
   }
 }
 
 /* =========================================================
-   共通微調整
-========================================================= */
-.page-title {
-  margin: 0;
-}
-
-/* =========================================================
-   HERO TITLE：SM内・400px以上だけ左余白を増やす
+   HERO TITLE：SM内 400px以上だけ左余白を増やす
 ========================================================= */
 @media (min-width: 400px) and (max-width: 767px) {
   .hero-title {
@@ -241,48 +252,8 @@
 }
 
 /* =========================================================
-   HERO TITLE（SM）
+   共通微調整
 ========================================================= */
-@media (max-width: 767px) {
-
-  .hero-title-box {
-    position: relative;
-    max-width: 100%;
-    text-align: left;
-    z-index: 2;
-  }
-
-  /* hero-title本体：文字組みだけ担当 */
-  .hero-title {
-    display: inline-block;
-    font-size: 2.05rem;        /* 実機で少し抑えたサイズ */
-    line-height: 1.35;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    color: #2B2B2B;
-    margin-left: 1.2em;        /* ← 左に寄りすぎ防止（既調整） */
-  }
-
-  /* マーカーが乗る文字 */
-  .hero-title-mark {
-    background-image: linear-gradient(
-      transparent 65%,
-      #ffffff 65%
-    );
-    background-size: 100% 1.4em;
-    background-repeat: repeat-y;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-  }
-
-  /* 読点・マーカー非対象 */
-  .hero-title-nomark {
-    background: none !important;
-  }
-
-  /* 強調（ラク） */
-  .hero-title .em {
-    color: #4fb3d6;
-    font-size: 1.25em;
-  }
+.page-title {
+  margin: 0;
 }
