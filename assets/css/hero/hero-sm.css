@@ -148,8 +148,8 @@
 
   .hero-user-image {
     width: 100vw;
-    height: 245px;
-    margin: 12px 0 0;
+    height: 260px;
+    margin: 12px 0 -40px;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
 
@@ -157,6 +157,9 @@
     background-position: center bottom;
     background-size: cover;
     background-repeat: no-repeat;
+
+        position: relative;
+    z-index: 1;
   }
 
   /* =========================================================
