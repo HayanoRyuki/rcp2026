@@ -1,6 +1,6 @@
 /* =========================================================
    HERO SECTION：タブレット用（768px〜1023px）
-   ※ SP思想に寄せた安全構成
+   ※ SP思想に寄せた安全構成（MD最終版）
 ========================================================= */
 @media (min-width: 768px) and (max-width: 1023px) {
 
@@ -25,7 +25,7 @@
   }
 
   /* =========================================================
-     HERO本体（高さ固定を完全撤廃）
+     HERO本体（高さ固定は使わない）
   ========================================================= */
   .hero.page-title.wrapper {
     width: 100%;
@@ -38,7 +38,7 @@
 
   .hero-body {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* 縦積み */
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
@@ -51,13 +51,12 @@
     padding: 0 32px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* ← 中央基準に */
   }
 
   .hero-title-box {
     position: relative;
     max-width: 100%;
-    text-align: center; /* ← タブレットは思い切って中央 */
+    padding-right: 120px; /* バッヂ分の逃げ */
   }
 
   .hero-title {
@@ -81,11 +80,13 @@
     font-size: 1.1em;
   }
 
-  /* ---------- BADGE ---------- */
+  /* ---------- BADGE（MDでは右上固定） ---------- */
   .hero-badge {
     position: absolute;
-    top: -12px;
-    right: 0;
+    top: -8px;
+    right: 24px;
+    left: auto;
+
     width: 96px;
     height: 96px;
     border: 2px solid #222;
@@ -111,23 +112,22 @@
   }
 
   /* =========================================================
-     BENEFITS（MDのみ：中央寄せ）
+     BENEFITS（MDでは中央寄せ）
   ========================================================= */
   .hero-benefits {
     list-style: none;
-    margin: 28px auto 0;     /* ← 中央寄せ */
+    margin: 28px auto 0; /* ← 中央寄せ */
     padding: 0;
     max-width: 420px;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    align-items: center;     /* ← 左に流れない */
+    align-items: center;
   }
 
   .hero-benefits li {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* 中身は左揃え */
     gap: 0.75rem;
     width: 100%;
     padding: 0.35em 0.9em;
@@ -152,12 +152,16 @@
     flex-shrink: 0;
   }
 
-  /* ---------- USER IMAGE ---------- */
+  /* =========================================================
+     USER IMAGE（MD専用チューニング）
+  ========================================================= */
   .hero-user-image {
-    width: 100%;
-    height: 260px;
-    margin: -24px 0 0;
-    background: url("../../img/hero/hero-user-xl.png") center bottom / contain no-repeat;
+    width: 110%;
+    height: 300px;
+    margin: -24px 0 0 -5%;
+
+    background: url("../../img/hero/hero-user-xl.png")
+      center bottom / contain no-repeat;
   }
 
   /* =========================================================
