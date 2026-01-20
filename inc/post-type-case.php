@@ -351,6 +351,11 @@ add_action('wp_ajax_generate_case_external_preview', function () {
   update_post_meta($post_id, '_external_preview_token', $token);
   update_post_meta($post_id, '_external_preview_expires', $expires);
 
-  $url = get_permalink($post_id) . '?external_preview=' . $token;
+  $url = add_query_arg(
+    'external_preview',
+    $token,
+    get_permalink($post_id)
+  );
+
   wp_send_json_success(['url' => $url]);
 });
