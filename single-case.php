@@ -32,7 +32,7 @@
         <?php endif; endif; ?>
 
         <div class="case-content">
-          <?php the_content(); ?>
+            <?php echo apply_filters('the_content', get_the_content()); ?>
         </div>
         <?php get_template_part('template-parts/case/cta'); ?>
       </article>
