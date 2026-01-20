@@ -201,7 +201,7 @@ add_shortcode('case_two_image', 'rcp_case_two_image_shortcode');
 
 
 /* =========================================================
- * case：外部確認URL（5日間有効）
+ * case：外部確認URL（14日間有効）
  * ========================================================= */
 
 /**
@@ -223,20 +223,21 @@ add_action('add_meta_boxes', 'add_case_external_preview_box');
  * メタボックス描画
  */
 function render_case_external_preview_box($post) {
+  // 既存トークンと有効期限を取得
   $token   = get_post_meta($post->ID, '_external_preview_token', true);
   $expires = get_post_meta($post->ID, '_external_preview_expires', true);
 
+  // 現在時刻が有効期限内かどうか
   $is_valid = $token && $expires && time() < intval($expires);
 
-  // ★ add_query_arg を使って安全にURL生成
+  // add_query_arg を使って安全にURL生成
   $url = $is_valid
     ? add_query_arg('external_preview', $token, get_permalink($post))
     : '';
-
   ?>
   <p>
     <button type="button" class="button" id="generate-external-preview">
-      外部確認URLをコピー（5日間）
+      外部確認URLをコピー（14日間）
     </button>
   </p>
 
@@ -244,7 +245,12 @@ function render_case_external_preview_box($post) {
     <p style="font-size:12px;color:#555;">
       有効期限：<?php echo date('Y/m/d H:i', intval($expires)); ?>
     </p>
-    <input type="text" readonly value="<?php echo esc_url($url); ?>" style="width:100%;">
+    <input
+      type="text"
+      readonly
+      value="<?php echo esc_url($url); ?>"
+      style="width:100%;"
+    >
   <?php endif; ?>
 
   <script>
@@ -257,6 +263,7 @@ function render_case_external_preview_box($post) {
       }, function(res){
         if (res.success) {
           navigator.clipboard.writeText(res.data.url);
+          // URL再生成後、表示を更新
           location.reload();
         }
       });
@@ -267,7 +274,7 @@ function render_case_external_preview_box($post) {
 }
 
 /**
- * AJAX：外部確認URL生成
+ * AJAX：外部確認URL生成（14日間有効）
  */
 add_action('wp_ajax_generate_case_external_preview', function () {
   if (!wp_verify_nonce($_POST['nonce'], 'generate_case_external_preview')) {
@@ -275,14 +282,22 @@ add_action('wp_ajax_generate_case_external_preview', function () {
   }
 
   $post_id = intval($_POST['post_id']);
+
+  // 推測困難なトークンを生成
   $token   = wp_generate_password(32, false);
-  $expires = time() + (5 * DAY_IN_SECONDS);
+
+  // 有効期限：14日
+  $expires = time() + (14 * DAY_IN_SECONDS);
 
   update_post_meta($post_id, '_external_preview_token', $token);
   update_post_meta($post_id, '_external_preview_expires', $expires);
 
-  // ★ ここも add_query_arg で統一
-  $url = add_query_arg('external_preview', $token, get_permalink($post_id));
+  // add_query_arg でURL生成を統一
+  $url = add_query_arg(
+    'external_preview',
+    $token,
+    get_permalink($post_id)
+  );
 
   wp_send_json_success(['url' => $url]);
 });
