@@ -281,3 +281,76 @@ function rcp_case_two_image_shortcode($atts) {
   return ob_get_clean();
 }
 add_shortcode('case_two_image', 'rcp_case_two_image_shortcode');
+
+// --------------------------------------------------
+// 外部確認URL（5日間有効）
+// --------------------------------------------------
+function add_case_external_preview_box() {
+  add_meta_box(
+    'case_external_preview',
+    '外部確認',
+    'render_case_external_preview_box',
+    'case',
+    'side',
+    'high'
+  );
+}
+add_action('add_meta_boxes', 'add_case_external_preview_box');
+
+function render_case_external_preview_box($post) {
+  $token   = get_post_meta($post->ID, '_external_preview_token', true);
+  $expires = get_post_meta($post->ID, '_external_preview_expires', true);
+
+  $is_valid = $token && $expires && time() < intval($expires);
+  $url = $is_valid
+    ? get_permalink($post) . '?external_preview=' . $token
+    : '';
+
+  wp_nonce_field('case_external_preview_nonce', 'case_external_preview_nonce');
+  ?>
+  <p>
+    <button type="button" class="button" id="generate-external-preview">
+      外部確認URLをコピー（5日間）
+    </button>
+  </p>
+  <?php if ($is_valid): ?>
+    <p style="font-size:12px;color:#555;">
+      有効期限：<?php echo date('Y/m/d H:i', intval($expires)); ?>
+    </p>
+    <input type="text" readonly value="<?php echo esc_url($url); ?>" style="width:100%;" id="external-preview-url">
+  <?php endif; ?>
+
+  <script>
+  jQuery(function($){
+    $('#generate-external-preview').on('click', function(){
+      $.post(ajaxurl, {
+        action: 'generate_case_external_preview',
+        post_id: <?php echo (int)$post->ID; ?>,
+        nonce: '<?php echo wp_create_nonce('generate_case_external_preview'); ?>'
+      }, function(res){
+        if (res.success) {
+          navigator.clipboard.writeText(res.data.url);
+          location.reload();
+        }
+      });
+    });
+  });
+  </script>
+  <?php
+}
+
+add_action('wp_ajax_generate_case_external_preview', function () {
+  if (!wp_verify_nonce($_POST['nonce'], 'generate_case_external_preview')) {
+    wp_send_json_error();
+  }
+
+  $post_id = intval($_POST['post_id']);
+  $token   = wp_generate_password(32, false);
+  $expires = time() + (5 * DAY_IN_SECONDS);
+
+  update_post_meta($post_id, '_external_preview_token', $token);
+  update_post_meta($post_id, '_external_preview_expires', $expires);
+
+  $url = get_permalink($post_id) . '?external_preview=' . $token;
+  wp_send_json_success(['url' => $url]);
+});
