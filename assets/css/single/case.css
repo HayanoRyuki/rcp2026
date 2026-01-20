@@ -356,3 +356,26 @@ h2.case {
     display: block;
   }
 }
+
+/* =========================================================
+   case：画像2枚並びコンポーネント
+========================================================= */
+.rcp-case-image-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.rcp-case-image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* SP：縦並び */
+@media (max-width: 767px) {
+  .rcp-case-image-two {
+    grid-template-columns: 1fr;
+  }
+}

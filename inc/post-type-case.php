@@ -249,3 +249,35 @@ function register_case_taxonomies() {
   );
 }
 add_action('init', 'register_case_taxonomies');
+
+// --------------------------------------------------
+// case記事内：画像2枚並びショートコード
+// 使用例：
+// [case_two_image img1="URL1" img2="URL2" alt1="説明1" alt2="説明2"]
+// --------------------------------------------------
+function rcp_case_two_image_shortcode($atts) {
+  $atts = shortcode_atts([
+    'img1' => '',
+    'img2' => '',
+    'alt1' => '',
+    'alt2' => '',
+  ], $atts);
+
+  if (!$atts['img1'] || !$atts['img2']) {
+    return '';
+  }
+
+  ob_start();
+  ?>
+  <div class="rcp-case-image-two">
+    <figure class="rcp-case-image-item">
+      <img src="<?php echo esc_url($atts['img1']); ?>" alt="<?php echo esc_attr($atts['alt1']); ?>">
+    </figure>
+    <figure class="rcp-case-image-item">
+      <img src="<?php echo esc_url($atts['img2']); ?>" alt="<?php echo esc_attr($atts['alt2']); ?>">
+    </figure>
+  </div>
+  <?php
+  return ob_get_clean();
+}
+add_shortcode('case_two_image', 'rcp_case_two_image_shortcode');
