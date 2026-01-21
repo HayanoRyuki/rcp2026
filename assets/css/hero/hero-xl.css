@@ -195,25 +195,25 @@
      シェア No.1 根拠注記（KV画像に重ねる）
   ========================================================= */
   .hero-share-note--overlay {
-    position: absolute;
+  position: absolute;
 
-    /* hero-title-box と揃えた左基準 */
-    left: 190px;
-    bottom: 24px;
+  /* ★ 画面左から常に100px */
+  left: 100px;
+  bottom: 24px;
 
-    max-width: 520px;
-    padding: 8px 10px;
+  max-width: 520px;
+  padding: 8px 10px;
 
-    font-size: 11px;
-    line-height: 1.5;
-    color: #fff;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #fff;
 
-    background: rgba(0, 0, 0, 0.35);
-    border-radius: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 4px;
 
-    z-index: 3;
-    pointer-events: none;
-  }
+  z-index: 3;
+  pointer-events: none;
+}
 }
 
 /* =========================================================
@@ -299,15 +299,3 @@
   display: none !important;
 }
 
-/* =========================================================
-   SP時：シェア根拠は下に退避
-========================================================= */
-@media (max-width: 767px) {
-  .hero-share-note--overlay {
-    position: static;
-    margin: 8px 16px 0;
-    background: none;
-    color: #666;
-    padding: 0;
-  }
-}
