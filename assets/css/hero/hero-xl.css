@@ -324,11 +324,25 @@
   font-size: 1.15em;
 }
 
-.hero-share-note {
-  max-width: 1200px;
-  margin: 8px auto 0;
-  padding: 0 20px;
-  font-size: 12px;
-  line-height: 1.6;
-  color: #666;
+.hero-body {
+  position: relative;
+}
+
+/* KV画像上に重ねる注記 */
+.hero-share-note--overlay {
+  position: absolute;
+  left: 24px;
+  bottom: 16px;
+
+  max-width: 520px;
+  padding: 8px 10px;
+
+  font-size: 11px;
+  line-height: 1.5;
+  color: #fff;
+
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 4px;
+
+  z-index: 5;
 }
