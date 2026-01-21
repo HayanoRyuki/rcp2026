@@ -262,3 +262,269 @@
 .page-title {
   margin: 0;
 }
+
+
+/* =========================================================
+   HERO SECTION：スマホ用（〜767px） / 完成版（overlay対応）
+========================================================= */
+@media (max-width: 767px) {
+
+  /* =========================================================
+     上部余白・ヘッダー対策
+  ========================================================= */
+  body.top,
+  body.home,
+  main.site-main.front-page {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  body.page-template-front-page .site-header,
+  .site-header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  body .section-hero {
+    padding: 0;
+  }
+
+  /* =========================================================
+     HERO本体
+  ========================================================= */
+  .hero.page-title.wrapper {
+    width: 100%;
+    min-height: auto;
+    padding: calc(48px + 64px) 0 32px;
+    background-color: #EAF6F9;
+  }
+
+  .hero-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 -36px;
+  }
+
+  /* =========================================================
+     LEFT COLUMN
+  ========================================================= */
+  .container_l.adView {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-title-box {
+    position: relative;
+    max-width: 100%;
+    text-align: left;
+    z-index: 2;
+  }
+
+  /* =========================================================
+     HERO TITLE
+  ========================================================= */
+  .hero-title {
+    display: inline-block;
+    font-size: 2.05rem;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #2B2B2B;
+    margin-left: 0.35em;
+  }
+
+  .hero-title-mark {
+    background-image: linear-gradient(
+      transparent 30%,
+      #ffffff 65%
+    );
+    background-size: 100% 1.4em;
+    background-repeat: repeat-y;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .hero-title-nomark {
+    background: none !important;
+  }
+
+  .hero-title .em {
+    color: #4fb3d6;
+    font-size: 1.25em;
+  }
+
+  /* =========================================================
+     BADGE（SM）
+  ========================================================= */
+  .hero-badge {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 72px;
+    height: 72px;
+    border: 2px solid #222;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .hero-badge .badge-main {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #222;
+  }
+
+  .hero-badge .badge-note {
+    position: absolute;
+    bottom: 26px;
+    right: 11px;
+    font-size: 0.55rem;
+    color: #222;
+  }
+
+  /* =========================================================
+     BENEFITS
+  ========================================================= */
+  .hero-benefits {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .hero-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 320px;
+    padding: 0.35em 0.8em;
+    background: #4fb3d6;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .hero-benefits li::before {
+    content: "→";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  /* =========================================================
+     USER IMAGE（基準要素）
+  ========================================================= */
+  .hero-user-image {
+    width: 100vw;
+    height: clamp(260px, 55vw, 320px);
+    margin: -10px 0 -40px;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    background-image: url("../../img/hero/hero-user-sm.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    position: relative;   /* ★ overlay基準 */
+    z-index: 1;
+  }
+
+  @media (max-width: 430px) {
+    .hero-user-image {
+      background-size: cover;
+    }
+  }
+
+  /* =========================================================
+     シェア No.1 根拠注記（SM：画像上に重ねる）
+  ========================================================= */
+  .hero-share-note--overlay {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    padding: 6px 8px;
+    font-size: 7px;
+    line-height: 1.4;
+    color: #fff;
+
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 4px;
+
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* =========================================================
+     RIGHT COLUMN（フォーム）
+  ========================================================= */
+  .container_r {
+    display: none;
+  }
+
+  /* =========================================================
+     SP専用：資料請求CTA
+  ========================================================= */
+  .hero-sp-cta-wrap {
+    margin: 24px 20px 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-sp-cta {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: 64px;
+    margin: 0 auto;
+    background-image: url("../../img/hero/hero-cv-sp.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    font-size: 0;
+    line-height: 0;
+    text-decoration: none;
+  }
+
+  .hero-sp-cta:active {
+    transform: scale(0.98);
+  }
+}
+
+/* =========================================================
+   HERO TITLE：SM内 400px以上だけ左余白を増やす
+========================================================= */
+@media (min-width: 400px) and (max-width: 767px) {
+  .hero-title {
+    margin-left: 1.5em;
+  }
+}
+
+/* =========================================================
+   共通微調整
+========================================================= */
+.page-title {
+  margin: 0;
+}
