@@ -1,18 +1,162 @@
 /* =========================================================
-   PAGE - LP（VC PLAN専用）
+   PAGE - VC PLAN 専用スタイル
 ========================================================= */
-.page-lp--vc-plan .site-header {
-  display: none !important;
+
+/* ---------- 基本レイアウト ---------- */
+.vc-plan {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 20px 80px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
-.page-lp--vc-plan .page-lp__hero-bg {
-  background-image: url('../img/vc_plan/general_lp_vc_FV_pc.png');
-  height: 100vh;
+/* ---------- ヒーローセクション ---------- */
+.vc-plan__hero {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
+.vc-plan__hero-bg {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  margin: 0 auto 2rem;
+  background-image: url('../../img/vc_plan/general_lp_vc_FV_pc.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.vc-plan__hero-cta {
+  margin-top: 1.5rem;
+}
+
+.vc-plan__hero-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.vc-plan__hero-button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* ---------- 本文コンテンツ ---------- */
+.vc-plan__content {
+  padding: 2rem 0;
+}
+
+.vc-plan__inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.vc-plan__lead {
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- 見出し ---------- */
+.vc-plan__subtitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-primary);
+  color: var(--color-text);
+}
+
+/* ---------- 本文テキスト ---------- */
+.vc-plan__text {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.vc-plan__text strong {
+  color: var(--color-primary);
+}
+
+/* ---------- リスト ---------- */
+.vc-plan__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.vc-plan__item {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+}
+
+.vc-plan__item::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ---------- CTA ---------- */
+.vc-plan__cta {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: var(--color-bg-alt);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.vc-plan__cta a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.vc-plan__cta a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* =========================================================
+   スマホ対応（768px以下）
+========================================================= */
 @media (max-width: 768px) {
-  .page-lp--vc-plan .page-lp__hero-bg {
-    background-image: url('../img/vc_plan/general_lp_vc_FV_sp.png');
-    height: 140vh;
+  .vc-plan {
+    padding: 80px 16px 60px;
+  }
+
+  .vc-plan__hero-bg {
+    height: 200px;
+    background-image: url('../../img/vc_plan/general_lp_vc_FV_sp.png');
+  }
+
+  .vc-plan__lead {
+    font-size: 0.95rem;
+  }
+
+  .vc-plan__lead br {
+    display: none;
+  }
+
+  .vc-plan__subtitle {
+    font-size: 1.2rem;
+  }
+
+  .vc-plan__hero-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem 1.5rem;
   }
 }
