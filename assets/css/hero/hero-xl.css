@@ -24,8 +24,8 @@
   /* ---------- HERO本体 ---------- */
   .hero.page-title.wrapper {
     width: 100%;
-      height: 700px;
-  min-height: 700px;
+    height: 700px;
+    min-height: 700px;
     display: flex;
     align-items: center;
     margin-top: 60px;
@@ -34,13 +34,14 @@
   }
 
   .hero-body {
-      height: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
+    /* ❌ relative はここでは使わない */
   }
 
   /* =========================================================
@@ -48,58 +49,52 @@
   ========================================================= */
   .container_l.adView {
     background: transparent;
-    padding: 60px 0px 0 0;
+    padding: 60px 0 0 0;
     flex: 1;
     display: flex;
     flex-direction: column;
+
+    /* ✅ overlay の基準をここに */
+    position: relative;
   }
 
   .hero-title-box {
-  text-align: left;
-  max-width: 560px;
-  position: relative;
-  margin-left: 190px;
-}
+    text-align: left;
+    max-width: 560px;
+    position: relative;
+    margin-left: 190px;
+  }
 
   .hero-title {
-  display: inline;
-  font-size: 3rem;
-  line-height: 1.25;
-  font-weight: 700;
-  color: #2B2B2B;
-  letter-spacing: 0.2em;
+    display: inline;
+    font-size: 3rem;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #2B2B2B;
+    letter-spacing: 0.2em;
 
-  /* 行ごとに白アンダーライン */
-  background-image: linear-gradient(
-    transparent 65%,
-    #ffffff 65%
-  );
-  background-size: 100% 1.4em;
-  background-repeat: repeat-y;
-}
-
+    background-image: linear-gradient(
+      transparent 65%,
+      #ffffff 65%
+    );
+    background-size: 100% 1.4em;
+    background-repeat: repeat-y;
+  }
 
   .hero-title .em {
-  color: #4fb3d6;
-  font-size: 1.1em;
-}
-
-  .hero-lead {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 1.75rem;
+    color: #4fb3d6;
+    font-size: 1.1em;
   }
 
   .hero-benefits {
     list-style: none;
-    padding: 38px 0px;
+    padding: 38px 0;
     margin: 0;
     max-width: 344px;
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
-    align-items: flex-start;   /* ← flexでも左寄せ */
+    align-items: flex-start;
     text-align: left;
   }
 
@@ -107,21 +102,17 @@
     display: flex;
     align-items: center;
     gap: 0.9rem;
-
-    width: 100%;        /* ← ★ これが肝 */
+    width: 100%;
     box-sizing: border-box;
-
     padding: 0.2em 0.8em;
     background: #4fb3d6;
     color: #fff;
     border-radius: 999px;
-
     font-size: 1.3rem;
     font-weight: 700;
     line-height: 1.4;
   }
 
-  /* 丸囲み → アイコン */
   .hero-benefits li::before {
     content: "→";
     display: inline-flex;
@@ -190,16 +181,6 @@
     flex-direction: column;
   }
 
-  .kv-form {
-    background: #fff;
-    border-radius: 10px;
-    padding: 0.5em;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
   .document-guidance-box {
     display: flex;
     align-items: center;
@@ -208,6 +189,30 @@
     font-weight: 700;
     margin-bottom: 1rem;
     color: #ffffff;
+  }
+
+  /* =========================================================
+     シェア No.1 根拠注記（KV画像に重ねる）
+  ========================================================= */
+  .hero-share-note--overlay {
+    position: absolute;
+
+    /* hero-title-box と揃えた左基準 */
+    left: 190px;
+    bottom: 24px;
+
+    max-width: 520px;
+    padding: 8px 10px;
+
+    font-size: 11px;
+    line-height: 1.5;
+    color: #fff;
+
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+
+    z-index: 3;
+    pointer-events: none;
   }
 }
 
@@ -262,9 +267,9 @@
 }
 
 .kv-form-agree a {
-    color: #ffffff;
-    text-decoration: underline;
-  }
+  color: #ffffff;
+  text-decoration: underline;
+}
 
 .kv-form-agree input {
   margin-top: 4px;
@@ -293,56 +298,16 @@
 .hero-sp-cta {
   display: none !important;
 }
+
 /* =========================================================
-   HERO TITLE（XL：マーカー制御）
+   SP時：シェア根拠は下に退避
 ========================================================= */
-
-.hero-title {
-  display: inline;
-  font-size: 3.2rem;     /* ← XL想定 */
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: #2B2B2B;
-}
-
-/* マーカーを引く文字だけ */
-.hero-title .mark {
-  display: inline;
-  background-image: linear-gradient(
-    transparent 62%,
-    #ffffff 62%
-  );
-  background-size: 100% 1.45em; /* ← XLは少し深め */
-  background-repeat: repeat-y;
-  padding: 0 0.18em;            /* ← XLは余白を少し広く */
-}
-
-/* 強調語 */
-.hero-title .em {
-  color: #4fb3d6;
-  font-size: 1.15em;
-}
-
-.hero-body {
-  position: relative;
-}
-
-/* KV画像上に重ねる注記 */
-.hero-share-note--overlay {
-  position: absolute;
-  left: 24px;
-  bottom: 16px;
-
-  max-width: 520px;
-  padding: 8px 10px;
-
-  font-size: 11px;
-  line-height: 1.5;
-  color: #fff;
-
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: 4px;
-
-  z-index: 5;
+@media (max-width: 767px) {
+  .hero-share-note--overlay {
+    position: static;
+    margin: 8px 16px 0;
+    background: none;
+    color: #666;
+    padding: 0;
+  }
 }
