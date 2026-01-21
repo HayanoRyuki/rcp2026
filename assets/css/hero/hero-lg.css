@@ -51,66 +51,30 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+
+    /* ★ 追加（XLと同一ルール） */
+    position: relative;
   }
 
   .hero-title-box {
     text-align: left;
     max-width: 520px;
     position: relative;
-    margin-left: 140px; /* ← XLより少し戻す */
+    margin-left: 140px;
   }
 
   .hero-title {
     display: inline;
-    font-size: 2.6rem;      /* ← XLより小さく */
+    font-size: 2.6rem;
     line-height: 1.25;
     font-weight: 700;
     color: #2B2B2B;
     letter-spacing: 0.18em;
   }
 
-  /* =========================================================
-   HERO TITLE（LG：マーカー制御）
-========================================================= */
-
-.hero-title {
-  display: inline;
-  font-size: 2.6rem;      /* 既存LG値そのまま */
-  line-height: 1.25;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: #2B2B2B;
-}
-
-/* マーカーを引く文字だけ */
-.hero-title .mark {
-  display: inline;
-  background-image: linear-gradient(
-    transparent 65%,
-    #ffffff 65%
-  );
-  background-size: 100% 1.3em; /* ← LG用に少し浅め */
-  background-repeat: repeat-y;
-  padding: 0 0.12em; /* 句読点との距離を詰める */
-}
-
-/* 強調語（既存踏襲） */
-.hero-title .em {
-  color: #4fb3d6;
-  font-size: 1.1em;
-}
-
-
   .hero-title .em {
     color: #4fb3d6;
     font-size: 1.1em;
-  }
-
-  .hero-lead {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 1.5rem;
   }
 
   .hero-benefits {
@@ -131,12 +95,10 @@
     gap: 0.8rem;
     width: 100%;
     box-sizing: border-box;
-
     padding: 0.25em 0.8em;
     background: #4fb3d6;
     color: #fff;
     border-radius: 999px;
-
     font-size: 1.15rem;
     font-weight: 700;
     line-height: 1.4;
@@ -166,7 +128,7 @@
 
   /* ---------- BADGE ---------- */
   .hero-badge {
-        display: none;
+    display: none;
   }
 
   /* =========================================================
@@ -182,16 +144,10 @@
     margin-right: -64px;
     display: flex;
     flex-direction: column;
-  }
 
-  .kv-form {
-    background: #fff;
-    border-radius: 10px;
-    padding: 0.5em;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* ★ 追加（XLと同一ルール） */
+    position: relative;
+    z-index: 10;
   }
 
   .document-guidance-box {
@@ -203,87 +159,28 @@
     margin-bottom: 0.9rem;
     color: #ffffff;
   }
-}
 
-/* =========================================================
-   FORM：インナーラベル型（LG）
-========================================================= */
-.kv-form-group {
-  position: relative;
-  margin-bottom: 0.75rem;
-}
+  /* =========================================================
+     シェア No.1 根拠注記（LG）
+  ========================================================= */
+  .hero-share-note--overlay {
+    position: absolute;
 
-.kv-form-group .floating-label {
-  position: absolute;
-  top: 6px;
-  left: 12px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #555;
-  pointer-events: none;
-  z-index: 2;
-}
+    /* ★ XLと同一ルール */
+    left: 100px;
+    bottom: 24px;
 
-.kv-form-group input,
-.kv-form-group select {
-  width: 100%;
-  height: 52px;
-  padding: 24px 12px 8px;
-  font-size: 0.9rem;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  background: #fff;
-}
+    max-width: 520px;
+    padding: 8px 10px;
 
-.kv-form-group input::placeholder,
-.kv-form-group select:invalid {
-  color: #aaa;
-}
+    font-size: 11px;
+    line-height: 1.5;
+    color: #fff;
 
-/* ---------- 氏名2カラム ---------- */
-.kv-form-group > div[style*="display: flex"] input {
-  padding-top: 22px;
-}
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
 
-/* ---------- 同意 ---------- */
-.kv-form-agree {
-  display: flex;
-  align-items: flex-start;
-  font-size: 0.9rem;
-  opacity: 0.8;
-  gap: 6px;
-  color: #ffffff;
-}
-
-.kv-form-agree a {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.kv-form-agree input {
-  margin-top: 4px;
-}
-
-/* ---------- ボタン ---------- */
-.btn.btn_dl {
-  width: 100%;
-  height: 52px;
-  margin-top: 1.4rem;
-  background: var(--color-danger);
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border-radius: 6px;
-  border: none;
-}
-
-.btn.btn_dl:hover {
-  background: var(--color-danger-hover);
-}
-
-/* =========================================================
-   SP専用：資料請求CTA（PCでは非表示）
-========================================================= */
-.hero-sp-cta {
-  display: none !important;
+    z-index: 3;
+    pointer-events: none;
+  }
 }
