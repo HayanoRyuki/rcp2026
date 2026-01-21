@@ -33,7 +33,7 @@
         <div class="hero-user-image"></div>
 
         <!-- =========================
-             シェアNo.1 根拠注記（KV画像に重ねる）
+             シェアNo.1 根拠注記（PC/タブレット用：KV画像に重ねる）
         ========================== -->
         <div class="hero-share-note hero-share-note--overlay">
           ※『クラウドiPad無人受付システム市場の実態と将来展望』（ミックITリポート 2025年11月）<br>
@@ -179,6 +179,14 @@
           <span class="hero-sp-cta-icon">⬇</span>
           資料をもらう
         </a>
+      </div>
+
+      <!-- =========================
+           シェアNo.1 根拠注記（SP用：CTAの後）
+      ========================== -->
+      <div class="hero-share-note hero-share-note--sp">
+        ※『クラウドiPad無人受付システム市場の実態と将来展望』（ミックITリポート 2025年11月）<br>
+        （デロイト トーマツ ミック経済研究所株式会社 調べ）
       </div>
 
     </div><!-- /.hero-body -->
