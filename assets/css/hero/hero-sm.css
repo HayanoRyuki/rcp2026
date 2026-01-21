@@ -1,5 +1,5 @@
 /* =========================================================
-   HERO SECTION：スマホ用（〜767px） / 完成版（追加要素対応）
+   HERO SECTION：スマホ用（〜767px） / 完成版（overlay対応）
 ========================================================= */
 @media (max-width: 767px) {
 
@@ -58,7 +58,7 @@
   }
 
   /* =========================================================
-     HERO TITLE（文字組みのみ）
+     HERO TITLE
   ========================================================= */
   .hero-title {
     display: inline-block;
@@ -105,6 +105,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    z-index: 3;
   }
 
   .hero-badge .badge-main {
@@ -165,19 +166,21 @@
   }
 
   /* =========================================================
-     USER IMAGE（フルブリード）
+     USER IMAGE（基準要素）
   ========================================================= */
   .hero-user-image {
     width: 100vw;
     height: clamp(260px, 55vw, 320px);
-    margin: -10px 0 -24px;
+    margin: -10px 0 -40px;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+
     background-image: url("../../img/hero/hero-user-sm.png");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: contain;
-    position: relative;
+
+    position: relative;   /* ★ overlay基準 */
     z-index: 1;
   }
 
@@ -188,16 +191,24 @@
   }
 
   /* =========================================================
-     シェア No.1 根拠注記（SM：通常フロー）
+     シェア No.1 根拠注記（SM：画像上に重ねる）
   ========================================================= */
   .hero-share-note--overlay {
-    position: static;
-    margin: 12px auto 0;
-    padding: 0 20px;
-    font-size: 11px;
-    line-height: 1.5;
-    color: #555;
-    text-align: left;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    padding: 6px 8px;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #fff;
+
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 4px;
+
+    z-index: 2;
+    pointer-events: none;
   }
 
   /* =========================================================
