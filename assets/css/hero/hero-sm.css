@@ -1,5 +1,5 @@
 /* =========================================================
-   HERO SECTION：スマホ用（〜767px） / 完成版
+   HERO SECTION：スマホ用（〜767px） / 完成版（追加要素対応）
 ========================================================= */
 @media (max-width: 767px) {
 
@@ -67,12 +67,9 @@
     font-weight: 700;
     letter-spacing: 0.14em;
     color: #2B2B2B;
-
-    /* 左に寄りすぎるのを防ぐ（基準値） */
     margin-left: 0.35em;
   }
 
-  /* マーカー対象文字 */
   .hero-title-mark {
     background-image: linear-gradient(
       transparent 30%,
@@ -84,12 +81,10 @@
     box-decoration-break: clone;
   }
 
-  /* マーカー非対象（句読点） */
   .hero-title-nomark {
     background: none !important;
   }
 
-  /* 強調（ラク） */
   .hero-title .em {
     color: #4fb3d6;
     font-size: 1.25em;
@@ -106,7 +101,6 @@
     height: 72px;
     border: 2px solid #222;
     border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,7 +129,6 @@
     list-style: none;
     margin: 20px 0 0;
     padding: 0;
-
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
@@ -146,15 +139,12 @@
     display: flex;
     align-items: center;
     gap: 0.6rem;
-
     width: 100%;
     max-width: 320px;
     padding: 0.35em 0.8em;
-
     background: #4fb3d6;
     color: #fff;
     border-radius: 999px;
-
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.4;
@@ -165,12 +155,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     width: 28px;
     height: 28px;
     border-radius: 50%;
     border: 2px solid #ffffff;
-
     color: #ffffff;
     font-size: 0.9rem;
     flex-shrink: 0;
@@ -182,21 +170,17 @@
   .hero-user-image {
     width: 100vw;
     height: clamp(260px, 55vw, 320px);
-
-    margin: -10px 0 -40px;
+    margin: -10px 0 -24px;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-
     background-image: url("../../img/hero/hero-user-sm.png");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: contain;
-
     position: relative;
     z-index: 1;
   }
 
-  /* 標準スマホ幅（375〜430px）は横を優先 */
   @media (max-width: 430px) {
     .hero-user-image {
       background-size: cover;
@@ -204,8 +188,20 @@
   }
 
   /* =========================================================
+     シェア No.1 根拠注記（SM：通常フロー）
+  ========================================================= */
+  .hero-share-note--overlay {
+    position: static;
+    margin: 12px auto 0;
+    padding: 0 20px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #555;
+    text-align: left;
+  }
+
+  /* =========================================================
      RIGHT COLUMN（フォーム）
-     ※ SPでは完全非表示
   ========================================================= */
   .container_r {
     display: none;
@@ -226,12 +222,10 @@
     max-width: 360px;
     height: 64px;
     margin: 0 auto;
-
     background-image: url("../../img/hero/hero-cv-sp.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-
     font-size: 0;
     line-height: 0;
     text-decoration: none;
