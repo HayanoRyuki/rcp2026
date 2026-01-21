@@ -3,18 +3,18 @@
     <div class="hero-body">
 
       <!-- =========================
-           左カラム：コピー＋画像
+           左カラム：コピー＋KV画像
       ========================== -->
       <div class="container_l adView">
 
         <div class="hero-title-box">
 
           <h1 class="hero-title">
-  <span class="hero-title-mark">
-    もっと<span class="em">ラク</span>で<span class="hero-title-nomark">、</span>
-  </span><br>
-  <span class="hero-title-mark">シンプルな受付へ</span>
-</h1>
+            <span class="hero-title-mark">
+              もっと<span class="em">ラク</span>で<span class="hero-title-nomark">、</span>
+            </span><br>
+            <span class="hero-title-mark">シンプルな受付へ</span>
+          </h1>
 
           <div class="hero-badge">
             <span class="badge-main">シェア<br>No.1</span>
@@ -29,7 +29,17 @@
 
         </div><!-- /.hero-title-box -->
 
+        <!-- KV画像 -->
         <div class="hero-user-image"></div>
+
+        <!-- =========================
+             シェアNo.1 根拠注記（KV画像に重ねる）
+        ========================== -->
+        <div class="hero-share-note hero-share-note--overlay">
+          ※<br>
+          『クラウドiPad無人受付システム市場の実態と将来展望』（ミックITリポート 2025年11月）<br>
+          （デロイト トーマツ ミック経済研究所株式会社 調べ）
+        </div>
 
       </div><!-- /.container_l -->
 
@@ -38,7 +48,6 @@
       ========================== -->
       <div class="container_r">
 
-        <!-- ★★ 統一クラス js-rcp-contact-form ★★ -->
         <form name="reception-lp"
               class="form-track download-form js-rcp-contact-form"
               action=""
@@ -54,7 +63,6 @@
 
           <div class="kv-form-wrap">
 
-            <!-- 会社名 -->
             <div class="kv-form-group has-floating-label">
               <label class="floating-label">
                 会社名<span class="asterisk">*</span>
@@ -62,7 +70,6 @@
               <input type="text" name="company_name" placeholder="御社名" required>
             </div>
 
-            <!-- 部署 -->
             <div class="kv-form-group has-floating-label">
               <label class="floating-label">
                 部署<span class="asterisk">*</span>
@@ -81,7 +88,6 @@
               </select>
             </div>
 
-            <!-- 氏名 -->
             <div class="kv-form-group has-floating-label">
               <label class="floating-label">
                 ご担当者のお名前<span class="asterisk">*</span>
@@ -92,7 +98,6 @@
               </div>
             </div>
 
-            <!-- 電話番号 -->
             <div class="kv-form-group has-floating-label">
               <label class="floating-label">
                 お電話番号<span class="asterisk">*</span>
@@ -100,7 +105,6 @@
               <input type="tel" name="phone_no" placeholder="01-2345-6789" required>
             </div>
 
-            <!-- メール -->
             <div class="kv-form-group has-floating-label">
               <label class="floating-label">
                 メールアドレス<span class="asterisk">*</span>
@@ -108,7 +112,6 @@
               <input type="email" name="email" placeholder="sample@receptionist.co.jp" required>
             </div>
 
-            <!-- 従業員数 -->
             <div class="kv-form-group has-floating-label">
               <label class="floating-label">
                 従業員数<span class="asterisk">*</span>
@@ -126,7 +129,6 @@
               </select>
             </div>
 
-            <!-- 導入予定時期 -->
             <div class="kv-form-group has-floating-label">
               <label class="floating-label">
                 導入予定時期<span class="asterisk">*</span>
@@ -141,7 +143,6 @@
               </select>
             </div>
 
-            <!-- 同意 -->
             <div class="kv-form-agree">
               <input type="checkbox" id="agreement" name="privacy_policy" value="1" required>
               <label for="agreement">
@@ -153,14 +154,11 @@
               </label>
             </div>
 
-            <!-- ハニーポット -->
             <input type="text" name="hp" tabindex="-1" autocomplete="off"
                    style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
 
-            <!-- 種別 -->
             <input type="hidden" name="contact_type" value="reception_lp">
 
-            <!-- UTM -->
             <input type="hidden" name="utm_source" id="utm_source_input">
             <input type="hidden" name="utm_medium" id="utm_medium_input">
             <input type="hidden" name="utm_campaign" id="utm_campaign_input">
@@ -175,7 +173,7 @@
       </div><!-- /.container_r -->
 
       <!-- =========================
-           下部：SP専用 資料請求CTA
+           SP専用 資料請求CTA
       ========================== -->
       <div class="hero-sp-cta-wrap">
         <a href="/resources/document-general/" class="hero-sp-cta">
@@ -184,16 +182,6 @@
         </a>
       </div>
 
-       <!-- =========================
-       シェアNo.1 根拠注記
-  ========================== -->
-  <div class="hero-share-note">
-    ※<br>
-    『クラウドiPad無人受付システム市場の実態と将来展望』（ミックITリポート 2025年11月）<br>
-    （デロイト トーマツ ミック経済研究所株式会社 調べ）
-  </div>
-
     </div><!-- /.hero-body -->
   </div><!-- /.hero.page-title.wrapper -->
-
 </div><!-- /.top -->
