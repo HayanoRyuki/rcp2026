@@ -25,12 +25,10 @@
   }
 
   /* =========================================================
-     HERO本体（高さ固定は使わない）
+     HERO本体
   ========================================================= */
   .hero.page-title.wrapper {
     width: 100%;
-    height: auto;
-    min-height: auto;
     margin-top: 56px;
     padding: 48px 0 32px;
     background-color: #EAF6F9;
@@ -38,7 +36,7 @@
 
   .hero-body {
     display: flex;
-    flex-direction: column; /* 縦積み */
+    flex-direction: column;
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
@@ -56,9 +54,12 @@
   .hero-title-box {
     position: relative;
     max-width: 100%;
-    padding-right: 120px; /* バッヂ分の逃げ */
+    padding-right: 120px;
   }
 
+  /* =========================================================
+     HERO TITLE（MD）
+  ========================================================= */
   .hero-title {
     display: inline;
     font-size: 3rem;
@@ -68,82 +69,58 @@
     color: #2B2B2B;
   }
 
+  .hero-title .mark {
+    display: inline;
+    background-image: linear-gradient(
+      transparent 65%,
+      #ffffff 65%
+    );
+    background-size: 100% 1.4em;
+    background-repeat: repeat-y;
+    padding: 0 0.15em;
+  }
+
   .hero-title .em {
     color: #4fb3d6;
     font-size: 1.3em;
   }
 
-  /* =========================================================
-   HERO TITLE（MD：マーカー制御）
-========================================================= */
+  /* ---------- BADGE ---------- */
+  .hero-badge {
+    position: absolute;
+    top: -12px;
+    right: 32px;
+    width: 144px;
+    height: 144px;
+    border: 3px solid #222;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
-.hero-title {
-  display: inline;
-  font-size: 3rem;          /* 既存値そのまま */
-  line-height: 1.35;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: #2B2B2B;
-}
+  .hero-badge .badge-main {
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #222;
+  }
 
-/* マーカーを引く文字だけ */
-.hero-title .mark {
-  display: inline;
-  background-image: linear-gradient(
-    transparent 65%,
-    #ffffff 65%
-  );
-  background-size: 100% 1.4em;
-  background-repeat: repeat-y;
-  padding: 0 0.15em; /* 句読点との差を自然に */
-}
-
-/* 強調語 */
-.hero-title .em {
-  color: #4fb3d6;
-  font-size: 1.3em;
-}
-
-
-/* ---------- BADGE（MD：1.5倍・右上固定） ---------- */
-.hero-badge {
-  position: absolute;
-  top: -12px;
-  right: 32px;
-  left: auto;
-
-  width: 144px;   /* 96 × 1.5 */
-  height: 144px;  /* 96 × 1.5 */
-  border: 3px solid #222; /* 2 × 1.5 */
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-badge .badge-main {
-  font-size: 1.45rem; /* 0.95 × 1.5 */
-  font-weight: 700;
-  line-height: 1.25;
-  color: #222;
-}
-
-.hero-badge .badge-note {
-  position: absolute;
-  bottom: 60px;  /* 40 × 1.5 */
-  right: 36px;   /* 24 × 1.5 */
-  font-size: 1rem; /* 0.65 × 1.5 ≒ 0.98 */
-  color: #222;
-}
+  .hero-badge .badge-note {
+    position: absolute;
+    bottom: 60px;
+    right: 36px;
+    font-size: 1rem;
+    color: #222;
+  }
 
   /* =========================================================
-     BENEFITS（MDでは中央寄せ）
+     BENEFITS
   ========================================================= */
   .hero-benefits {
     list-style: none;
-    margin: 28px auto 0; /* ← 中央寄せ */
+    margin: 28px auto 0;
     padding: 0;
     max-width: 420px;
     display: flex;
@@ -180,20 +157,32 @@
   }
 
   /* =========================================================
-     USER IMAGE（MD専用チューニング）
+     USER IMAGE
   ========================================================= */
   .hero-user-image {
     width: 110%;
     height: 300px;
     margin: -24px 0 0 -5%;
-
     background: url("../../img/hero/hero-user-xl.png")
       center bottom / contain no-repeat;
   }
 
   /* =========================================================
+     シェア No.1 根拠注記（MD：通常フロー）
+  ========================================================= */
+  .hero-share-note--overlay {
+    position: static;
+    margin: 8px auto 0;
+    max-width: 640px;
+    padding: 6px 8px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #333;
+    text-align: left;
+  }
+
+  /* =========================================================
      RIGHT COLUMN（FORM）
-     ※ HERO内で完結
   ========================================================= */
   .container_r {
     margin: 32px auto 0;
@@ -223,7 +212,7 @@
   }
 
   /* =========================================================
-     FORM：インナーラベル型（MD）
+     FORM（MD）
   ========================================================= */
   .kv-form-group {
     position: relative;
@@ -237,7 +226,6 @@
     font-size: 0.7rem;
     font-weight: 700;
     color: #555;
-    pointer-events: none;
   }
 
   .kv-form-group input,
@@ -249,11 +237,6 @@
     border: 1px solid var(--color-border);
     border-radius: 6px;
     background: #fff;
-  }
-
-  .kv-form-group input::placeholder,
-  .kv-form-group select:invalid {
-    color: #aaa;
   }
 
   .kv-form-agree {
