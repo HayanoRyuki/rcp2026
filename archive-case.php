@@ -4,7 +4,7 @@
   <section class="case-archive-section">
     <div class="container">
       <h1 class="page-title">導入事例一覧</h1>
-      <!-- ▼ 絞り込みフォーム（従業員規模のみ） -->
+      <!-- ▼ 絞り込みフォーム -->
       <form
         method="get"
         action="<?php echo esc_url( home_url( '/case/' ) ); ?>"
@@ -12,6 +12,7 @@
       >
         <div class="case-filter-wrap">
           <div class="case-filter-grid">
+
             <!-- 従業員規模 -->
             <div class="filter-box">
               <select
@@ -41,8 +42,55 @@
                 ?>
               </select>
             </div>
-          </div>
-        </div>
+
+            <!-- 活用シーン -->
+            <div class="filter-box">
+              <select
+                name="use_case"
+                id="use_case"
+                onchange="this.form.submit()"
+              >
+                <option value="">活用シーンで絞り込む</option>
+                <?php
+                  $terms = get_terms([
+                    'taxonomy'   => 'use_case',
+                    'hide_empty' => false,
+                  ]);
+                  if (!is_wp_error($terms) && !empty($terms)) {
+                    foreach ($terms as $term) {
+                      $selected = ( get_query_var('use_case') === $term->slug ) ? 'selected' : '';
+                      echo "<option value='{$term->slug}' {$selected}>{$term->name}</option>";
+                    }
+                  }
+                ?>
+              </select>
+            </div>
+
+            <!-- 課題 -->
+            <div class="filter-box">
+              <select
+                name="case_challenge"
+                id="case_challenge"
+                onchange="this.form.submit()"
+              >
+                <option value="">課題で絞り込む</option>
+                <?php
+                  $terms = get_terms([
+                    'taxonomy'   => 'case_challenge',
+                    'hide_empty' => false,
+                  ]);
+                  if (!is_wp_error($terms) && !empty($terms)) {
+                    foreach ($terms as $term) {
+                      $selected = ( get_query_var('case_challenge') === $term->slug ) ? 'selected' : '';
+                      echo "<option value='{$term->slug}' {$selected}>{$term->name}</option>";
+                    }
+                  }
+                ?>
+              </select>
+            </div>
+
+          </div> <!-- /.case-filter-grid -->
+        </div> <!-- /.case-filter-wrap -->
       </form>
 
 

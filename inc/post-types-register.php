@@ -42,6 +42,34 @@ function register_custom_post_types_and_taxonomies() {
     'rewrite' => ['slug' => 'case-category']
   ]);
 
+  // ◆ 導入事例の絞り込み用タクソノミー
+  register_taxonomy('employee_size', 'case', [
+    'label' => '従業員規模',
+    'hierarchical' => true,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'rewrite' => ['slug' => 'employee-size']
+  ]);
+
+  register_taxonomy('use_case', 'case', [
+    'label' => '活用シーン',
+    'hierarchical' => true,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'rewrite' => ['slug' => 'use-case']
+  ]);
+
+  register_taxonomy('case_challenge', 'case', [
+    'label' => '課題',
+    'hierarchical' => true,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'rewrite' => ['slug' => 'case-challenge']
+  ]);
+
   // ◆ 資料（RESOURCE）投稿タイプとカテゴリ
   register_post_type('resource', [
     'labels' => ['name' => '資料', 'singular_name' => '資料'],
