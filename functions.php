@@ -57,6 +57,7 @@ add_filter('document_title_parts', function ($title) {
  * ------------------------------------------------------------- */
 add_action('template_redirect', function () {
 
+  // 完全一致リダイレクト
   $redirects = [
     '/document-price' => 'https://receptionist.jp/resources/price-book/',
     '/document-200'   => 'https://receptionist.jp/resources/document-general/',
@@ -66,17 +67,182 @@ add_action('template_redirect', function () {
     '/plan'           => 'https://receptionist.jp/resources/price-book/',
     '/news'           => 'https://receptionist.co.jp/news/release',
     '/company'        => 'https://receptionist.co.jp/about',
+
+    // 旧 .html ページ
+    '/register.html'           => 'https://receptionist.jp/new-register/',
+    '/contact.html'            => 'https://receptionist.jp/contact/',
+    '/contact-select.html'     => 'https://receptionist.jp/contact-select/',
+    '/contact-agency.html'     => 'https://receptionist.jp/contact-agency/',
+    '/function.html'           => 'https://receptionist.jp/function/',
+    '/price.html'              => 'https://receptionist.jp/resources/price-book/',
+    '/company.html'            => 'https://receptionist.co.jp/about',
+    '/faq.html'                => 'https://receptionist.jp/',
+    '/chatwork.html'           => 'https://receptionist.jp/',
+    '/slack.html'              => 'https://receptionist.jp/',
+    '/office.html'             => 'https://receptionist.jp/',
+    '/office-workers.html'     => 'https://receptionist.jp/',
+    '/simulator.html'          => 'https://receptionist.jp/',
+    '/trademark.html'          => 'https://receptionist.jp/',
+    '/for-space.html'          => 'https://receptionist.jp/',
+    '/scheduling-appointment.html' => 'https://receptionist.jp/',
+    '/document-apo.html'       => 'https://receptionist.jp/resources/',
+    '/document-request.html'   => 'https://receptionist.jp/resources/',
+    '/2nd-anniversary.html'    => 'https://receptionist.jp/',
+
+    // 旧ページ（拡張子なし）
+    '/about'                   => 'https://receptionist.co.jp/about',
+    '/office-case'             => 'https://receptionist.jp/case/',
+    '/for-space'               => 'https://receptionist.jp/',
+    '/chatwork'                => 'https://receptionist.jp/',
+    '/functions'               => 'https://receptionist.jp/function/',
+    '/privacy'                 => 'https://receptionist.jp/',
+    '/scheduling-appointment'  => 'https://receptionist.jp/',
+    '/adjust-apo'              => 'https://receptionist.jp/',
+    '/career'                  => 'https://receptionist.co.jp/',
+    '/store'                   => 'https://receptionist.jp/case/',
+    '/smb'                     => 'https://receptionist.jp/',
+    '/microsoft365'            => 'https://receptionist.jp/',
+    '/factory-special'         => 'https://receptionist.jp/',
+
+    // 削除したページ
+    '/document-function'       => 'https://receptionist.jp/resources/',
+    '/security_reception'      => 'https://receptionist.jp/',
+    '/office-case'             => 'https://receptionist.jp/case/',
+    '/standby-screen'          => 'https://receptionist.jp/',
+    '/receptionist-keyboard'   => 'https://receptionist.jp/',
+    '/custombutton'            => 'https://receptionist.jp/',
+    '/receptionist_custom'     => 'https://receptionist.jp/',
+
+    // サンクスページ（削除済み）
+    '/receptionist_rooms_dx_thanks'              => 'https://receptionist.jp/',
+    '/apo_garoon_thanks'                         => 'https://receptionist.jp/',
+    '/document-function-thanks'                  => 'https://receptionist.jp/',
+    '/meetingroom-operational-efficiency-thanks' => 'https://receptionist.jp/',
+    '/document-partner-thanks'                   => 'https://receptionist.jp/',
+    '/document-200-thanks'                       => 'https://receptionist.jp/',
+
+    // カテゴリ・タグ関連
+    '/category/blog'           => 'https://receptionist.jp/blog/',
+    '/category/column'         => 'https://receptionist.jp/blog/',
+    '/category/office-relocation' => 'https://receptionist.jp/blog/',
+
+    // その他
+    '/prices'                  => 'https://receptionist.jp/resources/price-book/',
+    '/office-workers'          => 'https://receptionist.jp/',
+    '/default.xsl'             => 'https://receptionist.jp/',
   ];
 
   // リクエストURI取得（クエリ除外）
   $request_uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
   $request_uri = rtrim($request_uri, '/');
 
+  // 完全一致チェック
+  if (isset($redirects[$request_uri])) {
+    wp_redirect($redirects[$request_uri], 301);
+    exit;
+  }
+  if (isset($redirects[$request_uri . '/'])) {
+    wp_redirect($redirects[$request_uri . '/'], 301);
+    exit;
+  }
+
+  // 前方一致チェック（サブパス含む）
   foreach ($redirects as $old => $new) {
-    if ($request_uri === $old || str_starts_with($request_uri, $old . '/')) {
+    if (str_starts_with($request_uri, $old . '/')) {
       wp_redirect($new, 301);
       exit;
     }
+  }
+});
+
+
+/* -------------------------------------------------------------
+ *  /case-tag/ → /case/ リダイレクト（タクソノミー削除対応）
+ * ------------------------------------------------------------- */
+add_action('template_redirect', function () {
+  $request_uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+
+  if (str_starts_with($request_uri, '/case-tag/')) {
+    wp_redirect('https://receptionist.jp/case/', 301);
+    exit;
+  }
+});
+
+
+/* -------------------------------------------------------------
+ *  /topics/ → /case/ リダイレクト
+ * ------------------------------------------------------------- */
+add_action('template_redirect', function () {
+  $request_uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+
+  if (str_starts_with($request_uri, '/topics/')) {
+    wp_redirect('https://receptionist.jp/case/', 301);
+    exit;
+  }
+});
+
+
+/* -------------------------------------------------------------
+ *  /tag/ → /blog/ リダイレクト（削除されたタグ）
+ * ------------------------------------------------------------- */
+add_action('template_redirect', function () {
+  $request_uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+
+  if (str_starts_with($request_uri, '/tag/')) {
+    wp_redirect('https://receptionist.jp/blog/', 301);
+    exit;
+  }
+});
+
+
+/* -------------------------------------------------------------
+ *  /partner-cat/ → /partner-list/ リダイレクト
+ * ------------------------------------------------------------- */
+add_action('template_redirect', function () {
+  $request_uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+
+  if (str_starts_with($request_uri, '/partner-cat/')) {
+    wp_redirect('https://receptionist.jp/partner-list/', 301);
+    exit;
+  }
+});
+
+
+/* -------------------------------------------------------------
+ *  /news-tag/ → トップへリダイレクト
+ * ------------------------------------------------------------- */
+add_action('template_redirect', function () {
+  $request_uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+
+  if (str_starts_with($request_uri, '/news-tag/')) {
+    wp_redirect('https://receptionist.jp/', 301);
+    exit;
+  }
+});
+
+
+/* -------------------------------------------------------------
+ *  /blog/page/N/ → /blog/ リダイレクト（ページネーション）
+ * ------------------------------------------------------------- */
+add_action('template_redirect', function () {
+  $request_uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+
+  if (preg_match('#^/blog/page/\d+/?$#', $request_uri)) {
+    wp_redirect('https://receptionist.jp/blog/', 301);
+    exit;
+  }
+});
+
+
+/* -------------------------------------------------------------
+ *  register.html?utm_... → /new-register/ リダイレクト
+ * ------------------------------------------------------------- */
+add_action('template_redirect', function () {
+  $request_uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+
+  if ($request_uri === '/register.html' || $request_uri === '/register') {
+    wp_redirect('https://receptionist.jp/new-register/', 301);
+    exit;
   }
 });
 
