@@ -130,6 +130,9 @@ add_action('template_redirect', function () {
     '/prices'                  => 'https://receptionist.jp/resources/price-book/',
     '/office-workers'          => 'https://receptionist.jp/',
     '/default.xsl'             => 'https://receptionist.jp/',
+
+    // リダイレクトエラー対応
+    '/system/visitorhistory'   => 'https://receptionist.jp/function/',
   ];
 
   // リクエストURI取得（クエリ除外）
