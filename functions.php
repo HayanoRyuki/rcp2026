@@ -131,8 +131,6 @@ add_action('template_redirect', function () {
     '/office-workers'          => 'https://receptionist.jp/',
     '/default.xsl'             => 'https://receptionist.jp/',
 
-    // リダイレクトエラー対応
-    '/system/visitorhistory'   => 'https://receptionist.jp/function/',
   ];
 
   // リクエストURI取得（クエリ除外）
@@ -245,6 +243,19 @@ add_action('template_redirect', function () {
 
   if ($request_uri === '/register.html' || $request_uri === '/register') {
     wp_redirect('https://receptionist.jp/new-register/', 301);
+    exit;
+  }
+});
+
+
+/* -------------------------------------------------------------
+ *  /system/ → /function/ リダイレクト（リダイレクトエラー対応）
+ * ------------------------------------------------------------- */
+add_action('template_redirect', function () {
+  $request_uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+
+  if (str_starts_with($request_uri, '/system/')) {
+    wp_redirect('https://receptionist.jp/function/', 301);
     exit;
   }
 });
