@@ -49,7 +49,7 @@
           <li><a href="/resources/price-book">料金表</a></li>
           <li><a href="/resources">資料一覧</a></li>
           <li><a href="/event">イベント情報</a></li>
-          <li><a href="/?post_type=post">コラム</a></li>
+          <li><a href="/blog/">コラム</a></li>
 <li class="has-submenu">
   <a href="/partner" target="_blank" rel="noopener">パートナーについて</a>
   <ul class="submenu">

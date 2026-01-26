@@ -91,3 +91,70 @@ add_filter('pre_get_document_title', function($title) {
   }
   return $title;
 });
+
+
+// ===================================
+// Canonical URL 出力（UTMパラメータ除外）
+// ===================================
+function rcp2026_output_canonical() {
+  // 管理画面・フィード・検索結果・404では出力しない
+  if (is_admin() || is_feed() || is_search() || is_404()) {
+    return;
+  }
+
+  $canonical_url = '';
+
+  // トップページ
+  if (is_front_page() || is_home()) {
+    $canonical_url = home_url('/');
+  }
+  // 個別投稿・固定ページ
+  elseif (is_singular()) {
+    $canonical_url = get_permalink();
+  }
+  // カスタム投稿タイプのアーカイブ
+  elseif (is_post_type_archive()) {
+    $canonical_url = get_post_type_archive_link(get_post_type());
+  }
+  // カテゴリー・タグ・タクソノミーアーカイブ
+  elseif (is_category() || is_tag() || is_tax()) {
+    $term = get_queried_object();
+    $canonical_url = get_term_link($term);
+  }
+  // 著者アーカイブ
+  elseif (is_author()) {
+    $canonical_url = get_author_posts_url(get_queried_object_id());
+  }
+  // 日付アーカイブ
+  elseif (is_date()) {
+    if (is_year()) {
+      $canonical_url = get_year_link(get_query_var('year'));
+    } elseif (is_month()) {
+      $canonical_url = get_month_link(get_query_var('year'), get_query_var('monthnum'));
+    } elseif (is_day()) {
+      $canonical_url = get_day_link(get_query_var('year'), get_query_var('monthnum'), get_query_var('day'));
+    }
+  }
+
+  // ページネーション：1ページ目を正規URLとする
+  if (is_paged()) {
+    // アーカイブの場合は1ページ目のURLを取得
+    if (is_post_type_archive()) {
+      $canonical_url = get_post_type_archive_link(get_post_type());
+    } elseif (is_category() || is_tag() || is_tax()) {
+      $term = get_queried_object();
+      $canonical_url = get_term_link($term);
+    }
+  }
+
+  // URLが取得できた場合のみ出力
+  if ($canonical_url && !is_wp_error($canonical_url)) {
+    // クエリパラメータを除去（UTM等）
+    $canonical_url = strtok($canonical_url, '?');
+    // 末尾スラッシュを統一
+    $canonical_url = trailingslashit($canonical_url);
+
+    echo '<link rel="canonical" href="' . esc_url($canonical_url) . '" />' . "\n";
+  }
+}
+add_action('wp_head', 'rcp2026_output_canonical', 1);

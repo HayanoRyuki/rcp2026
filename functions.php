@@ -62,7 +62,7 @@ add_action('template_redirect', function () {
     '/document-200'   => 'https://receptionist.jp/resources/document-general/',
     '/partnerlist'    => 'https://receptionist.jp/partner-list/',
     '/downloads'      => 'https://receptionist.jp/resources/',
-    '/column'         => 'https://receptionist.jp/?post_type=post/',
+    '/column'         => 'https://receptionist.jp/blog/',
     '/plan'           => 'https://receptionist.jp/resources/price-book/',
     '/news'           => 'https://receptionist.co.jp/news/release',
     '/company'        => 'https://receptionist.co.jp/about',
