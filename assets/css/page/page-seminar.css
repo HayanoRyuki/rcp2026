@@ -170,20 +170,20 @@ svg {
 
 /* mainレイアウト
 ***************************************************************/
-.l-main {
+.lp-seminar__main {
   overflow: visible;
   width: 100%;
-  margin-top: 4rem;
+  margin-top: 7.2rem;
 }
 @media screen and (max-width: 767px) {
-  .l-main {
+  .lp-seminar__main {
     margin-top: 6rem;
   }
 }
 
 /* 共通inner
 ***************************************************************/
-.l-inner {
+.lp-seminar__inner {
   position: relative;
   width: 100%;
   max-width: 101rem;
@@ -192,7 +192,7 @@ svg {
   margin-inline: auto;
 }
 @media screen and (max-width: 767px) {
-  .l-inner {
+  .lp-seminar__inner {
     width: 100%;
     max-width: 63.2rem;
     padding: 0 1.6rem;
@@ -201,7 +201,7 @@ svg {
 
 /* ヘッダー
 ***************************************************************/
-.l-header {
+.lp-seminar__header {
   width: 100%;
   position: absolute;
   top: 0;
@@ -210,7 +210,7 @@ svg {
   background-color: #ffffff;
 }
 
-.l-header__inner {
+.lp-seminar____inner {
   display: grid;
   grid-template-columns: 17.3rem auto;
   gap: 2rem;
@@ -222,60 +222,76 @@ svg {
   height: 7.2rem;
 }
 @media screen and (max-width: 767px) {
-  .l-header__inner {
+  .lp-seminar____inner {
     padding-inline: 1.6rem;
     padding-block: 1rem;
     height: 6rem;
   }
 }
 
-.l-header__logo {
+.lp-seminar__header-logo {
   width: 19.8rem;
 }
 @media screen and (max-width: 767px) {
-  .l-header__logo {
+  .lp-seminar__header-logo {
     width: 12.2rem;
   }
 }
 
-.l-header__logo-img {
+.lp-seminar__header-logo-img {
   width: auto;
   height: auto;
 }
 
-.l-header__nav {
+.lp-seminar__header-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2.9rem;
 }
 @media screen and (max-width: 767px) {
-  .l-header__nav {
+  .lp-seminar__header-nav {
     gap: 0;
     justify-content: flex-end;
   }
 }
 
-.l-header__nav-text {
+.lp-seminar__header-nav-label {
+  color: #ffffff;
+  background-color: #000000;
+  padding: 5px 16px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.lp-seminar__header-nav-label img {
+  max-width: 12.81px;
+}
+
+.lp-seminar__header-nav-text {
   text-align: center;
-  width: 100%;
+  width: 80%;
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 2px;
 }
 @media screen and (max-width: 767px) {
-  .l-header__nav-text {
+  .lp-seminar__header-nav-text {
     display: none;
   }
 }
-.l-header__nav-text span {
+.lp-seminar__header-nav-text span {
   color: #FE7F2D;
   font-size: 2rem;
 }
 
 /* ヘッダー用CTA
 ***************************************************************/
-.l-header__nav-cta {
+.lp-seminar__header-nav-cta {
   display: flex;
   align-items: center;
   gap: 1.6rem;
@@ -283,7 +299,7 @@ svg {
 
 /* 共通ボタン
 ***************************************************************/
-.c-button {
+.lp-seminar__button {
   height: 7rem;
   border-radius: 8px;
   font-size: 1.4rem;
@@ -304,16 +320,16 @@ svg {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 767px) {
-  .c-button {
+  .lp-seminar__button {
     font-size: 1.4rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .c-button {
+  .lp-seminar__button {
     max-width: 100%;
   }
 }
-.c-button span:nth-child(1) {
+.lp-seminar__button span:nth-child(1) {
   color: #ffffff;
   font-size: 1.4rem;
   font-weight: 700;
@@ -321,11 +337,11 @@ svg {
   letter-spacing: 0em;
 }
 @media screen and (max-width: 767px) {
-  .c-button span:nth-child(1) {
+  .lp-seminar__button span:nth-child(1) {
     font-size: 1.4rem;
   }
 }
-.c-button span:nth-child(2) {
+.lp-seminar__button span:nth-child(2) {
   color: #FE7F2D;
   background-color: #ffffff;
   font-size: 1.2rem;
@@ -339,22 +355,22 @@ svg {
   border-radius: 1.2rem;
 }
 @media screen and (max-width: 767px) {
-  .c-button span:nth-child(2) {
+  .lp-seminar__button span:nth-child(2) {
     font-size: 1.2rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .c-button span:nth-child(2) {
+  .lp-seminar__button span:nth-child(2) {
     max-width: 14.8rem;
   }
 }
 @media (any-hover: hover) {
-  .c-button:hover {
+  .lp-seminar__button:hover {
     opacity: 0.7;
   }
 }
 
-.c-button__header {
+.lp-seminar__button-header {
   height: 4rem;
   border-radius: 8px;
   font-size: 1.4rem;
@@ -373,29 +389,29 @@ svg {
   padding: 0 2rem;
 }
 @media screen and (max-width: 767px) {
-  .c-button__header {
+  .lp-seminar__button-header {
     font-size: 1.4rem;
   }
 }
 @media (any-hover: hover) {
-  .c-button__header:hover {
+  .lp-seminar__button-header:hover {
     opacity: 0.7;
   }
 }
 
-.c-button-blue {
+.lp-seminar__button--blue {
   color: #ffffff;
   background: #0098BB;
 }
-.c-button-blue span:nth-child(1) {
+.lp-seminar__button--blue span:nth-child(1) {
   color: #ffffff;
 }
-.c-button-blue span:nth-child(2) {
+.lp-seminar__button--blue span:nth-child(2) {
   color: #0098BB;
   background-color: #ffffff;
 }
 
-.c-button-m {
+.lp-seminar__button--m {
   height: 7.4rem;
   border-radius: 8px;
   font-size: 2.4rem;
@@ -408,16 +424,16 @@ svg {
   padding-inline: 7.7rem;
 }
 @media screen and (max-width: 767px) {
-  .c-button-m {
+  .lp-seminar__button--m {
     font-size: 2.4rem;
   }
 }
-.c-button-m span:nth-child(2) {
+.lp-seminar__button--m span:nth-child(2) {
   max-width: 17.7rem;
   margin: 0 auto;
 }
 
-.c-button-l {
+.lp-seminar__button--l {
   height: 14rem;
   border-radius: 20px;
   font-size: 2.4rem;
@@ -431,18 +447,18 @@ svg {
   border: 0.5rem solid #ffffff;
 }
 @media screen and (max-width: 767px) {
-  .c-button-l {
+  .lp-seminar__button--l {
     font-size: 2.4rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .c-button-l {
+  .lp-seminar__button--l {
     height: 12rem;
     gap: 1.2rem;
     padding-inline: 3.7rem;
   }
 }
-.c-button-l span:nth-child(1) {
+.lp-seminar__button--l span:nth-child(1) {
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 0.8333333333;
@@ -451,12 +467,12 @@ svg {
   padding: 0 3.3rem;
 }
 @media screen and (max-width: 767px) {
-  .c-button-l span:nth-child(1) {
+  .lp-seminar__button--l span:nth-child(1) {
     font-size: 2.4rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .c-button-l span:nth-child(1) {
+  .lp-seminar__button--l span:nth-child(1) {
     font-size: 2.2rem;
     font-weight: 700;
     line-height: 0.9090909091;
@@ -464,11 +480,11 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .c-button-l span:nth-child(1) {
+  .lp-seminar__button--l span:nth-child(1) {
     font-size: 2.2rem;
   }
 }
-.c-button-l span:nth-child(1):before {
+.lp-seminar__button--l span:nth-child(1):before {
   content: "";
   width: 30px;
   height: 3px;
@@ -479,7 +495,7 @@ svg {
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
 }
-.c-button-l span:nth-child(1):after {
+.lp-seminar__button--l span:nth-child(1):after {
   content: "";
   width: 30px;
   height: 3px;
@@ -490,7 +506,7 @@ svg {
   top: 50%;
   transform: translateY(-50%) rotate(-45deg);
 }
-.c-button-l span:nth-child(2) {
+.lp-seminar__button--l span:nth-child(2) {
   font-size: 2rem;
   font-weight: 700;
   line-height: 2.2;
@@ -499,12 +515,12 @@ svg {
   border-radius: 2.2rem;
 }
 @media screen and (max-width: 767px) {
-  .c-button-l span:nth-child(2) {
+  .lp-seminar__button--l span:nth-child(2) {
     font-size: 2rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .c-button-l span:nth-child(2) {
+  .lp-seminar__button--l span:nth-child(2) {
     height: 4.2rem;
     border-radius: 2.1rem;
     font-size: 1.8rem;
@@ -514,12 +530,12 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .c-button-l span:nth-child(2) {
+  .lp-seminar__button--l span:nth-child(2) {
     font-size: 1.8rem;
   }
 }
 
-.c-form-group label {
+.lp-seminar__form-group label {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 0.9333333333;
@@ -528,12 +544,12 @@ svg {
   display: block;
 }
 @media screen and (max-width: 767px) {
-  .c-form-group label {
+  .lp-seminar__form-group label {
     font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .c-form-group label {
+  .lp-seminar__form-group label {
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 1;
@@ -541,30 +557,30 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .c-form-group label {
+  .lp-seminar__form-group label {
     font-size: 1.4rem;
   }
 }
-.c-form-group + .c-form-group {
+.lp-seminar__form-group + .lp-seminar__form-group {
   margin-top: 2rem;
 }
 
-.c-form-group-set {
+.lp-seminar__form-group-set {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 12px;
 }
-.c-form-group-set .c-form-group {
+.lp-seminar__form-group-set .lp-seminar__form-group {
   margin-top: 0;
 }
-.c-form-group-set + .c-form-group {
+.lp-seminar__form-group-set + .lp-seminar__form-group {
   margin-top: 2rem;
 }
 
-.c-form-input {
+.lp-seminar__form-group-input {
   position: relative;
 }
-.c-form-input input {
+.lp-seminar__form-group-input input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -578,10 +594,10 @@ svg {
   height: 3.6rem;
 }
 
-.c-form-select {
+.lp-seminar__form-select {
   position: relative;
 }
-.c-form-select select {
+.lp-seminar__form-select select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -594,7 +610,7 @@ svg {
   width: 100%;
   height: 3.6rem;
 }
-.c-form-select:after {
+.lp-seminar__form-select:after {
   content: "";
   width: 8px;
   height: 4px;
@@ -623,28 +639,28 @@ svg {
   color: #99A1AF;
 }
 
-.c-form-btn-area {
+.lp-seminar__form-btn-area {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
 }
 @media screen and (max-width: 767px) {
-  .c-form-btn-area {
+  .lp-seminar__form-btn-area {
     grid-template-columns: 1fr;
   }
 }
 
 /* セクション共通見出し
 ***************************************************************/
-.c-section-head {
+.lp-seminar__section-head {
   display: flex;
   justify-content: center;
   gap: 4rem;
   align-items: center;
 }
 
-.c-section-head__title-wrap {
+.lp-seminar__section-head-title-wrap {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -652,7 +668,7 @@ svg {
   align-items: center;
 }
 
-.c-section-head__sub {
+.lp-seminar__section-head-sub {
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 2.4285714286;
@@ -673,15 +689,15 @@ svg {
   gap: 0.5rem;
 }
 @media screen and (max-width: 767px) {
-  .c-section-head__sub {
+  .lp-seminar__section-head-sub {
     font-size: 1.4rem;
   }
 }
-.c-section-head__sub img {
+.lp-seminar__section-head-sub img {
   width: 18px;
 }
 
-.c-section-head__title {
+.lp-seminar__section-head-title {
   font-size: 3.6rem;
   font-weight: 700;
   line-height: 1.1111111111;
@@ -690,12 +706,12 @@ svg {
   margin-bottom: 2.5rem;
 }
 @media screen and (max-width: 767px) {
-  .c-section-head__title {
+  .lp-seminar__section-head-title {
     font-size: 3.6rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .c-section-head__title {
+  .lp-seminar__section-head-title {
     font-size: 3rem;
     font-weight: 700;
     line-height: 1.3333333333;
@@ -704,12 +720,12 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .c-section-head__title {
+  .lp-seminar__section-head-title {
     font-size: 3rem;
   }
 }
 
-.c-section-head__text {
+.lp-seminar__section-head-text {
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.6666666667;
@@ -717,12 +733,12 @@ svg {
   color: #4A5565;
 }
 @media screen and (max-width: 767px) {
-  .c-section-head__text {
+  .lp-seminar__section-head-text {
     font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .c-section-head__text {
+  .lp-seminar__section-head-text {
     font-size: 1.7rem;
     font-weight: 400;
     line-height: 1.7647058824;
@@ -731,42 +747,42 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .c-section-head__text {
+  .lp-seminar__section-head-text {
     font-size: 1.7rem;
   }
 }
 
 /* fv
 ***************************************************************/
-.p-fv {
+.lp-seminar__fv {
   position: relative;
   padding-block: 3rem 4.8rem;
-  background: url(../../img/seminar/img_fv--pc.webp) no-repeat center bottom/cover;
+  background: url(../../img/seminar/img_fv--pc2.webp) no-repeat center bottom/cover;
 }
 @media screen and (max-width: 767px) {
-  .p-fv {
+  .lp-seminar__fv {
     padding-block: 0 3rem;
   }
 }
 
-.p-fv__container {
+.lp-seminar__fv-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 @media screen and (max-width: 767px) {
-  .p-fv__container {
+  .lp-seminar__fv-container {
     grid-template-columns: 1fr;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .p-fv__info {
+  .lp-seminar__fv-info {
     padding-top: 4rem;
   }
 }
 
-.p-fv__label {
+.lp-seminar__fv-label {
   color: #ffffff;
   background-color: #000000;
   padding: 5px 16px;
@@ -779,18 +795,18 @@ svg {
   margin-bottom: 1.8rem;
 }
 @media screen and (max-width: 767px) {
-  .p-fv__label {
+  .lp-seminar__fv-label {
     position: absolute;
     left: 0;
     top: 0;
     border-radius: 0 0 5px 0;
   }
 }
-.p-fv__label img {
+.lp-seminar__fv-label img {
   max-width: 12.81px;
 }
 
-.p-fv__title {
+.lp-seminar__fv-title {
   font-size: 4.2rem;
   font-weight: 700;
   line-height: 1.6;
@@ -798,12 +814,12 @@ svg {
   color: #101828;
 }
 @media screen and (max-width: 767px) {
-  .p-fv__title {
+  .lp-seminar__fv-title {
     font-size: 4.2rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-fv__title {
+  .lp-seminar__fv-title {
     font-size: 3rem;
     font-weight: 700;
     line-height: 1.5;
@@ -811,41 +827,41 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .p-fv__title {
+  .lp-seminar__fv-title {
     font-size: 3rem;
   }
 }
 
-.p-fv__title-img {
+.lp-seminar__fv-title-img {
   max-width: 46rem;
   margin: 0 auto;
 }
 
-.p-fv__date {
+.lp-seminar__fv-date {
   background-color: #ffffff;
   border: solid 5px #50C3DC;
   border-radius: 2rem;
-  padding: 5rem 2rem 2rem;
+  padding: 5rem 0rem 2rem 1.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 17rem;
-  grid-gap: 2rem;
+  grid-gap: 0rem;
   position: relative;
 }
 @media screen and (max-width: 767px) {
-  .p-fv__date {
+  .lp-seminar__fv-date {
     margin-top: 11rem;
     grid-template-columns: 1fr;
     grid-gap: 1rem;
     padding: 3.2rem 1.6rem 1.6rem;
   }
 }
-.p-fv__date:before {
+.lp-seminar__fv-date:before {
   content: "";
   width: 100%;
   max-width: 44rem;
   height: 20rem;
-  background-image: url(../../img/seminar/img_fv-date--pc.webp);
+  background-image: url(../../img/seminar/img_fv-date--pc2.webp);
   background-size: contain;
   background-repeat: no-repeat;
   display: block;
@@ -855,17 +871,17 @@ svg {
   transform: translateX(-50%);
 }
 @media screen and (max-width: 767px) {
-  .p-fv__date:before {
+  .lp-seminar__fv-date:before {
     max-width: calc(100% - 32px);
     top: -11rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-fv__date-item {
+  .lp-seminar__fv-date-item {
     text-align: center;
   }
 }
-.p-fv__date-item h4 {
+.lp-seminar__fv-date-item h4 {
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 2.4rem;
@@ -877,11 +893,11 @@ svg {
   margin-bottom: 0.8rem;
 }
 @media screen and (max-width: 767px) {
-  .p-fv__date-item h4 {
+  .lp-seminar__fv-date-item h4 {
     margin: 0 auto;
   }
 }
-.p-fv__date-item p {
+.lp-seminar__fv-date-item p {
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 1.6;
@@ -890,11 +906,11 @@ svg {
   padding-left: 1.2rem;
 }
 @media screen and (max-width: 767px) {
-  .p-fv__date-item p {
+  .lp-seminar__fv-date-item p {
     text-align: left;
   }
 }
-.p-fv__date-item p:before {
+.lp-seminar__fv-date-item p:before {
   content: "";
   width: 6px;
   height: 6px;
@@ -905,36 +921,36 @@ svg {
   left: 0;
   top: 12px;
 }
-.p-fv__date-item p span {
+.lp-seminar__fv-date-item p span {
   font-size: 1.3rem;
 }
-.p-fv__date-item:nth-child(2) h4 {
+.lp-seminar__fv-date-item:nth-child(2) h4 {
   color: #FE7F2D;
   border: solid 1px #FE7F2D;
 }
-.p-fv__date-item:nth-child(2) p:before {
+.lp-seminar__fv-date-item:nth-child(2) p:before {
   background-color: #FE7F2D;
 }
 
 @media screen and (max-width: 767px) {
-  .p-fv__date-item-inner {
+  .lp-seminar__fv-date-item-inner {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 }
 
-.p-fv__form {
+.lp-seminar__fv-form {
   padding-top: 1.8rem;
   padding-left: 2rem;
 }
 @media screen and (max-width: 767px) {
-  .p-fv__form {
+  .lp-seminar__fv-form {
     padding: 0rem;
   }
 }
 
-.p-fv__form-inner {
+.lp-seminar__fv-form-inner {
   height: 100%;
   background-color: #ffffff;
   border-radius: 2.4rem;
@@ -942,24 +958,175 @@ svg {
   padding: 3.2rem;
 }
 @media screen and (max-width: 767px) {
-  .p-fv__form-inner {
+  .lp-seminar__fv-form-inner {
     border-radius: 2rem;
   }
+}
+.lp-seminar__fv-application {
+  margin-top: 4.8rem;
+}
+@media screen and (max-width: 767px) {
+  .lp-seminar__fv-application {
+    display: none;
+  }
+}
+
+.lp-seminar__fv-application-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 3.2rem;
+}
+
+.lp-seminar__fv-basics-area {
+  width: 50%;
+  min-height: 14rem;
+  border-radius: 20px;
+  border: 5px solid #ffffff;
+  background: #0098BB;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lp-seminar__fv-basics-lead {
+  color: #ffffff;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 83.333% */
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.lp-seminar__fv-basics-lead::before {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-image: url(../../img/seminar/img_fv-lead__pc-l.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: -3.4rem;
+  transform: translateY(-50%);
+}
+.lp-seminar__fv-basics-lead::after {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-image: url(../../img/seminar/img_fv-lead__pc-r.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 50%;
+  right: -3.4rem;
+  transform: translateY(-50%);
+}
+
+.lp-seminar__fv-basics-btn {
+  border-radius: 2.2rem;
+  background: #FFF;
+  width: 31.3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+.lp-seminar__fv-basics-btn a {
+  display: block;
+  text-align: center;
+  color: #0098BB;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem; /* 100% */
+  letter-spacing: 0.2rem;
+}
+
+.lp-seminar__fv-advanced-area {
+  width: 50%;
+  min-height: 14rem;
+  border-radius: 2rem;
+  border: 5px solid #ffffff;
+  background: #FE7F2D;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lp-seminar__fv-advanced-lead {
+  color: #ffffff;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 83.333% */
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.lp-seminar__fv-advanced-lead::before {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-image: url(../../img/seminar/img_fv-lead__pc-l.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: -3.4rem;
+  transform: translateY(-50%);
+}
+.lp-seminar__fv-advanced-lead::after {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-image: url(../../img/seminar/img_fv-lead__pc-r.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 50%;
+  right: -3.4rem;
+  transform: translateY(-50%);
+}
+
+.lp-seminar__fv-advanced-btn {
+  border-radius: 2.2rem;
+  background: #FFF;
+  width: 31.3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+.lp-seminar__fv-advanced-btn a {
+  display: block;
+  text-align: center;
+  color: #0098BB;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem; /* 100% */
+  letter-spacing: 0.2rem;
 }
 
 /* about
 ***************************************************************/
-.p-about {
+.lp-seminar__about {
   padding-block: 0;
   position: relative;
 }
 
-.p-about-head {
+.lp-seminar__about-head {
   background-color: #0098BB;
   padding-bottom: 9rem;
   position: relative;
+  padding-top: 5rem;
 }
-.p-about-head:after {
+.lp-seminar__about-head:after {
   content: "";
   width: 9.067rem;
   height: 5rem;
@@ -973,16 +1140,16 @@ svg {
   transform: translateX(-50%);
 }
 @media screen and (max-width: 767px) {
-  .p-about-head:after {
+  .lp-seminar__about-head:after {
     bottom: 1.5rem;
   }
 }
 
-.p-about-case {
+.lp-seminar__about-case-top {
   margin-top: 3.2rem;
 }
 
-.p-about-case h3 {
+.lp-seminar__about-case-top h3 {
   color: #ffffff;
   font-size: 2.8rem;
   font-weight: 700;
@@ -990,29 +1157,29 @@ svg {
   letter-spacing: 0em;
 }
 @media screen and (max-width: 767px) {
-  .p-about-case h3 {
+  .lp-seminar__about-case-top h3 {
     font-size: 2.8rem;
   }
 }
 
-.p-about-case-box {
+.lp-seminar__about-case-box {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 @media screen and (max-width: 767px) {
-  .p-about-case-box {
+  .lp-seminar__about-case-box {
     display: block;
   }
 }
 
-.p-about__text-box {
+.lp-seminar__about-text-box {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.p-about__text {
+.lp-seminar__about-text {
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.6;
@@ -1022,12 +1189,12 @@ svg {
   margin-bottom: 3.2rem;
 }
 @media screen and (max-width: 767px) {
-  .p-about__text {
+  .lp-seminar__about-text {
     font-size: 2rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-about__text {
+  .lp-seminar__about-text {
     font-size: 1.8rem;
     font-weight: 700;
     line-height: 1.7777777778;
@@ -1035,12 +1202,12 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .p-about__text {
+  .lp-seminar__about-text {
     font-size: 1.8rem;
   }
 }
 
-.p-about__text2 {
+.lp-seminar__about-text--2 {
   font-size: 2.8rem;
   font-weight: 700;
   line-height: 1.4285714286;
@@ -1052,11 +1219,11 @@ svg {
   margin: 0 auto;
 }
 @media screen and (max-width: 767px) {
-  .p-about__text2 {
+  .lp-seminar__about-text--2 {
     font-size: 2.8rem;
   }
 }
-.p-about__text2:before {
+.lp-seminar__about-text--2:before {
   content: "";
   width: 100%;
   height: 10px;
@@ -1068,12 +1235,12 @@ svg {
   z-index: -1;
 }
 @media screen and (max-width: 767px) {
-  .p-about__text2:before {
+  .lp-seminar__about-text--2:before {
     display: none;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-about__text2 {
+  .lp-seminar__about-text--2 {
     font-size: 2.8rem;
     font-weight: 700;
     line-height: 1.5714285714;
@@ -1081,15 +1248,15 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .p-about__text2 {
+  .lp-seminar__about-text--2 {
     font-size: 2.8rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-about__text2 span {
+  .lp-seminar__about-text--2 span {
     position: relative;
   }
-  .p-about__text2 span:before {
+  .lp-seminar__about-text--2 span:before {
     content: "";
     width: 100%;
     height: 10px;
@@ -1102,18 +1269,18 @@ svg {
   }
 }
 
-.p-about-body {
+.lp-seminar__about-body {
   position: relative;
   padding-top: 10.6rem;
   padding-bottom: 8.8rem;
 }
 @media screen and (max-width: 767px) {
-  .p-about-body {
+  .lp-seminar__about-body {
     padding-top: 6.8rem;
     padding-bottom: 6.2rem;
   }
 }
-.p-about-body:after {
+.lp-seminar__about-body:after {
   content: "";
   width: 6.7rem;
   height: 3.8rem;
@@ -1127,7 +1294,7 @@ svg {
   transform: translateX(-50%);
 }
 
-.p-about-body__title {
+.lp-seminar__about-body-title {
   font-size: 3.6rem;
   font-weight: 700;
   line-height: 1.1111111111;
@@ -1137,12 +1304,12 @@ svg {
   margin-bottom: 2.2rem;
 }
 @media screen and (max-width: 767px) {
-  .p-about-body__title {
+  .lp-seminar__about-body-title {
     font-size: 3.6rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-about-body__title {
+  .lp-seminar__about-body-title {
     font-size: 2.8rem;
     font-weight: 700;
     line-height: 1.4285714286;
@@ -1150,12 +1317,12 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .p-about-body__title {
+  .lp-seminar__about-body-title {
     font-size: 2.8rem;
   }
 }
 
-.p-about-body__text {
+.lp-seminar__about-body-text {
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.6666666667;
@@ -1165,12 +1332,12 @@ svg {
   margin-bottom: 4.8rem;
 }
 @media screen and (max-width: 767px) {
-  .p-about-body__text {
+  .lp-seminar__about-body-text {
     font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-about-body__text {
+  .lp-seminar__about-body-text {
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 1.6666666667;
@@ -1179,43 +1346,43 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .p-about-body__text {
+  .lp-seminar__about-body-text {
     font-size: 1.8rem;
   }
 }
 
-.p-about__case_title {
+.lp-seminar__about-case-title {
   text-align: center;
   margin-bottom: 2.8rem;
 }
 
-.p-about__case_title-img {
+.lp-seminar__about-case-title-img {
   margin: 0 auto;
   max-width: 64.2rem;
 }
 
-.p-about__case {
+.lp-seminar__about-case {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 3rem;
   margin-bottom: 4.8rem;
 }
 @media screen and (max-width: 767px) {
-  .p-about__case {
+  .lp-seminar__about-case {
     grid-template-columns: 1fr;
   }
 }
 
-.p-about__case-item {
+.lp-seminar__about-case-item {
   border-radius: 20px;
   background-color: #ffffff;
   box-shadow: 2px 2px 15px -1px rgba(0, 0, 0, 0.1);
   padding: 2.9rem 1.4rem;
 }
-.p-about__case-item figure {
+.lp-seminar__about-case-item figure {
   margin-bottom: 1.6rem;
 }
-.p-about__case-item h3 {
+.lp-seminar__about-case-item h3 {
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.25;
@@ -1225,11 +1392,11 @@ svg {
   margin-bottom: 1.4rem;
 }
 @media screen and (max-width: 767px) {
-  .p-about__case-item h3 {
+  .lp-seminar__about-case-item h3 {
     font-size: 2rem;
   }
 }
-.p-about__case-item p {
+.lp-seminar__about-case-item p {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.625;
@@ -1239,21 +1406,21 @@ svg {
   padding: 0 1rem;
 }
 @media screen and (max-width: 767px) {
-  .p-about__case-item p {
+  .lp-seminar__about-case-item p {
     font-size: 1.6rem;
   }
 }
 
-.p-about__text3 {
+.lp-seminar__about-text--3 {
   text-align: center;
   margin-bottom: 4.8rem;
 }
 @media screen and (max-width: 767px) {
-  .p-about__text3 {
+  .lp-seminar__about-text--3 {
     margin-bottom: 3.2rem;
   }
 }
-.p-about__text3 h3 {
+.lp-seminar__about-text--3 h3 {
   font-size: 2.6rem;
   font-weight: 700;
   line-height: 1.5384615385;
@@ -1264,11 +1431,11 @@ svg {
   margin-bottom: 2.55rem;
 }
 @media screen and (max-width: 767px) {
-  .p-about__text3 h3 {
+  .lp-seminar__about-text--3 h3 {
     font-size: 2.6rem;
   }
 }
-.p-about__text3 h3 .blue {
+.lp-seminar__about-text--3 h3 .blue {
   font-size: 2.6rem;
   font-weight: 800;
   line-height: 1.5384615385;
@@ -1276,16 +1443,16 @@ svg {
   color: #0098BB;
 }
 @media screen and (max-width: 767px) {
-  .p-about__text3 h3 .blue {
+  .lp-seminar__about-text--3 h3 .blue {
     font-size: 2.6rem;
   }
 }
-.p-about__text3 h3 .line {
+.lp-seminar__about-text--3 h3 .line {
   position: relative;
   display: inline-block;
 }
 @media screen and (max-width: 767px) {
-  .p-about__text3 h3 .line:before {
+  .lp-seminar__about-text--3 h3 .line:before {
     content: "";
     width: 100%;
     height: 10px;
@@ -1297,7 +1464,7 @@ svg {
     z-index: -1;
   }
 }
-.p-about__text3 h3:before {
+.lp-seminar__about-text--3 h3:before {
   content: "";
   width: 100%;
   height: 10px;
@@ -1309,11 +1476,11 @@ svg {
   z-index: -1;
 }
 @media screen and (max-width: 767px) {
-  .p-about__text3 h3:before {
+  .lp-seminar__about-text--3 h3:before {
     display: none;
   }
 }
-.p-about__text3 p {
+.lp-seminar__about-text--3 p {
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.6;
@@ -1321,12 +1488,12 @@ svg {
   color: #101828;
 }
 @media screen and (max-width: 767px) {
-  .p-about__text3 p {
+  .lp-seminar__about-text--3 p {
     font-size: 2rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-about__text3 p {
+  .lp-seminar__about-text--3 p {
     font-size: 1.8rem;
     font-weight: 700;
     line-height: 1.7777777778;
@@ -1334,20 +1501,20 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .p-about__text3 p {
+  .lp-seminar__about-text--3 p {
     font-size: 1.8rem;
   }
 }
 
 /* cta
 ***************************************************************/
-.p-cta {
+.lp-seminar__cta {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3.2rem;
 }
 @media screen and (max-width: 767px) {
-  .p-cta {
+  .lp-seminar__cta {
     grid-template-columns: 1fr;
     grid-gap: 3rem;
   }
@@ -1355,50 +1522,50 @@ svg {
 
 /* curriculum
 ***************************************************************/
-.p-curriculum {
+.lp-seminar__curriculum {
   padding-block: 6.4rem;
   background: #E6F5F8;
 }
 @media screen and (max-width: 767px) {
-  .p-curriculum {
+  .lp-seminar__curriculum {
     padding-block: 3.2rem 6rem;
   }
 }
 
-.p-curriculum__container {
+.lp-seminar__curriculum-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 3.2rem;
   margin-block-start: 5rem;
 }
 @media screen and (max-width: 767px) {
-  .p-curriculum__container {
+  .lp-seminar__curriculum-container {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 2.4rem;
     margin-block-start: 2.4rem;
   }
 }
 
-.p-curriculum__card {
+.lp-seminar__curriculum-card {
   display: grid;
   grid-template-rows: 7.5rem auto;
 }
 
-.p-curriculum__card-img {
+.lp-seminar__curriculum-card-img {
   text-align: center;
   margin-bottom: 1.6rem;
 }
-.p-curriculum__card-img h3 img {
+.lp-seminar__curriculum-card-img h3 img {
   max-width: 26.3rem;
   margin: 0 auto;
 }
 @media screen and (max-width: 767px) {
-  .p-curriculum__card-img h3 img {
+  .lp-seminar__curriculum-card-img h3 img {
     max-width: 22rem;
   }
 }
 
-.p-curriculum__card-body {
+.lp-seminar__curriculum-card-body {
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -1409,16 +1576,16 @@ svg {
   justify-content: space-between;
 }
 @media screen and (max-width: 767px) {
-  .p-curriculum__card-body {
+  .lp-seminar__curriculum-card-body {
     margin-block-start: 0;
     gap: 1.2rem;
   }
 }
-.p-curriculum__card-body ul {
+.lp-seminar__curriculum-card-body ul {
   padding-left: 2.8rem;
   margin-bottom: 1rem;
 }
-.p-curriculum__card-body ul li {
+.lp-seminar__curriculum-card-body ul li {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 1.4285714286;
@@ -1427,16 +1594,16 @@ svg {
   padding: 3px 0;
 }
 @media screen and (max-width: 767px) {
-  .p-curriculum__card-body ul li {
+  .lp-seminar__curriculum-card-body ul li {
     font-size: 1.4rem;
   }
 }
-.p-curriculum__card-body ul li:before {
+.lp-seminar__curriculum-card-body ul li:before {
   content: "・";
   color: #0098BB;
 }
 
-.p-curriculum__card-title {
+.lp-seminar__curriculum-card-title {
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.5;
@@ -1448,68 +1615,68 @@ svg {
   grid-gap: 1rem;
 }
 @media screen and (max-width: 767px) {
-  .p-curriculum__card-title {
+  .lp-seminar__curriculum-card-title {
     font-size: 1.6rem;
   }
 }
-.p-curriculum__card-title img {
+.lp-seminar__curriculum-card-title img {
   width: 2rem;
 }
 
-.p-curriculum-btn {
+.lp-seminar__curriculum-btn {
   border-top: solid 1px rgba(0, 0, 0, 0.1);
   padding-top: 3rem;
   text-align: center;
 }
-.p-curriculum-btn .c-button {
+.lp-seminar__curriculum-btn .lp-seminar__button {
   margin: 0 auto;
 }
 
 /* event
 ***************************************************************/
-.p-event {
+.lp-seminar__event {
   padding-block: 6.4rem;
   background-color: #F7F6F4;
 }
 @media screen and (max-width: 767px) {
-  .p-event {
+  .lp-seminar__event {
     padding-block: 4.8rem 6rem;
   }
 }
 
-.p-event__container {
+.lp-seminar__event-container {
   margin-block-start: 4.8rem;
 }
 @media screen and (max-width: 767px) {
-  .p-event__container {
+  .lp-seminar__event-container {
     margin-block-start: 3.2rem;
   }
 }
 
-.p-event__contents {
+.lp-seminar__event-contents {
   background-color: #ffffff;
   border-radius: 24px;
   padding: 3.2rem 5rem;
   box-shadow: 4px 4px 20px -1px rgba(0, 0, 0, 0.07);
 }
 @media screen and (max-width: 767px) {
-  .p-event__contents {
+  .lp-seminar__event-contents {
     border-radius: 20px;
     padding: 2.4rem 2rem;
   }
 }
 
-.p-event__step + .p-event__step {
+.lp-seminar__event-step + .lp-seminar__event-step {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 2.4rem;
   margin-top: 2.4rem;
 }
 
-.p-event__step-num {
+.lp-seminar__event-step-num {
   margin-bottom: 1rem;
 }
 
-.p-event__step-num-text {
+.lp-seminar__event-step-num-text {
   text-align: left;
   font-size: 2rem;
   font-weight: 700;
@@ -1521,12 +1688,12 @@ svg {
   align-items: center;
 }
 @media screen and (max-width: 767px) {
-  .p-event__step-num-text {
+  .lp-seminar__event-step-num-text {
     font-size: 2rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-event__step-num-text {
+  .lp-seminar__event-step-num-text {
     font-size: 1.8rem;
     font-weight: 700;
     line-height: 1.8333333333;
@@ -1534,19 +1701,19 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .p-event__step-num-text {
+  .lp-seminar__event-step-num-text {
     font-size: 1.8rem;
   }
 }
-.p-event__step-num-text img {
+.lp-seminar__event-step-num-text img {
   width: 28px;
 }
 
-.p-event__step-body {
+.lp-seminar__event-step-body {
   flex: 1;
 }
 
-.p-event__step-text {
+.lp-seminar__event-step-text {
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.6277777778;
@@ -1554,12 +1721,12 @@ svg {
   color: #4A5565;
 }
 @media screen and (max-width: 767px) {
-  .p-event__step-text {
+  .lp-seminar__event-step-text {
     font-size: 1.8rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-event__step-text {
+  .lp-seminar__event-step-text {
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.83125;
@@ -1567,37 +1734,37 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .p-event__step-text {
+  .lp-seminar__event-step-text {
     font-size: 1.6rem;
   }
 }
-.p-event__step-text b {
+.lp-seminar__event-step-text b {
   color: #0098BB;
 }
 
 /* support
 ***************************************************************/
-.p-support {
+.lp-seminar__support {
   padding-block: 9.6rem;
   background: #126C84;
 }
 @media screen and (max-width: 767px) {
-  .p-support {
+  .lp-seminar__support {
     padding-block: 4.8rem 6rem;
     padding-inline: 1.6rem;
   }
 }
 
-.p-support-head {
+.lp-seminar__support-head {
   margin-bottom: 6rem;
 }
 @media screen and (max-width: 767px) {
-  .p-support-head {
+  .lp-seminar__support-head {
     margin-bottom: 4rem;
   }
 }
 
-.p-support__title {
+.lp-seminar__support-title {
   font-size: 3.6rem;
   font-weight: 700;
   line-height: 1.3888888889;
@@ -1607,12 +1774,12 @@ svg {
   margin-bottom: 2.4rem;
 }
 @media screen and (max-width: 767px) {
-  .p-support__title {
+  .lp-seminar__support-title {
     font-size: 3.6rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-support__title {
+  .lp-seminar__support-title {
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 1.5833333333;
@@ -1620,12 +1787,12 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .p-support__title {
+  .lp-seminar__support-title {
     font-size: 2.4rem;
   }
 }
 
-.p-support__text {
+.lp-seminar__support-text {
   font-size: 2rem;
   font-weight: 400;
   line-height: 1.8;
@@ -1635,12 +1802,12 @@ svg {
   margin-bottom: 2.4rem;
 }
 @media screen and (max-width: 767px) {
-  .p-support__text {
+  .lp-seminar__support-text {
     font-size: 2rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-support__text {
+  .lp-seminar__support-text {
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.625;
@@ -1648,7 +1815,7 @@ svg {
   }
 }
 @media screen and (max-width: 767px) and (max-width: 767px) {
-  .p-support__text {
+  .lp-seminar__support-text {
     font-size: 1.6rem;
   }
 }
