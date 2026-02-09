@@ -14,6 +14,19 @@
   </script>
   <!-- End Google Tag Manager -->
 
+  <!-- ChatPlus -->
+  <script>
+    (function(){
+      var w=window,d=document;
+      var s="https://app.chatplus.jp/cp.js";
+      d["__cp_d"]="https://app.chatplus.jp";
+      d["__cp_c"]="e5ead80a_3";
+      var a=d.createElement("script"), m=d.getElementsByTagName("script")[0];
+      a.async=true,a.src=s,m.parentNode.insertBefore(a,m);
+    })();
+  </script>
+  <!-- End ChatPlus -->
+
   <?php wp_head(); ?>
 </head>
 
