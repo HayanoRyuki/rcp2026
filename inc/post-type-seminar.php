@@ -144,16 +144,18 @@ function render_seminar_schedule_meta_box( $post ) {
       });
     });
 
-    // 行削除（イベント委任）
+    // 行削除（イベント委任 — 日程行・カリキュラム行の両方に対応）
     document.addEventListener('click', function(e){
       if (e.target.classList.contains('seminar-btn-remove')) {
-        var row = e.target.closest('.seminar-repeater-row');
+        var row = e.target.closest('.seminar-repeater-row, .seminar-curriculum-row');
+        if (!row) return;
         var container = row.parentElement;
+        var selector = row.classList.contains('seminar-curriculum-row') ? '.seminar-curriculum-row' : '.seminar-repeater-row';
         // 最低1行は残す
-        if (container.querySelectorAll('.seminar-repeater-row').length > 1) {
+        if (container.querySelectorAll(selector).length > 1) {
           row.remove();
         } else {
-          row.querySelectorAll('input').forEach(function(input){ input.value = ''; });
+          row.querySelectorAll('input, textarea').forEach(function(el){ el.value = ''; });
         }
       }
     });
