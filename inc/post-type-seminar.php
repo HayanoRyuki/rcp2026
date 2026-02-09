@@ -263,6 +263,17 @@ function save_seminar_meta( $post_id ) {
   $template = get_page_template_slug( $post_id );
   if ( $template !== 'page-seminar.php' ) return;
 
+  // --- 全メタキーを一旦削除してから保存（旧プラグインの重複行対策） ---
+  $all_keys = [
+    'basic_dates', 'basic_week', 'basic_times',
+    'advanced_dates', 'advanced_week', 'advanced_times',
+    'curriculum_basic', 'curriculum_basic_text',
+    'curriculum_advanced', 'curriculum_advanced_text',
+  ];
+  foreach ( $all_keys as $key ) {
+    delete_post_meta( $post_id, $key );
+  }
+
   // --- 開催日程 ---
   $schedule_keys = [
     'basic_dates', 'basic_week', 'basic_times',
