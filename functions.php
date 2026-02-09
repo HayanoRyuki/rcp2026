@@ -22,6 +22,7 @@ $custom_post_types = [
   'post-type-resource',
   'post-type-logo',
   'post-type-partner',
+  'post-type-seminar',
 ];
 foreach ($custom_post_types as $file) {
   $path = get_template_directory() . "/inc/{$file}.php";
