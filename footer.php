@@ -30,6 +30,7 @@
     <li><a href="/new-register/">無料トライアル</a></li>
     <li><a href="https://app.receptionist.jp/sign_in">ログイン</a></li>
     <li><a href="https://help.receptionist.jp/">ヘルプサイト</a></li>
+    <li><a href="/seminar">講習会</a></li>
   </ul>
 </div>
 
