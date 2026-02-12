@@ -18,15 +18,10 @@ get_header();
   <div class="thanks-links">
 
     <!-- イベント利用 -->
-    <div class="section-block">
-      <p><strong>▼イベント利用での受付導入をご検討の方はこちら▼</strong></p>
-      <div class="link-list">
-        <a href="https://receptionist.my.salesforce.com/sfc/p/7F000001xBPZ/a/Nn000003dNEL/7eNydQQD_.Ijx6u_ASRMOazwLEomMdd4iW8C_Ge9x7E"
-           target="_blank" rel="noopener">
-          ▼イベント利用での受付導入をご検討の方はこちら▼
-        </a>
-      </div>
-    </div>
+    <a href="https://receptionist.my.salesforce.com/sfc/p/7F000001xBPZ/a/Nn000003dNEL/7eNydQQD_.Ijx6u_ASRMOazwLEomMdd4iW8C_Ge9x7E"
+       target="_blank" rel="noopener" class="btn-thanks blue">
+      ▼イベント利用での受付導入をご検討の方はこちら▼
+    </a>
 
         <!-- パートナー関連 -->
 
