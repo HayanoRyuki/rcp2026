@@ -1,5 +1,5 @@
 /* ========================================
-   Thanks Page
+   Thanks Page (Resource)
 ======================================== */
 
 .thanks-page {
@@ -58,9 +58,82 @@
   background-color: var(--color-primary-hover);
 }
 
+/* ボタン：赤（danger）バージョン */
+.btn-thanks.danger {
+  background-color: var(--color-danger);
+}
+
+.btn-thanks.danger:hover {
+  background-color: var(--color-danger-hover);
+}
+
 .highlight-number {
   font-size: 120%;
   font-weight: 900;
+}
+
+/* ========================================
+   イベント利用案内カード
+======================================== */
+
+.thanks-event-card {
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  background: var(--color-white, #fff);
+}
+
+/* 注意書きエリア */
+.thanks-event-card__notice {
+  padding: 2rem 2rem 1.5rem;
+  text-align: left;
+}
+
+.thanks-event-card__notice-title {
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-danger);
+  margin: 0 0 1rem;
+}
+
+.thanks-event-card__notice-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.thanks-event-card__notice-text strong {
+  color: var(--color-primary);
+}
+
+/* バナー画像エリア */
+.thanks-event-card__banner {
+  display: block;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.thanks-event-card__banner:hover {
+  opacity: 0.88;
+}
+
+.thanks-event-card__banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* CTAボタンエリア */
+.thanks-event-card__cta {
+  padding: 1.2rem 2rem 1.8rem;
+}
+
+.thanks-event-card__cta .btn-thanks {
+  text-align: center;
 }
 
 /* ========================================
@@ -68,9 +141,10 @@
 ======================================== */
 
 .thanks-links {
-  margin-top: 3rem;
+  max-width: 640px;
+  margin: 0 auto;
   padding: 2.4rem 2rem;
-  background: #f4f8fb; /* 少し青みある薄グレー */
+  background: #f4f8fb;
   border: 1px solid #dce6ee;
   border-radius: 14px;
   text-align: left;
@@ -101,21 +175,17 @@
 /* リンクリスト（行頭の・を揃える） */
 .thanks-links .link-list {
   padding-left: 0.2rem;
+  text-align: center;
 }
 
 /* 各リンク */
 .thanks-links a {
-  display: block;
+  display: inline-block;
   padding: 6px 0;
   color: var(--color-primary);
   font-weight: 600;
-  
-  /* ▼ 下線を消す */
   text-decoration: none;
-
-  /* 読みやすさ向上のため letter-spacing 少し広げる */
   letter-spacing: 0.3px;
-
   transition: color .25s ease, transform .2s ease;
 }
 
@@ -135,9 +205,43 @@
   font-weight: 800;
   color: var(--color-primary);
   margin-bottom: 0.6rem;
+  text-align: center;
 }
 
-/* ▼セクション見出しを中央揃えにする */
-.thanks-links .section-block > p {
-  text-align: center;
+/* ========================================
+   レスポンシブ
+======================================== */
+@media (max-width: 600px) {
+  .thanks-page {
+    padding: 2.5rem 1rem;
+  }
+
+  .thanks-title {
+    font-size: 1.5rem;
+  }
+
+  .thanks-event-card__notice {
+    padding: 1.5rem 1.2rem 1rem;
+  }
+
+  .thanks-event-card__notice-title {
+    font-size: 0.95rem;
+  }
+
+  .thanks-event-card__notice-text {
+    font-size: 0.88rem;
+  }
+
+  .thanks-event-card__cta {
+    padding: 1rem 1.2rem 1.4rem;
+  }
+
+  .btn-thanks {
+    font-size: 0.95rem;
+    padding: 1rem 0.8rem;
+  }
+
+  .thanks-links {
+    padding: 1.5rem 1.2rem;
+  }
 }
